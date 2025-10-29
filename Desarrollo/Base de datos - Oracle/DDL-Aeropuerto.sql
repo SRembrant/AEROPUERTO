@@ -1,3 +1,23 @@
+DROP TABLE GenerarFactura CASCADE CONSTRAINTS;
+DROP TABLE Factura CASCADE CONSTRAINTS;
+DROP TABLE Compra CASCADE CONSTRAINTS;
+DROP TABLE Pasaje CASCADE CONSTRAINTS;
+
+DROP TABLE Vuelo CASCADE CONSTRAINTS;
+DROP TABLE Avion CASCADE CONSTRAINTS;
+DROP TABLE PuertaEmbarque CASCADE CONSTRAINTS;
+DROP TABLE ZonaEmbarque CASCADE CONSTRAINTS;
+DROP TABLE Aerolinea CASCADE CONSTRAINTS;
+
+DROP TABLE UsuarioRegistrado CASCADE CONSTRAINTS;
+DROP TABLE CategoriaAsiento CASCADE CONSTRAINTS;
+DROP TABLE Pasajero CASCADE CONSTRAINTS;
+
+DROP TABLE Asiento CASCADE CONSTRAINTS;
+
+DROP TABLE ReglasReagendamiento CASCADE CONSTRAINTS;
+
+
 -- SCRIPT DE CREACION DE LA BASE DE DATOS (DDL)
 
 -- =============================
@@ -10,16 +30,16 @@ CREATE TABLE Pasajero (
     nombrePasajero   VARCHAR2(50) NOT NULL,
     apellidoPasajero VARCHAR2(50) NOT NULL,
     correoPasajero  VARCHAR2(100) NOT NULL, 
-    generoPasajero  VARCHAR2(10) NOT NULL,
-    fechaNacPasajero  DATE NOT NULL,
-    direccionPasajero          VARCHAR2(50) NOT NULL,
-    observacionPasajero     VARCHAR2(100),
-    nacionalidadPasajero   VARCHAR2(50) NOT NULL,
+  --  generoPasajero  VARCHAR2(10) NOT NULL,
+  --  fechaNacPasajero  DATE NOT NULL,
+  --  direccionPasajero          VARCHAR2(50) NOT NULL,
+  --  observacionPasajero     VARCHAR2(100),
+  --  nacionalidadPasajero   VARCHAR2(50) NOT NULL,
     
     CONSTRAINT pk_pasajero PRIMARY KEY (idPasajero),
     constraint uq_pasajero_correo unique (correoPasajero),
-    constraint ckc_generoPasajero check (generoPasajero in ('Masculino', 'Femenino')),
-    constraint ckc_tipoIdPasajero check (tipoIdPasajero in ('Tarjeta de Identidad', 'Cedula de Ciudadania', 'Cedula de Extranjeria', 'Pasaporte')),
+  --  constraint ckc_generoPasajero check (generoPasajero in ('Masculino', 'Femenino')),
+    constraint ckc_tipoIdPasajero check (tipoIdPasajero in ('T.I.', 'C.C.', 'C.E.', 'P.P.')),
     constraint ckc_idPasajero check (idPasajero>0)
 );
 
@@ -64,8 +84,8 @@ CREATE TABLE UsuarioRegistrado (
     constraint uq_usuarioRegistrado_usuarioAcceso unique (usuarioAcceso),
     constraint uq_usuarioRegistrado_docIdUsuario unique (docIdUsuario),
     constraint ckc_idUsuario check (idUsuario>0),
-    constraint ckc_generoUsuario check (generoUsuario in ('Masculino', 'Femenino')),
-    constraint ckc_tipoIdUsuario check (tipoIdUsuario in ('Tarjeta de Identidad', 'Cedula de Ciudadania', 'Cedula de Extranjeria', 'Pasaporte')),
+    constraint ckc_generoUsuario check (generoUsuario in ('Masculino', 'Femenino','No binario', 'Prefiero no decirlo', 'Otro')),
+    constraint ckc_tipoIdUsuario check (tipoIdUsuario in ('T.I.', 'C.C.', 'C.E.', 'P.P.')),
     constraint ckc_estadoUsuario check (estadoUsuario in ('Activo', 'Inactivo')),
     constraint ckc_telefonoUsuario check (telefonoUsuario > 0)
 );
@@ -138,7 +158,7 @@ CREATE TABLE Asiento (
     constraint ckc_numAsiento check (numAsiento>0),
     constraint ckc_estadoAsiento check(estadoAsiento IN('Disponible','Reservado'))
 );
-
+/*
 CREATE TABLE Vuelo (
     idVuelo         INTEGER NOT NULL,
    -- origenVuelo     VARCHAR2(50) NOT NULL,
@@ -161,6 +181,33 @@ CREATE TABLE Vuelo (
     constraint ckc_idVuelo check (idVuelo>0),
     constraint ckc_precioBaseVuelo check (precioBaseVuelo > 0),
     constraint ckc_estadoVuelo check (estadoVuelo in ('Adelantado', 'En tiempo', 'Atrasado'))
+);
+*/
+
+CREATE TABLE Vuelo (
+    idVuelo             INTEGER NOT NULL,
+    codVuelo            VARCHAR2(10) NOT NULL, -- nuevo: código del vuelo (ej. AV123)
+    ciuOrigenVuelo      VARCHAR2(50) NOT NULL,
+    paisOrigenVuelo     VARCHAR2(50) NOT NULL,
+    ciuDestinoVuelo     VARCHAR2(50) NOT NULL,
+    paisDestinoVuelo    VARCHAR2(50) NOT NULL,
+    precioBaseVuelo     NUMBER NOT NULL,
+    estadoVuelo         VARCHAR2(15) NOT NULL,
+    fechaEjecucion      DATE NOT NULL,
+    horaSalidaVuelo     DATE NOT NULL,         -- nuevo: hora de salida
+    horaLlegadaVuelo    DATE NOT NULL,         -- nuevo: hora de llegada
+    duracionVuelo       INTERVAL DAY TO SECOND, -- nuevo: duración total del vuelo
+    idZEmbarque         INTEGER NOT NULL,
+    idPuerta            INTEGER NOT NULL,
+    idAvion             INTEGER NOT NULL,
+
+    CONSTRAINT pk_Vuelo PRIMARY KEY (idVuelo),
+    CONSTRAINT fk_ZEmbVuel FOREIGN KEY (idZEmbarque) REFERENCES ZonaEmbarque (idZEmbarque),
+    CONSTRAINT fk_PuerVuel FOREIGN KEY (idPuerta) REFERENCES PuertaEmbarque (idPuerta),
+    CONSTRAINT fk_AvioVuel FOREIGN KEY (idAvion) REFERENCES Avion (idAvion),
+    CONSTRAINT ckc_idVuelo CHECK (idVuelo > 0),
+    CONSTRAINT ckc_precioBaseVuelo CHECK (precioBaseVuelo > 0),
+    CONSTRAINT ckc_estadoVuelo CHECK (estadoVuelo IN ('Adelantado', 'En tiempo', 'Atrasado'))
 );
 
 
@@ -189,29 +236,45 @@ CREATE TABLE Pasaje (
 );
 
 CREATE TABLE Compra (
-    idCompra        INTEGER NOT NULL,
+    idCompra        INTEGER GENERATED ALWAYS AS IDENTITY,
     idUsuario       INTEGER NOT NULL,
     idPasaje        INTEGER NOT NULL,
+    estadoCompra VARCHAR2(30) NOT NULL,
     
     CONSTRAINT pk_Compra PRIMARY KEY (idCompra),
     constraint fk_PasaComp foreign key (idPasaje) references Pasaje (idPasaje),
     constraint fk_UsuaComp foreign key (idUsuario) references UsuarioRegistrado (idUsuario),
     constraint uq_Compra unique (idPasaje),
-    constraint ckc_idCompra check (idCompra>0)
+    constraint ckc_idCompra check (idCompra>0),
+    constraint ckc_estadoCompa check (estadoCompra IN ('Procesado','Sin Procesar'))
 );
 
 CREATE TABLE Factura (
-    idFactura       INTEGER NOT NULL,
+    idFactura       INTEGER GENERATED ALWAYS AS IDENTITY
+    (START WITH 2000 INCREMENT BY 1 MINVALUE 2000 MAXVALUE 20000),
     fechaFactura    DATE NOT NULL,
-    montoFactura    NUMBER(10,2) NOT NULL,
+    montoFactura    NUMBER(12,2) NOT NULL,
     medioPagoFactura VARCHAR2(20) NOT NULL,
-    idCompra        INTEGER NOT NULL, 
+--    idCompra        INTEGER NOT NULL, 
     
     CONSTRAINT pk_Factura PRIMARY KEY (idFactura),
-    constraint fk_CompFact foreign key (idCompra) references Compra (idCompra),
-    constraint uq_Factura unique (idCompra),
+ --   constraint fk_CompFact foreign key (idCompra) references Compra (idCompra),
+ --   constraint uq_Factura unique (idCompra),
     constraint ckc_idFactura check (idFactura>0),
     constraint ckc_montoFactura check (montoFactura>=0)
+    
+);
+
+CREATE TABLE GenerarFactura(
+     idGenerarFactura INTEGER GENERATED ALWAYS AS IDENTITY,
+     idFactura       INTEGER NOT NULL,
+     idCompra        INTEGER NOT NULL,
+  
+    CONSTRAINT pk_GenerarFactura PRIMARY KEY (idGenerarFactura),
+    constraint fk_CompGen foreign key (idCompra) references Compra (idCompra),
+    constraint fk_facGen foreign key (idFactura) references Factura (idFactura),
+    constraint uq_GenerarFactura unique (idCompra,idFactura)
+
 );
 
 -- =============================
@@ -231,20 +294,4 @@ CREATE TABLE ReglasReagendamiento (
 
 
 commit
-DROP TABLE Factura CASCADE CONSTRAINTS;
-DROP TABLE Compra CASCADE CONSTRAINTS;
-DROP TABLE Pasaje CASCADE CONSTRAINTS;
 
-DROP TABLE Vuelo CASCADE CONSTRAINTS;
-DROP TABLE Avion CASCADE CONSTRAINTS;
-DROP TABLE PuertaEmbarque CASCADE CONSTRAINTS;
-DROP TABLE ZonaEmbarque CASCADE CONSTRAINTS;
-DROP TABLE Aerolinea CASCADE CONSTRAINTS;
-
-DROP TABLE UsuarioRegistrado CASCADE CONSTRAINTS;
-DROP TABLE CategoriaAsiento CASCADE CONSTRAINTS;
-DROP TABLE Pasajero CASCADE CONSTRAINTS;
-
-DROP TABLE Asiento CASCADE CONSTRAINTS;
-
-DROP TABLE ReglasReagendamiento CASCADE CONSTRAINTS;

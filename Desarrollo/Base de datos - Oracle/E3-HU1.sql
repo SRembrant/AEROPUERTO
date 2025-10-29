@@ -31,7 +31,8 @@ CREATE OR REPLACE PACKAGE MONITOREAR_VUELOS AS
         p_paisOrigen      IN  VUELO.PAISORIGENVUELO%TYPE,
         p_ciuDestino      IN  VUELO.CIUDESTINOVUELO%TYPE,
         p_paisDestino     IN  VUELO.PAISDESTINOVUELO%TYPE,
-        p_fecha           IN  DATE,
+        p_fechaIda        IN  DATE,
+        p_fechaRegreso    IN DATE,
         p_resultadoIda    OUT SYS_REFCURSOR,
         p_resultadoVuelta OUT SYS_REFCURSOR
     );
