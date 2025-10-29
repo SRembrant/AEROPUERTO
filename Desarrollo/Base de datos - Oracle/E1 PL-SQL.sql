@@ -72,11 +72,11 @@ CREATE OR REPLACE PACKAGE GESTION_USUARIO AS
     );
     
     -- validar si es viable o no hacer un cambio de contraseña
-    FUNCTION VALIDAR_CAMBIO_CONTRASENIA(
-        p_usuarioAcceso USUARIOREGISTRADO.USUARIOACCESO,
-        p_docIdUsuario USUARIOREGISTRADO.DOCIDUSUARIO
-    )
-    RETURN NUMBER;
+    --FUNCTION VALIDAR_CAMBIO_CONTRASENIA(
+        --p_usuarioAcceso USUARIOREGISTRADO.USUARIOACCESO,
+      --  p_docIdUsuario USUARIOREGISTRADO.DOCIDUSUARIO
+    --)
+   -- RETURN NUMBER;
 
 END GESTION_USUARIO;
 
@@ -105,6 +105,10 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
         p_bandera OUT NUMBER
     )
     IS
+        e_unique_violation EXCEPTION;
+        PRAGMA EXCEPTION_INIT(e_unique_violation, -00001);
+        v_error_message VARCHAR2(500);
+        
     BEGIN
         INSERT INTO USUARIOREGISTRADO(
             DOCIDUSUARIO, TIPOIDUSUARIO, NOMBREUSUARIO, APELLIDOUSUARIO, CORREOUSUARIO,
@@ -120,10 +124,24 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
         p_bandera := 1;
 
     EXCEPTION
-        WHEN DUP_VAL_ON_INDEX THEN
-            RAISE_APPLICATION_ERROR(-20001, 'El usuario con ese ID, correo o usuario ya existe.');
+       -- WHEN DUP_VAL_ON_INDEX THEN
+          --  RAISE_APPLICATION_ERROR(-20001, 'El usuario con ese ID, correo o usuario ya existe.');
         WHEN VALUE_ERROR THEN
             RAISE_APPLICATION_ERROR(-20002, 'Error de tipo de dato o valor nulo en campo obligatorio.');
+            
+        WHEN e_unique_violation THEN
+            v_error_message := SQLERRM;
+            IF INSTR(v_error_message, 'uq_usuarioRegistrado_correo') > 0 THEN
+                -- Violación del DNI
+                RAISE_APPLICATION_ERROR(-20005, 'El correo ingresado ya existe en el sistema.');    
+            ELSIF INSTR(v_error_message, 'uq_usuarioRegistrado_usuarioAcceso') > 0 THEN
+                -- Violación del Email
+                RAISE_APPLICATION_ERROR(-20006, 'El nombre de usuario ingresado ya está registrado.');   
+             ELSIF INSTR(v_error_message, 'uq_usuarioRegistrado_docIdUsuario') > 0 THEN
+                -- Violación del Email
+                RAISE_APPLICATION_ERROR(-20007, 'El documento de identificacion ya existe en el sistema.');       
+            END IF;
+            
         WHEN OTHERS THEN
             IF SQLCODE = -2290 THEN
                 RAISE_APPLICATION_ERROR(-20003, 'Violación de restricción CHECK (valores inválidos).');
@@ -203,6 +221,11 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
     )
     IS
         v_count INTEGER;
+        
+        e_unique_violation EXCEPTION;
+        PRAGMA EXCEPTION_INIT(e_unique_violation, -00001);
+        v_error_message VARCHAR2(500);
+        
     BEGIN
         SELECT COUNT(*) INTO v_count
         FROM USUARIOREGISTRADO
@@ -243,10 +266,24 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
             RAISE_APPLICATION_ERROR(-20032, 'No se pudo actualizar el usuario.');
         END IF;
     EXCEPTION
-        WHEN DUP_VAL_ON_INDEX THEN
-            RAISE_APPLICATION_ERROR(-20033, 'Valor duplicado en campo único.');
+      --  WHEN DUP_VAL_ON_INDEX THEN
+          --  RAISE_APPLICATION_ERROR(-20033, 'Valor duplicado en campo único.');
         WHEN VALUE_ERROR THEN
             RAISE_APPLICATION_ERROR(-20034, 'Error en tipo o tamaño de valor.');
+            
+        WHEN e_unique_violation THEN
+            v_error_message := SQLERRM;
+            IF INSTR(v_error_message, 'uq_usuarioRegistrado_correo') > 0 THEN
+                -- Violación del email
+                RAISE_APPLICATION_ERROR(-20005, 'El correo ingresado ya existe en el sistema.');    
+            ELSIF INSTR(v_error_message, 'uq_usuarioRegistrado_usuarioAcceso') > 0 THEN
+                -- Violación del usuario
+                RAISE_APPLICATION_ERROR(-20006, 'El nombre de usuario ingresado ya está registrado.');   
+             ELSIF INSTR(v_error_message, 'uq_usuarioRegistrado_docIdUsuario') > 0 THEN
+                -- Violación del id
+                RAISE_APPLICATION_ERROR(-20007, 'El documento de identificacion ya existe en el sistema.');       
+            END IF;
+              
         WHEN OTHERS THEN
             RAISE_APPLICATION_ERROR(-20035, 'Error al modificar usuario: ' || SQLERRM);
     END MODIFICAR_USUARIO;
@@ -274,9 +311,9 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
 
     EXCEPTION
         WHEN NO_DATA_FOUND THEN
-            RAISE_APPLICATION_ERROR(-20040,'No se encontró al usuario ingresado');
+            RAISE_APPLICATION_ERROR(-20010, 'No existe ningún usuario con el nombre de usuario buscado');
         WHEN TOO_MANY_ROWS THEN
-            RAISE_APPLICATION_ERROR(-20041,'Más de un usuario tiene el mismo nombre de usuario');
+            RAISE_APPLICATION_ERROR(-20011, 'Existen múltiples usuarios con el mismo nombre de usuario.');
         WHEN OTHERS THEN
             RAISE_APPLICATION_ERROR(-20042,'Error inesperado al validar credenciales');
     END VALIDAR_CREDENCIALES;
@@ -354,30 +391,30 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
     
 --------------------------------------------
 
-    FUNCTION VALIDAR_CAMBIO_CONTRASENIA(
-        p_usuarioAcceso USUARIOREGISTRADO.USUARIOACCESO,
-        p_docIdUsuario USUARIOREGISTRADO.DOCIDUSUARIO
-    )
-    RETURN NUMBER
-    IS
-        v_usuarioAcceso NUMBER;
-    BEGIN
-        SELECT USUARIOACCESO INTO v_usuarioAcceso
-        FROM USUARIOREGISTRADO
-        WHERE DOCIDUSUARIO = p_docIdUsuario;
+   -- FUNCTION VALIDAR_CAMBIO_CONTRASENIA(
+   --     p_usuarioAcceso USUARIOREGISTRADO.USUARIOACCESO,
+   --     p_docIdUsuario USUARIOREGISTRADO.DOCIDUSUARIO
+   -- )
+   -- RETURN NUMBER
+   -- IS
+   --     v_usuarioAcceso NUMBER;
+   -- BEGIN
+   --     SELECT USUARIOACCESO INTO v_usuarioAcceso
+   --     FROM USUARIOREGISTRADO
+   --     WHERE DOCIDUSUARIO = p_docIdUsuario;
         
-        IF v_usuarioAcceso = p_usuarioAcceso THEN
-            RETURN 1; -- es valido, se permite hacer un update de la contraseña
-        ELSE
-            RETURN 0; --no es valido, no se permite hacer update de la contraseña
-        END IF;
+   --     IF v_usuarioAcceso = p_usuarioAcceso THEN
+   --         RETURN 1; -- es valido, se permite hacer un update de la contraseña
+   --     ELSE
+   --         RETURN 0; --no es valido, no se permite hacer update de la contraseña
+   --     END IF;
         
-    EXCEPTION
-        WHEN NO_DATA_FOUND THEN
-            RAISE_APPLICATION_ERROR(-20090, 'No se encontro un usuario con el documento ingresado');
-        WHEN OTHERS THEN
-            RAISE_APPLICATION_ERROR(-20091, 'Error inesperado al intentar cambiar la contraseña');
-    END CAMBIO_CONTRASENIA;
+ --   EXCEPTION
+  --      WHEN NO_DATA_FOUND THEN
+--RAISE_APPLICATION_ERROR(-20090, 'No se encontro un usuario con el documento ingresado');
+  --      WHEN OTHERS THEN
+    --        RAISE_APPLICATION_ERROR(-20091, 'Error inesperado al intentar cambiar la contraseña');
+   -- END CAMBIO_CONTRASENIA;
 
 END GESTION_USUARIO;
 
@@ -401,7 +438,7 @@ BEGIN
     INTO v_count
     FROM UsuarioRegistrado
     WHERE usuarioAcceso = :NEW.usuarioAcceso
-      AND idUsuario != NVL(:OLD.idUsuario, -1);  -- Evita conflicto en UPDATE del mismo usuario
+      AND idUsuario != NVL(:OLD.idUsuario, -1);  
 
     IF v_count > 0 THEN
         RAISE_APPLICATION_ERROR(-20051,'El nombre de usuario ya está en uso.');
@@ -421,8 +458,8 @@ BEGIN
     -- 2 Validar longitud mínima y máxima (entre 8 y 64 caracteres)
     IF LENGTH(:NEW.contraseniaUsuario) < 8 THEN
         RAISE_APPLICATION_ERROR(-20061,'La contraseña debe tener al menos 8 caracteres.');
-    ELSIF LENGTH(:NEW.contraseniaUsuario) > 64 THEN
-        RAISE_APPLICATION_ERROR(-20062,'La contraseña no puede tener más de 64 caracteres.');
+    ELSIF LENGTH(:NEW.contraseniaUsuario) > 20 THEN
+        RAISE_APPLICATION_ERROR(-20062,'La contraseña no puede tener más de 20 caracteres.');
     END IF;
 END;
 
@@ -447,4 +484,4 @@ BEGIN
     END IF;
 END TRG_VALIDAR_EDAD_USUARIO;
 
-
+-- 
