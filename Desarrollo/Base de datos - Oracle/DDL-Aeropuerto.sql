@@ -1,3 +1,23 @@
+DROP TABLE GenerarFactura CASCADE CONSTRAINTS;
+DROP TABLE Factura CASCADE CONSTRAINTS;
+DROP TABLE Compra CASCADE CONSTRAINTS;
+DROP TABLE Pasaje CASCADE CONSTRAINTS;
+
+DROP TABLE Vuelo CASCADE CONSTRAINTS;
+DROP TABLE Avion CASCADE CONSTRAINTS;
+DROP TABLE PuertaEmbarque CASCADE CONSTRAINTS;
+DROP TABLE ZonaEmbarque CASCADE CONSTRAINTS;
+DROP TABLE Aerolinea CASCADE CONSTRAINTS;
+
+DROP TABLE UsuarioRegistrado CASCADE CONSTRAINTS;
+DROP TABLE CategoriaAsiento CASCADE CONSTRAINTS;
+DROP TABLE Pasajero CASCADE CONSTRAINTS;
+
+DROP TABLE Asiento CASCADE CONSTRAINTS;
+
+DROP TABLE ReglasReagendamiento CASCADE CONSTRAINTS;
+
+
 -- SCRIPT DE CREACION DE LA BASE DE DATOS (DDL)
 
 -- =============================
@@ -138,7 +158,7 @@ CREATE TABLE Asiento (
     constraint ckc_numAsiento check (numAsiento>0),
     constraint ckc_estadoAsiento check(estadoAsiento IN('Disponible','Reservado'))
 );
-
+/*
 CREATE TABLE Vuelo (
     idVuelo         INTEGER NOT NULL,
    -- origenVuelo     VARCHAR2(50) NOT NULL,
@@ -161,6 +181,33 @@ CREATE TABLE Vuelo (
     constraint ckc_idVuelo check (idVuelo>0),
     constraint ckc_precioBaseVuelo check (precioBaseVuelo > 0),
     constraint ckc_estadoVuelo check (estadoVuelo in ('Adelantado', 'En tiempo', 'Atrasado'))
+);
+*/
+
+CREATE TABLE Vuelo (
+    idVuelo             INTEGER NOT NULL,
+    codVuelo            VARCHAR2(10) NOT NULL, -- nuevo: código del vuelo (ej. AV123)
+    ciuOrigenVuelo      VARCHAR2(50) NOT NULL,
+    paisOrigenVuelo     VARCHAR2(50) NOT NULL,
+    ciuDestinoVuelo     VARCHAR2(50) NOT NULL,
+    paisDestinoVuelo    VARCHAR2(50) NOT NULL,
+    precioBaseVuelo     NUMBER NOT NULL,
+    estadoVuelo         VARCHAR2(15) NOT NULL,
+    fechaEjecucion      DATE NOT NULL,
+    horaSalidaVuelo     DATE NOT NULL,         -- nuevo: hora de salida
+    horaLlegadaVuelo    DATE NOT NULL,         -- nuevo: hora de llegada
+    duracionVuelo       INTERVAL DAY TO SECOND, -- nuevo: duración total del vuelo
+    idZEmbarque         INTEGER NOT NULL,
+    idPuerta            INTEGER NOT NULL,
+    idAvion             INTEGER NOT NULL,
+
+    CONSTRAINT pk_Vuelo PRIMARY KEY (idVuelo),
+    CONSTRAINT fk_ZEmbVuel FOREIGN KEY (idZEmbarque) REFERENCES ZonaEmbarque (idZEmbarque),
+    CONSTRAINT fk_PuerVuel FOREIGN KEY (idPuerta) REFERENCES PuertaEmbarque (idPuerta),
+    CONSTRAINT fk_AvioVuel FOREIGN KEY (idAvion) REFERENCES Avion (idAvion),
+    CONSTRAINT ckc_idVuelo CHECK (idVuelo > 0),
+    CONSTRAINT ckc_precioBaseVuelo CHECK (precioBaseVuelo > 0),
+    CONSTRAINT ckc_estadoVuelo CHECK (estadoVuelo IN ('Adelantado', 'En tiempo', 'Atrasado'))
 );
 
 
@@ -206,7 +253,7 @@ CREATE TABLE Factura (
     idFactura       INTEGER GENERATED ALWAYS AS IDENTITY
     (START WITH 2000 INCREMENT BY 1 MINVALUE 2000 MAXVALUE 20000),
     fechaFactura    DATE NOT NULL,
-    montoFactura    NUMBER(10,2) NOT NULL,
+    montoFactura    NUMBER(12,2) NOT NULL,
     medioPagoFactura VARCHAR2(20) NOT NULL,
 --    idCompra        INTEGER NOT NULL, 
     
@@ -247,21 +294,4 @@ CREATE TABLE ReglasReagendamiento (
 
 
 commit
-DROP TABLE GenerarFactura CASCADE CONSTRAINTS;
-DROP TABLE Factura CASCADE CONSTRAINTS;
-DROP TABLE Compra CASCADE CONSTRAINTS;
-DROP TABLE Pasaje CASCADE CONSTRAINTS;
 
-DROP TABLE Vuelo CASCADE CONSTRAINTS;
-DROP TABLE Avion CASCADE CONSTRAINTS;
-DROP TABLE PuertaEmbarque CASCADE CONSTRAINTS;
-DROP TABLE ZonaEmbarque CASCADE CONSTRAINTS;
-DROP TABLE Aerolinea CASCADE CONSTRAINTS;
-
-DROP TABLE UsuarioRegistrado CASCADE CONSTRAINTS;
-DROP TABLE CategoriaAsiento CASCADE CONSTRAINTS;
-DROP TABLE Pasajero CASCADE CONSTRAINTS;
-
-DROP TABLE Asiento CASCADE CONSTRAINTS;
-
-DROP TABLE ReglasReagendamiento CASCADE CONSTRAINTS;
