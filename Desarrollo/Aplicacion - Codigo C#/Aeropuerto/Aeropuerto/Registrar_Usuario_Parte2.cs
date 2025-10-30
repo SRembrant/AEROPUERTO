@@ -42,7 +42,7 @@ namespace Aeropuerto
         private void btnCrearCuenta_Click(object sender, EventArgs e)
         {
 
-            if (txtNumeroTelefonico.Text=="" || txtContrasenia.Text=="" || txtDireccion.Text=="" || txtDetalles.Text=="" )
+            if (txtNumeroTelefonico.Text=="" || txtContrasenia.Text=="" || txtDireccion.Text=="" )
             {
                 MessageBox.Show("Debe llenar los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

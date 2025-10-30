@@ -14,7 +14,9 @@ namespace Aeropuerto
     public partial class PaginaPrincipal : Form
     {
         UsuarioRegistrado objUsuarioRegistrado;
-        Inicio_Sesion login;
+        public Inicio_Sesion login;
+        Pasaje gestorPasaje = new Pasaje();
+
         public PaginaPrincipal(Inicio_Sesion login, UsuarioRegistrado objUsuarioRegistrado)
         {
             InitializeComponent();
@@ -31,13 +33,41 @@ namespace Aeropuerto
             txtDireccion_Pgperfil.Text = objUsuarioRegistrado.DireccionUsuario;
             txtDetalles_Pgperfil.Text = objUsuarioRegistrado.DetalleUsuario;
             txtNacionalidad_Pgperfil.Text = objUsuarioRegistrado.NacionalidadUsuario;
+
+            pnlMiPerfil.Parent = tbpMiperfil;
+            pnlContenedorPerfil.Parent = tbpMiperfil;
+
+            pnlMiPerfil.Dock = DockStyle.Fill;
+            pnlContenedorPerfil.Dock = DockStyle.Fill;
+
+            pnlMiPerfil.Visible = true;
+            pnlContenedorPerfil.Visible = false;
         }
 
         private void btnModificarDatos_Pgperfil_Click(object sender, EventArgs e)
         {
-            ModificarDatos opcionModificar = new ModificarDatos(this, this.objUsuarioRegistrado);
-            opcionModificar.Show();
-            this.Hide();
+            /*Uc_ModificarDatos ucModificar = new Uc_ModificarDatos(this, this.objUsuarioRegistrado);
+            this.pnlMiPerfil.Controls.Clear();
+            this.pnlMiPerfil.Controls.Add(ucModificar);
+            ucModificar.Dock = DockStyle.Fill;*/
+            //this.pnlContenedorPerfil.Show();
+            tabControl_PaginaPrincipal.SelectedTab = tbpMiperfil;
+
+            // Mostrar contenedor, ocultar panel base, y asegurar Z-order
+            pnlContenedorPerfil.SuspendLayout();
+
+            pnlContenedorPerfil.Visible = true;
+            pnlContenedorPerfil.BringToFront();     // 👈 importante para Z-order
+            pnlMiPerfil.Visible = false;
+
+            // Cargar el UC dentro del contenedor
+            var ucModificar = new Uc_ModificarDatos(this, this.objUsuarioRegistrado);
+            ucModificar.Dock = DockStyle.Fill;
+
+            pnlContenedorPerfil.Controls.Clear();
+            pnlContenedorPerfil.Controls.Add(ucModificar);
+
+            pnlContenedorPerfil.ResumeLayout();
         }
 
         public void ActualizarPantalla()
@@ -95,6 +125,15 @@ namespace Aeropuerto
                 dtmFechaViaje_Ida.MinDate = DateTime.Today;
                 
             }
+
+            if (tabControl_PaginaPrincipal.SelectedTab == tbpMisVuelos)
+            {
+                Uc_MisVuelos ucMisVuelos = new Uc_MisVuelos(this, objUsuarioRegistrado);
+                this.pnlMisVuelos.Controls.Clear();
+                this.pnlMisVuelos.Controls.Add(ucMisVuelos);
+                ucMisVuelos.Dock = DockStyle.Fill;
+            }
+
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
@@ -107,6 +146,8 @@ namespace Aeropuerto
 
             DateTime fechaIda = dtmFechaViaje_Ida.Value;
 
+            int cantidadPasajeros = int.Parse(txtCantidadPasajeros.Text);
+
             DataTable vuelos = objVuelo.ConsultarVuelosIda(ciudadOrigen, paisOrigen, ciudadDestino, paisDestino, fechaIda);
 
             if (vuelos.Rows.Count == 0)
@@ -115,17 +156,18 @@ namespace Aeropuerto
                 return;
             }
 
-            // Pasas los datos al siguiente form
-            AcVuelosDisponibles vista = new AcVuelosDisponibles(this, objVuelo, objUsuarioRegistrado, vuelos);
-            vista.Show();
-            this.Hide();
+            Uc_AcVuelosDisponibles ucVerVuelos = new Uc_AcVuelosDisponibles(cantidadPasajeros,this, objVuelo, objUsuarioRegistrado, vuelos);
+            this.pnlBuscarVuelos.Controls.Clear();
+            this.pnlBuscarVuelos.Controls.Add(ucVerVuelos);
+            ucVerVuelos.Dock = DockStyle.Fill;
         }
 
         private void btnIdaYVuelta_Click(object sender, EventArgs e)
         {
-            AccionIda_Vuelta idaVuelta = new AccionIda_Vuelta(this, objVuelo, objUsuarioRegistrado);
-            idaVuelta.Show();
-            this.Hide();
+            Uc_AccionIda_Vuelta ucIdaVuelta = new Uc_AccionIda_Vuelta(this, objVuelo, objUsuarioRegistrado);
+            this.pnlBuscarVuelos.Controls.Clear();
+            this.pnlBuscarVuelos.Controls.Add(ucIdaVuelta);
+            ucIdaVuelta.Dock = DockStyle.Fill;
         }
 
         private void btnCerrarSesion_Modificar1_Click(object sender, EventArgs e)
@@ -134,5 +176,38 @@ namespace Aeropuerto
             login.Show();
             
         }
+
+        
+
+        public Guna.UI2.WinForms.Guna2Panel PanelMiPerfil
+        {
+            get { return pnlMiPerfil; }
+        }
+
+        public Guna.UI2.WinForms.Guna2Panel PanelBuscarVuelos
+        {
+            get { return pnlBuscarVuelos; }
+        }
+
+        public Guna.UI2.WinForms.Guna2Panel PanelMisVuelos
+        {
+            get { return pnlMisVuelos; }
+        }
+
+        public TabControl TabControl_PaginaPrincipal
+        {
+            get { return tabControl_PaginaPrincipal; }
+        }
+
+        public TabPage TbpMiPerfil
+        {
+            get { return tbpMiperfil; }
+        }
+
+        public Guna.UI2.WinForms.Guna2Panel PanelContenedorPerfil
+        {
+            get { return pnlContenedorPerfil; }
+        }
+
     }
 }

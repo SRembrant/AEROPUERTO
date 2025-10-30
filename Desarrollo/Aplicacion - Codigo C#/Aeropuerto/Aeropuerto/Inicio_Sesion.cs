@@ -37,6 +37,11 @@ namespace Aeropuerto
             if (resultado.Contains("permitido"))
             {
                 int id = objUsuarioRegistrado.ObtenerIdPorNombreUsuario(usuarioNombre);
+                
+                /*Console.WriteLine(usuarioNombre);
+                Console.WriteLine(id);
+                Boolean flag = objUsuarioRegistrado.CargarDatosPorID(id);
+                Console.WriteLine(flag);*/
 
                 if (id > 0 && objUsuarioRegistrado.CargarDatosPorID(id))
                 {

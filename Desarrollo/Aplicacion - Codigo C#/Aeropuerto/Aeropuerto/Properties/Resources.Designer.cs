@@ -73,6 +73,36 @@ namespace Aeropuerto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2025_10_27_150457 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2025-10-27 150457", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2025_10_27_153759 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2025-10-27 153759", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2025_10_27_163820 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2025-10-27 163820", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flecha_2 {
             get {
                 object obj = ResourceManager.GetObject("flecha_2", resourceCulture);

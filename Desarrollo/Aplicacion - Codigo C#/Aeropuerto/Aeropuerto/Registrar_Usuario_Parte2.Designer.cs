@@ -39,7 +39,6 @@
             this.lblErrorCampoObligatorioFechaNac = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblErrorTelefonoConValoresNoNumericos = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTerminosYCondiciones_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.chbxAceptoTerminosCondiciones = new Guna.UI2.WinForms.Guna2CheckBox();
             this.txtDireccion = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtContrasenia = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtmFechaNacimiento = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -56,6 +55,7 @@
             this.lblFechaNacimiento_mns = new System.Windows.Forms.Label();
             this.lblSeguridadDeLaCuenta_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnCrearCuenta = new Guna.UI2.WinForms.Guna2Button();
+            this.chbxAceptoTerminosCondiciones = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -102,6 +102,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 10;
+            this.guna2Panel1.Controls.Add(this.chbxAceptoTerminosCondiciones);
             this.guna2Panel1.Controls.Add(this.pictureBox1);
             this.guna2Panel1.Controls.Add(this.lblVolverARegistrar_1);
             this.guna2Panel1.Controls.Add(this.lblErrorCampoObligatorioDireccion);
@@ -110,7 +111,6 @@
             this.guna2Panel1.Controls.Add(this.lblErrorCampoObligatorioFechaNac);
             this.guna2Panel1.Controls.Add(this.lblErrorTelefonoConValoresNoNumericos);
             this.guna2Panel1.Controls.Add(this.lblTerminosYCondiciones_mns);
-            this.guna2Panel1.Controls.Add(this.chbxAceptoTerminosCondiciones);
             this.guna2Panel1.Controls.Add(this.txtDireccion);
             this.guna2Panel1.Controls.Add(this.txtContrasenia);
             this.guna2Panel1.Controls.Add(this.dtmFechaNacimiento);
@@ -211,31 +211,12 @@
             this.lblTerminosYCondiciones_mns.BackColor = System.Drawing.Color.Transparent;
             this.lblTerminosYCondiciones_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F);
             this.lblTerminosYCondiciones_mns.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblTerminosYCondiciones_mns.Location = new System.Drawing.Point(179, 337);
+            this.lblTerminosYCondiciones_mns.Location = new System.Drawing.Point(179, 335);
             this.lblTerminosYCondiciones_mns.Name = "lblTerminosYCondiciones_mns";
             this.lblTerminosYCondiciones_mns.Size = new System.Drawing.Size(199, 42);
             this.lblTerminosYCondiciones_mns.TabIndex = 20;
             this.lblTerminosYCondiciones_mns.Text = "Al hacer click, estas aceptando\r\nlos terminos de uso y la politica\r\nde privacidad" +
     "";
-            // 
-            // chbxAceptoTerminosCondiciones
-            // 
-            this.chbxAceptoTerminosCondiciones.AutoSize = true;
-            this.chbxAceptoTerminosCondiciones.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbxAceptoTerminosCondiciones.CheckedState.BorderRadius = 0;
-            this.chbxAceptoTerminosCondiciones.CheckedState.BorderThickness = 0;
-            this.chbxAceptoTerminosCondiciones.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbxAceptoTerminosCondiciones.CheckMarkColor = System.Drawing.Color.Transparent;
-            this.chbxAceptoTerminosCondiciones.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.chbxAceptoTerminosCondiciones.Location = new System.Drawing.Point(179, 314);
-            this.chbxAceptoTerminosCondiciones.Name = "chbxAceptoTerminosCondiciones";
-            this.chbxAceptoTerminosCondiciones.Size = new System.Drawing.Size(60, 17);
-            this.chbxAceptoTerminosCondiciones.TabIndex = 19;
-            this.chbxAceptoTerminosCondiciones.Text = "Acepto";
-            this.chbxAceptoTerminosCondiciones.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chbxAceptoTerminosCondiciones.UncheckedState.BorderRadius = 0;
-            this.chbxAceptoTerminosCondiciones.UncheckedState.BorderThickness = 0;
-            this.chbxAceptoTerminosCondiciones.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // txtDireccion
             // 
@@ -486,6 +467,16 @@
             this.btnCrearCuenta.Text = "Crear cuenta";
             this.btnCrearCuenta.Click += new System.EventHandler(this.btnCrearCuenta_Click);
             // 
+            // chbxAceptoTerminosCondiciones
+            // 
+            this.chbxAceptoTerminosCondiciones.AutoSize = true;
+            this.chbxAceptoTerminosCondiciones.Location = new System.Drawing.Point(179, 314);
+            this.chbxAceptoTerminosCondiciones.Name = "chbxAceptoTerminosCondiciones";
+            this.chbxAceptoTerminosCondiciones.Size = new System.Drawing.Size(60, 17);
+            this.chbxAceptoTerminosCondiciones.TabIndex = 29;
+            this.chbxAceptoTerminosCondiciones.Text = "Acepto";
+            this.chbxAceptoTerminosCondiciones.UseVisualStyleBackColor = true;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.flechaiz;
@@ -536,7 +527,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtContrasenia;
         private Guna.UI2.WinForms.Guna2TextBox txtDireccion;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTerminosYCondiciones_mns;
-        private Guna.UI2.WinForms.Guna2CheckBox chbxAceptoTerminosCondiciones;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorTelefonoConValoresNoNumericos;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligatorioContrasenia;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligatorioNumTelefono;
@@ -544,5 +534,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligatorioDireccion;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblVolverARegistrar_1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox chbxAceptoTerminosCondiciones;
     }
 }

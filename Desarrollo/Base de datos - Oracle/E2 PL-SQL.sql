@@ -99,6 +99,21 @@ CREATE OR REPLACE PACKAGE GESTION_PASAJES AS
             p_idUsuario IN USUARIOREGISTRADO.IDUSUARIO%TYPE,
             p_resultado OUT SYS_REFCURSOR
         );
+        
+    PROCEDURE OBTENER_CANTIDAD_PASAJES_USUARIO (
+            p_idUsuario IN USUARIOREGISTRADO.IDUSUARIO%TYPE,
+            p_cantidad OUT NUMBER
+        );
+        
+    PROCEDURE OBTENER_INFO_VUELO_PASAJE (
+            p_idPasaje IN PASAJE.IDPASAJE%TYPE,
+            p_resultado OUT SYS_REFCURSOR
+        );
+        
+    FUNCTION OBTENER_SOBRECOSTO_CATEGORIA (
+        p_nombreCategoria CATEGORIAASIENTO.NOMBRECATEGORIA%TYPE
+    )
+    RETURN CATEGORIAASIENTO.SOBRECOSTOCATEGORIA%TYPE;    
 
 END GESTION_PASAJES;
 
@@ -300,17 +315,32 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         COMMIT;
         
     EXCEPTION
-        /*WHEN OTHERS THEN
-            ROLLBACK;
-            RAISE_APPLICATION_ERROR(-20025, 'Error inesperado al reservar el pasaje: ' || SQLERRM);*/
-    WHEN OTHERS THEN
-        IF SQLCODE = -8177 THEN
-            ROLLBACK;
-            RAISE_APPLICATION_ERROR(-20026, 'Conflicto de concurrencia: otro usuario modificó asientos, intente de nuevo.');
-        ELSE
-            ROLLBACK;
-            RAISE_APPLICATION_ERROR(-20025, 'Error inesperado al reservar el pasaje: ' || SQLERRM);
-        END IF;
+        WHEN OTHERS THEN
+            IF SQLCODE = -20014 THEN
+                ROLLBACK;
+                DELETE FROM PASAJERO WHERE IDPASAJERO = p_idPasajero;
+                RAISE_APPLICATION_ERROR(-20014,'No hay asientos disponibles para el avion en la categoria ingresada');
+            ELSIF SQLCODE = -20015 THEN
+                ROLLBACK;
+                DELETE FROM PASAJERO WHERE IDPASAJERO = p_idPasajero;
+                RAISE_APPLICATION_ERROR(-20015,'Se encontró más de un asiento cuando solo se esperaba uno');
+            ELSIF SQLCODE = -20016 THEN
+                ROLLBACK;
+                DELETE FROM PASAJERO WHERE IDPASAJERO = p_idPasajero;
+                RAISE_APPLICATION_ERROR(-20016,'Error de tipo o conversión al asignar el número de asiento.');
+            ELSIF SQLCODE = -20017 THEN
+                ROLLBACK;
+                DELETE FROM PASAJERO WHERE IDPASAJERO = p_idPasajero;
+                RAISE_APPLICATION_ERROR(-20017, 'Error inesperado al obtener asiento: ' || SQLERRM);
+            ELSIF SQLCODE = -20023 THEN
+                ROLLBACK;
+                DELETE FROM PASAJERO WHERE IDPASAJERO = p_idPasajero;
+                RAISE_APPLICATION_ERROR(-20023, 'Otro usuario está reservando asientos de esta categoría. Intente más tarde.');
+            ELSE
+                ROLLBACK;
+                DELETE FROM PASAJERO WHERE IDPASAJERO = p_idPasajero;
+                RAISE_APPLICATION_ERROR(-20025, 'Error inesperado al reservar el pasaje' ||SQLERRM);
+            END IF; 
         
     END RESERVAR_PASAJE;
      
@@ -370,14 +400,14 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
     END IF;  
     
     --calcular el total a pagar 
-        /*v_totalBruto := CALCULAR_SUMA_PRECIO_BASE(datos_compra_t.COUNT, datos_compra_t(1).precioBase); -- recibir los parametros de suma preciio base???
+        v_totalBruto := CALCULAR_SUMA_PRECIO_BASE(datos_compra_t.COUNT, datos_compra_t(1).precioBase); -- recibir los parametros de suma preciio base???
         v_porcentaje := ( datos_compra_t(1).sobrecostoCategoria * v_totalBruto ) / 100;
         v_totalPagar := v_totalBruto + v_porcentaje;
-        v_totalPagar := ROUND(v_totalBruto + v_porcentaje, 2);*/
+        v_totalPagar := ROUND(v_totalBruto + v_porcentaje, 2);
         
-        v_totalBruto := CALCULAR_SUMA_PRECIO_BASE(datos_compra_t.COUNT, datos_compra_t(1).precioBase);
+        /*v_totalBruto := CALCULAR_SUMA_PRECIO_BASE(datos_compra_t.COUNT, datos_compra_t(1).precioBase);
         v_totalPagar := v_totalBruto + (datos_compra_t.COUNT * datos_compra_t(1).sobrecostoCategoria);
-        v_totalPagar := ROUND(v_totalPagar, 2);
+        v_totalPagar := ROUND(v_totalPagar, 2);*/
         
     --creacion de la factura
         INSERT INTO FACTURA (FECHAFACTURA,MONTOFACTURA,MEDIOPAGOFACTURA) VALUES (CURRENT_DATE, v_totalPagar, p_medioPago)
@@ -559,6 +589,8 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
                 WHERE 1=0;
     END OBTENER_CATEGORIAS_ASIENTO_NOMBRES;
     
+    
+    
     PROCEDURE OBTENER_VUELOS_USUARIO (
         p_idUsuario IN USUARIOREGISTRADO.IDUSUARIO%TYPE,
         p_resultado OUT SYS_REFCURSOR
@@ -568,6 +600,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         OPEN p_resultado FOR
             SELECT 
                 v.idVuelo,
+                c.idPasaje,
                 v.ciuOrigenVuelo AS origen,
                 v.ciuDestinoVuelo AS destino,
                 v.fechaEjecucion AS fecha,
@@ -586,8 +619,109 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
             WHERE 
                 c.idUsuario = p_idUsuario
                 AND c.estadoCompra = 'Procesado'
+                AND p.estadoPasaje = 'Activo'
             ORDER BY v.fechaEjecucion DESC;
     END OBTENER_VUELOS_USUARIO;
+    
+    
+    
+    PROCEDURE OBTENER_CANTIDAD_PASAJES_USUARIO (
+        p_idUsuario IN USUARIOREGISTRADO.IDUSUARIO%TYPE,
+        p_cantidad OUT NUMBER
+    )
+    AS
+    BEGIN
+        SELECT COUNT(*)
+        INTO p_cantidad
+        FROM COMPRA c
+        INNER JOIN PASAJE p ON c.IDPASAJE = p.IDPASAJE
+        WHERE c.IDUSUARIO = p_idUsuario
+          AND c.ESTADOCOMPRA = 'Procesado';  -- Solo pasajes válidos
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            p_cantidad := 0;
+        WHEN OTHERS THEN
+            p_cantidad := 0;
+    END OBTENER_CANTIDAD_PASAJES_USUARIO;
+    
+-- ===============================================================
+-- PROCEDIMIENTO: OBTENER_INFO_VUELO_PASAJE
+-- Devuelve toda la información detallada del vuelo y pasaje
+-- para mostrarla en la pantalla Uc_Informacion_Vuelo
+-- ===============================================================    
+    
+    PROCEDURE OBTENER_INFO_VUELO_PASAJE (
+        p_idPasaje IN PASAJE.IDPASAJE%TYPE,
+        p_resultado OUT SYS_REFCURSOR
+    )
+    AS
+    BEGIN
+        OPEN p_resultado FOR
+            SELECT
+                v.codVuelo AS numeroVuelo,
+                v.ciuOrigenVuelo AS origen,
+                v.ciuDestinoVuelo AS destino,
+                TO_CHAR(v.horaSalidaVuelo, 'HH24:MI') AS horaSalida,
+                TO_CHAR(v.horaLlegadaVuelo, 'HH24:MI') AS horaLlegada,
+                v.duracionVuelo AS duracion,
+                v.fechaEjecucion AS fechaVuelo,
+                p.estadoPasaje AS estadoPasaje,
+                a.nombreAerolinea,
+                av.modeloAvion,
+                asn.numAsiento,
+                cat.nombreCategoria AS categoria,
+                cat.sobrecostoCategoria,
+                c.idCompra,
+                f.montoFactura,
+                f.idFactura,
+                f.medioPagoFactura,
+                -- Campos adicionales
+                'En tiempo' AS estadoVuelo,
+                '9' AS puertaEmbarque,
+                'A6' AS zonaEmbarque,
+                3 AS numPasajeros
+            FROM 
+                PASAJE p
+                INNER JOIN VUELO v ON p.idVuelo = v.idVuelo
+                INNER JOIN AVION av ON v.idAvion = av.idAvion
+                INNER JOIN AEROLINEA a ON av.idAerolinea = a.idAerolinea
+                INNER JOIN ASIENTO asn ON p.idAvion = asn.idAvion AND p.numAsiento = asn.numAsiento
+                INNER JOIN CATEGORIAASIENTO cat ON asn.idCategoria = cat.idCategoria
+                INNER JOIN COMPRA c ON c.idPasaje = p.idPasaje
+                LEFT JOIN GENERARFACTURA gf ON gf.idCompra = c.idCompra
+                LEFT JOIN FACTURA f ON f.idFactura = gf.idFactura
+            WHERE 
+                p.idPasaje = p_idPasaje;
+    
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            OPEN p_resultado FOR
+                SELECT NULL AS numeroVuelo FROM dual WHERE 1=0;
+    END OBTENER_INFO_VUELO_PASAJE;
+
+
+
+
+    FUNCTION OBTENER_SOBRECOSTO_CATEGORIA (
+        p_nombreCategoria CATEGORIAASIENTO.NOMBRECATEGORIA%TYPE
+    )
+    RETURN CATEGORIAASIENTO.SOBRECOSTOCATEGORIA%TYPE
+    IS
+        v_sobrecosto CATEGORIAASIENTO.SOBRECOSTOCATEGORIA%TYPE;
+    BEGIN
+        SELECT SOBRECOSTOCATEGORIA
+        INTO v_sobrecosto
+        FROM CATEGORIAASIENTO
+        WHERE NOMBRECATEGORIA = p_nombreCategoria;
+    
+        RETURN v_sobrecosto;
+    
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            RAISE_APPLICATION_ERROR(-20060, 'No existe la categoría con ese nombre');
+        WHEN OTHERS THEN
+            RAISE_APPLICATION_ERROR(-20061, 'Error inesperado al obtener el sobrecosto: ' || SQLERRM);
+    END OBTENER_SOBRECOSTO_CATEGORIA;
 
 
 END GESTION_PASAJES;
