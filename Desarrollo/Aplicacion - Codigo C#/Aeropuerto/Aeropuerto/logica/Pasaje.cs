@@ -12,7 +12,7 @@ namespace Aeropuerto.logica
     {
         Datos datos = new Datos(); // Tu clase de conexión centralizada a Oracle
 
-        // ✅ Registrar pasajero
+        // Registrar pasajero
         public string InsertarPasajero(int idPasajero, string tipoId, string nombre, string apellido, string correo)
         {
             try
@@ -45,12 +45,14 @@ namespace Aeropuerto.logica
             }
             catch (OracleException ex)
             {
-                return ManejadorErroresOracle.Traducir(ex);
+                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
+                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
             
         }
 
-        // ✅ Reservar pasaje
+        // Reservar pasaje
         public string ReservarPasaje(int idUsuario, int idPasajero, int idVuelo, int idCategoria)
         {
             try
@@ -85,11 +87,13 @@ namespace Aeropuerto.logica
             }
             catch (OracleException ex)
             {
-                return ManejadorErroresOracle.Traducir(ex);
+                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
+                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
         }
 
-        // ✅ Generar factura
+        // Generar factura
         public DataTable RecuperarFactura(int idVuelo, int idUsuario, string medioPago)
         {
             OracleParameter[] parametros = new OracleParameter[]
@@ -103,7 +107,7 @@ namespace Aeropuerto.logica
             return datos.EjecutarProcedureCursor("GESTION_PASAJES.RECUPERAR_DATOS_FACTURA", parametros);
         }
 
-        // ✅ Cancelar pasaje
+        // Cancelar pasaje
         public string CancelarPasaje(int idPasaje)
         {
             try
@@ -118,11 +122,13 @@ namespace Aeropuerto.logica
             }
             catch (OracleException ex)
             {
-                return ManejadorErroresOracle.Traducir(ex);
+                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
+                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
         }
 
-        // ✅ Obtener ID de Categoría por nombre
+        // Obtener ID de Categoría por nombre
         public int ObtenerIdCategoria(string nombreCategoria)
         {
             OracleParameter[] parametros = new OracleParameter[]
@@ -211,7 +217,8 @@ namespace Aeropuerto.logica
             }
             catch (OracleException ex)
             {
-                MessageBox.Show("Error al obtener cantidad de pasajes: " + ManejadorErroresOracle.Traducir(ex));
+                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
+                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return 0;
             }
 
@@ -231,7 +238,7 @@ namespace Aeropuerto.logica
             return datos.EjecutarProcedureCursor("GESTION_PASAJES.OBTENER_INFO_VUELO_PASAJE", parametros);
         }
 
-        // ✅ Obtener sobrecosto de una categoría por nombre
+        // Obtener sobrecosto de una categoría por nombre
         public decimal ObtenerSobrecostoCategoria(string nombreCategoria)
         {
             try
@@ -242,14 +249,13 @@ namespace Aeropuerto.logica
                 };
 
                 var resultado = datos.EjecutarFuncion(
-                    "GESTION_PASAJES.OBTENER_SOBRECOSTO_CATEGORIA", // ⚠️ nueva función en BD (ver nota abajo)
+                    "GESTION_PASAJES.OBTENER_SOBRECOSTO_CATEGORIA", 
                     parametros,
                     OracleDbType.Decimal
                 );
 
                 decimal valor = 0;
 
-                // Conversión segura OracleDecimal → decimal
                 if (resultado is Oracle.ManagedDataAccess.Types.OracleDecimal oracleDecimal)
                 {
                     valor = oracleDecimal.Value;
@@ -263,7 +269,8 @@ namespace Aeropuerto.logica
             }
             catch (OracleException ex)
             {
-                MessageBox.Show("Error al obtener sobrecosto de categoría: " + ManejadorErroresOracle.Traducir(ex));
+                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
+                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return 0;
             }
         }

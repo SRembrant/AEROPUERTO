@@ -42,7 +42,7 @@ namespace Aeropuerto
             txtDireccion_ModifParte2.Text = objUsarioRegistrado.DireccionUsuario;
             txtDetalles_ModifParte2.Text = objUsarioRegistrado.DetalleUsuario;
             cbxNacionalidad_ModifParte2.SelectedItem = objUsarioRegistrado.NacionalidadUsuario;
-
+            this.Visible = true;
         }
 
         private void btnActualizarDatos_ModifParte2_Click(object sender, EventArgs e)
@@ -57,21 +57,25 @@ namespace Aeropuerto
             string resultado = objUsarioRegistrado.ModificarUsuario(pkUsuario, originalID, nuevaID, nuevotipoID, nuevoNombre,
                     nuevoApellido, nuevoCorreo, nuevoGenero, nuevaFechaNacimiento, nuevaNacionalidad, nuevoUsuario,
                     nuevaContrasenia, nuevaDireccion, nuevoDetalle, nuevoTelefono);
-            MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if (!string.IsNullOrWhiteSpace(resultado))
+            {
+                MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
 
         private void lblRegresarAnterior_ModifParte2_Click(object sender, EventArgs e)
         {
-            principal.PanelMiPerfil.Controls.Clear();
-            principal.PanelMiPerfil.Controls.Add(objModificarAnterior);
-            objModificarAnterior.Dock = DockStyle.Fill;
+            this.Visible = false;
+            objModificarAnterior.Visible = true;
+            /*principal.PanelMiPerfil.Controls.Add(objModificarAnterior);
+            objModificarAnterior.Dock = DockStyle.Fill;*/
             principal.PanelMiPerfil.Refresh();
         }
 
         private void lblRegresarInicio_Modificar2_Click(object sender, EventArgs e)
         {
-            principal.PanelContenedorPerfil.Controls.Clear();
             principal.PanelContenedorPerfil.Visible = false;
 
             principal.PanelMiPerfil.Visible = true;

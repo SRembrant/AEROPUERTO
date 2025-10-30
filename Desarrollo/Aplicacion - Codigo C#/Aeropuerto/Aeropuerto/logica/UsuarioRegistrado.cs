@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 
 namespace Aeropuerto.logica
@@ -75,7 +76,9 @@ namespace Aeropuerto.logica
             }
             catch (OracleException ex)
             {
-                return ManejadorErroresOracle.Traducir(ex);
+                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
+                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
             catch (Exception ex)
             {
@@ -116,7 +119,9 @@ namespace Aeropuerto.logica
             }
             catch (OracleException ex)
             {
-                return ManejadorErroresOracle.Traducir(ex);
+                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
+                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
             catch (Exception ex)
             {
@@ -158,7 +163,9 @@ namespace Aeropuerto.logica
             }
             catch (OracleException ex)
             {
-                return ManejadorErroresOracle.Traducir(ex);
+                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
+                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
             catch (Exception ex)
             {

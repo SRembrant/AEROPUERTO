@@ -120,8 +120,8 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
         WHEN OTHERS THEN
             IF SQLCODE = -2290 THEN
                 RAISE_APPLICATION_ERROR(-20003, 'Violación de restricción CHECK (valores inválidos).');
-            ELSE
-                RAISE_APPLICATION_ERROR(-20004, 'Error desconocido al insertar usuario: ' || SQLERRM);
+            /*ELSE
+                RAISE_APPLICATION_ERROR(-20004, 'Error desconocido al insertar usuario: ' || SQLERRM);*/
             END IF;
     END INSERTAR_USUARIO_NUEVO;
 
@@ -177,7 +177,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
     END ELIMINAR_CUENTA;
 
     ---------------------------------------------------------
-     PROCEDURE MODIFICAR_USUARIO(
+    PROCEDURE MODIFICAR_USUARIO(
         p_IdUsuario            IN USUARIOREGISTRADO.IDUSUARIO%TYPE,
         p_antiguoDocIdUsuario  IN USUARIOREGISTRADO.DOCIDUSUARIO%TYPE,
         p_nuevoDocIdUsuario    IN USUARIOREGISTRADO.DOCIDUSUARIO%TYPE,
@@ -195,13 +195,11 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
         p_telefonoUsuario      IN USUARIOREGISTRADO.TELEFONOUSUARIO%TYPE
     )
     IS
-      e_unique_violation EXCEPTION;
-        PRAGMA EXCEPTION_INIT(e_unique_violation, -00001);
+        e_unique_violation EXCEPTION;
+        PRAGMA EXCEPTION_INIT (e_unique_violation, -00001);
         v_error_message VARCHAR2(500);
-        
         v_count INTEGER;
     BEGIN
-       
         SELECT COUNT(*) INTO v_count
         FROM USUARIOREGISTRADO
         WHERE IDUSUARIO = p_IdUsuario;
@@ -214,7 +212,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
             SELECT COUNT(*) INTO v_count
             FROM USUARIOREGISTRADO
             WHERE DOCIDUSUARIO = p_nuevoDocIdUsuario;
-             
+
             IF v_count > 0 THEN
                 RAISE_APPLICATION_ERROR(-20031, 'El nuevo documento ya está en uso.');
             END IF;
@@ -240,16 +238,12 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
         IF SQL%ROWCOUNT = 0 THEN
             RAISE_APPLICATION_ERROR(-20032, 'No se pudo actualizar el usuario.');
         END IF;
-
     EXCEPTION
-    
-        --  WHEN DUP_VAL_ON_INDEX THEN
-          --  RAISE_APPLICATION_ERROR(-20033, 'Valor duplicado en campo único.');
+      --  WHEN DUP_VAL_ON_INDEX THEN
+        --    RAISE_APPLICATION_ERROR(-20033, 'Valor duplicado en campo único.');
         WHEN VALUE_ERROR THEN
             RAISE_APPLICATION_ERROR(-20034, 'Error en tipo o tamaño de valor.');
-            
-        WHEN e_unique_violation THEN
-        DBMS_OUTPUT.PUT_LINE('Modificando usuario...');
+         WHEN e_unique_violation THEN
             v_error_message := SQLERRM;
             IF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_CORREO') > 0 THEN
                 -- Violación del email
@@ -261,12 +255,9 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
                 -- Violación del id
                 RAISE_APPLICATION_ERROR(-20007, 'El documento de identificacion ya existe en el sistema.');       
             END IF;
-              
-        WHEN OTHERS THEN
-            RAISE_APPLICATION_ERROR(-20035, 'Error al modificar usuario: ' || SQLERRM);
-            
+        
     END MODIFICAR_USUARIO;
-    
+
     ---------------------------------------------------------
     FUNCTION VALIDAR_CREDENCIALES(
         p_usuarioAcceso IN USUARIOREGISTRADO.USUARIOACCESO%TYPE,
@@ -373,33 +364,10 @@ END GESTION_USUARIO;
 
 --- TRIGGERS EPICA 1
 /*Trigger. Antes de insertar un nuevo usuario o actualizar el nombre de usuario, se debe garantizar que nadie más (activo) 
-        en la base de datos tiene el mismo nombre de usuario para evitar confusiones.
-*/        
-/*CREATE OR REPLACE TRIGGER TR_VALIDAR_USERNAME_UNICO
-BEFORE INSERT OR UPDATE ON UsuarioRegistrado
-FOR EACH ROW
-DECLARE
-    v_count INTEGER;
-BEGIN
-    -- Validar que no tenga espacios adelante ni atrás
-    IF TRIM(:NEW.usuarioAcceso) != :NEW.usuarioAcceso THEN
-        RAISE_APPLICATION_ERROR(-20050,'El nombre de usuario no puede tener espacios al inicio o al final.');
-    END IF;
-
-    -- Validar que el username sea único (sensible a mayúsculas/minúsculas)
-    SELECT COUNT(*)
-    INTO v_count
-    FROM UsuarioRegistrado
-    WHERE usuarioAcceso = :NEW.usuarioAcceso
-      AND idUsuario != NVL(:OLD.idUsuario, -1);  -- Evita conflicto en UPDATE del mismo usuario
-
-    IF v_count > 0 THEN
-        RAISE_APPLICATION_ERROR(-20051,'El nombre de usuario ya está en uso.');
-    END IF;
-END;*/
-
+        en la base de datos tiene el mismo nombre de usuario para evitar confusiones.*/
+/*
 CREATE OR REPLACE TRIGGER TR_VALIDAR_USERNAME_UNICO
-BEFORE INSERT OR UPDATE OF USUARIOACCESO ON UsuarioRegistrado
+BEFORE INSERT ON UsuarioRegistrado
 FOR EACH ROW
 DECLARE
     v_count NUMBER;
@@ -419,7 +387,8 @@ BEGIN
     END IF;
 END;
 
-ALTER TRIGGER TR_VALIDAR_USERNAME_UNICO DISABLE;
+ALTER TRIGGER TR_VALIDAR_USERNAME_UNICO ENABLE;
+DROP TRIGGER TR_VALIDAR_USERNAME_UNICO;*/
 
 --trigger de ciberseguridad
 CREATE OR REPLACE TRIGGER TR_VALIDAR_CONTRA_USUARIO
@@ -440,48 +409,6 @@ BEGIN
 END;
 
 --trigger de correo electronico
-/*CREATE OR REPLACE TRIGGER trg_validar_correo_usuario
-BEFORE INSERT OR UPDATE OF CORREOUSUARIO ON UsuarioRegistrado
-FOR EACH ROW
-BEGIN
-    -- 1️ Validar que no tenga espacios al inicio ni al final
-    IF TRIM(:NEW.correoUsuario) != :NEW.correoUsuario THEN
-        RAISE_APPLICATION_ERROR(
-            -20070,
-            'El correo no debe tener espacios al inicio o al final.'
-        );
-    END IF;
-
-    -- 2 Validar formato general del correo con una expresión regular
-    IF NOT REGEXP_LIKE(
-        :NEW.correoUsuario,
-        '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'
-    ) THEN
-        RAISE_APPLICATION_ERROR(-20071,'El correo electrónico no tiene un formato válido'
-        );
-    END IF;
-END;*/
-
-/*CREATE OR REPLACE TRIGGER trg_validar_correo_usuario
-BEFORE INSERT OR UPDATE OF CORREOUSUARIO ON UsuarioRegistrado
-FOR EACH ROW
-BEGIN
-    -- Si el correo no cambió, no validar
-    IF UPDATING AND :NEW.correoUsuario = :OLD.correoUsuario THEN
-        RETURN;
-    END IF;
-
-    -- Validar espacios
-    IF TRIM(:NEW.correoUsuario) != :NEW.correoUsuario THEN
-        RAISE_APPLICATION_ERROR(-20070, 'El correo no debe tener espacios al inicio o al final.');
-    END IF;
-
-    -- Validar formato
-    IF NOT REGEXP_LIKE(:NEW.correoUsuario, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$') THEN
-        RAISE_APPLICATION_ERROR(-20071, 'El correo electrónico no tiene un formato válido.');
-    END IF;
-END;*/
-
 CREATE OR REPLACE TRIGGER trg_validar_correo_usuario
 BEFORE INSERT OR UPDATE OF CORREOUSUARIO ON UsuarioRegistrado
 FOR EACH ROW
@@ -508,7 +435,29 @@ BEGIN
     END IF;
 END trg_validar_correo_usuario;
 
-ALTER TRIGGER trg_validar_correo_usuario DISABLE;
+
+
+CREATE OR REPLACE TRIGGER trg_validar_correo_pasajero
+BEFORE INSERT ON PASAJERO
+FOR EACH ROW
+DECLARE
+    v_newCorreo VARCHAR2(255);
+    v_oldCorreo VARCHAR2(255);
+BEGIN
+    v_newCorreo := TRIM(LOWER(:NEW.correoPasajero));
+    v_oldCorreo := TRIM(LOWER(:OLD.correoPasajero));
+
+    -- Validar espacios
+    IF TRIM(:NEW.correoPasajero) != :NEW.correoPasajero THEN
+        RAISE_APPLICATION_ERROR(-20072, 'El correo no debe tener espacios al inicio o al final.');
+    END IF;
+
+    -- Validar formato general
+    IF NOT REGEXP_LIKE(:NEW.correoPasajero, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$') THEN
+        RAISE_APPLICATION_ERROR(-20073, 'El correo electrónico no tiene un formato válido.');
+    END IF;
+END trg_validar_correo_pasajero;
+
 
 
 
@@ -536,6 +485,7 @@ BEGIN
         );
     END IF;
 END TRG_VALIDAR_EDAD_USUARIO;
+
 
 
 CREATE OR REPLACE TRIGGER TR_VALIDAR_PALABRAS_SQL
@@ -573,16 +523,6 @@ BEGIN
         END IF;
     END LOOP;
 END;
-/*
-UPDATE USUARIOREGISTRADO
-SET CORREOUSUARIO = 'correotest.com'
-WHERE IDUSUARIO = 1;
-
-UPDATE USUARIOREGISTRADO
-SET FECHANACUSUARIO = SYSDATE
-WHERE IDUSUARIO = 1;
-
-*/
 
 CREATE OR REPLACE TRIGGER TRG_VALIDAR_TELEFONO_USUARIO
 BEFORE INSERT OR UPDATE OF TELEFONOUSUARIO
@@ -606,9 +546,7 @@ BEGIN
     END IF;
 END TRG_VALIDAR_TELEFONO_USUARIO;
 
-ALTER TRIGGER  TRG_VALIDAR_TELEFONO_USUARIO DISABLE
 
---
 CREATE OR REPLACE TRIGGER TRG_VALIDAR_CARACTERES_USUARIO
 BEFORE INSERT OR UPDATE OF DIRECCIONUSUARIO, OBSERVACIONUSUARIO
 ON USUARIOREGISTRADO
@@ -647,3 +585,58 @@ END TRG_VALIDAR_CARACTERES_USUARIO;
 
 
 
+
+
+
+
+--PRUEBAS DE TRIGGERS Y EXCEPCIONES
+UPDATE USUARIOREGISTRADO
+SET CORREOUSUARIO = 'correotest.com'
+WHERE IDUSUARIO = 1;
+
+UPDATE USUARIOREGISTRADO
+SET FECHANACUSUARIO = SYSDATE
+WHERE IDUSUARIO = 1;
+
+INSERT INTO PASAJERO (IDPASAJERO, TIPOIDPASAJERO,NOMBREPASAJERO, APELLIDOPASAJERO, CORREOPASAJERO)
+VALUES (444,'T.I.','Maria','Lopez', 'correoprueba');
+
+UPDATE USUARIOREGISTRADO
+SET CONTRASENIAUSUARIO = ' contraseniatest'
+WHERE IDUSUARIO = 1;
+
+
+INSERT INTO UsuarioRegistrado (
+    docIdUsuario,
+    tipoIdUsuario,
+    nombreUsuario,
+    apellidoUsuario,
+    correoUsuario,
+    generoUsuario,
+    fechaNacUsuario,
+    nacionalidadUsuario,
+    estadoUsuario,
+    usuarioAcceso,
+    contraseniaUsuario,
+    direccionUsuario,
+    observacionUsuario,
+    telefonoUsuario
+) VALUES (
+    123456789,                     -- Documento
+    'C.C.',                        -- Tipo de identificación
+    'Valentina',                   -- Nombre
+    'Balcazar',                    -- Apellido
+    'valebc@correo.com', -- Correo
+    'Femenino',                    -- Género
+    TO_DATE('1998-05-21', 'YYYY-MM-DD'), -- Fecha de nacimiento
+    'Colombiana',                  -- Nacionalidad
+    'Activo',                      -- Estado
+    'valenb',                      -- Usuario de acceso
+    '12345abc',                    -- Contraseña
+    'Calle 10 #15-30',             -- Dirección
+    'Sin observaciones',           -- Observación
+    3124567890                     -- Teléfono
+);
+
+DELETE FROM USUARIOREGISTRADO
+WHERE IDUSUARIO=53;

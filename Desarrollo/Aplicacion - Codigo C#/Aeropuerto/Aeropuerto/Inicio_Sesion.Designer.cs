@@ -222,6 +222,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlPrincipal);
             this.Name = "Inicio_Sesion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio_Sesion";
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();

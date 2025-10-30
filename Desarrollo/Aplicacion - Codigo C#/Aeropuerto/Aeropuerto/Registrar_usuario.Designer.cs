@@ -32,6 +32,7 @@
             this.lblCreaUsuarioGratuita_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUneteANosotros = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblErrorCampObligIdentificacion = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblErrorCampoObligNombreUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblErrorCamObligDireccionCorreo = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -102,6 +103,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 10;
+            this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.lblErrorCampObligIdentificacion);
             this.guna2Panel1.Controls.Add(this.lblErrorCampoObligNombreUsuario);
             this.guna2Panel1.Controls.Add(this.lblErrorCamObligDireccionCorreo);
@@ -133,6 +135,16 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(335, 412);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label1.Location = new System.Drawing.Point(184, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Tu Apellido";
             // 
             // lblErrorCampObligIdentificacion
             // 
@@ -501,6 +513,7 @@
             this.ClientSize = new System.Drawing.Size(800, 542);
             this.Controls.Add(this.pnlPrincipal);
             this.Name = "Registrar_usuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar_usuario";
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();
@@ -541,5 +554,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampObligIdentificacion;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligNombreUsuario;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCamObligDireccionCorreo;
+        private System.Windows.Forms.Label label1;
     }
 }

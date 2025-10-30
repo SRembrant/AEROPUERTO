@@ -144,7 +144,7 @@ namespace Aeropuerto
                 if (insercionExitosa && reservaExitosa)
                 {
                     int idVueloFactura = Convert.ToInt32(vuelosIda.Rows[0]["IDVUELO"]);
-                    Uc_GenerarFactura ucGenerarFactura = new Uc_GenerarFactura(idVueloFactura, idUsuario, medioPago, gestorPasaje);
+                    Uc_GenerarFactura ucGenerarFactura = new Uc_GenerarFactura(idVueloFactura, idUsuario, medioPago, gestorPasaje, objUsuarioRegistrado);
                     principal.PanelBuscarVuelos.Controls.Clear();
                     principal.PanelBuscarVuelos.Controls.Add(ucGenerarFactura);
                     ucGenerarFactura.Dock = DockStyle.Fill;

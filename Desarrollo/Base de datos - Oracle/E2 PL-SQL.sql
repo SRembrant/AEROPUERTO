@@ -132,12 +132,8 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         p_idCategoria CATEGORIAASIENTO.IDCATEGORIA%TYPE
     )
     RETURN NUMBER
-        
     IS
         v_numAsiento Asiento.numAsiento%TYPE;
-        
-      --  e_conversionNumero EXCEPTION;
-        -- PRAGMA EXCEPTION_INIT(e_conversionNumero, -06502);
     BEGIN
         SELECT numAsiento
         INTO v_numAsiento
@@ -151,8 +147,6 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         RETURN v_numAsiento;
 
     EXCEPTION
-     --   WHEN  e_conversionNumero THEN
-       --     RAISE_APPLICATION_ERROR(-20501,'Error en el tipo de dato recibido');
         -- No hay asientos disponibles
         WHEN NO_DATA_FOUND THEN
             RAISE_APPLICATION_ERROR(-20014,'No hay asientos disponibles para el avion en la categoria ingresada');
@@ -163,7 +157,6 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
     
         -- Errores de valor nulo o integridad
         WHEN VALUE_ERROR THEN
-         
             RAISE_APPLICATION_ERROR(-20016,'Error de tipo o conversión al asignar el número de asiento.');
     
         -- Cualquier otro error inesperado
@@ -202,7 +195,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
     
     EXCEPTION
         WHEN VALUE_ERROR THEN
-            RAISE_APPLICATION_ERROR(-20034,'Error en tipo o tamaño de valor.');
+            RAISE_APPLICATION_ERROR(-20021,'Error en tipo o tamaño de valor.');
     
         WHEN OTHERS THEN
             RAISE_APPLICATION_ERROR(-20020,'Error desconocido al calcular el total de precio base');
@@ -246,14 +239,14 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
     
     EXCEPTION
         WHEN VALUE_ERROR THEN
-            RAISE_APPLICATION_ERROR(-20002, 'Error de tipo de dato o valor nulo en campo obligatorio.');
+            RAISE_APPLICATION_ERROR(-20102, 'Error de tipo de dato o valor nulo en campo obligatorio.');
         
         WHEN e_unique_violation THEN
-            RAISE_APPLICATION_ERROR(-20005, 'El correo ingresado ya existe en el sistema.');
+            RAISE_APPLICATION_ERROR(-20105, 'El correo ingresado ya existe en el sistema.');
         
         WHEN OTHERS THEN
             IF SQLCODE = -2290 THEN
-                RAISE_APPLICATION_ERROR(-20003, 'Violación de restricción CHECK (valores inválidos).');
+                RAISE_APPLICATION_ERROR(-20103, 'Violación de restricción CHECK (valores inválidos).');
             ELSE
                 RAISE_APPLICATION_ERROR(-20013, 'Error desconocido al guardar pasajero: ' || SQLERRM);
             END IF;
@@ -275,8 +268,6 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         v_fechaUsoPasaje Pasaje.fechaUsoPasaje%TYPE;
         v_id_pasaje Pasaje.idPasaje%TYPE;
         v_id_compra Compra.idCompra%TYPE;
-        
- 
     BEGIN
         -- 0. nivel de aislamiento serializable
         --SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
@@ -324,10 +315,6 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         COMMIT;
         
     EXCEPTION
-      --  WHEN e_conversionNumero THEN
-        --    ROLLBACK;
-          --  DELETE FROM PASAJERO WHERE IDPASAJERO = p_idPasajero;
-            --RAISE_APPLICATION_ERROR(-20501,'Error en el tipo de dato recibido');
         WHEN OTHERS THEN
             IF SQLCODE = -20014 THEN
                 ROLLBACK;
@@ -338,7 +325,6 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
                 DELETE FROM PASAJERO WHERE IDPASAJERO = p_idPasajero;
                 RAISE_APPLICATION_ERROR(-20015,'Se encontró más de un asiento cuando solo se esperaba uno');
             ELSIF SQLCODE = -20016 THEN
-              
                 ROLLBACK;
                 DELETE FROM PASAJERO WHERE IDPASAJERO = p_idPasajero;
                 RAISE_APPLICATION_ERROR(-20016,'Error de tipo o conversión al asignar el número de asiento.');
@@ -419,10 +405,6 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         v_totalPagar := v_totalBruto + v_porcentaje;
         v_totalPagar := ROUND(v_totalBruto + v_porcentaje, 2);
         
-        /*v_totalBruto := CALCULAR_SUMA_PRECIO_BASE(datos_compra_t.COUNT, datos_compra_t(1).precioBase);
-        v_totalPagar := v_totalBruto + (datos_compra_t.COUNT * datos_compra_t(1).sobrecostoCategoria);
-        v_totalPagar := ROUND(v_totalPagar, 2);*/
-        
     --creacion de la factura
         INSERT INTO FACTURA (FECHAFACTURA,MONTOFACTURA,MEDIOPAGOFACTURA) VALUES (CURRENT_DATE, v_totalPagar, p_medioPago)
         RETURNING idFactura INTO v_idFactura;
@@ -449,7 +431,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
 
         WHEN VALUE_ERROR THEN
             ROLLBACK;
-            RAISE_APPLICATION_ERROR(-20034, 'Error en tipo o tamaño de valor');
+            RAISE_APPLICATION_ERROR(-20035, 'Error en tipo o tamaño de valor');
     
         WHEN DUP_VAL_ON_INDEX THEN
             ROLLBACK;
@@ -547,7 +529,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         
         WHEN ex_pasaje_ya_inactivo THEN
             ROLLBACK;
-            RAISE_APPLICATION_ERROR(-20001, 'El pasaje ya se encuentra inactivo.');
+            RAISE_APPLICATION_ERROR(-20101, 'El pasaje ya se encuentra inactivo.');
             
         WHEN OTHERS THEN
             ROLLBACK;
@@ -579,7 +561,6 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
             RAISE_APPLICATION_ERROR(-20054, 'Error inesperado al obtener ID de categoría: ' || SQLERRM);
     END OBTENER_ID_CATEGORIA;
 
---procedimiento para obtener los nombres de las categorias de asiento
     PROCEDURE OBTENER_CATEGORIAS_ASIENTO_NOMBRES(
         p_resultado OUT SYS_REFCURSOR
     )
@@ -733,9 +714,9 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
     
     EXCEPTION
         WHEN NO_DATA_FOUND THEN
-            RAISE_APPLICATION_ERROR(-20060, 'No existe la categoría con ese nombre');
+            RAISE_APPLICATION_ERROR(-20055, 'No existe la categoría con ese nombre');
         WHEN OTHERS THEN
-            RAISE_APPLICATION_ERROR(-20061, 'Error inesperado al obtener el sobrecosto: ' || SQLERRM);
+            RAISE_APPLICATION_ERROR(-20056, 'Error inesperado al obtener el sobrecosto: ' || SQLERRM);
     END OBTENER_SOBRECOSTO_CATEGORIA;
 
 

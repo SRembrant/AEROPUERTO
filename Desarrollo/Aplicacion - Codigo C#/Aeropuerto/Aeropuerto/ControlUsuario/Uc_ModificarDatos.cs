@@ -27,6 +27,7 @@ namespace Aeropuerto
             txtNumIdentificacion_Modificar.Text = objUsuarioRegistrado.DocIdUsuario.ToString();
             cbxTipoIdentificacion.SelectedItem = objUsuarioRegistrado.TipoIdUsuario;
             cbxNuevoGenero.SelectedItem = objUsuarioRegistrado.GeneroUsuario;
+            this.Visible = true;
         }
 
         private void btnGuardarYContinuar_Click(object sender, EventArgs e)
@@ -44,16 +45,11 @@ namespace Aeropuerto
             nuevoTipoID = cbxTipoIdentificacion.SelectedItem.ToString();
             nuevoGenero = cbxNuevoGenero.SelectedItem.ToString();
 
-            /*var objModificar2 = new ModificarDatos_Parte2(this, this.principal, this.objUsuarioRegistrado, originalID, nuevoNombre, nuevoApellido, nuevoCorreo,
-                                    nuevoUsuario, nuevoGenero, nuevaID, nuevoTipoID);
-            objModificar2.Show();
-            this.Hide();*/
-
             var objModificar2 = new Uc_ModificarDatos_Parte2(this, this.principal, this.objUsuarioRegistrado, originalID, nuevoNombre, nuevoApellido, nuevoCorreo,
                                     nuevoUsuario, nuevoGenero, nuevaID, nuevoTipoID);
 
             // Limpia el panel y agrega el nuevo control
-            principal.PanelContenedorPerfil.Controls.Clear();
+            this.Visible = false;
             principal.PanelContenedorPerfil.Controls.Add(objModificar2);
             objModificar2.Dock = DockStyle.Fill;
 
@@ -62,7 +58,6 @@ namespace Aeropuerto
 
         private void pbxRegresar_Modificar1_Click(object sender, EventArgs e)
         {
-            principal.PanelContenedorPerfil.Controls.Clear();
             principal.PanelContenedorPerfil.Visible = false;
 
             principal.PanelMiPerfil.Visible = true;
