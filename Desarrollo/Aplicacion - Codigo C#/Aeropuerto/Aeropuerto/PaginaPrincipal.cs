@@ -23,6 +23,7 @@ namespace Aeropuerto
             this.login = login;
             this.objUsuarioRegistrado = objUsuarioRegistrado;
             txtTuNombre_PgPerfil.Text = objUsuarioRegistrado.NombreUsuario;
+            txtApellido_PgPerfil.Text=objUsuarioRegistrado.ApellidoUsuario;
             txtDireccionCorreo_Pgperfil.Text = objUsuarioRegistrado.CorreoUsuario;
             txtNombreUsuario_Pgperfil.Text = objUsuarioRegistrado.UsuarioAcceso;
             txtGenero_Pgperfil.Text=objUsuarioRegistrado.GeneroUsuario;
@@ -34,6 +35,7 @@ namespace Aeropuerto
             txtDetalles_Pgperfil.Text = objUsuarioRegistrado.DetalleUsuario;
             txtNacionalidad_Pgperfil.Text = objUsuarioRegistrado.NacionalidadUsuario;
 
+
             pnlMiPerfil.Parent = tbpMiperfil;
             pnlContenedorPerfil.Parent = tbpMiperfil;
 
@@ -42,37 +44,33 @@ namespace Aeropuerto
 
             pnlMiPerfil.Visible = true;
             pnlContenedorPerfil.Visible = false;
+
+            this.Refresh();
         }
 
         private void btnModificarDatos_Pgperfil_Click(object sender, EventArgs e)
         {
-            /*Uc_ModificarDatos ucModificar = new Uc_ModificarDatos(this, this.objUsuarioRegistrado);
-            this.pnlMiPerfil.Controls.Clear();
-            this.pnlMiPerfil.Controls.Add(ucModificar);
-            ucModificar.Dock = DockStyle.Fill;*/
-            //this.pnlContenedorPerfil.Show();
             tabControl_PaginaPrincipal.SelectedTab = tbpMiperfil;
 
             // Mostrar contenedor, ocultar panel base, y asegurar Z-order
             pnlContenedorPerfil.SuspendLayout();
 
             pnlContenedorPerfil.Visible = true;
-            pnlContenedorPerfil.BringToFront();     // 👈 importante para Z-order
+            pnlContenedorPerfil.BringToFront();    
             pnlMiPerfil.Visible = false;
 
             // Cargar el UC dentro del contenedor
             var ucModificar = new Uc_ModificarDatos(this, this.objUsuarioRegistrado);
             ucModificar.Dock = DockStyle.Fill;
 
-            pnlContenedorPerfil.Controls.Clear();
             pnlContenedorPerfil.Controls.Add(ucModificar);
-
             pnlContenedorPerfil.ResumeLayout();
         }
 
         public void ActualizarPantalla()
         {
             txtTuNombre_PgPerfil.Text = objUsuarioRegistrado.NombreUsuario;
+            txtApellido_PgPerfil.Text=objUsuarioRegistrado.ApellidoUsuario;
             txtDireccionCorreo_Pgperfil.Text = objUsuarioRegistrado.CorreoUsuario;
             txtNombreUsuario_Pgperfil.Text = objUsuarioRegistrado.UsuarioAcceso;
             txtGenero_Pgperfil.Text = objUsuarioRegistrado.GeneroUsuario;
@@ -156,10 +154,11 @@ namespace Aeropuerto
                 return;
             }
 
-            Uc_AcVuelosDisponibles ucVerVuelos = new Uc_AcVuelosDisponibles(cantidadPasajeros,this, objVuelo, objUsuarioRegistrado, vuelos);
+            Uc_AcVuelosDisponibles ucVerVuelos = new Uc_AcVuelosDisponibles(cantidadPasajeros, this, objVuelo, objUsuarioRegistrado, vuelos);
             this.pnlBuscarVuelos.Controls.Clear();
             this.pnlBuscarVuelos.Controls.Add(ucVerVuelos);
             ucVerVuelos.Dock = DockStyle.Fill;
+
         }
 
         private void btnIdaYVuelta_Click(object sender, EventArgs e)
@@ -168,6 +167,7 @@ namespace Aeropuerto
             this.pnlBuscarVuelos.Controls.Clear();
             this.pnlBuscarVuelos.Controls.Add(ucIdaVuelta);
             ucIdaVuelta.Dock = DockStyle.Fill;
+
         }
 
         private void btnCerrarSesion_Modificar1_Click(object sender, EventArgs e)
@@ -208,6 +208,8 @@ namespace Aeropuerto
         {
             get { return pnlContenedorPerfil; }
         }
+
+        
 
     }
 }

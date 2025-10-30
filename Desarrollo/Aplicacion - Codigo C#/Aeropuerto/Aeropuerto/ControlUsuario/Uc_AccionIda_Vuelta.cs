@@ -113,8 +113,8 @@ namespace Aeropuerto
 
         private void btnSoloIda_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            principal.Show();
+            this.Visible = false;
+            principal.Visible= true;
         }
     }
 }

@@ -47,10 +47,9 @@
             this.mns_BuscarVuelos.BackColor = System.Drawing.Color.Transparent;
             this.mns_BuscarVuelos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.mns_BuscarVuelos.ForeColor = System.Drawing.Color.Black;
-            this.mns_BuscarVuelos.Location = new System.Drawing.Point(16, 7);
-            this.mns_BuscarVuelos.Margin = new System.Windows.Forms.Padding(4);
+            this.mns_BuscarVuelos.Location = new System.Drawing.Point(12, 6);
             this.mns_BuscarVuelos.Name = "mns_BuscarVuelos";
-            this.mns_BuscarVuelos.Size = new System.Drawing.Size(293, 37);
+            this.mns_BuscarVuelos.Size = new System.Drawing.Size(220, 30);
             this.mns_BuscarVuelos.TabIndex = 64;
             this.mns_BuscarVuelos.Text = "Información de pasajero";
             // 
@@ -58,10 +57,9 @@
             // 
             this.flowLayoutPanelPasajeros.AutoScroll = true;
             this.flowLayoutPanelPasajeros.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelPasajeros.Location = new System.Drawing.Point(16, 48);
-            this.flowLayoutPanelPasajeros.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanelPasajeros.Location = new System.Drawing.Point(12, 39);
             this.flowLayoutPanelPasajeros.Name = "flowLayoutPanelPasajeros";
-            this.flowLayoutPanelPasajeros.Size = new System.Drawing.Size(728, 582);
+            this.flowLayoutPanelPasajeros.Size = new System.Drawing.Size(546, 473);
             this.flowLayoutPanelPasajeros.TabIndex = 65;
             this.flowLayoutPanelPasajeros.WrapContents = false;
             // 
@@ -69,10 +67,9 @@
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(378, 658);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(284, 535);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(106, 21);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(90, 15);
             this.guna2HtmlLabel2.TabIndex = 66;
             this.guna2HtmlLabel2.Text = "Metodo de pago";
             // 
@@ -91,10 +88,9 @@
             "PSE",
             "Tarjeta Crédito",
             "Tarjeta Débito"});
-            this.cbxMetodoPago.Location = new System.Drawing.Point(492, 658);
-            this.cbxMetodoPago.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxMetodoPago.Location = new System.Drawing.Point(392, 535);
             this.cbxMetodoPago.Name = "cbxMetodoPago";
-            this.cbxMetodoPago.Size = new System.Drawing.Size(191, 24);
+            this.cbxMetodoPago.Size = new System.Drawing.Size(144, 24);
             this.cbxMetodoPago.TabIndex = 75;
             // 
             // guna2Panel1
@@ -104,10 +100,9 @@
             this.guna2Panel1.Controls.Add(this.lblPrecio_InformPasajero);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.FillColor = System.Drawing.Color.Black;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 697);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 567);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(784, 105);
+            this.guna2Panel1.Size = new System.Drawing.Size(588, 85);
             this.guna2Panel1.TabIndex = 66;
             // 
             // btnRealizarCompra
@@ -122,10 +117,9 @@
             this.btnRealizarCompra.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnRealizarCompra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRealizarCompra.ForeColor = System.Drawing.Color.White;
-            this.btnRealizarCompra.Location = new System.Drawing.Point(459, 23);
-            this.btnRealizarCompra.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRealizarCompra.Location = new System.Drawing.Point(344, 19);
             this.btnRealizarCompra.Name = "btnRealizarCompra";
-            this.btnRealizarCompra.Size = new System.Drawing.Size(285, 50);
+            this.btnRealizarCompra.Size = new System.Drawing.Size(214, 41);
             this.btnRealizarCompra.TabIndex = 7;
             this.btnRealizarCompra.Text = "Realizar compra";
             this.btnRealizarCompra.UseTransparentBackground = true;
@@ -136,10 +130,9 @@
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(55, 17);
-            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(41, 14);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(105, 27);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(83, 22);
             this.guna2HtmlLabel5.TabIndex = 6;
             this.guna2HtmlLabel5.Text = "Precio total";
             // 
@@ -148,10 +141,9 @@
             this.lblPrecio_InformPasajero.BackColor = System.Drawing.Color.Transparent;
             this.lblPrecio_InformPasajero.Font = new System.Drawing.Font("Segoe UI", 13.25F, System.Drawing.FontStyle.Bold);
             this.lblPrecio_InformPasajero.ForeColor = System.Drawing.Color.White;
-            this.lblPrecio_InformPasajero.Location = new System.Drawing.Point(31, 41);
-            this.lblPrecio_InformPasajero.Margin = new System.Windows.Forms.Padding(4);
+            this.lblPrecio_InformPasajero.Location = new System.Drawing.Point(23, 33);
             this.lblPrecio_InformPasajero.Name = "lblPrecio_InformPasajero";
-            this.lblPrecio_InformPasajero.Size = new System.Drawing.Size(157, 32);
+            this.lblPrecio_InformPasajero.Size = new System.Drawing.Size(124, 27);
             this.lblPrecio_InformPasajero.TabIndex = 4;
             this.lblPrecio_InformPasajero.Text = "3.700.000 COP";
             // 
@@ -159,8 +151,7 @@
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(55, 658);
-            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(41, 535);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(3, 2);
             this.guna2HtmlLabel6.TabIndex = 77;
@@ -169,17 +160,16 @@
             // chk_TerminosPoliticas
             // 
             this.chk_TerminosPoliticas.AutoSize = true;
-            this.chk_TerminosPoliticas.Location = new System.Drawing.Point(16, 658);
-            this.chk_TerminosPoliticas.Margin = new System.Windows.Forms.Padding(4);
+            this.chk_TerminosPoliticas.Location = new System.Drawing.Point(12, 535);
             this.chk_TerminosPoliticas.Name = "chk_TerminosPoliticas";
-            this.chk_TerminosPoliticas.Size = new System.Drawing.Size(281, 20);
+            this.chk_TerminosPoliticas.Size = new System.Drawing.Size(227, 17);
             this.chk_TerminosPoliticas.TabIndex = 3;
             this.chk_TerminosPoliticas.Text = "He leído y acepto la política de privacidad";
             this.chk_TerminosPoliticas.UseVisualStyleBackColor = true;
             // 
             // Uc_Informacion_Pasajero
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2HtmlLabel6);
             this.Controls.Add(this.guna2HtmlLabel2);
@@ -188,9 +178,8 @@
             this.Controls.Add(this.flowLayoutPanelPasajeros);
             this.Controls.Add(this.chk_TerminosPoliticas);
             this.Controls.Add(this.mns_BuscarVuelos);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Uc_Informacion_Pasajero";
-            this.Size = new System.Drawing.Size(784, 802);
+            this.Size = new System.Drawing.Size(588, 652);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);

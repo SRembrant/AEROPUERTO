@@ -32,6 +32,8 @@
             this.lblCreaUsuarioGratuita_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUneteANosotros = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.chbxAceptoTerminosCondiciones = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblVolverARegistrar_1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblErrorCampoObligatorioDireccion = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblErrorCampoObligatorioContrasenia = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -55,8 +57,6 @@
             this.lblFechaNacimiento_mns = new System.Windows.Forms.Label();
             this.lblSeguridadDeLaCuenta_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnCrearCuenta = new Guna.UI2.WinForms.Guna2Button();
-            this.chbxAceptoTerminosCondiciones = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -133,6 +133,26 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(389, 459);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // chbxAceptoTerminosCondiciones
+            // 
+            this.chbxAceptoTerminosCondiciones.AutoSize = true;
+            this.chbxAceptoTerminosCondiciones.Location = new System.Drawing.Point(179, 314);
+            this.chbxAceptoTerminosCondiciones.Name = "chbxAceptoTerminosCondiciones";
+            this.chbxAceptoTerminosCondiciones.Size = new System.Drawing.Size(60, 17);
+            this.chbxAceptoTerminosCondiciones.TabIndex = 29;
+            this.chbxAceptoTerminosCondiciones.Text = "Acepto";
+            this.chbxAceptoTerminosCondiciones.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.flechaiz;
+            this.pictureBox1.Location = new System.Drawing.Point(292, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 10);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
             // 
             // lblVolverARegistrar_1
             // 
@@ -467,26 +487,6 @@
             this.btnCrearCuenta.Text = "Crear cuenta";
             this.btnCrearCuenta.Click += new System.EventHandler(this.btnCrearCuenta_Click);
             // 
-            // chbxAceptoTerminosCondiciones
-            // 
-            this.chbxAceptoTerminosCondiciones.AutoSize = true;
-            this.chbxAceptoTerminosCondiciones.Location = new System.Drawing.Point(179, 314);
-            this.chbxAceptoTerminosCondiciones.Name = "chbxAceptoTerminosCondiciones";
-            this.chbxAceptoTerminosCondiciones.Size = new System.Drawing.Size(60, 17);
-            this.chbxAceptoTerminosCondiciones.TabIndex = 29;
-            this.chbxAceptoTerminosCondiciones.Text = "Acepto";
-            this.chbxAceptoTerminosCondiciones.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.flechaiz;
-            this.pictureBox1.Location = new System.Drawing.Point(292, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 10);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            // 
             // Registrar_Usuario_Parte2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,6 +494,7 @@
             this.ClientSize = new System.Drawing.Size(800, 578);
             this.Controls.Add(this.pnlPrincipal);
             this.Name = "Registrar_Usuario_Parte2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar_Usuario_Parte2";
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();

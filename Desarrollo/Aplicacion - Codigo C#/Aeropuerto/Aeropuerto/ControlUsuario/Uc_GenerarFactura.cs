@@ -22,13 +22,14 @@ namespace Aeropuerto.ControlUsuario
         int idVuelo;
         int idUsuario;
         string medioPago;
-        public Uc_GenerarFactura(int idVuelo, int idUsuario, string medioPago, Pasaje gestorPasaje)
+        public Uc_GenerarFactura(int idVuelo, int idUsuario, string medioPago, Pasaje gestorPasaje, UsuarioRegistrado objUsuario)
         {
             InitializeComponent();
             this.idVuelo = idVuelo;
             this.idUsuario = idUsuario;
             this.medioPago = medioPago;
             this.gestorPasaje = gestorPasaje;
+            this.objUsuarioRegistrado = objUsuario;
         }
 
         private void lbGenerarFactura_Click(object sender, EventArgs e)
