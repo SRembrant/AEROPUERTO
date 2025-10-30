@@ -9,7 +9,6 @@ CREATE OR REPLACE PACKAGE GESTION_PASAJES AS
     -- -------------------------------------------------------------------------
     -- COMPRA DE PASAJES
     -- -------------------------------------------------------------------------
-
     --funcion para verificar la disponibilidad de sillas en una categoria especifica. ()
     FUNCTION OBTENER_ASIENTO_LIBRE
     (
@@ -90,10 +89,10 @@ CREATE OR REPLACE PACKAGE GESTION_PASAJES AS
     )
     RETURN CATEGORIAASIENTO.IDCATEGORIA%TYPE;
 
-    PROCEDURE OBTENER_CATEGORIAS_ASIENTO_NOMBRES(
+    PROCEDURE OBTENER_CATEGORIAS_ASIENTO_NOMBRES
+    (
         p_resultado OUT SYS_REFCURSOR
     );
-    
     
     PROCEDURE OBTENER_VUELOS_USUARIO (
             p_idUsuario IN USUARIOREGISTRADO.IDUSUARIO%TYPE,
