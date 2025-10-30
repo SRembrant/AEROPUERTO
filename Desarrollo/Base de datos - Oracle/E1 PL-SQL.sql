@@ -30,14 +30,12 @@ CREATE OR REPLACE PACKAGE GESTION_USUARIO AS
     );
 
     -- Función: obtener ID de usuario por correo
-    FUNCTION OBTENER_ID_PASAJERO_POR_NOMBRE_USUARIO
-    (
+    FUNCTION OBTENER_ID_PASAJERO_POR_NOMBRE_USUARIO(
         p_nombreUsuario IN USUARIOREGISTRADO.USUARIOACCESO%TYPE
     ) RETURN USUARIOREGISTRADO.IDUSUARIO%TYPE;
 
     -- Procedimiento: eliminar cuenta (estado = 'Inactivo')
-    PROCEDURE ELIMINAR_CUENTA
-    (
+    PROCEDURE ELIMINAR_CUENTA(
         p_idUsuario IN USUARIOREGISTRADO.IDUSUARIO%TYPE
     );
 
@@ -197,13 +195,8 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
         p_telefonoUsuario      IN USUARIOREGISTRADO.TELEFONOUSUARIO%TYPE
     )
     IS
-      e_unique_violation EXCEPTION;
-        PRAGMA EXCEPTION_INIT(e_unique_violation, -00001);
-        v_error_message VARCHAR2(500);
-        
         v_count INTEGER;
     BEGIN
-       
         SELECT COUNT(*) INTO v_count
         FROM USUARIOREGISTRADO
         WHERE IDUSUARIO = p_IdUsuario;
@@ -216,7 +209,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
             SELECT COUNT(*) INTO v_count
             FROM USUARIOREGISTRADO
             WHERE DOCIDUSUARIO = p_nuevoDocIdUsuario;
-             
+
             IF v_count > 0 THEN
                 RAISE_APPLICATION_ERROR(-20031, 'El nuevo documento ya está en uso.');
             END IF;
@@ -241,29 +234,12 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
 
         IF SQL%ROWCOUNT = 0 THEN
             RAISE_APPLICATION_ERROR(-20032, 'No se pudo actualizar el usuario.');
-       
-    END IF;
-
+        END IF;
     EXCEPTION
-    
-        --  WHEN DUP_VAL_ON_INDEX THEN
-          --  RAISE_APPLICATION_ERROR(-20033, 'Valor duplicado en campo único.');
+        WHEN DUP_VAL_ON_INDEX THEN
+            RAISE_APPLICATION_ERROR(-20033, 'Valor duplicado en campo único.');
         WHEN VALUE_ERROR THEN
             RAISE_APPLICATION_ERROR(-20034, 'Error en tipo o tamaño de valor.');
-            
-        WHEN e_unique_violation THEN
-            v_error_message := SQLERRM;
-            IF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_CORREO') > 0 THEN
-                -- Violación del email
-                RAISE_APPLICATION_ERROR(-20005, 'El correo ingresado ya existe en el sistema.');    
-            ELSIF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_USUARIOACCESO') > 0 THEN
-                -- Violación del usuario
-                RAISE_APPLICATION_ERROR(-20006, 'El nombre de usuario ingresado ya está registrado.');   
-             ELSIF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_DOCIDUSUARIO') > 0 THEN
-                -- Violación del id
-                RAISE_APPLICATION_ERROR(-20007, 'El documento de identificacion ya existe en el sistema.');       
-            END IF;
-              
         WHEN OTHERS THEN
             RAISE_APPLICATION_ERROR(-20035, 'Error al modificar usuario: ' || SQLERRM);
             
@@ -372,6 +348,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
 
 END GESTION_USUARIO;
 
+
 --- TRIGGERS EPICA 1
 /*Trigger. Antes de insertar un nuevo usuario o actualizar el nombre de usuario, se debe garantizar que nadie más (activo) 
         en la base de datos tiene el mismo nombre de usuario para evitar confusiones.
@@ -400,7 +377,7 @@ BEGIN
 END;*/
 
 CREATE OR REPLACE TRIGGER TR_VALIDAR_USERNAME_UNICO
-BEFORE INSERT ON UsuarioRegistrado
+BEFORE INSERT OR UPDATE OF USUARIOACCESO ON UsuarioRegistrado
 FOR EACH ROW
 DECLARE
     v_count NUMBER;
@@ -424,7 +401,7 @@ ALTER TRIGGER TR_VALIDAR_USERNAME_UNICO DISABLE;
 
 --trigger de ciberseguridad
 CREATE OR REPLACE TRIGGER TR_VALIDAR_CONTRA_USUARIO
-BEFORE INSERT OR UPDATE ON UsuarioRegistrado
+BEFORE INSERT OR UPDATE OF CONTRASENIAUSUARIO ON UsuarioRegistrado
 FOR EACH ROW
 BEGIN
     -- Validar que no tenga espacios al inicio o al final
@@ -435,8 +412,8 @@ BEGIN
     -- 2 Validar longitud mínima y máxima (entre 8 y 64 caracteres)
     IF LENGTH(:NEW.contraseniaUsuario) < 8 THEN
         RAISE_APPLICATION_ERROR(-20061,'La contraseña debe tener al menos 8 caracteres.');
-    ELSIF LENGTH(:NEW.contraseniaUsuario) > 20 THEN
-        RAISE_APPLICATION_ERROR(-20062,'La contraseña no puede tener más de 20 caracteres.');
+    ELSIF LENGTH(:NEW.contraseniaUsuario) > 64 THEN
+        RAISE_APPLICATION_ERROR(-20062,'La contraseña no puede tener más de 64 caracteres.');
     END IF;
 END;
 
@@ -534,8 +511,13 @@ BEGIN
 END TRG_VALIDAR_EDAD_USUARIO;
 
 
+/*
+UPDATE USUARIOREGISTRADO
+SET CORREOUSUARIO = 'correotest.com'
+WHERE IDUSUARIO = 1;
 
-/*UPDATE USUARIOREGISTRADO
-SET CORREOUSUARIO = 'correo@test.com'
-WHERE IDUSUARIO = 42;*/
+UPDATE USUARIOREGISTRADO
+SET FECHANACUSUARIO = SYSDATE
+WHERE IDUSUARIO = 1;
 
+*/

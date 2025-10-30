@@ -69,7 +69,7 @@ CREATE TABLE UsuarioRegistrado (
     nombreUsuario   VARCHAR2(50) NOT NULL,
     apellidoUsuario VARCHAR2(50) NOT NULL,
     correoUsuario   VARCHAR2(100) NOT NULL, 
-    generoUsuario    VARCHAR2(10) NOT NULL,
+    generoUsuario    VARCHAR2(30) NOT NULL,
     fechaNacUsuario  DATE NOT NULL,
     nacionalidadUsuario    VARCHAR2(50) NOT NULL,
     estadoUsuario VARCHAR2(30) NOT NULL,
@@ -294,4 +294,110 @@ CREATE TABLE ReglasReagendamiento (
 
 
 commit
+
+
+-- =============================
+-- AEROLÍNEA
+-- =============================
+INSERT INTO Aerolinea (
+    idAerolinea, nombreAerolinea, paisOrigenAerolinea, contactoAerolinea
+) VALUES (
+    1, 'Avianca', 'Colombia', 'contacto@avianca.com'
+);
+
+-- =============================
+-- ZONA DE EMBARQUE
+-- =============================
+INSERT INTO ZonaEmbarque (
+    idZEmbarque, nombreZEmbarque, ubicacionZEmbarque, capacidadPasajerosZ, idAerolinea
+) VALUES (
+    1, 'Zona A', 'Terminal 1', 200, 1
+);
+
+-- =============================
+-- PUERTA DE EMBARQUE
+-- =============================
+INSERT INTO PuertaEmbarque (
+    idPuerta, numeroPuerta, ubicacionPuerta, estadoPuerta, idZEmbarque
+) VALUES (
+    1, 'A1', 'Terminal 1 - Zona A', 'Libre', 1
+);
+
+-- =============================
+-- AVIÓN
+-- =============================
+INSERT INTO Avion (
+    idAvion, matriculaAvion, modeloAvion, capacidadCargaAvion,
+    capacidadPasajeroAvion, idAerolinea
+) VALUES (
+    1, 'HK-4821', 'Airbus A320', 5000, 180, 1
+);
+
+-- Vuelo 1: Bogotá → Lima
+INSERT INTO Vuelo (
+    idVuelo, codVuelo,
+    ciuOrigenVuelo, paisOrigenVuelo,
+    ciuDestinoVuelo, paisDestinoVuelo,
+    precioBaseVuelo, estadoVuelo,
+    fechaEjecucion, horaSalidaVuelo, horaLlegadaVuelo, duracionVuelo,
+    idZEmbarque, idPuerta, idAvion
+) VALUES (
+    1, 'AV1001',
+    'Bogotá', 'Colombia',
+    'Lima', 'Perú',
+    850000, 'En tiempo',
+    TO_DATE('2025-12-20', 'YYYY-MM-DD'),
+    TO_DATE('2025-12-20 14:30', 'YYYY-MM-DD HH24:MI'),
+    TO_DATE('2025-12-20 17:45', 'YYYY-MM-DD HH24:MI'),
+    INTERVAL '3:15' HOUR TO MINUTE,
+    1, 1, 1
+);
+
+-- Vuelo 2: Lima → Bogotá
+INSERT INTO Vuelo (
+    idVuelo, codVuelo,
+    ciuOrigenVuelo, paisOrigenVuelo,
+    ciuDestinoVuelo, paisDestinoVuelo,
+    precioBaseVuelo, estadoVuelo,
+    fechaEjecucion, horaSalidaVuelo, horaLlegadaVuelo, duracionVuelo,
+    idZEmbarque, idPuerta, idAvion
+) VALUES (
+    2, 'AV1002',
+    'Lima', 'Perú',
+    'Bogotá', 'Colombia',
+    900000, 'Adelantado',
+    TO_DATE('2025-12-21', 'YYYY-MM-DD'),
+    TO_DATE('2025-12-21 10:25', 'YYYY-MM-DD HH24:MI'),
+    TO_DATE('2025-12-21 13:40', 'YYYY-MM-DD HH24:MI'),
+    INTERVAL '3:15' HOUR TO MINUTE,
+    1, 1, 1
+);
+
+
+INSERT INTO CategoriaAsiento (idCategoria, nombreCategoria, sobrecostoCategoria)
+VALUES (1, 'Economica', 1);
+
+INSERT INTO CategoriaAsiento (idCategoria, nombreCategoria, sobrecostoCategoria)
+VALUES (2, 'Ejecutiva', 15);
+
+INSERT INTO CategoriaAsiento (idCategoria, nombreCategoria, sobrecostoCategoria)
+VALUES (3, 'Primera Clase', 30);
+
+
+BEGIN
+  FOR i IN 1..4 LOOP
+    INSERT INTO Asiento VALUES (i, 1, 1, 'Disponible');
+  END LOOP;
+
+  FOR i IN 5..8 LOOP
+    INSERT INTO Asiento VALUES (i, 1, 2, 'Disponible');
+  END LOOP;
+
+  FOR i IN 9..10 LOOP
+    INSERT INTO Asiento VALUES (i, 1, 3, 'Disponible');
+  END LOOP;
+  COMMIT;
+END;
+
+
 

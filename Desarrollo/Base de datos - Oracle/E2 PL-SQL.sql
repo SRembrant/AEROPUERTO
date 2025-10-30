@@ -558,11 +558,11 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
     
     EXCEPTION
         WHEN NO_DATA_FOUND THEN
-            RAISE_APPLICATION_ERROR(-20050, 'No existe la categoría con ese nombre');
+            RAISE_APPLICATION_ERROR(-20052, 'No existe la categoría con ese nombre');
         WHEN TOO_MANY_ROWS THEN
-            RAISE_APPLICATION_ERROR(-20051, 'Existen múltiples categorías con ese nombre');
+            RAISE_APPLICATION_ERROR(-20053, 'Existen múltiples categorías con ese nombre');
         WHEN OTHERS THEN
-            RAISE_APPLICATION_ERROR(-20052, 'Error inesperado al obtener ID de categoría: ' || SQLERRM);
+            RAISE_APPLICATION_ERROR(-20054, 'Error inesperado al obtener ID de categoría: ' || SQLERRM);
     END OBTENER_ID_CATEGORIA;
 
     PROCEDURE OBTENER_CATEGORIAS_ASIENTO_NOMBRES(
