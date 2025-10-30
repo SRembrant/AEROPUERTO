@@ -177,7 +177,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
     END ELIMINAR_CUENTA;
 
     ---------------------------------------------------------
-    PROCEDURE MODIFICAR_USUARIO(
+     PROCEDURE MODIFICAR_USUARIO(
         p_IdUsuario            IN USUARIOREGISTRADO.IDUSUARIO%TYPE,
         p_antiguoDocIdUsuario  IN USUARIOREGISTRADO.DOCIDUSUARIO%TYPE,
         p_nuevoDocIdUsuario    IN USUARIOREGISTRADO.DOCIDUSUARIO%TYPE,
@@ -195,8 +195,13 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
         p_telefonoUsuario      IN USUARIOREGISTRADO.TELEFONOUSUARIO%TYPE
     )
     IS
+      e_unique_violation EXCEPTION;
+        PRAGMA EXCEPTION_INIT(e_unique_violation, -00001);
+        v_error_message VARCHAR2(500);
+        
         v_count INTEGER;
     BEGIN
+       
         SELECT COUNT(*) INTO v_count
         FROM USUARIOREGISTRADO
         WHERE IDUSUARIO = p_IdUsuario;
@@ -209,7 +214,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
             SELECT COUNT(*) INTO v_count
             FROM USUARIOREGISTRADO
             WHERE DOCIDUSUARIO = p_nuevoDocIdUsuario;
-
+             
             IF v_count > 0 THEN
                 RAISE_APPLICATION_ERROR(-20031, 'El nuevo documento ya está en uso.');
             END IF;
@@ -234,17 +239,36 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
 
         IF SQL%ROWCOUNT = 0 THEN
             RAISE_APPLICATION_ERROR(-20032, 'No se pudo actualizar el usuario.');
-        END IF;
+        ELSE
+        DBMS_OUTPUT.PUT_LINE('No se realizaron cambios (datos idénticos).');
+    END IF;
+
     EXCEPTION
-        WHEN DUP_VAL_ON_INDEX THEN
-            RAISE_APPLICATION_ERROR(-20033, 'Valor duplicado en campo único.');
+    
+        --  WHEN DUP_VAL_ON_INDEX THEN
+          --  RAISE_APPLICATION_ERROR(-20033, 'Valor duplicado en campo único.');
         WHEN VALUE_ERROR THEN
             RAISE_APPLICATION_ERROR(-20034, 'Error en tipo o tamaño de valor.');
+            
+        WHEN e_unique_violation THEN
+        DBMS_OUTPUT.PUT_LINE('Modificando usuario...');
+            v_error_message := SQLERRM;
+            IF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_CORREO') > 0 THEN
+                -- Violación del email
+                RAISE_APPLICATION_ERROR(-20005, 'El correo ingresado ya existe en el sistema.');    
+            ELSIF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_USUARIOACCESO') > 0 THEN
+                -- Violación del usuario
+                RAISE_APPLICATION_ERROR(-20006, 'El nombre de usuario ingresado ya está registrado.');   
+             ELSIF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_DOCIDUSUARIO') > 0 THEN
+                -- Violación del id
+                RAISE_APPLICATION_ERROR(-20007, 'El documento de identificacion ya existe en el sistema.');       
+            END IF;
+              
         WHEN OTHERS THEN
             RAISE_APPLICATION_ERROR(-20035, 'Error al modificar usuario: ' || SQLERRM);
             
     END MODIFICAR_USUARIO;
-
+    
     ---------------------------------------------------------
     FUNCTION VALIDAR_CREDENCIALES(
         p_usuarioAcceso IN USUARIOREGISTRADO.USUARIOACCESO%TYPE,
