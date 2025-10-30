@@ -239,9 +239,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
 
         IF SQL%ROWCOUNT = 0 THEN
             RAISE_APPLICATION_ERROR(-20032, 'No se pudo actualizar el usuario.');
-        ELSE
-        DBMS_OUTPUT.PUT_LINE('No se realizaron cambios (datos idénticos).');
-    END IF;
+        END IF;
 
     EXCEPTION
     
@@ -522,19 +520,59 @@ FOR EACH ROW
 DECLARE
     v_edad NUMBER;
 BEGIN
-    -- Calculamos la edad en años
+    -- Calculamos la edad en años (truncando los decimales)
     v_edad := TRUNC(MONTHS_BETWEEN(SYSDATE, :NEW.FECHANACUSUARIO) / 12);
 
-    -- Validación de edad mínima
+    -- Validación de edad mínima y máxima
     IF v_edad < 18 THEN
         RAISE_APPLICATION_ERROR(
             -20080,
             'El usuario debe tener al menos 18 años para registrarse.'
         );
+    ELSIF v_edad > 100 THEN
+        RAISE_APPLICATION_ERROR(
+            -20081,
+            'La edad ingresada excede el máximo permitido (100 años).'
+        );
     END IF;
 END TRG_VALIDAR_EDAD_USUARIO;
 
 
+CREATE OR REPLACE TRIGGER TR_VALIDAR_PALABRAS_SQL
+BEFORE INSERT OR UPDATE OF 
+    NOMBREUSUARIO, APELLIDOUSUARIO, USUARIOACCESO, CONTRASENIAUSUARIO, 
+    DIRECCIONUSUARIO, OBSERVACIONUSUARIO
+ON USUARIOREGISTRADO
+FOR EACH ROW
+DECLARE
+    v_texto VARCHAR2(4000);
+    v_palabra VARCHAR2(50);
+    v_lista_palabras SYS.ODCIVARCHAR2LIST := SYS.ODCIVARCHAR2LIST(
+        'DROP', 'DELETE', 'INSERT', 'UPDATE', 'ALTER', 
+        'CREATE', 'TRUNCATE', 'TABLE', 'SELECT', 'FROM', 'WHERE', 'EXECUTE'
+    );
+BEGIN
+    -- Concatenamos todos los campos susceptibles a revisión
+    v_texto := UPPER(
+        NVL(:NEW.NOMBREUSUARIO, '') || ' ' ||
+        NVL(:NEW.APELLIDOUSUARIO, '') || ' ' ||
+        NVL(:NEW.USUARIOACCESO, '') || ' ' ||
+        NVL(:NEW.CONTRASENIAUSUARIO, '') || ' ' ||
+        NVL(:NEW.DIRECCIONUSUARIO, '') || ' ' ||
+        NVL(:NEW.OBSERVACIONUSUARIO, '')
+    );
+
+    -- Recorremos la lista de palabras SQL prohibidas
+    FOR i IN 1 .. v_lista_palabras.COUNT LOOP
+        v_palabra := v_lista_palabras(i);
+        IF INSTR(v_texto, v_palabra) > 0 THEN
+            RAISE_APPLICATION_ERROR(
+                -20500,
+                'El texto ingresado contiene una palabra SQL reservada o peligrosa: ' || v_palabra
+            );
+        END IF;
+    END LOOP;
+END;
 /*
 UPDATE USUARIOREGISTRADO
 SET CORREOUSUARIO = 'correotest.com'
@@ -545,3 +583,67 @@ SET FECHANACUSUARIO = SYSDATE
 WHERE IDUSUARIO = 1;
 
 */
+
+CREATE OR REPLACE TRIGGER TRG_VALIDAR_TELEFONO_USUARIO
+BEFORE INSERT OR UPDATE OF TELEFONOUSUARIO
+ON USUARIOREGISTRADO
+FOR EACH ROW
+BEGIN
+    -- Verificar que el campo no sea nulo
+    IF :NEW.TELEFONOUSUARIO IS NULL THEN
+        RAISE_APPLICATION_ERROR(
+            -20600,
+            'El número de teléfono no puede ser nulo.'
+        );
+    END IF;
+
+    -- Verificar que contenga exactamente 10 dígitos numéricos
+    IF NOT REGEXP_LIKE(:NEW.TELEFONOUSUARIO, '^[0-9]{10}$') THEN
+        RAISE_APPLICATION_ERROR(
+            -20601,
+            'El número de teléfono debe contener exactamente 10 dígitos numéricos.'
+        );
+    END IF;
+END TRG_VALIDAR_TELEFONO_USUARIO;
+
+ALTER TRIGGER  TRG_VALIDAR_TELEFONO_USUARIO DISABLE
+
+--
+CREATE OR REPLACE TRIGGER TRG_VALIDAR_CARACTERES_USUARIO
+BEFORE INSERT OR UPDATE OF DIRECCIONUSUARIO, OBSERVACIONUSUARIO
+ON USUARIOREGISTRADO
+FOR EACH ROW
+DECLARE
+    v_cadena VARCHAR2(4000);
+BEGIN
+    -- Validar campo DIRECCIONUSUARIO (si no es nulo)
+    IF :NEW.DIRECCIONUSUARIO IS NOT NULL THEN
+        v_cadena := :NEW.DIRECCIONUSUARIO;
+
+        -- Verificar si contiene algún carácter no permitido
+        IF REGEXP_LIKE(v_cadena, '[!¡?¿+*_%$@]') THEN
+            RAISE_APPLICATION_ERROR(
+                -20092,
+                'La dirección contiene caracteres no permitidos. Solo se permiten letras, números, espacios, - # y ''.'
+            );
+        END IF;
+    END IF;
+
+    -- Validar campo OBSERVACIONUSUARIO (si no es nulo)
+    IF :NEW.OBSERVACIONUSUARIO IS NOT NULL THEN
+        v_cadena := :NEW.OBSERVACIONUSUARIO;
+
+        -- Verificar si contiene algún carácter no permitido
+        IF REGEXP_LIKE(v_cadena, '[!¡?¿+*_%$@]') THEN
+            RAISE_APPLICATION_ERROR(
+                -20093,
+                'La observación contiene caracteres no permitidos. Solo se permiten letras, números, espacios, - # y ''.'
+            );
+        END IF;
+    END IF;
+END TRG_VALIDAR_CARACTERES_USUARIO;
+
+
+
+
+
