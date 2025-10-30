@@ -13,30 +13,6 @@ namespace Aeropuerto.accesoDatos
         string cadenaConexion = @"Data Source = localhost; User ID = AEROPUERTO; Password=oracle";
 
         // Ejecutar un procedimiento almacenado (sin retorno, tipo DML)
-        /*public int EjecutarProcedimiento(string nombreProcedimiento, OracleParameter[] parametros)
-        {
-            int filasAfectadas = 0;
-
-            using (OracleConnection conexion = new OracleConnection(cadenaConexion))
-            {
-                conexion.Open();
-
-                using (OracleCommand comando = new OracleCommand(nombreProcedimiento, conexion))
-                {
-                    comando.CommandType = CommandType.StoredProcedure;
-
-                    if (parametros != null)
-                    {
-                        comando.Parameters.AddRange(parametros);
-                    }
-
-                    filasAfectadas = comando.ExecuteNonQuery();
-                }
-            }
-
-            return filasAfectadas;
-        }*/
-
         public void EjecutarProcedimiento(string nombreProcedimiento, OracleParameter[] parametros)
         {
             using (OracleConnection conexion = new OracleConnection(cadenaConexion))

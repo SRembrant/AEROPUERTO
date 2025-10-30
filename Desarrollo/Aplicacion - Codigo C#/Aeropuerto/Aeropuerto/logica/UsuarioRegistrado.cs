@@ -186,7 +186,7 @@ namespace Aeropuerto.logica
                 valor = Convert.ToInt32(resultado);
             }
 
-            if (valor > 1)
+            if (valor > 0)
                 return valor;
             else
                 return -1;

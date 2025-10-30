@@ -14,6 +14,18 @@ namespace Aeropuerto.logica
 {
     public class Vuelo
     {
+        public int IdVuelo { get; set; }
+        public string CiuOrigenVuelo { get; set; }
+        public string PaisOrigenVuelo { get; set; }
+        public string CiuDestinoVuelo { get; set; }
+        public string PaisDestinoVuelo { get; set; }
+        public decimal PrecioBaseVuelo { get; set; }
+        public string EstadoVuelo { get; set; }
+        public DateTime FechaEjecucion { get; set; }
+        public int IdZEmbarque { get; set; }
+        public int IdPuerta { get; set; }
+        public int IdAvion { get; set; }
+
         Datos datos = new Datos();
 
         public DataTable ObtenerCiudadesOrigen()
@@ -73,9 +85,9 @@ namespace Aeropuerto.logica
 
 
         public (DataTable VuelosIda, DataTable VuelosVuelta) ConsultarVuelosIdaVuelta(
-    string ciudadOrigen, string paisOrigen,
-    string ciudadDestino, string paisDestino,
-    DateTime fechaIda, DateTime fechaRegreso)
+                    string ciudadOrigen, string paisOrigen,
+                    string ciudadDestino, string paisDestino,
+                    DateTime fechaIda, DateTime fechaRegreso)
         {
             DataTable vuelosIda = new DataTable();
             DataTable vuelosVuelta = new DataTable();
@@ -114,6 +126,6 @@ namespace Aeropuerto.logica
             return (vuelosIda, vuelosVuelta);
         }
 
-
+        
     }
 }

@@ -105,16 +105,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="accesoDatos\Datos.cs" />
-    <Compile Include="AccionIda_Vuelta.cs">
+    <Compile Include="ControlUsuario\Uc_DatosPasajero.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_DatosPasajero.Designer.cs">
+      <DependentUpon>Uc_DatosPasajero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_GenerarFactura.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_GenerarFactura.Designer.cs">
+      <DependentUpon>Uc_GenerarFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios_Opc\AccionIda_Vuelta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccionIda_Vuelta.Designer.cs">
+    <Compile Include="Formularios_Opc\AccionIda_Vuelta.Designer.cs">
       <DependentUpon>AccionIda_Vuelta.cs</DependentUpon>
     </Compile>
-    <Compile Include="AcVuelosDisponibles.cs">
+    <Compile Include="Formularios_Opc\AcVuelosDisponibles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AcVuelosDisponibles.Designer.cs">
+    <Compile Include="Formularios_Opc\AcVuelosDisponibles.Designer.cs">
       <DependentUpon>AcVuelosDisponibles.cs</DependentUpon>
     </Compile>
     <Compile Include="DotNetBarTabcontrol.cs">
@@ -126,18 +138,19 @@
     <Compile Include="Inicio_Sesion.Designer.cs">
       <DependentUpon>Inicio_Sesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="logica\Pasaje.cs" />
     <Compile Include="logica\UsuarioRegistrado.cs" />
     <Compile Include="logica\Vuelo.cs" />
-    <Compile Include="ModificarDatos.cs">
+    <Compile Include="Formularios_Opc\ModificarDatos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarDatos.Designer.cs">
+    <Compile Include="Formularios_Opc\ModificarDatos.Designer.cs">
       <DependentUpon>ModificarDatos.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarDatos_Parte2.cs">
+    <Compile Include="Formularios_Opc\ModificarDatos_Parte2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarDatos_Parte2.Designer.cs">
+    <Compile Include="Formularios_Opc\ModificarDatos_Parte2.Designer.cs">
       <DependentUpon>ModificarDatos_Parte2.cs</DependentUpon>
     </Compile>
     <Compile Include="PaginaPrincipal.cs">
@@ -160,20 +173,80 @@
     <Compile Include="Registrar_Usuario_Parte2.Designer.cs">
       <DependentUpon>Registrar_Usuario_Parte2.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlUsuario\Uc_AccionIda_Vuelta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_AccionIda_Vuelta.Designer.cs">
+      <DependentUpon>Uc_AccionIda_Vuelta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_AcVuelosDisponibles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_AcVuelosDisponibles.Designer.cs">
+      <DependentUpon>Uc_AcVuelosDisponibles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_ModificarDatos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_ModificarDatos.Designer.cs">
+      <DependentUpon>Uc_ModificarDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_ModificarDatos_Parte2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_ModificarDatos_Parte2.Designer.cs">
+      <DependentUpon>Uc_ModificarDatos_Parte2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_Informacion_Pasajero.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_Informacion_Pasajero.Designer.cs">
+      <DependentUpon>Uc_Informacion_Pasajero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_Informacion_Vuelo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_Informacion_Vuelo.Designer.cs">
+      <DependentUpon>Uc_Informacion_Vuelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_MisVuelos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_MisVuelos.Designer.cs">
+      <DependentUpon>Uc_MisVuelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_ConfirmarCancelacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_ConfirmarCancelacion.Designer.cs">
+      <DependentUpon>Uc_ConfirmarCancelacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_ConfirmarReagendamiento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_ConfirmarReagendamiento.Designer.cs">
+      <DependentUpon>Uc_ConfirmarReagendamiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="utilidades\ManejadorErroresOracle.cs" />
-    <EmbeddedResource Include="AccionIda_Vuelta.resx">
+    <EmbeddedResource Include="ControlUsuario\Uc_DatosPasajero.resx">
+      <DependentUpon>Uc_DatosPasajero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario\Uc_GenerarFactura.resx">
+      <DependentUpon>Uc_GenerarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Opc\AccionIda_Vuelta.resx">
       <DependentUpon>AccionIda_Vuelta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AcVuelosDisponibles.resx">
+    <EmbeddedResource Include="Formularios_Opc\AcVuelosDisponibles.resx">
       <DependentUpon>AcVuelosDisponibles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio_Sesion.resx">
       <DependentUpon>Inicio_Sesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarDatos.resx">
+    <EmbeddedResource Include="Formularios_Opc\ModificarDatos.resx">
       <DependentUpon>ModificarDatos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarDatos_Parte2.resx">
+    <EmbeddedResource Include="Formularios_Opc\ModificarDatos_Parte2.resx">
       <DependentUpon>ModificarDatos_Parte2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaPrincipal.resx">
@@ -194,6 +267,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registrar_Usuario_Parte2.resx">
       <DependentUpon>Registrar_Usuario_Parte2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario\Uc_AccionIda_Vuelta.resx">
+      <DependentUpon>Uc_AccionIda_Vuelta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario\Uc_AcVuelosDisponibles.resx">
+      <DependentUpon>Uc_AcVuelosDisponibles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario\Uc_ModificarDatos.resx">
+      <DependentUpon>Uc_ModificarDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario\Uc_ModificarDatos_Parte2.resx">
+      <DependentUpon>Uc_ModificarDatos_Parte2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario\Uc_Informacion_Pasajero.resx">
+      <DependentUpon>Uc_Informacion_Pasajero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario\Uc_Informacion_Vuelo.resx">
+      <DependentUpon>Uc_Informacion_Vuelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario\Uc_MisVuelos.resx">
+      <DependentUpon>Uc_MisVuelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario\Uc_ConfirmarCancelacion.resx">
+      <DependentUpon>Uc_ConfirmarCancelacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario\Uc_ConfirmarReagendamiento.resx">
+      <DependentUpon>Uc_ConfirmarReagendamiento.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
@@ -239,5 +339,15 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2025-10-27 150457.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2025-10-27 153759.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2025-10-27 163820.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

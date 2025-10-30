@@ -1,6 +1,6 @@
 ﻿namespace Aeropuerto
 {
-    partial class AcVuelosDisponibles
+    partial class AccionIda_Vuelta
     {
         /// <summary>
         /// Required designer variable.
@@ -30,35 +30,25 @@
         {
             this.tabControl_PaginaPrincipal = new Guna.UI2.WinForms.Guna2TabControl();
             this.tbpBuscarVuelos = new System.Windows.Forms.TabPage();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelIda = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbFecha_VDisponibles = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbPrecio_VDisponibles = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbDestino_VDisponibles = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbOrigen_VDisponibles = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbDestino_Avr_VDisponibles = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbOrigen_Avr_VDisponibles = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.panelRegreso = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbFecha_VDisponibles_Regreso = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbPrecio_VDisponibles_Regreso = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lbDestino_VDisponibles_Regreso = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbOrigen_VDisponibles_Regreso = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbDestino_Avr_VDisponibles_Regreso = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbOrigen_Avr_VDisponibles_Regreso = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pnl_AccionIda_Vuelta = new Guna.UI2.WinForms.Guna2Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtmFechaViaje_Regreso = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btnSiguiente = new Guna.UI2.WinForms.Guna2Button();
+            this.txtCantidadPasajeros = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtmFechaViaje_Ida = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.cbxDestino = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbxOrigen = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnIdaYVuelta = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSoloIda = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbpInicio = new System.Windows.Forms.TabPage();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.flowlp_vuelos_menuprincipal = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBoxFlechas2 = new System.Windows.Forms.PictureBox();
             this.lblDestino = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblOrigen = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.mns_Hasta = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -68,6 +58,7 @@
             this.lblCreaUsuarioGratuita_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblHola = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbpMisVuelos = new System.Windows.Forms.TabPage();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbpMiperfil = new System.Windows.Forms.TabPage();
             this.pnlMiPerfil = new Guna.UI2.WinForms.Guna2Panel();
             this.btnModificarDatos_Pgperfil = new Guna.UI2.WinForms.Guna2Button();
@@ -96,25 +87,24 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFlechas2 = new System.Windows.Forms.PictureBox();
             this.tabControl_PaginaPrincipal.SuspendLayout();
             this.tbpBuscarVuelos.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panelIda.SuspendLayout();
-            this.guna2Panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelRegreso.SuspendLayout();
-            this.guna2Panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnl_AccionIda_Vuelta.SuspendLayout();
             this.tbpInicio.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.flowlp_vuelos_menuprincipal.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlechas2)).BeginInit();
             this.tbpMisVuelos.SuspendLayout();
             this.tbpMiperfil.SuspendLayout();
             this.pnlMiPerfil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlechas2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_PaginaPrincipal
@@ -151,7 +141,7 @@
             // 
             // tbpBuscarVuelos
             // 
-            this.tbpBuscarVuelos.Controls.Add(this.guna2Panel3);
+            this.tbpBuscarVuelos.Controls.Add(this.pnl_AccionIda_Vuelta);
             this.tbpBuscarVuelos.Location = new System.Drawing.Point(184, 4);
             this.tbpBuscarVuelos.Name = "tbpBuscarVuelos";
             this.tbpBuscarVuelos.Size = new System.Drawing.Size(588, 652);
@@ -159,280 +149,235 @@
             this.tbpBuscarVuelos.Text = "Buscar vuelos";
             this.tbpBuscarVuelos.UseVisualStyleBackColor = true;
             // 
-            // guna2Panel3
+            // pnl_AccionIda_Vuelta
             // 
-            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel5);
-            this.guna2Panel3.Controls.Add(this.flowLayoutPanel1);
-            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel4);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(588, 652);
-            this.guna2Panel3.TabIndex = 0;
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.label5);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.dtmFechaViaje_Regreso);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.btnSiguiente);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.txtCantidadPasajeros);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.label4);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.label3);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.dtmFechaViaje_Ida);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.cbxDestino);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.pictureBox3);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.pictureBox1);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.label2);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.label1);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.cbxOrigen);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.pictureBox2);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.btnIdaYVuelta);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.btnSoloIda);
+            this.pnl_AccionIda_Vuelta.Controls.Add(this.guna2HtmlLabel4);
+            this.pnl_AccionIda_Vuelta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_AccionIda_Vuelta.Location = new System.Drawing.Point(0, 0);
+            this.pnl_AccionIda_Vuelta.Name = "pnl_AccionIda_Vuelta";
+            this.pnl_AccionIda_Vuelta.Size = new System.Drawing.Size(588, 652);
+            this.pnl_AccionIda_Vuelta.TabIndex = 0;
             // 
-            // guna2HtmlLabel5
+            // label5
             // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(506, 22);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(39, 21);
-            this.guna2HtmlLabel5.TabIndex = 11;
-            this.guna2HtmlLabel5.Text = "Inicio";
-            this.guna2HtmlLabel5.Click += new System.EventHandler(this.guna2HtmlLabel5_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label5.Location = new System.Drawing.Point(93, 265);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(190, 13);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "Selecciona la fecha de vuelta del viaje";
             // 
-            // flowLayoutPanel1
+            // dtmFechaViaje_Regreso
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.panelIda);
-            this.flowLayoutPanel1.Controls.Add(this.panelRegreso);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(21, 52);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(546, 582);
-            this.flowLayoutPanel1.TabIndex = 5;
-            this.flowLayoutPanel1.WrapContents = false;
+            this.dtmFechaViaje_Regreso.BorderRadius = 10;
+            this.dtmFechaViaje_Regreso.Checked = true;
+            this.dtmFechaViaje_Regreso.FillColor = System.Drawing.Color.White;
+            this.dtmFechaViaje_Regreso.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtmFechaViaje_Regreso.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtmFechaViaje_Regreso.Location = new System.Drawing.Point(96, 288);
+            this.dtmFechaViaje_Regreso.MaxDate = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
+            this.dtmFechaViaje_Regreso.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtmFechaViaje_Regreso.Name = "dtmFechaViaje_Regreso";
+            this.dtmFechaViaje_Regreso.Size = new System.Drawing.Size(222, 23);
+            this.dtmFechaViaje_Regreso.TabIndex = 61;
+            this.dtmFechaViaje_Regreso.Value = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             // 
-            // panelIda
+            // btnSiguiente
             // 
-            this.panelIda.Controls.Add(this.lbFecha_VDisponibles);
-            this.panelIda.Controls.Add(this.guna2HtmlLabel10);
-            this.panelIda.Controls.Add(this.guna2Panel5);
-            this.panelIda.Controls.Add(this.pictureBox1);
-            this.panelIda.Controls.Add(this.lbDestino_VDisponibles);
-            this.panelIda.Controls.Add(this.lbOrigen_VDisponibles);
-            this.panelIda.Controls.Add(this.lbDestino_Avr_VDisponibles);
-            this.panelIda.Controls.Add(this.lbOrigen_Avr_VDisponibles);
-            this.panelIda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelIda.Location = new System.Drawing.Point(3, 3);
-            this.panelIda.Name = "panelIda";
-            this.panelIda.Size = new System.Drawing.Size(543, 123);
-            this.panelIda.TabIndex = 0;
+            this.btnSiguiente.BorderRadius = 15;
+            this.btnSiguiente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSiguiente.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSiguiente.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSiguiente.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSiguiente.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSiguiente.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnSiguiente.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Bold);
+            this.btnSiguiente.ForeColor = System.Drawing.Color.White;
+            this.btnSiguiente.Location = new System.Drawing.Point(206, 376);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(189, 32);
+            this.btnSiguiente.TabIndex = 60;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
-            // lbFecha_VDisponibles
+            // txtCantidadPasajeros
             // 
-            this.lbFecha_VDisponibles.BackColor = System.Drawing.Color.Transparent;
-            this.lbFecha_VDisponibles.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lbFecha_VDisponibles.ForeColor = System.Drawing.Color.Gray;
-            this.lbFecha_VDisponibles.Location = new System.Drawing.Point(187, 88);
-            this.lbFecha_VDisponibles.Name = "lbFecha_VDisponibles";
-            this.lbFecha_VDisponibles.Size = new System.Drawing.Size(41, 17);
-            this.lbFecha_VDisponibles.TabIndex = 11;
-            this.lbFecha_VDisponibles.Text = "Madrid";
+            this.txtCantidadPasajeros.BorderRadius = 10;
+            this.txtCantidadPasajeros.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCantidadPasajeros.DefaultText = "";
+            this.txtCantidadPasajeros.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCantidadPasajeros.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCantidadPasajeros.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCantidadPasajeros.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCantidadPasajeros.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCantidadPasajeros.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCantidadPasajeros.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCantidadPasajeros.Location = new System.Drawing.Point(96, 330);
+            this.txtCantidadPasajeros.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCantidadPasajeros.Name = "txtCantidadPasajeros";
+            this.txtCantidadPasajeros.PlaceholderText = "";
+            this.txtCantidadPasajeros.SelectedText = "";
+            this.txtCantidadPasajeros.Size = new System.Drawing.Size(165, 24);
+            this.txtCantidadPasajeros.TabIndex = 59;
             // 
-            // guna2HtmlLabel10
+            // label4
             // 
-            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(10, 11);
-            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(26, 23);
-            this.guna2HtmlLabel10.TabIndex = 9;
-            this.guna2HtmlLabel10.Text = "Ida";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label4.Location = new System.Drawing.Point(93, 314);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 13);
+            this.label4.TabIndex = 58;
+            this.label4.Text = "Cantidad de pasajeros";
             // 
-            // guna2Panel5
+            // label3
             // 
-            this.guna2Panel5.Controls.Add(this.lbPrecio_VDisponibles);
-            this.guna2Panel5.Location = new System.Drawing.Point(384, 0);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(159, 123);
-            this.guna2Panel5.TabIndex = 10;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label3.Location = new System.Drawing.Point(89, 216);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(175, 13);
+            this.label3.TabIndex = 57;
+            this.label3.Text = "Selecciona la fecha de ida del viaje";
             // 
-            // lbPrecio_VDisponibles
+            // dtmFechaViaje_Ida
             // 
-            this.lbPrecio_VDisponibles.BackColor = System.Drawing.Color.Transparent;
-            this.lbPrecio_VDisponibles.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lbPrecio_VDisponibles.ForeColor = System.Drawing.Color.Black;
-            this.lbPrecio_VDisponibles.Location = new System.Drawing.Point(27, 55);
-            this.lbPrecio_VDisponibles.Name = "lbPrecio_VDisponibles";
-            this.lbPrecio_VDisponibles.Size = new System.Drawing.Size(106, 23);
-            this.lbPrecio_VDisponibles.TabIndex = 8;
-            this.lbPrecio_VDisponibles.Text = "1.250.000 COP";
+            this.dtmFechaViaje_Ida.BorderRadius = 10;
+            this.dtmFechaViaje_Ida.Checked = true;
+            this.dtmFechaViaje_Ida.FillColor = System.Drawing.Color.White;
+            this.dtmFechaViaje_Ida.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtmFechaViaje_Ida.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtmFechaViaje_Ida.Location = new System.Drawing.Point(92, 239);
+            this.dtmFechaViaje_Ida.MaxDate = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
+            this.dtmFechaViaje_Ida.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtmFechaViaje_Ida.Name = "dtmFechaViaje_Ida";
+            this.dtmFechaViaje_Ida.Size = new System.Drawing.Size(222, 23);
+            this.dtmFechaViaje_Ida.TabIndex = 56;
+            this.dtmFechaViaje_Ida.Value = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             // 
-            // pictureBox1
+            // cbxDestino
             // 
-            this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.flecha_2;
-            this.pictureBox1.Location = new System.Drawing.Point(169, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 39);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.cbxDestino.BackColor = System.Drawing.Color.Transparent;
+            this.cbxDestino.BorderRadius = 10;
+            this.cbxDestino.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDestino.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxDestino.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxDestino.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxDestino.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxDestino.ItemHeight = 18;
+            this.cbxDestino.Location = new System.Drawing.Point(391, 189);
+            this.cbxDestino.Name = "cbxDestino";
+            this.cbxDestino.Size = new System.Drawing.Size(165, 24);
+            this.cbxDestino.TabIndex = 55;
+            this.cbxDestino.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
-            // lbDestino_VDisponibles
+            // label2
             // 
-            this.lbDestino_VDisponibles.BackColor = System.Drawing.Color.Transparent;
-            this.lbDestino_VDisponibles.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lbDestino_VDisponibles.ForeColor = System.Drawing.Color.Gray;
-            this.lbDestino_VDisponibles.Location = new System.Drawing.Point(263, 55);
-            this.lbDestino_VDisponibles.Name = "lbDestino_VDisponibles";
-            this.lbDestino_VDisponibles.Size = new System.Drawing.Size(28, 17);
-            this.lbDestino_VDisponibles.TabIndex = 8;
-            this.lbDestino_VDisponibles.Text = "Paris";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label2.Location = new System.Drawing.Point(388, 173);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 13);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Selecciona un destino";
             // 
-            // lbOrigen_VDisponibles
+            // label1
             // 
-            this.lbOrigen_VDisponibles.BackColor = System.Drawing.Color.Transparent;
-            this.lbOrigen_VDisponibles.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lbOrigen_VDisponibles.ForeColor = System.Drawing.Color.Gray;
-            this.lbOrigen_VDisponibles.Location = new System.Drawing.Point(110, 55);
-            this.lbOrigen_VDisponibles.Name = "lbOrigen_VDisponibles";
-            this.lbOrigen_VDisponibles.Size = new System.Drawing.Size(41, 17);
-            this.lbOrigen_VDisponibles.TabIndex = 7;
-            this.lbOrigen_VDisponibles.Text = "Madrid";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label1.Location = new System.Drawing.Point(89, 173);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Selecciona un origen";
             // 
-            // lbDestino_Avr_VDisponibles
+            // cbxOrigen
             // 
-            this.lbDestino_Avr_VDisponibles.BackColor = System.Drawing.Color.Transparent;
-            this.lbDestino_Avr_VDisponibles.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lbDestino_Avr_VDisponibles.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbDestino_Avr_VDisponibles.Location = new System.Drawing.Point(306, 42);
-            this.lbDestino_Avr_VDisponibles.Name = "lbDestino_Avr_VDisponibles";
-            this.lbDestino_Avr_VDisponibles.Size = new System.Drawing.Size(57, 39);
-            this.lbDestino_Avr_VDisponibles.TabIndex = 4;
-            this.lbDestino_Avr_VDisponibles.Text = "PAR";
+            this.cbxOrigen.BackColor = System.Drawing.Color.Transparent;
+            this.cbxOrigen.BorderRadius = 10;
+            this.cbxOrigen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxOrigen.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxOrigen.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxOrigen.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxOrigen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxOrigen.ItemHeight = 18;
+            this.cbxOrigen.Location = new System.Drawing.Point(92, 189);
+            this.cbxOrigen.Name = "cbxOrigen";
+            this.cbxOrigen.Size = new System.Drawing.Size(165, 24);
+            this.cbxOrigen.TabIndex = 8;
+            this.cbxOrigen.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
-            // lbOrigen_Avr_VDisponibles
+            // btnIdaYVuelta
             // 
-            this.lbOrigen_Avr_VDisponibles.BackColor = System.Drawing.Color.Transparent;
-            this.lbOrigen_Avr_VDisponibles.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lbOrigen_Avr_VDisponibles.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbOrigen_Avr_VDisponibles.Location = new System.Drawing.Point(29, 42);
-            this.lbOrigen_Avr_VDisponibles.Name = "lbOrigen_Avr_VDisponibles";
-            this.lbOrigen_Avr_VDisponibles.Size = new System.Drawing.Size(68, 39);
-            this.lbOrigen_Avr_VDisponibles.TabIndex = 3;
-            this.lbOrigen_Avr_VDisponibles.Text = "MAD";
+            this.btnIdaYVuelta.BorderRadius = 15;
+            this.btnIdaYVuelta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIdaYVuelta.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnIdaYVuelta.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnIdaYVuelta.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnIdaYVuelta.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnIdaYVuelta.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnIdaYVuelta.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Bold);
+            this.btnIdaYVuelta.ForeColor = System.Drawing.Color.White;
+            this.btnIdaYVuelta.Location = new System.Drawing.Point(315, 55);
+            this.btnIdaYVuelta.Name = "btnIdaYVuelta";
+            this.btnIdaYVuelta.Size = new System.Drawing.Size(189, 32);
+            this.btnIdaYVuelta.TabIndex = 5;
+            this.btnIdaYVuelta.Text = "Ida y vuelta";
             // 
-            // panelRegreso
+            // btnSoloIda
             // 
-            this.panelRegreso.Controls.Add(this.lbFecha_VDisponibles_Regreso);
-            this.panelRegreso.Controls.Add(this.guna2HtmlLabel11);
-            this.panelRegreso.Controls.Add(this.guna2Panel7);
-            this.panelRegreso.Controls.Add(this.pictureBox2);
-            this.panelRegreso.Controls.Add(this.lbDestino_VDisponibles_Regreso);
-            this.panelRegreso.Controls.Add(this.lbOrigen_VDisponibles_Regreso);
-            this.panelRegreso.Controls.Add(this.lbDestino_Avr_VDisponibles_Regreso);
-            this.panelRegreso.Controls.Add(this.lbOrigen_Avr_VDisponibles_Regreso);
-            this.panelRegreso.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelRegreso.Location = new System.Drawing.Point(3, 132);
-            this.panelRegreso.Name = "panelRegreso";
-            this.panelRegreso.Size = new System.Drawing.Size(543, 123);
-            this.panelRegreso.TabIndex = 11;
-            // 
-            // lbFecha_VDisponibles_Regreso
-            // 
-            this.lbFecha_VDisponibles_Regreso.BackColor = System.Drawing.Color.Transparent;
-            this.lbFecha_VDisponibles_Regreso.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lbFecha_VDisponibles_Regreso.ForeColor = System.Drawing.Color.Gray;
-            this.lbFecha_VDisponibles_Regreso.Location = new System.Drawing.Point(187, 88);
-            this.lbFecha_VDisponibles_Regreso.Name = "lbFecha_VDisponibles_Regreso";
-            this.lbFecha_VDisponibles_Regreso.Size = new System.Drawing.Size(41, 17);
-            this.lbFecha_VDisponibles_Regreso.TabIndex = 12;
-            this.lbFecha_VDisponibles_Regreso.Text = "Madrid";
-            // 
-            // guna2HtmlLabel11
-            // 
-            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(10, 11);
-            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(64, 23);
-            this.guna2HtmlLabel11.TabIndex = 11;
-            this.guna2HtmlLabel11.Text = "Regreso";
-            // 
-            // guna2Panel7
-            // 
-            this.guna2Panel7.Controls.Add(this.lbPrecio_VDisponibles_Regreso);
-            this.guna2Panel7.Location = new System.Drawing.Point(384, 0);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(159, 123);
-            this.guna2Panel7.TabIndex = 10;
-            // 
-            // lbPrecio_VDisponibles_Regreso
-            // 
-            this.lbPrecio_VDisponibles_Regreso.BackColor = System.Drawing.Color.Transparent;
-            this.lbPrecio_VDisponibles_Regreso.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lbPrecio_VDisponibles_Regreso.ForeColor = System.Drawing.Color.Black;
-            this.lbPrecio_VDisponibles_Regreso.Location = new System.Drawing.Point(27, 55);
-            this.lbPrecio_VDisponibles_Regreso.Name = "lbPrecio_VDisponibles_Regreso";
-            this.lbPrecio_VDisponibles_Regreso.Size = new System.Drawing.Size(106, 23);
-            this.lbPrecio_VDisponibles_Regreso.TabIndex = 8;
-            this.lbPrecio_VDisponibles_Regreso.Text = "1.250.000 COP";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Aeropuerto.Properties.Resources.flecha_2;
-            this.pictureBox2.Location = new System.Drawing.Point(169, 42);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(72, 39);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
-            // lbDestino_VDisponibles_Regreso
-            // 
-            this.lbDestino_VDisponibles_Regreso.BackColor = System.Drawing.Color.Transparent;
-            this.lbDestino_VDisponibles_Regreso.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lbDestino_VDisponibles_Regreso.ForeColor = System.Drawing.Color.Gray;
-            this.lbDestino_VDisponibles_Regreso.Location = new System.Drawing.Point(263, 55);
-            this.lbDestino_VDisponibles_Regreso.Name = "lbDestino_VDisponibles_Regreso";
-            this.lbDestino_VDisponibles_Regreso.Size = new System.Drawing.Size(28, 17);
-            this.lbDestino_VDisponibles_Regreso.TabIndex = 8;
-            this.lbDestino_VDisponibles_Regreso.Text = "Paris";
-            // 
-            // lbOrigen_VDisponibles_Regreso
-            // 
-            this.lbOrigen_VDisponibles_Regreso.BackColor = System.Drawing.Color.Transparent;
-            this.lbOrigen_VDisponibles_Regreso.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lbOrigen_VDisponibles_Regreso.ForeColor = System.Drawing.Color.Gray;
-            this.lbOrigen_VDisponibles_Regreso.Location = new System.Drawing.Point(110, 55);
-            this.lbOrigen_VDisponibles_Regreso.Name = "lbOrigen_VDisponibles_Regreso";
-            this.lbOrigen_VDisponibles_Regreso.Size = new System.Drawing.Size(41, 17);
-            this.lbOrigen_VDisponibles_Regreso.TabIndex = 7;
-            this.lbOrigen_VDisponibles_Regreso.Text = "Madrid";
-            // 
-            // lbDestino_Avr_VDisponibles_Regreso
-            // 
-            this.lbDestino_Avr_VDisponibles_Regreso.BackColor = System.Drawing.Color.Transparent;
-            this.lbDestino_Avr_VDisponibles_Regreso.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lbDestino_Avr_VDisponibles_Regreso.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbDestino_Avr_VDisponibles_Regreso.Location = new System.Drawing.Point(306, 42);
-            this.lbDestino_Avr_VDisponibles_Regreso.Name = "lbDestino_Avr_VDisponibles_Regreso";
-            this.lbDestino_Avr_VDisponibles_Regreso.Size = new System.Drawing.Size(57, 39);
-            this.lbDestino_Avr_VDisponibles_Regreso.TabIndex = 4;
-            this.lbDestino_Avr_VDisponibles_Regreso.Text = "PAR";
-            // 
-            // lbOrigen_Avr_VDisponibles_Regreso
-            // 
-            this.lbOrigen_Avr_VDisponibles_Regreso.BackColor = System.Drawing.Color.Transparent;
-            this.lbOrigen_Avr_VDisponibles_Regreso.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lbOrigen_Avr_VDisponibles_Regreso.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbOrigen_Avr_VDisponibles_Regreso.Location = new System.Drawing.Point(29, 42);
-            this.lbOrigen_Avr_VDisponibles_Regreso.Name = "lbOrigen_Avr_VDisponibles_Regreso";
-            this.lbOrigen_Avr_VDisponibles_Regreso.Size = new System.Drawing.Size(68, 39);
-            this.lbOrigen_Avr_VDisponibles_Regreso.TabIndex = 3;
-            this.lbOrigen_Avr_VDisponibles_Regreso.Text = "MAD";
+            this.btnSoloIda.BorderRadius = 15;
+            this.btnSoloIda.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSoloIda.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSoloIda.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSoloIda.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSoloIda.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSoloIda.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Bold);
+            this.btnSoloIda.ForeColor = System.Drawing.Color.Black;
+            this.btnSoloIda.Location = new System.Drawing.Point(96, 55);
+            this.btnSoloIda.Name = "btnSoloIda";
+            this.btnSoloIda.Size = new System.Drawing.Size(189, 32);
+            this.btnSoloIda.TabIndex = 4;
+            this.btnSoloIda.Text = "Solo ida";
+            this.btnSoloIda.Click += new System.EventHandler(this.btnSoloIda_Click);
             // 
             // guna2HtmlLabel4
             // 
+            this.guna2HtmlLabel4.AutoSize = false;
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(13, 12);
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(235, 3);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(133, 22);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(133, 30);
             this.guna2HtmlLabel4.TabIndex = 3;
-            this.guna2HtmlLabel4.Text = "Vuelos disponibles";
+            this.guna2HtmlLabel4.Text = "Buscar vuelos";
             // 
             // tbpInicio
             // 
             this.tbpInicio.Controls.Add(this.guna2Panel1);
             this.tbpInicio.Location = new System.Drawing.Point(184, 4);
             this.tbpInicio.Name = "tbpInicio";
-            this.tbpInicio.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpInicio.Padding = new System.Windows.Forms.Padding(3);
             this.tbpInicio.Size = new System.Drawing.Size(588, 652);
             this.tbpInicio.TabIndex = 0;
             this.tbpInicio.Text = "Inicio";
@@ -475,16 +420,6 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(543, 139);
             this.guna2Panel2.TabIndex = 0;
-            // 
-            // pictureBoxFlechas2
-            // 
-            this.pictureBoxFlechas2.Image = global::Aeropuerto.Properties.Resources.flecha_2;
-            this.pictureBoxFlechas2.Location = new System.Drawing.Point(203, 32);
-            this.pictureBoxFlechas2.Name = "pictureBoxFlechas2";
-            this.pictureBoxFlechas2.Size = new System.Drawing.Size(119, 62);
-            this.pictureBoxFlechas2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxFlechas2.TabIndex = 9;
-            this.pictureBoxFlechas2.TabStop = false;
             // 
             // lblDestino
             // 
@@ -576,14 +511,26 @@
             // 
             // tbpMisVuelos
             // 
-            this.tbpMisVuelos.Controls.Add(this.guna2HtmlLabel6);
+            this.tbpMisVuelos.Controls.Add(this.guna2HtmlLabel5);
             this.tbpMisVuelos.Location = new System.Drawing.Point(184, 4);
             this.tbpMisVuelos.Name = "tbpMisVuelos";
-            this.tbpMisVuelos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpMisVuelos.Padding = new System.Windows.Forms.Padding(3);
             this.tbpMisVuelos.Size = new System.Drawing.Size(588, 652);
             this.tbpMisVuelos.TabIndex = 1;
             this.tbpMisVuelos.Text = "Mis vuelos";
             this.tbpMisVuelos.UseVisualStyleBackColor = true;
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDown;
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(19, 23);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(199, 19);
+            this.guna2HtmlLabel5.TabIndex = 2;
+            this.guna2HtmlLabel5.Text = "No existen vuelos registrados :(";
             // 
             // tbpMiperfil
             // 
@@ -1011,53 +958,73 @@
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Perfil";
             // 
-            // guna2HtmlLabel6
+            // pictureBox3
             // 
-            this.guna2HtmlLabel6.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDown;
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(16, 17);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(199, 19);
-            this.guna2HtmlLabel6.TabIndex = 3;
-            this.guna2HtmlLabel6.Text = "No existen vuelos registrados :(";
+            this.pictureBox3.Image = global::Aeropuerto.Properties.Resources.flecha_2;
+            this.pictureBox3.Location = new System.Drawing.Point(245, 108);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(109, 57);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 54;
+            this.pictureBox3.TabStop = false;
             // 
-            // AcVuelosDisponibles
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.avion_b;
+            this.pictureBox1.Location = new System.Drawing.Point(391, 115);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 53;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Aeropuerto.Properties.Resources.avion_b;
+            this.pictureBox2.Location = new System.Drawing.Point(92, 115);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBoxFlechas2
+            // 
+            this.pictureBoxFlechas2.Image = global::Aeropuerto.Properties.Resources.flecha_2;
+            this.pictureBoxFlechas2.Location = new System.Drawing.Point(203, 32);
+            this.pictureBoxFlechas2.Name = "pictureBoxFlechas2";
+            this.pictureBoxFlechas2.Size = new System.Drawing.Size(119, 62);
+            this.pictureBoxFlechas2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFlechas2.TabIndex = 9;
+            this.pictureBoxFlechas2.TabStop = false;
+            // 
+            // AccionIda_Vuelta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 661);
+            this.ClientSize = new System.Drawing.Size(800, 660);
             this.Controls.Add(this.tabControl_PaginaPrincipal);
-            this.Name = "AcVuelosDisponibles";
-            this.Text = "AcVuelosDisponibles";
+            this.Name = "AccionIda_Vuelta";
+            this.Text = "AccionIda_Vuelta";
             this.tabControl_PaginaPrincipal.ResumeLayout(false);
             this.tbpBuscarVuelos.ResumeLayout(false);
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.panelIda.ResumeLayout(false);
-            this.panelIda.PerformLayout();
-            this.guna2Panel5.ResumeLayout(false);
-            this.guna2Panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelRegreso.ResumeLayout(false);
-            this.panelRegreso.PerformLayout();
-            this.guna2Panel7.ResumeLayout(false);
-            this.guna2Panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnl_AccionIda_Vuelta.ResumeLayout(false);
+            this.pnl_AccionIda_Vuelta.PerformLayout();
             this.tbpInicio.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.flowlp_vuelos_menuprincipal.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlechas2)).EndInit();
             this.tbpMisVuelos.ResumeLayout(false);
             this.tbpMisVuelos.PerformLayout();
             this.tbpMiperfil.ResumeLayout(false);
             this.pnlMiPerfil.ResumeLayout(false);
             this.pnlMiPerfil.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlechas2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1108,30 +1075,24 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.TabPage tbpBuscarVuelos;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Guna.UI2.WinForms.Guna2Panel panelIda;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbDestino_VDisponibles;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbOrigen_VDisponibles;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbDestino_Avr_VDisponibles;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbOrigen_Avr_VDisponibles;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbPrecio_VDisponibles;
+        private Guna.UI2.WinForms.Guna2Panel pnl_AccionIda_Vuelta;
+        private Guna.UI2.WinForms.Guna2Button btnSiguiente;
+        private Guna.UI2.WinForms.Guna2TextBox txtCantidadPasajeros;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtmFechaViaje_Ida;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxDestino;
+        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Panel panelRegreso;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbPrecio_VDisponibles_Regreso;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxOrigen;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbDestino_VDisponibles_Regreso;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbOrigen_VDisponibles_Regreso;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbDestino_Avr_VDisponibles_Regreso;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbOrigen_Avr_VDisponibles_Regreso;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna.UI2.WinForms.Guna2Button btnIdaYVuelta;
+        private Guna.UI2.WinForms.Guna2Button btnSoloIda;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtmFechaViaje_Regreso;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbFecha_VDisponibles;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbFecha_VDisponibles_Regreso;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
     }
 }

@@ -1,0 +1,433 @@
+﻿namespace Aeropuerto
+{
+    partial class Uc_ModificarDatos
+    {
+        /// <summary> 
+        /// Variable del diseñador necesaria.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Limpiar los recursos que se estén usando.
+        /// </summary>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Código generado por el Diseñador de componentes
+
+        /// <summary> 
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lblVolverAPerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pnlPrincipal = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblCreaUsuarioGratuita_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblUneteANosotros = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtApellidoUsuario_Modificar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbxTipoIdentificacion = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lblTipoIdentificacion_msn = new System.Windows.Forms.Label();
+            this.cbxNuevoGenero = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lblGenero_mns = new System.Windows.Forms.Label();
+            this.txtNumIdentificacion_Modificar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblNumIdentificacion_mns = new System.Windows.Forms.Label();
+            this.txtNombreUsuario_Modificar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblNombreUsuario_msn = new System.Windows.Forms.Label();
+            this.txtDireccionCorreo_Modificar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblDireccionCorreco_mns = new System.Windows.Forms.Label();
+            this.txtTuNombre_Modificar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnGuardarYContinuar = new Guna.UI2.WinForms.Guna2Button();
+            this.pbxRegresar_Modificar1 = new System.Windows.Forms.PictureBox();
+            this.pnlPrincipal.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRegresar_Modificar1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // lblVolverAPerfil
+            // 
+            this.lblVolverAPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.lblVolverAPerfil.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblVolverAPerfil.Location = new System.Drawing.Point(64, 22);
+            this.lblVolverAPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblVolverAPerfil.Name = "lblVolverAPerfil";
+            this.lblVolverAPerfil.Size = new System.Drawing.Size(40, 22);
+            this.lblVolverAPerfil.TabIndex = 51;
+            this.lblVolverAPerfil.Text = "Perfil";
+            // 
+            // pnlPrincipal
+            // 
+            this.pnlPrincipal.AutoSize = true;
+            this.pnlPrincipal.BackColor = System.Drawing.Color.Transparent;
+            this.pnlPrincipal.BorderRadius = 20;
+            this.pnlPrincipal.Controls.Add(this.lblCreaUsuarioGratuita_mns);
+            this.pnlPrincipal.Controls.Add(this.lblUneteANosotros);
+            this.pnlPrincipal.Controls.Add(this.guna2Panel2);
+            this.pnlPrincipal.FillColor = System.Drawing.Color.RoyalBlue;
+            this.pnlPrincipal.Location = new System.Drawing.Point(164, 90);
+            this.pnlPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlPrincipal.Name = "pnlPrincipal";
+            this.pnlPrincipal.ShadowDecoration.Depth = 20;
+            this.pnlPrincipal.ShadowDecoration.Enabled = true;
+            this.pnlPrincipal.Size = new System.Drawing.Size(471, 588);
+            this.pnlPrincipal.TabIndex = 50;
+            // 
+            // lblCreaUsuarioGratuita_mns
+            // 
+            this.lblCreaUsuarioGratuita_mns.BackColor = System.Drawing.Color.Transparent;
+            this.lblCreaUsuarioGratuita_mns.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblCreaUsuarioGratuita_mns.ForeColor = System.Drawing.Color.White;
+            this.lblCreaUsuarioGratuita_mns.Location = new System.Drawing.Point(115, 74);
+            this.lblCreaUsuarioGratuita_mns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblCreaUsuarioGratuita_mns.Name = "lblCreaUsuarioGratuita_mns";
+            this.lblCreaUsuarioGratuita_mns.Size = new System.Drawing.Size(277, 22);
+            this.lblCreaUsuarioGratuita_mns.TabIndex = 2;
+            this.lblCreaUsuarioGratuita_mns.Text = "Actualiza los datos que sean necesarios";
+            // 
+            // lblUneteANosotros
+            // 
+            this.lblUneteANosotros.BackColor = System.Drawing.Color.Transparent;
+            this.lblUneteANosotros.Font = new System.Drawing.Font("Segoe UI", 18.25F, System.Drawing.FontStyle.Bold);
+            this.lblUneteANosotros.ForeColor = System.Drawing.Color.White;
+            this.lblUneteANosotros.Location = new System.Drawing.Point(144, 25);
+            this.lblUneteANosotros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblUneteANosotros.Name = "lblUneteANosotros";
+            this.lblUneteANosotros.Size = new System.Drawing.Size(205, 43);
+            this.lblUneteANosotros.TabIndex = 1;
+            this.lblUneteANosotros.Text = "¿Ocurrió algo?";
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BorderRadius = 10;
+            this.guna2Panel2.Controls.Add(this.txtApellidoUsuario_Modificar);
+            this.guna2Panel2.Controls.Add(this.cbxTipoIdentificacion);
+            this.guna2Panel2.Controls.Add(this.lblTipoIdentificacion_msn);
+            this.guna2Panel2.Controls.Add(this.cbxNuevoGenero);
+            this.guna2Panel2.Controls.Add(this.lblGenero_mns);
+            this.guna2Panel2.Controls.Add(this.txtNumIdentificacion_Modificar);
+            this.guna2Panel2.Controls.Add(this.lblNumIdentificacion_mns);
+            this.guna2Panel2.Controls.Add(this.txtNombreUsuario_Modificar);
+            this.guna2Panel2.Controls.Add(this.lblNombreUsuario_msn);
+            this.guna2Panel2.Controls.Add(this.txtDireccionCorreo_Modificar);
+            this.guna2Panel2.Controls.Add(this.lblDireccionCorreco_mns);
+            this.guna2Panel2.Controls.Add(this.txtTuNombre_Modificar);
+            this.guna2Panel2.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2Panel2.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2Panel2.Controls.Add(this.btnGuardarYContinuar);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel2.FillColor = System.Drawing.Color.White;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 117);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(471, 471);
+            this.guna2Panel2.TabIndex = 0;
+            // 
+            // txtApellidoUsuario_Modificar
+            // 
+            this.txtApellidoUsuario_Modificar.BorderRadius = 10;
+            this.txtApellidoUsuario_Modificar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtApellidoUsuario_Modificar.DefaultText = "";
+            this.txtApellidoUsuario_Modificar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtApellidoUsuario_Modificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtApellidoUsuario_Modificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtApellidoUsuario_Modificar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtApellidoUsuario_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtApellidoUsuario_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtApellidoUsuario_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtApellidoUsuario_Modificar.Location = new System.Drawing.Point(248, 82);
+            this.txtApellidoUsuario_Modificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtApellidoUsuario_Modificar.Name = "txtApellidoUsuario_Modificar";
+            this.txtApellidoUsuario_Modificar.PlaceholderText = "";
+            this.txtApellidoUsuario_Modificar.SelectedText = "";
+            this.txtApellidoUsuario_Modificar.Size = new System.Drawing.Size(193, 30);
+            this.txtApellidoUsuario_Modificar.TabIndex = 61;
+            // 
+            // cbxTipoIdentificacion
+            // 
+            this.cbxTipoIdentificacion.BackColor = System.Drawing.Color.Transparent;
+            this.cbxTipoIdentificacion.BorderRadius = 10;
+            this.cbxTipoIdentificacion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxTipoIdentificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipoIdentificacion.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxTipoIdentificacion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxTipoIdentificacion.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxTipoIdentificacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxTipoIdentificacion.ItemHeight = 18;
+            this.cbxTipoIdentificacion.Items.AddRange(new object[] {
+            "C.C.",
+            "P.P.",
+            "C.E."});
+            this.cbxTipoIdentificacion.Location = new System.Drawing.Point(272, 302);
+            this.cbxTipoIdentificacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxTipoIdentificacion.Name = "cbxTipoIdentificacion";
+            this.cbxTipoIdentificacion.Size = new System.Drawing.Size(159, 24);
+            this.cbxTipoIdentificacion.StartIndex = 0;
+            this.cbxTipoIdentificacion.TabIndex = 59;
+            // 
+            // lblTipoIdentificacion_msn
+            // 
+            this.lblTipoIdentificacion_msn.AutoSize = true;
+            this.lblTipoIdentificacion_msn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.lblTipoIdentificacion_msn.Location = new System.Drawing.Point(268, 277);
+            this.lblTipoIdentificacion_msn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoIdentificacion_msn.Name = "lblTipoIdentificacion_msn";
+            this.lblTipoIdentificacion_msn.Size = new System.Drawing.Size(135, 16);
+            this.lblTipoIdentificacion_msn.TabIndex = 60;
+            this.lblTipoIdentificacion_msn.Text = "Tipo de identificación";
+            // 
+            // cbxNuevoGenero
+            // 
+            this.cbxNuevoGenero.BackColor = System.Drawing.Color.Transparent;
+            this.cbxNuevoGenero.BorderRadius = 10;
+            this.cbxNuevoGenero.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxNuevoGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxNuevoGenero.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxNuevoGenero.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxNuevoGenero.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxNuevoGenero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxNuevoGenero.ItemHeight = 18;
+            this.cbxNuevoGenero.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino",
+            "No binario",
+            "Prefiero no decirlo",
+            "Otro"});
+            this.cbxNuevoGenero.Location = new System.Drawing.Point(27, 244);
+            this.cbxNuevoGenero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxNuevoGenero.Name = "cbxNuevoGenero";
+            this.cbxNuevoGenero.Size = new System.Drawing.Size(219, 24);
+            this.cbxNuevoGenero.StartIndex = 0;
+            this.cbxNuevoGenero.TabIndex = 58;
+            // 
+            // lblGenero_mns
+            // 
+            this.lblGenero_mns.AutoSize = true;
+            this.lblGenero_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.lblGenero_mns.Location = new System.Drawing.Point(24, 224);
+            this.lblGenero_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGenero_mns.Name = "lblGenero_mns";
+            this.lblGenero_mns.Size = new System.Drawing.Size(52, 16);
+            this.lblGenero_mns.TabIndex = 56;
+            this.lblGenero_mns.Text = "Genero";
+            // 
+            // txtNumIdentificacion_Modificar
+            // 
+            this.txtNumIdentificacion_Modificar.BorderRadius = 10;
+            this.txtNumIdentificacion_Modificar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNumIdentificacion_Modificar.DefaultText = "";
+            this.txtNumIdentificacion_Modificar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNumIdentificacion_Modificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNumIdentificacion_Modificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNumIdentificacion_Modificar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNumIdentificacion_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNumIdentificacion_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNumIdentificacion_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNumIdentificacion_Modificar.Location = new System.Drawing.Point(28, 302);
+            this.txtNumIdentificacion_Modificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNumIdentificacion_Modificar.Name = "txtNumIdentificacion_Modificar";
+            this.txtNumIdentificacion_Modificar.PlaceholderText = "";
+            this.txtNumIdentificacion_Modificar.SelectedText = "";
+            this.txtNumIdentificacion_Modificar.Size = new System.Drawing.Size(220, 30);
+            this.txtNumIdentificacion_Modificar.TabIndex = 55;
+            // 
+            // lblNumIdentificacion_mns
+            // 
+            this.lblNumIdentificacion_mns.AutoSize = true;
+            this.lblNumIdentificacion_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.lblNumIdentificacion_mns.Location = new System.Drawing.Point(24, 277);
+            this.lblNumIdentificacion_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNumIdentificacion_mns.Name = "lblNumIdentificacion_mns";
+            this.lblNumIdentificacion_mns.Size = new System.Drawing.Size(155, 16);
+            this.lblNumIdentificacion_mns.TabIndex = 54;
+            this.lblNumIdentificacion_mns.Text = "Número de identificación";
+            // 
+            // txtNombreUsuario_Modificar
+            // 
+            this.txtNombreUsuario_Modificar.BorderRadius = 10;
+            this.txtNombreUsuario_Modificar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNombreUsuario_Modificar.DefaultText = "";
+            this.txtNombreUsuario_Modificar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNombreUsuario_Modificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNombreUsuario_Modificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombreUsuario_Modificar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombreUsuario_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombreUsuario_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNombreUsuario_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombreUsuario_Modificar.Location = new System.Drawing.Point(28, 191);
+            this.txtNombreUsuario_Modificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombreUsuario_Modificar.Name = "txtNombreUsuario_Modificar";
+            this.txtNombreUsuario_Modificar.PlaceholderText = "";
+            this.txtNombreUsuario_Modificar.SelectedText = "";
+            this.txtNombreUsuario_Modificar.Size = new System.Drawing.Size(192, 30);
+            this.txtNombreUsuario_Modificar.TabIndex = 53;
+            // 
+            // lblNombreUsuario_msn
+            // 
+            this.lblNombreUsuario_msn.AutoSize = true;
+            this.lblNombreUsuario_msn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.lblNombreUsuario_msn.Location = new System.Drawing.Point(24, 171);
+            this.lblNombreUsuario_msn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreUsuario_msn.Name = "lblNombreUsuario_msn";
+            this.lblNombreUsuario_msn.Size = new System.Drawing.Size(122, 16);
+            this.lblNombreUsuario_msn.TabIndex = 52;
+            this.lblNombreUsuario_msn.Text = "Nombre de usuario";
+            // 
+            // txtDireccionCorreo_Modificar
+            // 
+            this.txtDireccionCorreo_Modificar.BorderRadius = 10;
+            this.txtDireccionCorreo_Modificar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDireccionCorreo_Modificar.DefaultText = "";
+            this.txtDireccionCorreo_Modificar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDireccionCorreo_Modificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDireccionCorreo_Modificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDireccionCorreo_Modificar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDireccionCorreo_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDireccionCorreo_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDireccionCorreo_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDireccionCorreo_Modificar.Location = new System.Drawing.Point(28, 138);
+            this.txtDireccionCorreo_Modificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDireccionCorreo_Modificar.Name = "txtDireccionCorreo_Modificar";
+            this.txtDireccionCorreo_Modificar.PlaceholderText = "";
+            this.txtDireccionCorreo_Modificar.SelectedText = "";
+            this.txtDireccionCorreo_Modificar.Size = new System.Drawing.Size(403, 30);
+            this.txtDireccionCorreo_Modificar.TabIndex = 51;
+            // 
+            // lblDireccionCorreco_mns
+            // 
+            this.lblDireccionCorreco_mns.AutoSize = true;
+            this.lblDireccionCorreco_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.lblDireccionCorreco_mns.Location = new System.Drawing.Point(24, 116);
+            this.lblDireccionCorreco_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDireccionCorreco_mns.Name = "lblDireccionCorreco_mns";
+            this.lblDireccionCorreco_mns.Size = new System.Drawing.Size(194, 16);
+            this.lblDireccionCorreco_mns.TabIndex = 50;
+            this.lblDireccionCorreco_mns.Text = "Dirección de correo electrónico";
+            // 
+            // txtTuNombre_Modificar
+            // 
+            this.txtTuNombre_Modificar.BorderRadius = 10;
+            this.txtTuNombre_Modificar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTuNombre_Modificar.DefaultText = "";
+            this.txtTuNombre_Modificar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTuNombre_Modificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTuNombre_Modificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTuNombre_Modificar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTuNombre_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTuNombre_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTuNombre_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTuNombre_Modificar.Location = new System.Drawing.Point(28, 82);
+            this.txtTuNombre_Modificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTuNombre_Modificar.Name = "txtTuNombre_Modificar";
+            this.txtTuNombre_Modificar.PlaceholderText = "";
+            this.txtTuNombre_Modificar.SelectedText = "";
+            this.txtTuNombre_Modificar.Size = new System.Drawing.Size(212, 30);
+            this.txtTuNombre_Modificar.TabIndex = 49;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(28, 55);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(70, 21);
+            this.guna2HtmlLabel3.TabIndex = 48;
+            this.guna2HtmlLabel3.Text = "Tu nombre";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(28, 25);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(167, 23);
+            this.guna2HtmlLabel2.TabIndex = 47;
+            this.guna2HtmlLabel2.Text = "Información personal";
+            // 
+            // btnGuardarYContinuar
+            // 
+            this.btnGuardarYContinuar.BorderRadius = 15;
+            this.btnGuardarYContinuar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarYContinuar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGuardarYContinuar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGuardarYContinuar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGuardarYContinuar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGuardarYContinuar.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnGuardarYContinuar.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Bold);
+            this.btnGuardarYContinuar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarYContinuar.Location = new System.Drawing.Point(115, 368);
+            this.btnGuardarYContinuar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardarYContinuar.Name = "btnGuardarYContinuar";
+            this.btnGuardarYContinuar.Size = new System.Drawing.Size(252, 39);
+            this.btnGuardarYContinuar.TabIndex = 0;
+            this.btnGuardarYContinuar.Text = "Continuar";
+            this.btnGuardarYContinuar.Click += new System.EventHandler(this.btnGuardarYContinuar_Click);
+            // 
+            // pbxRegresar_Modificar1
+            // 
+            this.pbxRegresar_Modificar1.Image = global::Aeropuerto.Properties.Resources.flechaiz;
+            this.pbxRegresar_Modificar1.Location = new System.Drawing.Point(25, 31);
+            this.pbxRegresar_Modificar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxRegresar_Modificar1.Name = "pbxRegresar_Modificar1";
+            this.pbxRegresar_Modificar1.Size = new System.Drawing.Size(16, 16);
+            this.pbxRegresar_Modificar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxRegresar_Modificar1.TabIndex = 52;
+            this.pbxRegresar_Modificar1.TabStop = false;
+            this.pbxRegresar_Modificar1.Click += new System.EventHandler(this.pbxRegresar_Modificar1_Click);
+            // 
+            // Uc_ModificarDatos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pbxRegresar_Modificar1);
+            this.Controls.Add(this.lblVolverAPerfil);
+            this.Controls.Add(this.pnlPrincipal);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "Uc_ModificarDatos";
+            this.Size = new System.Drawing.Size(784, 740);
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlPrincipal.PerformLayout();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRegresar_Modificar1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.PictureBox pbxRegresar_Modificar1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblVolverAPerfil;
+        private Guna.UI2.WinForms.Guna2Panel pnlPrincipal;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblCreaUsuarioGratuita_mns;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblUneteANosotros;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2TextBox txtApellidoUsuario_Modificar;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxTipoIdentificacion;
+        private System.Windows.Forms.Label lblTipoIdentificacion_msn;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxNuevoGenero;
+        private System.Windows.Forms.Label lblGenero_mns;
+        private Guna.UI2.WinForms.Guna2TextBox txtNumIdentificacion_Modificar;
+        private System.Windows.Forms.Label lblNumIdentificacion_mns;
+        private Guna.UI2.WinForms.Guna2TextBox txtNombreUsuario_Modificar;
+        private System.Windows.Forms.Label lblNombreUsuario_msn;
+        private Guna.UI2.WinForms.Guna2TextBox txtDireccionCorreo_Modificar;
+        private System.Windows.Forms.Label lblDireccionCorreco_mns;
+        private Guna.UI2.WinForms.Guna2TextBox txtTuNombre_Modificar;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2Button btnGuardarYContinuar;
+    }
+}

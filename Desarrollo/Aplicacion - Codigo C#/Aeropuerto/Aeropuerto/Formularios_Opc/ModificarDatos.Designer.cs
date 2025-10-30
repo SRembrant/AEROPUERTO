@@ -30,7 +30,7 @@
         {
             this.tabControlModificarDatos = new Guna.UI2.WinForms.Guna2TabControl();
             this.tbpMiperfil = new System.Windows.Forms.TabPage();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnl_ModificarDatos = new Guna.UI2.WinForms.Guna2Panel();
             this.pbxRegresar_Modificar1 = new System.Windows.Forms.PictureBox();
             this.lblVolverAPerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlPrincipal = new Guna.UI2.WinForms.Guna2Panel();
@@ -71,7 +71,7 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tabControlModificarDatos.SuspendLayout();
             this.tbpMiperfil.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
+            this.pnl_ModificarDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegresar_Modificar1)).BeginInit();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -116,7 +116,7 @@
             // 
             // tbpMiperfil
             // 
-            this.tbpMiperfil.Controls.Add(this.guna2Panel1);
+            this.tbpMiperfil.Controls.Add(this.pnl_ModificarDatos);
             this.tbpMiperfil.Location = new System.Drawing.Point(184, 4);
             this.tbpMiperfil.Name = "tbpMiperfil";
             this.tbpMiperfil.Size = new System.Drawing.Size(588, 601);
@@ -124,16 +124,16 @@
             this.tbpMiperfil.Text = "Mi perfil";
             this.tbpMiperfil.UseVisualStyleBackColor = true;
             // 
-            // guna2Panel1
+            // pnl_ModificarDatos
             // 
-            this.guna2Panel1.Controls.Add(this.pbxRegresar_Modificar1);
-            this.guna2Panel1.Controls.Add(this.lblVolverAPerfil);
-            this.guna2Panel1.Controls.Add(this.pnlPrincipal);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(588, 601);
-            this.guna2Panel1.TabIndex = 0;
+            this.pnl_ModificarDatos.Controls.Add(this.pbxRegresar_Modificar1);
+            this.pnl_ModificarDatos.Controls.Add(this.lblVolverAPerfil);
+            this.pnl_ModificarDatos.Controls.Add(this.pnlPrincipal);
+            this.pnl_ModificarDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_ModificarDatos.Location = new System.Drawing.Point(0, 0);
+            this.pnl_ModificarDatos.Name = "pnl_ModificarDatos";
+            this.pnl_ModificarDatos.Size = new System.Drawing.Size(588, 601);
+            this.pnl_ModificarDatos.TabIndex = 0;
             // 
             // pbxRegresar_Modificar1
             // 
@@ -190,7 +190,7 @@
             this.lblUneteANosotros.ForeColor = System.Drawing.Color.White;
             this.lblUneteANosotros.Location = new System.Drawing.Point(108, 20);
             this.lblUneteANosotros.Name = "lblUneteANosotros";
-            this.lblUneteANosotros.Size = new System.Drawing.Size(169, 33);
+            this.lblUneteANosotros.Size = new System.Drawing.Size(169, 34);
             this.lblUneteANosotros.TabIndex = 1;
             this.lblUneteANosotros.Text = "¿Ocurrió algo?";
             // 
@@ -455,7 +455,7 @@
             // 
             this.tbpInicio.Location = new System.Drawing.Point(184, 4);
             this.tbpInicio.Name = "tbpInicio";
-            this.tbpInicio.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpInicio.Padding = new System.Windows.Forms.Padding(3);
             this.tbpInicio.Size = new System.Drawing.Size(588, 601);
             this.tbpInicio.TabIndex = 0;
             this.tbpInicio.Text = "Inicio";
@@ -466,7 +466,7 @@
             this.tbpMisVuelos.Controls.Add(this.guna2HtmlLabel5);
             this.tbpMisVuelos.Location = new System.Drawing.Point(184, 4);
             this.tbpMisVuelos.Name = "tbpMisVuelos";
-            this.tbpMisVuelos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpMisVuelos.Padding = new System.Windows.Forms.Padding(3);
             this.tbpMisVuelos.Size = new System.Drawing.Size(588, 601);
             this.tbpMisVuelos.TabIndex = 1;
             this.tbpMisVuelos.Text = "Mis vuelos";
@@ -692,8 +692,8 @@
             this.Text = "ModificarDatos";
             this.tabControlModificarDatos.ResumeLayout(false);
             this.tbpMiperfil.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            this.pnl_ModificarDatos.ResumeLayout(false);
+            this.pnl_ModificarDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegresar_Modificar1)).EndInit();
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();
@@ -717,7 +717,7 @@
         private System.Windows.Forms.TabPage tbpMisVuelos;
         private System.Windows.Forms.TabPage tbpMiperfil;
         private System.Windows.Forms.TabPage tbpBuscarVuelos;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel pnl_ModificarDatos;
         private Guna.UI2.WinForms.Guna2Panel pnlPrincipal;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCreaUsuarioGratuita_mns;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblUneteANosotros;
