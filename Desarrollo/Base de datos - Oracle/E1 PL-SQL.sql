@@ -177,7 +177,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
     END ELIMINAR_CUENTA;
 
     ---------------------------------------------------------
-    PROCEDURE MODIFICAR_USUARIO(
+     PROCEDURE MODIFICAR_USUARIO(
         p_IdUsuario            IN USUARIOREGISTRADO.IDUSUARIO%TYPE,
         p_antiguoDocIdUsuario  IN USUARIOREGISTRADO.DOCIDUSUARIO%TYPE,
         p_nuevoDocIdUsuario    IN USUARIOREGISTRADO.DOCIDUSUARIO%TYPE,
@@ -195,8 +195,13 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
         p_telefonoUsuario      IN USUARIOREGISTRADO.TELEFONOUSUARIO%TYPE
     )
     IS
+      e_unique_violation EXCEPTION;
+        PRAGMA EXCEPTION_INIT(e_unique_violation, -00001);
+        v_error_message VARCHAR2(500);
+        
         v_count INTEGER;
     BEGIN
+       
         SELECT COUNT(*) INTO v_count
         FROM USUARIOREGISTRADO
         WHERE IDUSUARIO = p_IdUsuario;
@@ -209,7 +214,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
             SELECT COUNT(*) INTO v_count
             FROM USUARIOREGISTRADO
             WHERE DOCIDUSUARIO = p_nuevoDocIdUsuario;
-
+             
             IF v_count > 0 THEN
                 RAISE_APPLICATION_ERROR(-20031, 'El nuevo documento ya está en uso.');
             END IF;
@@ -235,16 +240,33 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
         IF SQL%ROWCOUNT = 0 THEN
             RAISE_APPLICATION_ERROR(-20032, 'No se pudo actualizar el usuario.');
         END IF;
+
     EXCEPTION
-        WHEN DUP_VAL_ON_INDEX THEN
-            RAISE_APPLICATION_ERROR(-20033, 'Valor duplicado en campo único.');
+    
+        --  WHEN DUP_VAL_ON_INDEX THEN
+          --  RAISE_APPLICATION_ERROR(-20033, 'Valor duplicado en campo único.');
         WHEN VALUE_ERROR THEN
             RAISE_APPLICATION_ERROR(-20034, 'Error en tipo o tamaño de valor.');
+            
+        WHEN e_unique_violation THEN
+        DBMS_OUTPUT.PUT_LINE('Modificando usuario...');
+            v_error_message := SQLERRM;
+            IF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_CORREO') > 0 THEN
+                -- Violación del email
+                RAISE_APPLICATION_ERROR(-20005, 'El correo ingresado ya existe en el sistema.');    
+            ELSIF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_USUARIOACCESO') > 0 THEN
+                -- Violación del usuario
+                RAISE_APPLICATION_ERROR(-20006, 'El nombre de usuario ingresado ya está registrado.');   
+             ELSIF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_DOCIDUSUARIO') > 0 THEN
+                -- Violación del id
+                RAISE_APPLICATION_ERROR(-20007, 'El documento de identificacion ya existe en el sistema.');       
+            END IF;
+              
         WHEN OTHERS THEN
             RAISE_APPLICATION_ERROR(-20035, 'Error al modificar usuario: ' || SQLERRM);
             
     END MODIFICAR_USUARIO;
-
+    
     ---------------------------------------------------------
     FUNCTION VALIDAR_CREDENCIALES(
         p_usuarioAcceso IN USUARIOREGISTRADO.USUARIOACCESO%TYPE,
@@ -498,19 +520,59 @@ FOR EACH ROW
 DECLARE
     v_edad NUMBER;
 BEGIN
-    -- Calculamos la edad en años
+    -- Calculamos la edad en años (truncando los decimales)
     v_edad := TRUNC(MONTHS_BETWEEN(SYSDATE, :NEW.FECHANACUSUARIO) / 12);
 
-    -- Validación de edad mínima
+    -- Validación de edad mínima y máxima
     IF v_edad < 18 THEN
         RAISE_APPLICATION_ERROR(
             -20080,
             'El usuario debe tener al menos 18 años para registrarse.'
         );
+    ELSIF v_edad > 100 THEN
+        RAISE_APPLICATION_ERROR(
+            -20081,
+            'La edad ingresada excede el máximo permitido (100 años).'
+        );
     END IF;
 END TRG_VALIDAR_EDAD_USUARIO;
 
 
+CREATE OR REPLACE TRIGGER TR_VALIDAR_PALABRAS_SQL
+BEFORE INSERT OR UPDATE OF 
+    NOMBREUSUARIO, APELLIDOUSUARIO, USUARIOACCESO, CONTRASENIAUSUARIO, 
+    DIRECCIONUSUARIO, OBSERVACIONUSUARIO
+ON USUARIOREGISTRADO
+FOR EACH ROW
+DECLARE
+    v_texto VARCHAR2(4000);
+    v_palabra VARCHAR2(50);
+    v_lista_palabras SYS.ODCIVARCHAR2LIST := SYS.ODCIVARCHAR2LIST(
+        'DROP', 'DELETE', 'INSERT', 'UPDATE', 'ALTER', 
+        'CREATE', 'TRUNCATE', 'TABLE', 'SELECT', 'FROM', 'WHERE', 'EXECUTE'
+    );
+BEGIN
+    -- Concatenamos todos los campos susceptibles a revisión
+    v_texto := UPPER(
+        NVL(:NEW.NOMBREUSUARIO, '') || ' ' ||
+        NVL(:NEW.APELLIDOUSUARIO, '') || ' ' ||
+        NVL(:NEW.USUARIOACCESO, '') || ' ' ||
+        NVL(:NEW.CONTRASENIAUSUARIO, '') || ' ' ||
+        NVL(:NEW.DIRECCIONUSUARIO, '') || ' ' ||
+        NVL(:NEW.OBSERVACIONUSUARIO, '')
+    );
+
+    -- Recorremos la lista de palabras SQL prohibidas
+    FOR i IN 1 .. v_lista_palabras.COUNT LOOP
+        v_palabra := v_lista_palabras(i);
+        IF INSTR(v_texto, v_palabra) > 0 THEN
+            RAISE_APPLICATION_ERROR(
+                -20500,
+                'El texto ingresado contiene una palabra SQL reservada o peligrosa: ' || v_palabra
+            );
+        END IF;
+    END LOOP;
+END;
 /*
 UPDATE USUARIOREGISTRADO
 SET CORREOUSUARIO = 'correotest.com'
@@ -521,3 +583,67 @@ SET FECHANACUSUARIO = SYSDATE
 WHERE IDUSUARIO = 1;
 
 */
+
+CREATE OR REPLACE TRIGGER TRG_VALIDAR_TELEFONO_USUARIO
+BEFORE INSERT OR UPDATE OF TELEFONOUSUARIO
+ON USUARIOREGISTRADO
+FOR EACH ROW
+BEGIN
+    -- Verificar que el campo no sea nulo
+    IF :NEW.TELEFONOUSUARIO IS NULL THEN
+        RAISE_APPLICATION_ERROR(
+            -20600,
+            'El número de teléfono no puede ser nulo.'
+        );
+    END IF;
+
+    -- Verificar que contenga exactamente 10 dígitos numéricos
+    IF NOT REGEXP_LIKE(:NEW.TELEFONOUSUARIO, '^[0-9]{10}$') THEN
+        RAISE_APPLICATION_ERROR(
+            -20601,
+            'El número de teléfono debe contener exactamente 10 dígitos numéricos.'
+        );
+    END IF;
+END TRG_VALIDAR_TELEFONO_USUARIO;
+
+ALTER TRIGGER  TRG_VALIDAR_TELEFONO_USUARIO DISABLE
+
+--
+CREATE OR REPLACE TRIGGER TRG_VALIDAR_CARACTERES_USUARIO
+BEFORE INSERT OR UPDATE OF DIRECCIONUSUARIO, OBSERVACIONUSUARIO
+ON USUARIOREGISTRADO
+FOR EACH ROW
+DECLARE
+    v_cadena VARCHAR2(4000);
+BEGIN
+    -- Validar campo DIRECCIONUSUARIO (si no es nulo)
+    IF :NEW.DIRECCIONUSUARIO IS NOT NULL THEN
+        v_cadena := :NEW.DIRECCIONUSUARIO;
+
+        -- Verificar si contiene algún carácter no permitido
+        IF REGEXP_LIKE(v_cadena, '[!¡?¿+*_%$@]') THEN
+            RAISE_APPLICATION_ERROR(
+                -20092,
+                'La dirección contiene caracteres no permitidos. Solo se permiten letras, números, espacios, - # y ''.'
+            );
+        END IF;
+    END IF;
+
+    -- Validar campo OBSERVACIONUSUARIO (si no es nulo)
+    IF :NEW.OBSERVACIONUSUARIO IS NOT NULL THEN
+        v_cadena := :NEW.OBSERVACIONUSUARIO;
+
+        -- Verificar si contiene algún carácter no permitido
+        IF REGEXP_LIKE(v_cadena, '[!¡?¿+*_%$@]') THEN
+            RAISE_APPLICATION_ERROR(
+                -20093,
+                'La observación contiene caracteres no permitidos. Solo se permiten letras, números, espacios, - # y ''.'
+            );
+        END IF;
+    END IF;
+END TRG_VALIDAR_CARACTERES_USUARIO;
+
+
+
+
+

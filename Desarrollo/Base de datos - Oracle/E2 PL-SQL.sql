@@ -132,8 +132,12 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         p_idCategoria CATEGORIAASIENTO.IDCATEGORIA%TYPE
     )
     RETURN NUMBER
+        
     IS
         v_numAsiento Asiento.numAsiento%TYPE;
+        
+      --  e_conversionNumero EXCEPTION;
+        -- PRAGMA EXCEPTION_INIT(e_conversionNumero, -06502);
     BEGIN
         SELECT numAsiento
         INTO v_numAsiento
@@ -147,6 +151,8 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         RETURN v_numAsiento;
 
     EXCEPTION
+     --   WHEN  e_conversionNumero THEN
+       --     RAISE_APPLICATION_ERROR(-20501,'Error en el tipo de dato recibido');
         -- No hay asientos disponibles
         WHEN NO_DATA_FOUND THEN
             RAISE_APPLICATION_ERROR(-20014,'No hay asientos disponibles para el avion en la categoria ingresada');
@@ -157,6 +163,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
     
         -- Errores de valor nulo o integridad
         WHEN VALUE_ERROR THEN
+         
             RAISE_APPLICATION_ERROR(-20016,'Error de tipo o conversión al asignar el número de asiento.');
     
         -- Cualquier otro error inesperado
@@ -268,6 +275,8 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         v_fechaUsoPasaje Pasaje.fechaUsoPasaje%TYPE;
         v_id_pasaje Pasaje.idPasaje%TYPE;
         v_id_compra Compra.idCompra%TYPE;
+        
+ 
     BEGIN
         -- 0. nivel de aislamiento serializable
         --SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
@@ -315,6 +324,10 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         COMMIT;
         
     EXCEPTION
+      --  WHEN e_conversionNumero THEN
+        --    ROLLBACK;
+          --  DELETE FROM PASAJERO WHERE IDPASAJERO = p_idPasajero;
+            --RAISE_APPLICATION_ERROR(-20501,'Error en el tipo de dato recibido');
         WHEN OTHERS THEN
             IF SQLCODE = -20014 THEN
                 ROLLBACK;
@@ -325,6 +338,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
                 DELETE FROM PASAJERO WHERE IDPASAJERO = p_idPasajero;
                 RAISE_APPLICATION_ERROR(-20015,'Se encontró más de un asiento cuando solo se esperaba uno');
             ELSIF SQLCODE = -20016 THEN
+              
                 ROLLBACK;
                 DELETE FROM PASAJERO WHERE IDPASAJERO = p_idPasajero;
                 RAISE_APPLICATION_ERROR(-20016,'Error de tipo o conversión al asignar el número de asiento.');
@@ -565,6 +579,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
             RAISE_APPLICATION_ERROR(-20054, 'Error inesperado al obtener ID de categoría: ' || SQLERRM);
     END OBTENER_ID_CATEGORIA;
 
+--procedimiento para obtener los nombres de las categorias de asiento
     PROCEDURE OBTENER_CATEGORIAS_ASIENTO_NOMBRES(
         p_resultado OUT SYS_REFCURSOR
     )
