@@ -10,7 +10,7 @@ namespace Aeropuerto.accesoDatos
 {
     internal class Datos
     {
-        string cadenaConexion = @"Data Source = localhost; User ID = AEROPUERTO; Password=oracle";
+        string cadenaConexion = @"Data Source = localhost; User ID = AEROPUERTO1; Password=oracle";
 
         // Ejecutar un procedimiento almacenado (sin retorno, tipo DML)
         public void EjecutarProcedimiento(string nombreProcedimiento, OracleParameter[] parametros)
