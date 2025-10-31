@@ -38,11 +38,6 @@ namespace Aeropuerto
             {
                 int id = objUsuarioRegistrado.ObtenerIdPorNombreUsuario(usuarioNombre);
                 
-                /*Console.WriteLine(usuarioNombre);
-                Console.WriteLine(id);
-                Boolean flag = objUsuarioRegistrado.CargarDatosPorID(id);
-                Console.WriteLine(flag);*/
-
                 if (id > 0 && objUsuarioRegistrado.CargarDatosPorID(id))
                 {
                     PaginaPrincipal ventana = new PaginaPrincipal(this, objUsuarioRegistrado);
@@ -67,6 +62,8 @@ namespace Aeropuerto
             Registrar_usuario registro = new Registrar_usuario(this, objUsuarioRegistrado);
             registro.Show();
             this.Hide();
+            txtNombreUsuario.Text = "";
+            txtContrasenia.Text = "";
         }
 
         private void txtNombreUsuario_Click(object sender, EventArgs e)

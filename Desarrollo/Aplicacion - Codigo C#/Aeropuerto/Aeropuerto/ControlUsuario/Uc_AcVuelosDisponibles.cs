@@ -33,19 +33,21 @@ namespace Aeropuerto
             this.vuelosRegreso = null;
             panelRegreso.Hide();
             MostrarVuelos(vuelosIda, null);
+            this.Visible = true;
         }
 
         //Constructor ida y vuelta
         public Uc_AcVuelosDisponibles(int cantidadPasajeros, PaginaPrincipal principal, Vuelo objVuelo, UsuarioRegistrado objUsuarioRegistrado, DataTable vuelosIda, DataTable vuelosRegreso)
         {
             InitializeComponent();
-            this.cantidadPasajeros= cantidadPasajeros;
+            this.cantidadPasajeros = cantidadPasajeros;
             this.principal = principal;
             this.objVuelo = objVuelo;
             this.objUsuarioRegistrado = objUsuarioRegistrado;
             this.vuelosIda = vuelosIda;
             this.vuelosRegreso = vuelosRegreso;
             MostrarVuelos(vuelosIda, vuelosRegreso);
+            this.Visible = true;
         }
 
         private void MostrarVuelos(DataTable vuelosIda, DataTable vuelosVuelta)
@@ -98,11 +100,23 @@ namespace Aeropuerto
 
         private void pbComprar_Click(object sender, EventArgs e)
         {
-            Uc_Informacion_Pasajero ucPasajeros = new Uc_Informacion_Pasajero(principal, objVuelo, objUsuarioRegistrado, vuelosIda, vuelosRegreso, cantidadPasajeros);
-            principal.PanelBuscarVuelos.Controls.Clear();
-            principal.PanelBuscarVuelos.Controls.Add(ucPasajeros);
+            var ucPasajeros = new Uc_Informacion_Pasajero(principal, objVuelo, objUsuarioRegistrado, vuelosIda, vuelosRegreso, cantidadPasajeros);
+            this.Visible = false;
+            principal.PanelContenedorBuscarVuelos.Controls.Add(ucPasajeros);
             ucPasajeros.Dock = DockStyle.Fill;
             ucPasajeros.GenerarPasajeros(cantidadPasajeros);
+            principal.PanelBuscarVuelos.Refresh();
+        }
+
+        private void px_RegresarInicio_VerVuelosDisponibles_Click(object sender, EventArgs e)
+        {
+            principal.PanelContenedorBuscarVuelos.Visible = false;
+
+            this.Visible = false;
+            principal.PanelBuscarVuelos.Visible = true;
+            principal.PanelBuscarVuelos.BringToFront();
+
+            principal.ActualizarPantalla();
         }
     }
 }

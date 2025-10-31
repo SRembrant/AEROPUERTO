@@ -17,18 +17,11 @@ namespace Aeropuerto
         PaginaPrincipal principal;
         Vuelo objVuelo;
         UsuarioRegistrado objUsuarioRegistrado;
-        DataTable vuelosIda; 
+        DataTable vuelosIda;
         DataTable vuelosRegreso;
         Pasaje gestorPasaje = new Pasaje();
 
         public int NumeroPasajeros { get; private set; }
-
-        /*public string Nombre => txtNombre_InformacionPasajeros.Text;
-        public string Apellido => txtApellido_InformacionPasajero.Text;
-        public string Correo => txtCorreo_InformacionPasajero.Text;
-        public string TipoIdentificacion => cbxTipoID.SelectedItem.ToString();
-        public string Identificacion => txtIdentifiacion_InformacionPasajero.Text;
-        public string nombreCategoria => cbxCategoriaAsiento.Text;*/
 
         public Uc_Informacion_Pasajero(PaginaPrincipal principal, Vuelo objVuelo, UsuarioRegistrado objUsuarioRegistrado, DataTable vuelosIda, DataTable vuelosRegreso, int numeroPasajeros)
         {
@@ -40,12 +33,14 @@ namespace Aeropuerto
             this.vuelosRegreso = vuelosRegreso;
             this.NumeroPasajeros = numeroPasajeros;
             lblPrecio_InformPasajero.Text = "";
+            this.Visible = true;
         }
 
         public Uc_Informacion_Pasajero(int numero)
         {
             InitializeComponent();
             NumeroPasajeros = numero;
+            this.Visible = true;
         }
 
         public void GenerarPasajeros(int cantidad)
@@ -61,7 +56,7 @@ namespace Aeropuerto
             CalcularTotal();
         }
 
-        
+
         private void btnRealizarCompra_Click(object sender, EventArgs e)
         {
             if (!chk_TerminosPoliticas.Checked)
@@ -144,10 +139,12 @@ namespace Aeropuerto
                 if (insercionExitosa && reservaExitosa)
                 {
                     int idVueloFactura = Convert.ToInt32(vuelosIda.Rows[0]["IDVUELO"]);
-                    Uc_GenerarFactura ucGenerarFactura = new Uc_GenerarFactura(idVueloFactura, idUsuario, medioPago, gestorPasaje, objUsuarioRegistrado);
-                    principal.PanelBuscarVuelos.Controls.Clear();
-                    principal.PanelBuscarVuelos.Controls.Add(ucGenerarFactura);
+                    Uc_GenerarFactura ucGenerarFactura = new Uc_GenerarFactura(idVueloFactura, idUsuario, medioPago, gestorPasaje, objUsuarioRegistrado, principal);
+                    this.Visible = false;
+                    principal.PanelContenedorBuscarVuelos.Controls.Add(ucGenerarFactura);
                     ucGenerarFactura.Dock = DockStyle.Fill;
+
+                    principal.PanelBuscarVuelos.Refresh();
                 }
                 else
                 {
@@ -199,5 +196,3 @@ namespace Aeropuerto
     }
 
 }
-    
-

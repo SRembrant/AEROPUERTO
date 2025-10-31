@@ -22,7 +22,8 @@ namespace Aeropuerto.ControlUsuario
         int idVuelo;
         int idUsuario;
         string medioPago;
-        public Uc_GenerarFactura(int idVuelo, int idUsuario, string medioPago, Pasaje gestorPasaje, UsuarioRegistrado objUsuario)
+
+        public Uc_GenerarFactura(int idVuelo, int idUsuario, string medioPago, Pasaje gestorPasaje, UsuarioRegistrado objUsuario, PaginaPrincipal principal)
         {
             InitializeComponent();
             this.idVuelo = idVuelo;
@@ -30,6 +31,8 @@ namespace Aeropuerto.ControlUsuario
             this.medioPago = medioPago;
             this.gestorPasaje = gestorPasaje;
             this.objUsuarioRegistrado = objUsuario;
+            this.principal = principal;
+            this.Visible = true;
         }
 
         private void lbGenerarFactura_Click(object sender, EventArgs e)
@@ -42,6 +45,13 @@ namespace Aeropuerto.ControlUsuario
                 string resultado = $"Factura #{row["IDFACTURA"]}\nMonto: {row["MONTOFACTURA"]}\nPago: {row["MEDIOPAGOFACTURA"]}";
                 MessageBox.Show(resultado, "Cancelación completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                // Regresar a Buscar Vuelo
+                principal.PanelContenedorBuscarVuelos.Visible = false;
+                this.Visible = false;
+                principal.PanelBuscarVuelos.Visible = true;
+                principal.PanelBuscarVuelos.BringToFront();
+
+                principal.ActualizarPantalla();
             }
         }
     }

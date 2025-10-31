@@ -23,10 +23,10 @@ namespace Aeropuerto
             this.login = login;
             this.objUsuarioRegistrado = objUsuarioRegistrado;
             txtTuNombre_PgPerfil.Text = objUsuarioRegistrado.NombreUsuario;
-            txtApellido_PgPerfil.Text=objUsuarioRegistrado.ApellidoUsuario;
+            txtApellido_PgPerfil.Text = objUsuarioRegistrado.ApellidoUsuario;
             txtDireccionCorreo_Pgperfil.Text = objUsuarioRegistrado.CorreoUsuario;
             txtNombreUsuario_Pgperfil.Text = objUsuarioRegistrado.UsuarioAcceso;
-            txtGenero_Pgperfil.Text=objUsuarioRegistrado.GeneroUsuario;
+            txtGenero_Pgperfil.Text = objUsuarioRegistrado.GeneroUsuario;
             txtNumIdentificacion_Pgperfil.Text = objUsuarioRegistrado.DocIdUsuario.ToString();
             dtmFechaNacimiento_Pgperfil.Value = objUsuarioRegistrado.FechaNacUsuario;
             txtNumeroTelefonico_Pgperfil.Text = objUsuarioRegistrado.TelefonoUsuario.ToString();
@@ -36,6 +36,7 @@ namespace Aeropuerto
             txtNacionalidad_Pgperfil.Text = objUsuarioRegistrado.NacionalidadUsuario;
 
 
+            //Mi Perfil
             pnlMiPerfil.Parent = tbpMiperfil;
             pnlContenedorPerfil.Parent = tbpMiperfil;
 
@@ -44,6 +45,18 @@ namespace Aeropuerto
 
             pnlMiPerfil.Visible = true;
             pnlContenedorPerfil.Visible = false;
+
+            this.Refresh();
+
+            //Buscar Vuelos
+            pnlBuscarVuelos.Parent = tbpBuscarVuelos;
+            pnlContenedorBuscarVuelos.Parent = tbpBuscarVuelos;
+
+            pnlBuscarVuelos.Dock = DockStyle.Fill;
+            pnlContenedorBuscarVuelos.Dock = DockStyle.Fill;
+
+            pnlBuscarVuelos.Visible = true;
+            pnlContenedorBuscarVuelos.Visible = false;
 
             this.Refresh();
         }
@@ -56,7 +69,7 @@ namespace Aeropuerto
             pnlContenedorPerfil.SuspendLayout();
 
             pnlContenedorPerfil.Visible = true;
-            pnlContenedorPerfil.BringToFront();    
+            pnlContenedorPerfil.BringToFront();
             pnlMiPerfil.Visible = false;
 
             // Cargar el UC dentro del contenedor
@@ -70,7 +83,7 @@ namespace Aeropuerto
         public void ActualizarPantalla()
         {
             txtTuNombre_PgPerfil.Text = objUsuarioRegistrado.NombreUsuario;
-            txtApellido_PgPerfil.Text=objUsuarioRegistrado.ApellidoUsuario;
+            txtApellido_PgPerfil.Text = objUsuarioRegistrado.ApellidoUsuario;
             txtDireccionCorreo_Pgperfil.Text = objUsuarioRegistrado.CorreoUsuario;
             txtNombreUsuario_Pgperfil.Text = objUsuarioRegistrado.UsuarioAcceso;
             txtGenero_Pgperfil.Text = objUsuarioRegistrado.GeneroUsuario;
@@ -121,7 +134,7 @@ namespace Aeropuerto
                 CargarDestinos();
                 dtmFechaViaje_Ida.MaxDate = new DateTime(DateTime.Today.Year + 1, 12, 31);
                 dtmFechaViaje_Ida.MinDate = DateTime.Today;
-                
+
             }
 
             if (tabControl_PaginaPrincipal.SelectedTab == tbpMisVuelos)
@@ -136,37 +149,74 @@ namespace Aeropuerto
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            string ciudadOrigen = cbxOrigen.Text;
-            string paisOrigen = cbxOrigen.SelectedValue.ToString();
-
-            string ciudadDestino = cbxDestino.Text;
-            string paisDestino = cbxDestino.SelectedValue.ToString();
-
-            DateTime fechaIda = dtmFechaViaje_Ida.Value;
-
-            int cantidadPasajeros = int.Parse(txtCantidadPasajeros.Text);
-
-            DataTable vuelos = objVuelo.ConsultarVuelosIda(ciudadOrigen, paisOrigen, ciudadDestino, paisDestino, fechaIda);
-
-            if (vuelos.Rows.Count == 0)
+            if (cbxOrigen.SelectedItem == null && cbxDestino.SelectedItem == null && string.IsNullOrEmpty(txtCantidadPasajeros.Text) || cbxOrigen.SelectedItem == null && cbxDestino.SelectedItem == null)
             {
-                MessageBox.Show("No se encontraron vuelos disponibles para la selección.");
+                MessageBox.Show("Debe llenar los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            else
+            {
+                string ciudadOrigen = cbxOrigen.Text;
+                string paisOrigen = cbxOrigen.SelectedValue.ToString();
 
-            Uc_AcVuelosDisponibles ucVerVuelos = new Uc_AcVuelosDisponibles(cantidadPasajeros, this, objVuelo, objUsuarioRegistrado, vuelos);
-            this.pnlBuscarVuelos.Controls.Clear();
-            this.pnlBuscarVuelos.Controls.Add(ucVerVuelos);
-            ucVerVuelos.Dock = DockStyle.Fill;
+                string ciudadDestino = cbxDestino.Text;
+                string paisDestino = cbxDestino.SelectedValue.ToString();
+
+                DateTime fechaIda = dtmFechaViaje_Ida.Value;
+
+                if (string.IsNullOrEmpty(txtCantidadPasajeros.Text))
+                {
+                    MessageBox.Show("Debe seleccionar la cantidad de pasajeros", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    int cantidadPasajeros = int.Parse(txtCantidadPasajeros.Text);
+
+                    DataTable vuelos = objVuelo.ConsultarVuelosIda(ciudadOrigen, paisOrigen, ciudadDestino, paisDestino, fechaIda);
+
+                    if (vuelos.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron vuelos disponibles para la selección.");
+                        return;
+                    }
+
+                    tabControl_PaginaPrincipal.SelectedTab = tbpBuscarVuelos;
+
+                    // Mostrar contenedor, ocultar panel base, y asegurar Z-order
+                    pnlContenedorBuscarVuelos.SuspendLayout();
+
+                    pnlContenedorBuscarVuelos.Visible = true;
+                    pnlContenedorBuscarVuelos.BringToFront();
+                    pnlBuscarVuelos.Visible = false;
+
+                    // Cargar el UC dentro del contenedor
+                    var ucVerVuelos = new Uc_AcVuelosDisponibles(cantidadPasajeros, this, objVuelo, objUsuarioRegistrado, vuelos);
+                    ucVerVuelos.Dock = DockStyle.Fill;
+
+                    pnlContenedorBuscarVuelos.Controls.Add(ucVerVuelos);
+                    pnlContenedorBuscarVuelos.ResumeLayout();
+                }
+
+            }
 
         }
-                //ola
+
         private void btnIdaYVuelta_Click(object sender, EventArgs e)
         {
-            Uc_AccionIda_Vuelta ucIdaVuelta = new Uc_AccionIda_Vuelta(this, objVuelo, objUsuarioRegistrado);
-            this.pnlBuscarVuelos.Controls.Clear();
-            this.pnlBuscarVuelos.Controls.Add(ucIdaVuelta);
+            // Mostrar contenedor, ocultar panel base, y asegurar Z-order
+            pnlContenedorBuscarVuelos.SuspendLayout();
+
+            pnlContenedorBuscarVuelos.Visible = true;
+            pnlContenedorBuscarVuelos.BringToFront();
+            pnlBuscarVuelos.Visible = false;
+
+            // Cargar el UC dentro del contenedor
+            var ucIdaVuelta = new Uc_AccionIda_Vuelta(this, objVuelo, objUsuarioRegistrado);
             ucIdaVuelta.Dock = DockStyle.Fill;
+
+            pnlContenedorBuscarVuelos.Controls.Add(ucIdaVuelta);
+            pnlContenedorBuscarVuelos.ResumeLayout();
 
         }
 
@@ -174,10 +224,10 @@ namespace Aeropuerto
         {
             this.Hide();
             login.Show();
-            
+
         }
 
-        
+
 
         public Guna.UI2.WinForms.Guna2Panel PanelMiPerfil
         {
@@ -209,7 +259,10 @@ namespace Aeropuerto
             get { return pnlContenedorPerfil; }
         }
 
-        
+        public Guna.UI2.WinForms.Guna2Panel PanelContenedorBuscarVuelos
+        {
+            get { return pnlContenedorBuscarVuelos; }
+        }
 
     }
 }
