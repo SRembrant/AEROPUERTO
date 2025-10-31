@@ -723,3 +723,47 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
 END GESTION_PASAJES;
 
 
+
+CREATE OR REPLACE TRIGGER trg_validar_correo_pasajero
+BEFORE INSERT ON PASAJERO
+FOR EACH ROW
+DECLARE
+    v_newCorreo VARCHAR2(255);
+    v_oldCorreo VARCHAR2(255);
+BEGIN
+
+    v_newCorreo := TRIM(LOWER(:NEW.correoPasajero));
+    v_oldCorreo := TRIM(LOWER(:OLD.correoPasajero));
+
+    -- Validar espacios
+    IF TRIM(:NEW.correoPasajero) != :NEW.correoPasajero THEN
+        RAISE_APPLICATION_ERROR(-20072, 'El correo no debe tener espacios al inicio o al final.');
+    END IF;
+
+    -- Validar formato general
+    IF NOT REGEXP_LIKE(:NEW.correoPasajero, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$') THEN
+        RAISE_APPLICATION_ERROR(-20073, 'El correo electrónico no tiene un formato válido.');
+    END IF;
+END trg_validar_correo_pasajero;
+
+
+CREATE OR REPLACE TRIGGER trg_validar_nombre_apellido_pasajero
+BEFORE INSERT OR UPDATE ON PASAJERO
+FOR EACH ROW
+DECLARE
+    -- Solo letras (con tildes y ñ) y espacios intermedios
+    formato_valido CONSTANT VARCHAR2(200) := '^[A-Za-zÁÉÍÓÚáéíóúÑñ]+( [A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$';
+BEGIN
+    -- Validar nombre
+    IF NOT REGEXP_LIKE(:NEW.nombrePasajero, formato_valido) THEN
+        RAISE_APPLICATION_ERROR(-20010,
+            'El nombre contiene caracteres inválidos o espacios al inicio/final.');
+    END IF;
+
+    -- Validar apellido
+    IF NOT REGEXP_LIKE(:NEW.apellidoPasajero, formato_valido) THEN
+        RAISE_APPLICATION_ERROR(-20011,
+            'El apellido contiene caracteres inválidos o espacios al inicio/final.');
+    END IF;
+END trg_validar_nombre_apellido_pasajero;
+
