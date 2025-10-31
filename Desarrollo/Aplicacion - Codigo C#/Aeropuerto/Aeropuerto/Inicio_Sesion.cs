@@ -34,6 +34,8 @@ namespace Aeropuerto
 
             string resultado = objUsuarioRegistrado.ValidarCredenciales(usuarioNombre, contrasenia);
 
+            if (resultado == null) return;
+            
             if (resultado.Contains("permitido"))
             {
                 int id = objUsuarioRegistrado.ObtenerIdPorNombreUsuario(usuarioNombre);

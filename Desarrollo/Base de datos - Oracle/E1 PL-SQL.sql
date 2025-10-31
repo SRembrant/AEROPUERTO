@@ -437,28 +437,6 @@ END trg_validar_correo_usuario;
 
 
 
-CREATE OR REPLACE TRIGGER trg_validar_correo_pasajero
-BEFORE INSERT ON PASAJERO
-FOR EACH ROW
-DECLARE
-    v_newCorreo VARCHAR2(255);
-    v_oldCorreo VARCHAR2(255);
-BEGIN
-    v_newCorreo := TRIM(LOWER(:NEW.correoPasajero));
-    v_oldCorreo := TRIM(LOWER(:OLD.correoPasajero));
-
-    -- Validar espacios
-    IF TRIM(:NEW.correoPasajero) != :NEW.correoPasajero THEN
-        RAISE_APPLICATION_ERROR(-20072, 'El correo no debe tener espacios al inicio o al final.');
-    END IF;
-
-    -- Validar formato general
-    IF NOT REGEXP_LIKE(:NEW.correoPasajero, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$') THEN
-        RAISE_APPLICATION_ERROR(-20073, 'El correo electrónico no tiene un formato válido.');
-    END IF;
-END trg_validar_correo_pasajero;
-
-
 
 
 -- trigger de edad >18
@@ -580,11 +558,6 @@ BEGIN
         END IF;
     END IF;
 END TRG_VALIDAR_CARACTERES_USUARIO;
-
-
-
-
-
 
 
 
