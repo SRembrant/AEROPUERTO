@@ -160,7 +160,7 @@ namespace Aeropuerto
             ucVerVuelos.Dock = DockStyle.Fill;
 
         }
-
+        //prueba git
         private void btnIdaYVuelta_Click(object sender, EventArgs e)
         {
             Uc_AccionIda_Vuelta ucIdaVuelta = new Uc_AccionIda_Vuelta(this, objVuelo, objUsuarioRegistrado);
