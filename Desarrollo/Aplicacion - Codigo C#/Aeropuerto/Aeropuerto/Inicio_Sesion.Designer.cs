@@ -40,6 +40,7 @@
             this.txtNombreUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtContrasenia = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnInicio_sesion = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,11 +66,11 @@
             this.lblBienvenidoDnv.BackColor = System.Drawing.Color.Transparent;
             this.lblBienvenidoDnv.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenidoDnv.ForeColor = System.Drawing.Color.White;
-            this.lblBienvenidoDnv.Location = new System.Drawing.Point(88, 57);
+            this.lblBienvenidoDnv.Location = new System.Drawing.Point(126, 56);
             this.lblBienvenidoDnv.Name = "lblBienvenidoDnv";
-            this.lblBienvenidoDnv.Size = new System.Drawing.Size(175, 23);
+            this.lblBienvenidoDnv.Size = new System.Drawing.Size(100, 23);
             this.lblBienvenidoDnv.TabIndex = 2;
-            this.lblBienvenidoDnv.Text = "¡Bienvenido de nuevo!";
+            this.lblBienvenidoDnv.Text = "¡Bienvenido!";
             // 
             // lblHola
             // 
@@ -85,6 +86,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel1.Controls.Add(this.lblCrearCuenta);
             this.guna2Panel1.Controls.Add(this.lblOlvidarContrasenia);
             this.guna2Panel1.Controls.Add(this.lblContraseña);
@@ -104,11 +106,11 @@
             // 
             this.lblCrearCuenta.BackColor = System.Drawing.Color.Transparent;
             this.lblCrearCuenta.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCrearCuenta.Location = new System.Drawing.Point(136, 282);
+            this.lblCrearCuenta.Location = new System.Drawing.Point(197, 282);
             this.lblCrearCuenta.Name = "lblCrearCuenta";
-            this.lblCrearCuenta.Size = new System.Drawing.Size(74, 17);
+            this.lblCrearCuenta.Size = new System.Drawing.Size(90, 17);
             this.lblCrearCuenta.TabIndex = 7;
-            this.lblCrearCuenta.Text = "Crear cuenta";
+            this.lblCrearCuenta.Text = "Crear una ahora";
             this.lblCrearCuenta.Click += new System.EventHandler(this.lblCrearCuenta_Click);
             // 
             // lblOlvidarContrasenia
@@ -214,6 +216,16 @@
             this.btnInicio_sesion.Text = "Inicio Sesión";
             this.btnInicio_sesion.Click += new System.EventHandler(this.btnInicio_sesion_Click);
             // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(43, 282);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(148, 17);
+            this.guna2HtmlLabel1.TabIndex = 9;
+            this.guna2HtmlLabel1.Text = "¿Aún no tienes una cuenta?";
+            // 
             // Inicio_Sesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,5 +259,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCrearCuenta;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblOlvidarContrasenia;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblContraseña;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

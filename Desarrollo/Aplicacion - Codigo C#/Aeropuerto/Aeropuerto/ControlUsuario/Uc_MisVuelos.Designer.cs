@@ -53,7 +53,7 @@
             this.flp_MisVuelos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp_MisVuelos.Location = new System.Drawing.Point(17, 52);
             this.flp_MisVuelos.Name = "flp_MisVuelos";
-            this.flp_MisVuelos.Size = new System.Drawing.Size(559, 582);
+            this.flp_MisVuelos.Size = new System.Drawing.Size(661, 582);
             this.flp_MisVuelos.TabIndex = 13;
             this.flp_MisVuelos.WrapContents = false;
             // 
@@ -72,15 +72,16 @@
             this.pnl_MisVuelos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnl_MisVuelos.Location = new System.Drawing.Point(3, 3);
             this.pnl_MisVuelos.Name = "pnl_MisVuelos";
-            this.pnl_MisVuelos.Size = new System.Drawing.Size(556, 91);
+            this.pnl_MisVuelos.Size = new System.Drawing.Size(658, 91);
             this.pnl_MisVuelos.TabIndex = 0;
             // 
             // lbFechaVuelo_misVuelos
             // 
+            this.lbFechaVuelo_misVuelos.AutoSize = false;
             this.lbFechaVuelo_misVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lbFechaVuelo_misVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lbFechaVuelo_misVuelos.ForeColor = System.Drawing.Color.Gray;
-            this.lbFechaVuelo_misVuelos.Location = new System.Drawing.Point(213, 15);
+            this.lbFechaVuelo_misVuelos.Location = new System.Drawing.Point(255, 14);
             this.lbFechaVuelo_misVuelos.Name = "lbFechaVuelo_misVuelos";
             this.lbFechaVuelo_misVuelos.Size = new System.Drawing.Size(104, 17);
             this.lbFechaVuelo_misVuelos.TabIndex = 13;
@@ -88,10 +89,11 @@
             // 
             // lblNumeroVuelo_MisVuelos
             // 
+            this.lblNumeroVuelo_MisVuelos.AutoSize = false;
             this.lblNumeroVuelo_MisVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lblNumeroVuelo_MisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lblNumeroVuelo_MisVuelos.ForeColor = System.Drawing.Color.Black;
-            this.lblNumeroVuelo_MisVuelos.Location = new System.Drawing.Point(89, 15);
+            this.lblNumeroVuelo_MisVuelos.Location = new System.Drawing.Point(131, 14);
             this.lblNumeroVuelo_MisVuelos.Name = "lblNumeroVuelo_MisVuelos";
             this.lblNumeroVuelo_MisVuelos.Size = new System.Drawing.Size(47, 17);
             this.lblNumeroVuelo_MisVuelos.TabIndex = 12;
@@ -99,10 +101,11 @@
             // 
             // lblAerolinea_MisVuelos
             // 
+            this.lblAerolinea_MisVuelos.AutoSize = false;
             this.lblAerolinea_MisVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lblAerolinea_MisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lblAerolinea_MisVuelos.ForeColor = System.Drawing.Color.Black;
-            this.lblAerolinea_MisVuelos.Location = new System.Drawing.Point(388, 15);
+            this.lblAerolinea_MisVuelos.Location = new System.Drawing.Point(430, 14);
             this.lblAerolinea_MisVuelos.Name = "lblAerolinea_MisVuelos";
             this.lblAerolinea_MisVuelos.Size = new System.Drawing.Size(76, 17);
             this.lblAerolinea_MisVuelos.TabIndex = 11;
@@ -113,7 +116,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Gray;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(250, 15);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(292, 14);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(3, 2);
             this.guna2HtmlLabel1.TabIndex = 10;
@@ -122,7 +125,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.Captura_de_pantalla_2025_10_27_163820;
-            this.pictureBox1.Location = new System.Drawing.Point(222, 39);
+            this.pictureBox1.Location = new System.Drawing.Point(264, 38);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(69, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,10 +134,11 @@
             // 
             // lbDestino_misVuelos
             // 
+            this.lbDestino_misVuelos.AutoSize = false;
             this.lbDestino_misVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lbDestino_misVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lbDestino_misVuelos.ForeColor = System.Drawing.Color.Gray;
-            this.lbDestino_misVuelos.Location = new System.Drawing.Point(388, 53);
+            this.lbDestino_misVuelos.Location = new System.Drawing.Point(430, 52);
             this.lbDestino_misVuelos.Name = "lbDestino_misVuelos";
             this.lbDestino_misVuelos.Size = new System.Drawing.Size(28, 17);
             this.lbDestino_misVuelos.TabIndex = 8;
@@ -142,10 +146,11 @@
             // 
             // lbOrigen_MisVuelos
             // 
+            this.lbOrigen_MisVuelos.AutoSize = false;
             this.lbOrigen_MisVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lbOrigen_MisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lbOrigen_MisVuelos.ForeColor = System.Drawing.Color.Gray;
-            this.lbOrigen_MisVuelos.Location = new System.Drawing.Point(89, 53);
+            this.lbOrigen_MisVuelos.Location = new System.Drawing.Point(131, 52);
             this.lbOrigen_MisVuelos.Name = "lbOrigen_MisVuelos";
             this.lbOrigen_MisVuelos.Size = new System.Drawing.Size(41, 17);
             this.lbOrigen_MisVuelos.TabIndex = 7;
@@ -156,7 +161,7 @@
             this.lbDestino_Avr_MisVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lbDestino_Avr_MisVuelos.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
             this.lbDestino_Avr_MisVuelos.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbDestino_Avr_MisVuelos.Location = new System.Drawing.Point(388, 24);
+            this.lbDestino_Avr_MisVuelos.Location = new System.Drawing.Point(430, 23);
             this.lbDestino_Avr_MisVuelos.Name = "lbDestino_Avr_MisVuelos";
             this.lbDestino_Avr_MisVuelos.Size = new System.Drawing.Size(42, 30);
             this.lbDestino_Avr_MisVuelos.TabIndex = 4;
@@ -167,7 +172,7 @@
             this.lbOrigen_Avr_MisVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lbOrigen_Avr_MisVuelos.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
             this.lbOrigen_Avr_MisVuelos.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbOrigen_Avr_MisVuelos.Location = new System.Drawing.Point(89, 24);
+            this.lbOrigen_Avr_MisVuelos.Location = new System.Drawing.Point(131, 23);
             this.lbOrigen_Avr_MisVuelos.Name = "lbOrigen_Avr_MisVuelos";
             this.lbOrigen_Avr_MisVuelos.Size = new System.Drawing.Size(51, 30);
             this.lbOrigen_Avr_MisVuelos.TabIndex = 3;
@@ -191,7 +196,7 @@
             this.Controls.Add(this.flp_MisVuelos);
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Name = "Uc_MisVuelos";
-            this.Size = new System.Drawing.Size(588, 652);
+            this.Size = new System.Drawing.Size(701, 646);
             this.flp_MisVuelos.ResumeLayout(false);
             this.pnl_MisVuelos.ResumeLayout(false);
             this.pnl_MisVuelos.PerformLayout();

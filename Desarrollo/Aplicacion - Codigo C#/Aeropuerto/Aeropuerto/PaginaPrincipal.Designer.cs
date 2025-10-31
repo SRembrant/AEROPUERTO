@@ -135,11 +135,10 @@
             this.tabControl_PaginaPrincipal.Controls.Add(this.tbpMiperfil);
             this.tabControl_PaginaPrincipal.Controls.Add(this.tbpBuscarVuelos);
             this.tabControl_PaginaPrincipal.ItemSize = new System.Drawing.Size(180, 40);
-            this.tabControl_PaginaPrincipal.Location = new System.Drawing.Point(16, 15);
-            this.tabControl_PaginaPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl_PaginaPrincipal.Location = new System.Drawing.Point(12, 12);
             this.tabControl_PaginaPrincipal.Name = "tabControl_PaginaPrincipal";
             this.tabControl_PaginaPrincipal.SelectedIndex = 0;
-            this.tabControl_PaginaPrincipal.Size = new System.Drawing.Size(1035, 812);
+            this.tabControl_PaginaPrincipal.Size = new System.Drawing.Size(895, 660);
             this.tabControl_PaginaPrincipal.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.tabControl_PaginaPrincipal.TabButtonHoverState.FillColor = System.Drawing.Color.RoyalBlue;
             this.tabControl_PaginaPrincipal.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,10 +164,9 @@
             // 
             this.tbpInicio.Controls.Add(this.guna2Panel1);
             this.tbpInicio.Location = new System.Drawing.Point(184, 4);
-            this.tbpInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbpInicio.Name = "tbpInicio";
-            this.tbpInicio.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbpInicio.Size = new System.Drawing.Size(847, 804);
+            this.tbpInicio.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpInicio.Size = new System.Drawing.Size(588, 652);
             this.tbpInicio.TabIndex = 0;
             this.tbpInicio.Text = "Inicio";
             this.tbpInicio.UseVisualStyleBackColor = true;
@@ -180,10 +178,9 @@
             this.guna2Panel1.Controls.Add(this.lblHola);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(4, 4);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(839, 796);
+            this.guna2Panel1.Size = new System.Drawing.Size(582, 646);
             this.guna2Panel1.TabIndex = 0;
             // 
             // flowlp_vuelos_menuprincipal
@@ -191,10 +188,9 @@
             this.flowlp_vuelos_menuprincipal.AutoScroll = true;
             this.flowlp_vuelos_menuprincipal.Controls.Add(this.guna2Panel2);
             this.flowlp_vuelos_menuprincipal.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowlp_vuelos_menuprincipal.Location = new System.Drawing.Point(23, 92);
-            this.flowlp_vuelos_menuprincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowlp_vuelos_menuprincipal.Location = new System.Drawing.Point(17, 75);
             this.flowlp_vuelos_menuprincipal.Name = "flowlp_vuelos_menuprincipal";
-            this.flowlp_vuelos_menuprincipal.Size = new System.Drawing.Size(728, 674);
+            this.flowlp_vuelos_menuprincipal.Size = new System.Drawing.Size(546, 548);
             this.flowlp_vuelos_menuprincipal.TabIndex = 4;
             this.flowlp_vuelos_menuprincipal.WrapContents = false;
             // 
@@ -208,19 +204,17 @@
             this.guna2Panel2.Controls.Add(this.lblDestino_Abrev);
             this.guna2Panel2.Controls.Add(this.lblOrigen_Abrev);
             this.guna2Panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Panel2.Location = new System.Drawing.Point(4, 4);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(724, 171);
+            this.guna2Panel2.Size = new System.Drawing.Size(543, 139);
             this.guna2Panel2.TabIndex = 0;
             // 
             // pictureBoxFlechas2
             // 
             this.pictureBoxFlechas2.Image = global::Aeropuerto.Properties.Resources.flecha_2;
-            this.pictureBoxFlechas2.Location = new System.Drawing.Point(271, 39);
-            this.pictureBoxFlechas2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxFlechas2.Location = new System.Drawing.Point(203, 32);
             this.pictureBoxFlechas2.Name = "pictureBoxFlechas2";
-            this.pictureBoxFlechas2.Size = new System.Drawing.Size(159, 76);
+            this.pictureBoxFlechas2.Size = new System.Drawing.Size(119, 62);
             this.pictureBoxFlechas2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlechas2.TabIndex = 9;
             this.pictureBoxFlechas2.TabStop = false;
@@ -230,10 +224,9 @@
             this.lblDestino.BackColor = System.Drawing.Color.Transparent;
             this.lblDestino.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lblDestino.ForeColor = System.Drawing.Color.Gray;
-            this.lblDestino.Location = new System.Drawing.Point(564, 112);
-            this.lblDestino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblDestino.Location = new System.Drawing.Point(423, 91);
             this.lblDestino.Name = "lblDestino";
-            this.lblDestino.Size = new System.Drawing.Size(36, 22);
+            this.lblDestino.Size = new System.Drawing.Size(28, 17);
             this.lblDestino.TabIndex = 8;
             this.lblDestino.Text = "Paris";
             // 
@@ -242,10 +235,9 @@
             this.lblOrigen.BackColor = System.Drawing.Color.Transparent;
             this.lblOrigen.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lblOrigen.ForeColor = System.Drawing.Color.Gray;
-            this.lblOrigen.Location = new System.Drawing.Point(52, 112);
-            this.lblOrigen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblOrigen.Location = new System.Drawing.Point(39, 91);
             this.lblOrigen.Name = "lblOrigen";
-            this.lblOrigen.Size = new System.Drawing.Size(53, 22);
+            this.lblOrigen.Size = new System.Drawing.Size(41, 17);
             this.lblOrigen.TabIndex = 7;
             this.lblOrigen.Text = "Madrid";
             // 
@@ -254,10 +246,9 @@
             this.mns_Hasta.BackColor = System.Drawing.Color.Transparent;
             this.mns_Hasta.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.mns_Hasta.ForeColor = System.Drawing.Color.Gray;
-            this.mns_Hasta.Location = new System.Drawing.Point(564, 39);
-            this.mns_Hasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mns_Hasta.Location = new System.Drawing.Point(423, 32);
             this.mns_Hasta.Name = "mns_Hasta";
-            this.mns_Hasta.Size = new System.Drawing.Size(41, 22);
+            this.mns_Hasta.Size = new System.Drawing.Size(33, 17);
             this.mns_Hasta.TabIndex = 6;
             this.mns_Hasta.Text = "Hasta";
             // 
@@ -266,10 +257,9 @@
             this.mnsDesde.BackColor = System.Drawing.Color.Transparent;
             this.mnsDesde.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.mnsDesde.ForeColor = System.Drawing.Color.Gray;
-            this.mnsDesde.Location = new System.Drawing.Point(52, 39);
-            this.mnsDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mnsDesde.Location = new System.Drawing.Point(39, 32);
             this.mnsDesde.Name = "mnsDesde";
-            this.mnsDesde.Size = new System.Drawing.Size(45, 22);
+            this.mnsDesde.Size = new System.Drawing.Size(36, 17);
             this.mnsDesde.TabIndex = 5;
             this.mnsDesde.Text = "Desde";
             // 
@@ -278,10 +268,9 @@
             this.lblDestino_Abrev.BackColor = System.Drawing.Color.Transparent;
             this.lblDestino_Abrev.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblDestino_Abrev.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblDestino_Abrev.Location = new System.Drawing.Point(564, 57);
-            this.lblDestino_Abrev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblDestino_Abrev.Location = new System.Drawing.Point(423, 46);
             this.lblDestino_Abrev.Name = "lblDestino_Abrev";
-            this.lblDestino_Abrev.Size = new System.Drawing.Size(70, 48);
+            this.lblDestino_Abrev.Size = new System.Drawing.Size(57, 39);
             this.lblDestino_Abrev.TabIndex = 4;
             this.lblDestino_Abrev.Text = "PAR";
             // 
@@ -290,10 +279,9 @@
             this.lblOrigen_Abrev.BackColor = System.Drawing.Color.Transparent;
             this.lblOrigen_Abrev.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblOrigen_Abrev.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblOrigen_Abrev.Location = new System.Drawing.Point(52, 57);
-            this.lblOrigen_Abrev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblOrigen_Abrev.Location = new System.Drawing.Point(39, 46);
             this.lblOrigen_Abrev.Name = "lblOrigen_Abrev";
-            this.lblOrigen_Abrev.Size = new System.Drawing.Size(85, 48);
+            this.lblOrigen_Abrev.Size = new System.Drawing.Size(68, 39);
             this.lblOrigen_Abrev.TabIndex = 3;
             this.lblOrigen_Abrev.Text = "MAD";
             // 
@@ -302,10 +290,9 @@
             this.lblCreaUsuarioGratuita_mns.BackColor = System.Drawing.Color.Transparent;
             this.lblCreaUsuarioGratuita_mns.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
             this.lblCreaUsuarioGratuita_mns.ForeColor = System.Drawing.Color.Black;
-            this.lblCreaUsuarioGratuita_mns.Location = new System.Drawing.Point(23, 59);
-            this.lblCreaUsuarioGratuita_mns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblCreaUsuarioGratuita_mns.Location = new System.Drawing.Point(17, 48);
             this.lblCreaUsuarioGratuita_mns.Name = "lblCreaUsuarioGratuita_mns";
-            this.lblCreaUsuarioGratuita_mns.Size = new System.Drawing.Size(279, 25);
+            this.lblCreaUsuarioGratuita_mns.Size = new System.Drawing.Size(229, 21);
             this.lblCreaUsuarioGratuita_mns.TabIndex = 3;
             this.lblCreaUsuarioGratuita_mns.Text = "Descubre miles de destinos para ti :)";
             // 
@@ -314,10 +301,9 @@
             this.lblHola.BackColor = System.Drawing.Color.Transparent;
             this.lblHola.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
             this.lblHola.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblHola.Location = new System.Drawing.Point(23, 4);
-            this.lblHola.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblHola.Location = new System.Drawing.Point(17, 3);
             this.lblHola.Name = "lblHola";
-            this.lblHola.Size = new System.Drawing.Size(73, 37);
+            this.lblHola.Size = new System.Drawing.Size(61, 30);
             this.lblHola.TabIndex = 2;
             this.lblHola.Text = "¡Hola!";
             // 
@@ -325,10 +311,9 @@
             // 
             this.tbpMisVuelos.Controls.Add(this.pnlMisVuelos);
             this.tbpMisVuelos.Location = new System.Drawing.Point(184, 4);
-            this.tbpMisVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbpMisVuelos.Name = "tbpMisVuelos";
-            this.tbpMisVuelos.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbpMisVuelos.Size = new System.Drawing.Size(847, 804);
+            this.tbpMisVuelos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpMisVuelos.Size = new System.Drawing.Size(707, 652);
             this.tbpMisVuelos.TabIndex = 1;
             this.tbpMisVuelos.Text = "Mis vuelos";
             this.tbpMisVuelos.UseVisualStyleBackColor = true;
@@ -339,10 +324,9 @@
             this.pnlMisVuelos.Controls.Add(this.flp_MisVuelos);
             this.pnlMisVuelos.Controls.Add(this.guna2HtmlLabel7);
             this.pnlMisVuelos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMisVuelos.Location = new System.Drawing.Point(4, 4);
-            this.pnlMisVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMisVuelos.Location = new System.Drawing.Point(3, 3);
             this.pnlMisVuelos.Name = "pnlMisVuelos";
-            this.pnlMisVuelos.Size = new System.Drawing.Size(839, 796);
+            this.pnlMisVuelos.Size = new System.Drawing.Size(701, 646);
             this.pnlMisVuelos.TabIndex = 1;
             // 
             // lb_NoComprados
@@ -350,10 +334,9 @@
             this.lb_NoComprados.BackColor = System.Drawing.Color.Transparent;
             this.lb_NoComprados.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_NoComprados.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lb_NoComprados.Location = new System.Drawing.Point(219, 18);
-            this.lb_NoComprados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lb_NoComprados.Location = new System.Drawing.Point(164, 15);
             this.lb_NoComprados.Name = "lb_NoComprados";
-            this.lb_NoComprados.Size = new System.Drawing.Size(208, 25);
+            this.lb_NoComprados.Size = new System.Drawing.Size(178, 21);
             this.lb_NoComprados.TabIndex = 13;
             this.lb_NoComprados.Text = "No hay vuelos comprados";
             // 
@@ -363,10 +346,9 @@
             this.flp_MisVuelos.BackColor = System.Drawing.Color.White;
             this.flp_MisVuelos.Controls.Add(this.pnl_MisVuelos);
             this.flp_MisVuelos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flp_MisVuelos.Location = new System.Drawing.Point(61, 65);
-            this.flp_MisVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flp_MisVuelos.Location = new System.Drawing.Point(46, 53);
             this.flp_MisVuelos.Name = "flp_MisVuelos";
-            this.flp_MisVuelos.Size = new System.Drawing.Size(728, 716);
+            this.flp_MisVuelos.Size = new System.Drawing.Size(642, 582);
             this.flp_MisVuelos.TabIndex = 15;
             this.flp_MisVuelos.WrapContents = false;
             // 
@@ -383,10 +365,9 @@
             this.pnl_MisVuelos.Controls.Add(this.lbDestino_Avr_MisVuelos);
             this.pnl_MisVuelos.Controls.Add(this.lbOrigen_Avr_MisVuelos);
             this.pnl_MisVuelos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnl_MisVuelos.Location = new System.Drawing.Point(4, 4);
-            this.pnl_MisVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_MisVuelos.Location = new System.Drawing.Point(3, 3);
             this.pnl_MisVuelos.Name = "pnl_MisVuelos";
-            this.pnl_MisVuelos.Size = new System.Drawing.Size(724, 112);
+            this.pnl_MisVuelos.Size = new System.Drawing.Size(639, 91);
             this.pnl_MisVuelos.TabIndex = 0;
             // 
             // lb_FechaVuelo_misVuelos
@@ -394,10 +375,9 @@
             this.lb_FechaVuelo_misVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lb_FechaVuelo_misVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lb_FechaVuelo_misVuelos.ForeColor = System.Drawing.Color.Gray;
-            this.lb_FechaVuelo_misVuelos.Location = new System.Drawing.Point(287, 18);
-            this.lb_FechaVuelo_misVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lb_FechaVuelo_misVuelos.Location = new System.Drawing.Point(241, 14);
             this.lb_FechaVuelo_misVuelos.Name = "lb_FechaVuelo_misVuelos";
-            this.lb_FechaVuelo_misVuelos.Size = new System.Drawing.Size(127, 22);
+            this.lb_FechaVuelo_misVuelos.Size = new System.Drawing.Size(104, 17);
             this.lb_FechaVuelo_misVuelos.TabIndex = 13;
             this.lb_FechaVuelo_misVuelos.Text = "7 DICIEMBRE 2025";
             // 
@@ -406,10 +386,9 @@
             this.lblNumeroVuelo_MisVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lblNumeroVuelo_MisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lblNumeroVuelo_MisVuelos.ForeColor = System.Drawing.Color.Black;
-            this.lblNumeroVuelo_MisVuelos.Location = new System.Drawing.Point(119, 18);
-            this.lblNumeroVuelo_MisVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblNumeroVuelo_MisVuelos.Location = new System.Drawing.Point(115, 14);
             this.lblNumeroVuelo_MisVuelos.Name = "lblNumeroVuelo_MisVuelos";
-            this.lblNumeroVuelo_MisVuelos.Size = new System.Drawing.Size(55, 22);
+            this.lblNumeroVuelo_MisVuelos.Size = new System.Drawing.Size(47, 17);
             this.lblNumeroVuelo_MisVuelos.TabIndex = 12;
             this.lblNumeroVuelo_MisVuelos.Text = "M186T5";
             // 
@@ -418,10 +397,9 @@
             this.lblAerolinea_MisVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lblAerolinea_MisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lblAerolinea_MisVuelos.ForeColor = System.Drawing.Color.Black;
-            this.lblAerolinea_MisVuelos.Location = new System.Drawing.Point(517, 18);
-            this.lblAerolinea_MisVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblAerolinea_MisVuelos.Location = new System.Drawing.Point(414, 14);
             this.lblAerolinea_MisVuelos.Name = "lblAerolinea_MisVuelos";
-            this.lblAerolinea_MisVuelos.Size = new System.Drawing.Size(98, 22);
+            this.lblAerolinea_MisVuelos.Size = new System.Drawing.Size(76, 17);
             this.lblAerolinea_MisVuelos.TabIndex = 11;
             this.lblAerolinea_MisVuelos.Text = "Qatar Airways";
             // 
@@ -430,8 +408,7 @@
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Gray;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(333, 18);
-            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(276, 14);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(3, 2);
             this.guna2HtmlLabel5.TabIndex = 10;
@@ -440,10 +417,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Aeropuerto.Properties.Resources.Captura_de_pantalla_2025_10_27_163820;
-            this.pictureBox4.Location = new System.Drawing.Point(299, 48);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(250, 38);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(92, 39);
+            this.pictureBox4.Size = new System.Drawing.Size(69, 32);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
@@ -453,10 +429,9 @@
             this.lbDestino_misVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lbDestino_misVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lbDestino_misVuelos.ForeColor = System.Drawing.Color.Gray;
-            this.lbDestino_misVuelos.Location = new System.Drawing.Point(517, 65);
-            this.lbDestino_misVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbDestino_misVuelos.Location = new System.Drawing.Point(414, 52);
             this.lbDestino_misVuelos.Name = "lbDestino_misVuelos";
-            this.lbDestino_misVuelos.Size = new System.Drawing.Size(36, 22);
+            this.lbDestino_misVuelos.Size = new System.Drawing.Size(28, 17);
             this.lbDestino_misVuelos.TabIndex = 8;
             this.lbDestino_misVuelos.Text = "Paris";
             // 
@@ -465,10 +440,9 @@
             this.lbOrigen_MisVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lbOrigen_MisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lbOrigen_MisVuelos.ForeColor = System.Drawing.Color.Gray;
-            this.lbOrigen_MisVuelos.Location = new System.Drawing.Point(119, 65);
-            this.lbOrigen_MisVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbOrigen_MisVuelos.Location = new System.Drawing.Point(115, 52);
             this.lbOrigen_MisVuelos.Name = "lbOrigen_MisVuelos";
-            this.lbOrigen_MisVuelos.Size = new System.Drawing.Size(53, 22);
+            this.lbOrigen_MisVuelos.Size = new System.Drawing.Size(41, 17);
             this.lbOrigen_MisVuelos.TabIndex = 7;
             this.lbOrigen_MisVuelos.Text = "Madrid";
             // 
@@ -477,10 +451,9 @@
             this.lbDestino_Avr_MisVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lbDestino_Avr_MisVuelos.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
             this.lbDestino_Avr_MisVuelos.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbDestino_Avr_MisVuelos.Location = new System.Drawing.Point(517, 30);
-            this.lbDestino_Avr_MisVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbDestino_Avr_MisVuelos.Location = new System.Drawing.Point(414, 23);
             this.lbDestino_Avr_MisVuelos.Name = "lbDestino_Avr_MisVuelos";
-            this.lbDestino_Avr_MisVuelos.Size = new System.Drawing.Size(52, 37);
+            this.lbDestino_Avr_MisVuelos.Size = new System.Drawing.Size(42, 30);
             this.lbDestino_Avr_MisVuelos.TabIndex = 4;
             this.lbDestino_Avr_MisVuelos.Text = "PAR";
             // 
@@ -489,10 +462,9 @@
             this.lbOrigen_Avr_MisVuelos.BackColor = System.Drawing.Color.Transparent;
             this.lbOrigen_Avr_MisVuelos.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
             this.lbOrigen_Avr_MisVuelos.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbOrigen_Avr_MisVuelos.Location = new System.Drawing.Point(119, 30);
-            this.lbOrigen_Avr_MisVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbOrigen_Avr_MisVuelos.Location = new System.Drawing.Point(115, 23);
             this.lbOrigen_Avr_MisVuelos.Name = "lbOrigen_Avr_MisVuelos";
-            this.lbOrigen_Avr_MisVuelos.Size = new System.Drawing.Size(63, 37);
+            this.lbOrigen_Avr_MisVuelos.Size = new System.Drawing.Size(51, 30);
             this.lbOrigen_Avr_MisVuelos.TabIndex = 3;
             this.lbOrigen_Avr_MisVuelos.Text = "MAD";
             // 
@@ -501,10 +473,9 @@
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(65, 17);
-            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(49, 14);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(99, 27);
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(79, 22);
             this.guna2HtmlLabel7.TabIndex = 14;
             this.guna2HtmlLabel7.Text = "Mis Vuelos";
             // 
@@ -512,9 +483,8 @@
             // 
             this.tbpMiperfil.Controls.Add(this.pnlMiPerfil);
             this.tbpMiperfil.Location = new System.Drawing.Point(184, 4);
-            this.tbpMiperfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbpMiperfil.Name = "tbpMiperfil";
-            this.tbpMiperfil.Size = new System.Drawing.Size(847, 804);
+            this.tbpMiperfil.Size = new System.Drawing.Size(707, 652);
             this.tbpMiperfil.TabIndex = 2;
             this.tbpMiperfil.Text = "Mi perfil";
             this.tbpMiperfil.UseVisualStyleBackColor = true;
@@ -553,9 +523,8 @@
             this.pnlMiPerfil.Controls.Add(this.pnlContenedorPerfil);
             this.pnlMiPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMiPerfil.Location = new System.Drawing.Point(0, 0);
-            this.pnlMiPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMiPerfil.Name = "pnlMiPerfil";
-            this.pnlMiPerfil.Size = new System.Drawing.Size(847, 804);
+            this.pnlMiPerfil.Size = new System.Drawing.Size(707, 652);
             this.pnlMiPerfil.TabIndex = 0;
             // 
             // txtApellido_PgPerfil
@@ -571,22 +540,22 @@
             this.txtApellido_PgPerfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido_PgPerfil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtApellido_PgPerfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtApellido_PgPerfil.Location = new System.Drawing.Point(263, 108);
-            this.txtApellido_PgPerfil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtApellido_PgPerfil.Location = new System.Drawing.Point(197, 88);
+            this.txtApellido_PgPerfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtApellido_PgPerfil.Name = "txtApellido_PgPerfil";
             this.txtApellido_PgPerfil.PlaceholderText = "";
             this.txtApellido_PgPerfil.SelectedText = "";
-            this.txtApellido_PgPerfil.Size = new System.Drawing.Size(220, 30);
+            this.txtApellido_PgPerfil.Size = new System.Drawing.Size(165, 24);
             this.txtApellido_PgPerfil.TabIndex = 65;
             // 
             // guna2HtmlLabel6
             // 
+            this.guna2HtmlLabel6.AutoSize = false;
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(263, 81);
-            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(197, 66);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(60, 22);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(47, 17);
             this.guna2HtmlLabel6.TabIndex = 64;
             this.guna2HtmlLabel6.Text = "Apellido";
             // 
@@ -601,10 +570,9 @@
             this.btnCerrarSesion_Modificar1.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnCerrarSesion_Modificar1.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Bold);
             this.btnCerrarSesion_Modificar1.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion_Modificar1.Location = new System.Drawing.Point(305, 729);
-            this.btnCerrarSesion_Modificar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrarSesion_Modificar1.Location = new System.Drawing.Point(229, 592);
             this.btnCerrarSesion_Modificar1.Name = "btnCerrarSesion_Modificar1";
-            this.btnCerrarSesion_Modificar1.Size = new System.Drawing.Size(157, 53);
+            this.btnCerrarSesion_Modificar1.Size = new System.Drawing.Size(118, 43);
             this.btnCerrarSesion_Modificar1.TabIndex = 63;
             this.btnCerrarSesion_Modificar1.Text = "Cerrar Sesión";
             this.btnCerrarSesion_Modificar1.Click += new System.EventHandler(this.btnCerrarSesion_Modificar1_Click);
@@ -620,10 +588,9 @@
             this.btnModificarDatos_Pgperfil.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnModificarDatos_Pgperfil.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Bold);
             this.btnModificarDatos_Pgperfil.ForeColor = System.Drawing.Color.White;
-            this.btnModificarDatos_Pgperfil.Location = new System.Drawing.Point(492, 729);
-            this.btnModificarDatos_Pgperfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificarDatos_Pgperfil.Location = new System.Drawing.Point(369, 592);
             this.btnModificarDatos_Pgperfil.Name = "btnModificarDatos_Pgperfil";
-            this.btnModificarDatos_Pgperfil.Size = new System.Drawing.Size(268, 53);
+            this.btnModificarDatos_Pgperfil.Size = new System.Drawing.Size(201, 43);
             this.btnModificarDatos_Pgperfil.TabIndex = 62;
             this.btnModificarDatos_Pgperfil.Text = "Modificar datos";
             this.btnModificarDatos_Pgperfil.Click += new System.EventHandler(this.btnModificarDatos_Pgperfil_Click);
@@ -641,12 +608,12 @@
             this.txtNacionalidad_Pgperfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNacionalidad_Pgperfil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNacionalidad_Pgperfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNacionalidad_Pgperfil.Location = new System.Drawing.Point(20, 702);
-            this.txtNacionalidad_Pgperfil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNacionalidad_Pgperfil.Location = new System.Drawing.Point(15, 570);
+            this.txtNacionalidad_Pgperfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNacionalidad_Pgperfil.Name = "txtNacionalidad_Pgperfil";
             this.txtNacionalidad_Pgperfil.PlaceholderText = "";
             this.txtNacionalidad_Pgperfil.SelectedText = "";
-            this.txtNacionalidad_Pgperfil.Size = new System.Drawing.Size(220, 30);
+            this.txtNacionalidad_Pgperfil.Size = new System.Drawing.Size(165, 24);
             this.txtNacionalidad_Pgperfil.TabIndex = 61;
             // 
             // txtDireccion_Pgperfil
@@ -662,12 +629,12 @@
             this.txtDireccion_Pgperfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDireccion_Pgperfil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDireccion_Pgperfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDireccion_Pgperfil.Location = new System.Drawing.Point(20, 609);
-            this.txtDireccion_Pgperfil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDireccion_Pgperfil.Location = new System.Drawing.Point(15, 495);
+            this.txtDireccion_Pgperfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDireccion_Pgperfil.Name = "txtDireccion_Pgperfil";
             this.txtDireccion_Pgperfil.PlaceholderText = "";
             this.txtDireccion_Pgperfil.SelectedText = "";
-            this.txtDireccion_Pgperfil.Size = new System.Drawing.Size(192, 30);
+            this.txtDireccion_Pgperfil.Size = new System.Drawing.Size(144, 24);
             this.txtDireccion_Pgperfil.TabIndex = 60;
             // 
             // txtContrasenia_Pgperfil
@@ -683,12 +650,12 @@
             this.txtContrasenia_Pgperfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtContrasenia_Pgperfil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtContrasenia_Pgperfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContrasenia_Pgperfil.Location = new System.Drawing.Point(20, 556);
-            this.txtContrasenia_Pgperfil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtContrasenia_Pgperfil.Location = new System.Drawing.Point(15, 452);
+            this.txtContrasenia_Pgperfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContrasenia_Pgperfil.Name = "txtContrasenia_Pgperfil";
             this.txtContrasenia_Pgperfil.PlaceholderText = "";
             this.txtContrasenia_Pgperfil.SelectedText = "";
-            this.txtContrasenia_Pgperfil.Size = new System.Drawing.Size(192, 30);
+            this.txtContrasenia_Pgperfil.Size = new System.Drawing.Size(144, 24);
             this.txtContrasenia_Pgperfil.TabIndex = 59;
             // 
             // dtmFechaNacimiento_Pgperfil
@@ -699,12 +666,11 @@
             this.dtmFechaNacimiento_Pgperfil.FillColor = System.Drawing.Color.White;
             this.dtmFechaNacimiento_Pgperfil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtmFechaNacimiento_Pgperfil.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtmFechaNacimiento_Pgperfil.Location = new System.Drawing.Point(20, 437);
-            this.dtmFechaNacimiento_Pgperfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtmFechaNacimiento_Pgperfil.Location = new System.Drawing.Point(15, 355);
             this.dtmFechaNacimiento_Pgperfil.MaxDate = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             this.dtmFechaNacimiento_Pgperfil.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtmFechaNacimiento_Pgperfil.Name = "dtmFechaNacimiento_Pgperfil";
-            this.dtmFechaNacimiento_Pgperfil.Size = new System.Drawing.Size(403, 28);
+            this.dtmFechaNacimiento_Pgperfil.Size = new System.Drawing.Size(302, 23);
             this.dtmFechaNacimiento_Pgperfil.TabIndex = 49;
             this.dtmFechaNacimiento_Pgperfil.Value = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             // 
@@ -712,10 +678,9 @@
             // 
             this.lbl_Nacionalidad.AutoSize = true;
             this.lbl_Nacionalidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Nacionalidad.Location = new System.Drawing.Point(16, 682);
-            this.lbl_Nacionalidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Nacionalidad.Location = new System.Drawing.Point(12, 554);
             this.lbl_Nacionalidad.Name = "lbl_Nacionalidad";
-            this.lbl_Nacionalidad.Size = new System.Drawing.Size(98, 20);
+            this.lbl_Nacionalidad.Size = new System.Drawing.Size(77, 15);
             this.lbl_Nacionalidad.TabIndex = 58;
             this.lbl_Nacionalidad.Text = "Nacionalidad";
             // 
@@ -732,23 +697,21 @@
             this.txtDetalles_Pgperfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDetalles_Pgperfil.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtDetalles_Pgperfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDetalles_Pgperfil.Location = new System.Drawing.Point(233, 609);
-            this.txtDetalles_Pgperfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDetalles_Pgperfil.Location = new System.Drawing.Point(175, 495);
             this.txtDetalles_Pgperfil.Multiline = true;
             this.txtDetalles_Pgperfil.Name = "txtDetalles_Pgperfil";
             this.txtDetalles_Pgperfil.PlaceholderText = "";
             this.txtDetalles_Pgperfil.SelectedText = "";
-            this.txtDetalles_Pgperfil.Size = new System.Drawing.Size(249, 65);
+            this.txtDetalles_Pgperfil.Size = new System.Drawing.Size(187, 53);
             this.txtDetalles_Pgperfil.TabIndex = 57;
             // 
             // lblDetalles_mns
             // 
             this.lblDetalles_mns.AutoSize = true;
             this.lblDetalles_mns.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalles_mns.Location = new System.Drawing.Point(229, 590);
-            this.lblDetalles_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDetalles_mns.Location = new System.Drawing.Point(172, 479);
             this.lblDetalles_mns.Name = "lblDetalles_mns";
-            this.lblDetalles_mns.Size = new System.Drawing.Size(63, 20);
+            this.lblDetalles_mns.Size = new System.Drawing.Size(48, 15);
             this.lblDetalles_mns.TabIndex = 56;
             this.lblDetalles_mns.Text = "Detalles";
             // 
@@ -756,10 +719,9 @@
             // 
             this.lblDireccion_mns.AutoSize = true;
             this.lblDireccion_mns.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion_mns.Location = new System.Drawing.Point(16, 590);
-            this.lblDireccion_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDireccion_mns.Location = new System.Drawing.Point(12, 479);
             this.lblDireccion_mns.Name = "lblDireccion_mns";
-            this.lblDireccion_mns.Size = new System.Drawing.Size(72, 20);
+            this.lblDireccion_mns.Size = new System.Drawing.Size(57, 15);
             this.lblDireccion_mns.TabIndex = 55;
             this.lblDireccion_mns.Text = "Dirección";
             // 
@@ -776,22 +738,21 @@
             this.txtNumeroTelefonico_Pgperfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNumeroTelefonico_Pgperfil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNumeroTelefonico_Pgperfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNumeroTelefonico_Pgperfil.Location = new System.Drawing.Point(20, 503);
-            this.txtNumeroTelefonico_Pgperfil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNumeroTelefonico_Pgperfil.Location = new System.Drawing.Point(15, 409);
+            this.txtNumeroTelefonico_Pgperfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumeroTelefonico_Pgperfil.Name = "txtNumeroTelefonico_Pgperfil";
             this.txtNumeroTelefonico_Pgperfil.PlaceholderText = "";
             this.txtNumeroTelefonico_Pgperfil.SelectedText = "";
-            this.txtNumeroTelefonico_Pgperfil.Size = new System.Drawing.Size(317, 30);
+            this.txtNumeroTelefonico_Pgperfil.Size = new System.Drawing.Size(238, 24);
             this.txtNumeroTelefonico_Pgperfil.TabIndex = 54;
             // 
             // lblContrasenia_mns
             // 
             this.lblContrasenia_mns.AutoSize = true;
             this.lblContrasenia_mns.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContrasenia_mns.Location = new System.Drawing.Point(16, 537);
-            this.lblContrasenia_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContrasenia_mns.Location = new System.Drawing.Point(12, 436);
             this.lblContrasenia_mns.Name = "lblContrasenia_mns";
-            this.lblContrasenia_mns.Size = new System.Drawing.Size(83, 20);
+            this.lblContrasenia_mns.Size = new System.Drawing.Size(67, 15);
             this.lblContrasenia_mns.TabIndex = 53;
             this.lblContrasenia_mns.Text = "Contraseña";
             // 
@@ -799,10 +760,9 @@
             // 
             this.lblNumeroTelefono_mns.AutoSize = true;
             this.lblNumeroTelefono_mns.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroTelefono_mns.Location = new System.Drawing.Point(16, 484);
-            this.lblNumeroTelefono_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNumeroTelefono_mns.Location = new System.Drawing.Point(12, 393);
             this.lblNumeroTelefono_mns.Name = "lblNumeroTelefono_mns";
-            this.lblNumeroTelefono_mns.Size = new System.Drawing.Size(144, 20);
+            this.lblNumeroTelefono_mns.Size = new System.Drawing.Size(114, 15);
             this.lblNumeroTelefono_mns.TabIndex = 52;
             this.lblNumeroTelefono_mns.Text = "Numero de teléfono";
             // 
@@ -810,10 +770,9 @@
             // 
             this.lblFechaNacimiento_mns.AutoSize = true;
             this.lblFechaNacimiento_mns.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaNacimiento_mns.Location = new System.Drawing.Point(16, 415);
-            this.lblFechaNacimiento_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaNacimiento_mns.Location = new System.Drawing.Point(12, 337);
             this.lblFechaNacimiento_mns.Name = "lblFechaNacimiento_mns";
-            this.lblFechaNacimiento_mns.Size = new System.Drawing.Size(146, 20);
+            this.lblFechaNacimiento_mns.Size = new System.Drawing.Size(117, 15);
             this.lblFechaNacimiento_mns.TabIndex = 51;
             this.lblFechaNacimiento_mns.Text = "Fecha de nacimiento";
             // 
@@ -821,10 +780,9 @@
             // 
             this.lblSeguridadDeLaCuenta_mns.BackColor = System.Drawing.Color.Transparent;
             this.lblSeguridadDeLaCuenta_mns.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblSeguridadDeLaCuenta_mns.Location = new System.Drawing.Point(20, 379);
-            this.lblSeguridadDeLaCuenta_mns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblSeguridadDeLaCuenta_mns.Location = new System.Drawing.Point(15, 308);
             this.lblSeguridadDeLaCuenta_mns.Name = "lblSeguridadDeLaCuenta_mns";
-            this.lblSeguridadDeLaCuenta_mns.Size = new System.Drawing.Size(188, 25);
+            this.lblSeguridadDeLaCuenta_mns.Size = new System.Drawing.Size(144, 19);
             this.lblSeguridadDeLaCuenta_mns.TabIndex = 50;
             this.lblSeguridadDeLaCuenta_mns.Text = "Seguridad de la cuenta";
             // 
@@ -841,22 +799,21 @@
             this.txtGenero_Pgperfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGenero_Pgperfil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtGenero_Pgperfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGenero_Pgperfil.Location = new System.Drawing.Point(20, 270);
-            this.txtGenero_Pgperfil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGenero_Pgperfil.Location = new System.Drawing.Point(15, 219);
+            this.txtGenero_Pgperfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGenero_Pgperfil.Name = "txtGenero_Pgperfil";
             this.txtGenero_Pgperfil.PlaceholderText = "";
             this.txtGenero_Pgperfil.SelectedText = "";
-            this.txtGenero_Pgperfil.Size = new System.Drawing.Size(220, 30);
+            this.txtGenero_Pgperfil.Size = new System.Drawing.Size(165, 24);
             this.txtGenero_Pgperfil.TabIndex = 46;
             // 
             // lblGenero_mns
             // 
             this.lblGenero_mns.AutoSize = true;
             this.lblGenero_mns.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenero_mns.Location = new System.Drawing.Point(16, 250);
-            this.lblGenero_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGenero_mns.Location = new System.Drawing.Point(12, 203);
             this.lblGenero_mns.Name = "lblGenero_mns";
-            this.lblGenero_mns.Size = new System.Drawing.Size(57, 20);
+            this.lblGenero_mns.Size = new System.Drawing.Size(45, 15);
             this.lblGenero_mns.TabIndex = 45;
             this.lblGenero_mns.Text = "Genero";
             // 
@@ -873,22 +830,21 @@
             this.txtNumIdentificacion_Pgperfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNumIdentificacion_Pgperfil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNumIdentificacion_Pgperfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNumIdentificacion_Pgperfil.Location = new System.Drawing.Point(20, 327);
-            this.txtNumIdentificacion_Pgperfil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNumIdentificacion_Pgperfil.Location = new System.Drawing.Point(15, 266);
+            this.txtNumIdentificacion_Pgperfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumIdentificacion_Pgperfil.Name = "txtNumIdentificacion_Pgperfil";
             this.txtNumIdentificacion_Pgperfil.PlaceholderText = "";
             this.txtNumIdentificacion_Pgperfil.SelectedText = "";
-            this.txtNumIdentificacion_Pgperfil.Size = new System.Drawing.Size(220, 30);
+            this.txtNumIdentificacion_Pgperfil.Size = new System.Drawing.Size(165, 24);
             this.txtNumIdentificacion_Pgperfil.TabIndex = 44;
             // 
             // lblNumIdentificacion_mns
             // 
             this.lblNumIdentificacion_mns.AutoSize = true;
             this.lblNumIdentificacion_mns.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumIdentificacion_mns.Location = new System.Drawing.Point(16, 303);
-            this.lblNumIdentificacion_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNumIdentificacion_mns.Location = new System.Drawing.Point(12, 246);
             this.lblNumIdentificacion_mns.Name = "lblNumIdentificacion_mns";
-            this.lblNumIdentificacion_mns.Size = new System.Drawing.Size(178, 20);
+            this.lblNumIdentificacion_mns.Size = new System.Drawing.Size(142, 15);
             this.lblNumIdentificacion_mns.TabIndex = 43;
             this.lblNumIdentificacion_mns.Text = "Número de identificación";
             // 
@@ -905,22 +861,21 @@
             this.txtNombreUsuario_Pgperfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreUsuario_Pgperfil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombreUsuario_Pgperfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreUsuario_Pgperfil.Location = new System.Drawing.Point(20, 217);
-            this.txtNombreUsuario_Pgperfil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombreUsuario_Pgperfil.Location = new System.Drawing.Point(15, 176);
+            this.txtNombreUsuario_Pgperfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreUsuario_Pgperfil.Name = "txtNombreUsuario_Pgperfil";
             this.txtNombreUsuario_Pgperfil.PlaceholderText = "";
             this.txtNombreUsuario_Pgperfil.SelectedText = "";
-            this.txtNombreUsuario_Pgperfil.Size = new System.Drawing.Size(192, 30);
+            this.txtNombreUsuario_Pgperfil.Size = new System.Drawing.Size(144, 24);
             this.txtNombreUsuario_Pgperfil.TabIndex = 41;
             // 
             // lblNombreUsuario_msn
             // 
             this.lblNombreUsuario_msn.AutoSize = true;
             this.lblNombreUsuario_msn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreUsuario_msn.Location = new System.Drawing.Point(16, 197);
-            this.lblNombreUsuario_msn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreUsuario_msn.Location = new System.Drawing.Point(12, 160);
             this.lblNombreUsuario_msn.Name = "lblNombreUsuario_msn";
-            this.lblNombreUsuario_msn.Size = new System.Drawing.Size(137, 20);
+            this.lblNombreUsuario_msn.Size = new System.Drawing.Size(109, 15);
             this.lblNombreUsuario_msn.TabIndex = 40;
             this.lblNombreUsuario_msn.Text = "Nombre de usuario";
             // 
@@ -937,22 +892,21 @@
             this.txtDireccionCorreo_Pgperfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDireccionCorreo_Pgperfil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDireccionCorreo_Pgperfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDireccionCorreo_Pgperfil.Location = new System.Drawing.Point(20, 164);
-            this.txtDireccionCorreo_Pgperfil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDireccionCorreo_Pgperfil.Location = new System.Drawing.Point(15, 133);
+            this.txtDireccionCorreo_Pgperfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDireccionCorreo_Pgperfil.Name = "txtDireccionCorreo_Pgperfil";
             this.txtDireccionCorreo_Pgperfil.PlaceholderText = "";
             this.txtDireccionCorreo_Pgperfil.SelectedText = "";
-            this.txtDireccionCorreo_Pgperfil.Size = new System.Drawing.Size(403, 30);
+            this.txtDireccionCorreo_Pgperfil.Size = new System.Drawing.Size(302, 24);
             this.txtDireccionCorreo_Pgperfil.TabIndex = 39;
             // 
             // lblDireccionCorreco_mns
             // 
             this.lblDireccionCorreco_mns.AutoSize = true;
             this.lblDireccionCorreco_mns.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccionCorreco_mns.Location = new System.Drawing.Point(16, 142);
-            this.lblDireccionCorreco_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDireccionCorreco_mns.Location = new System.Drawing.Point(12, 115);
             this.lblDireccionCorreco_mns.Name = "lblDireccionCorreco_mns";
-            this.lblDireccionCorreco_mns.Size = new System.Drawing.Size(218, 20);
+            this.lblDireccionCorreco_mns.Size = new System.Drawing.Size(172, 15);
             this.lblDireccionCorreco_mns.TabIndex = 38;
             this.lblDireccionCorreco_mns.Text = "Dirección de correo electrónico";
             // 
@@ -969,44 +923,44 @@
             this.txtTuNombre_PgPerfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTuNombre_PgPerfil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTuNombre_PgPerfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTuNombre_PgPerfil.Location = new System.Drawing.Point(20, 108);
-            this.txtTuNombre_PgPerfil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTuNombre_PgPerfil.Location = new System.Drawing.Point(15, 88);
+            this.txtTuNombre_PgPerfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTuNombre_PgPerfil.Name = "txtTuNombre_PgPerfil";
             this.txtTuNombre_PgPerfil.PlaceholderText = "";
             this.txtTuNombre_PgPerfil.SelectedText = "";
-            this.txtTuNombre_PgPerfil.Size = new System.Drawing.Size(220, 30);
+            this.txtTuNombre_PgPerfil.Size = new System.Drawing.Size(165, 24);
             this.txtTuNombre_PgPerfil.TabIndex = 3;
             // 
             // guna2HtmlLabel3
             // 
+            this.guna2HtmlLabel3.AutoSize = false;
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(20, 81);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(15, 66);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(58, 22);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(47, 17);
             this.guna2HtmlLabel3.TabIndex = 2;
             this.guna2HtmlLabel3.Text = "Nombre";
             // 
             // guna2HtmlLabel2
             // 
+            this.guna2HtmlLabel2.AutoSize = false;
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(20, 47);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(15, 38);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(173, 25);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(135, 19);
             this.guna2HtmlLabel2.TabIndex = 1;
             this.guna2HtmlLabel2.Text = "Informacion personal";
             // 
             // guna2HtmlLabel1
             // 
+            this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(20, 15);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(15, 12);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(58, 32);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(46, 25);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Perfil";
             // 
@@ -1014,18 +968,16 @@
             // 
             this.pnlContenedorPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedorPerfil.Location = new System.Drawing.Point(0, 0);
-            this.pnlContenedorPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlContenedorPerfil.Name = "pnlContenedorPerfil";
-            this.pnlContenedorPerfil.Size = new System.Drawing.Size(847, 804);
+            this.pnlContenedorPerfil.Size = new System.Drawing.Size(707, 652);
             this.pnlContenedorPerfil.TabIndex = 66;
             // 
             // tbpBuscarVuelos
             // 
             this.tbpBuscarVuelos.Controls.Add(this.pnlBuscarVuelos);
             this.tbpBuscarVuelos.Location = new System.Drawing.Point(184, 4);
-            this.tbpBuscarVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbpBuscarVuelos.Name = "tbpBuscarVuelos";
-            this.tbpBuscarVuelos.Size = new System.Drawing.Size(847, 804);
+            this.tbpBuscarVuelos.Size = new System.Drawing.Size(707, 652);
             this.tbpBuscarVuelos.TabIndex = 3;
             this.tbpBuscarVuelos.Text = "Buscar vuelos";
             this.tbpBuscarVuelos.UseVisualStyleBackColor = true;
@@ -1050,9 +1002,8 @@
             this.pnlBuscarVuelos.Controls.Add(this.pnlContenedorBuscarVuelos);
             this.pnlBuscarVuelos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBuscarVuelos.Location = new System.Drawing.Point(0, 0);
-            this.pnlBuscarVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBuscarVuelos.Name = "pnlBuscarVuelos";
-            this.pnlBuscarVuelos.Size = new System.Drawing.Size(847, 804);
+            this.pnlBuscarVuelos.Size = new System.Drawing.Size(707, 652);
             this.pnlBuscarVuelos.TabIndex = 0;
             // 
             // btnSiguiente
@@ -1065,10 +1016,9 @@
             this.btnSiguiente.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnSiguiente.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Bold);
             this.btnSiguiente.ForeColor = System.Drawing.Color.White;
-            this.btnSiguiente.Location = new System.Drawing.Point(281, 418);
-            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSiguiente.Location = new System.Drawing.Point(211, 340);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(252, 39);
+            this.btnSiguiente.Size = new System.Drawing.Size(189, 32);
             this.btnSiguiente.TabIndex = 60;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
@@ -1085,22 +1035,21 @@
             this.txtCantidadPasajeros.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCantidadPasajeros.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCantidadPasajeros.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCantidadPasajeros.Location = new System.Drawing.Point(123, 358);
-            this.txtCantidadPasajeros.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCantidadPasajeros.Location = new System.Drawing.Point(92, 291);
+            this.txtCantidadPasajeros.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCantidadPasajeros.Name = "txtCantidadPasajeros";
             this.txtCantidadPasajeros.PlaceholderText = "";
             this.txtCantidadPasajeros.SelectedText = "";
-            this.txtCantidadPasajeros.Size = new System.Drawing.Size(220, 30);
+            this.txtCantidadPasajeros.Size = new System.Drawing.Size(165, 24);
             this.txtCantidadPasajeros.TabIndex = 59;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.label4.Location = new System.Drawing.Point(119, 338);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(89, 275);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 16);
+            this.label4.Size = new System.Drawing.Size(112, 13);
             this.label4.TabIndex = 58;
             this.label4.Text = "Cantidad de pasajeros";
             // 
@@ -1108,10 +1057,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.label3.Location = new System.Drawing.Point(119, 266);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(89, 216);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 16);
+            this.label3.Size = new System.Drawing.Size(141, 13);
             this.label3.TabIndex = 57;
             this.label3.Text = "Selecciona la fecha de viaje";
             // 
@@ -1122,12 +1070,11 @@
             this.dtmFechaViaje_Ida.FillColor = System.Drawing.Color.White;
             this.dtmFechaViaje_Ida.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtmFechaViaje_Ida.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtmFechaViaje_Ida.Location = new System.Drawing.Point(123, 294);
-            this.dtmFechaViaje_Ida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtmFechaViaje_Ida.Location = new System.Drawing.Point(92, 239);
             this.dtmFechaViaje_Ida.MaxDate = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             this.dtmFechaViaje_Ida.MinDate = new System.DateTime(1753, 2, 6, 0, 0, 0, 0);
             this.dtmFechaViaje_Ida.Name = "dtmFechaViaje_Ida";
-            this.dtmFechaViaje_Ida.Size = new System.Drawing.Size(296, 28);
+            this.dtmFechaViaje_Ida.Size = new System.Drawing.Size(222, 23);
             this.dtmFechaViaje_Ida.TabIndex = 56;
             this.dtmFechaViaje_Ida.Value = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             // 
@@ -1142,20 +1089,18 @@
             this.cbxDestino.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbxDestino.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbxDestino.ItemHeight = 18;
-            this.cbxDestino.Location = new System.Drawing.Point(521, 233);
-            this.cbxDestino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxDestino.Location = new System.Drawing.Point(391, 189);
             this.cbxDestino.Name = "cbxDestino";
-            this.cbxDestino.Size = new System.Drawing.Size(219, 24);
+            this.cbxDestino.Size = new System.Drawing.Size(165, 24);
             this.cbxDestino.TabIndex = 55;
             this.cbxDestino.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Aeropuerto.Properties.Resources.flecha_2;
-            this.pictureBox3.Location = new System.Drawing.Point(327, 133);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(245, 108);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(145, 70);
+            this.pictureBox3.Size = new System.Drawing.Size(109, 57);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 54;
             this.pictureBox3.TabStop = false;
@@ -1163,10 +1108,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.avion_b;
-            this.pictureBox1.Location = new System.Drawing.Point(521, 142);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(391, 115);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 53;
             this.pictureBox1.TabStop = false;
@@ -1175,10 +1119,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.label2.Location = new System.Drawing.Point(517, 213);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(388, 173);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 16);
+            this.label2.Size = new System.Drawing.Size(112, 13);
             this.label2.TabIndex = 52;
             this.label2.Text = "Selecciona un destino";
             // 
@@ -1186,10 +1129,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.label1.Location = new System.Drawing.Point(119, 213);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(89, 173);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 16);
+            this.label1.Size = new System.Drawing.Size(107, 13);
             this.label1.TabIndex = 51;
             this.label1.Text = "Selecciona un origen";
             // 
@@ -1204,20 +1146,18 @@
             this.cbxOrigen.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbxOrigen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbxOrigen.ItemHeight = 18;
-            this.cbxOrigen.Location = new System.Drawing.Point(123, 233);
-            this.cbxOrigen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxOrigen.Location = new System.Drawing.Point(92, 189);
             this.cbxOrigen.Name = "cbxOrigen";
-            this.cbxOrigen.Size = new System.Drawing.Size(219, 24);
+            this.cbxOrigen.Size = new System.Drawing.Size(165, 24);
             this.cbxOrigen.TabIndex = 8;
             this.cbxOrigen.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Aeropuerto.Properties.Resources.avion_b;
-            this.pictureBox2.Location = new System.Drawing.Point(123, 142);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(92, 115);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(133, 62);
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
@@ -1232,10 +1172,9 @@
             this.btnIdaYVuelta.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnIdaYVuelta.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Bold);
             this.btnIdaYVuelta.ForeColor = System.Drawing.Color.Black;
-            this.btnIdaYVuelta.Location = new System.Drawing.Point(420, 68);
-            this.btnIdaYVuelta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIdaYVuelta.Location = new System.Drawing.Point(315, 55);
             this.btnIdaYVuelta.Name = "btnIdaYVuelta";
-            this.btnIdaYVuelta.Size = new System.Drawing.Size(252, 39);
+            this.btnIdaYVuelta.Size = new System.Drawing.Size(189, 32);
             this.btnIdaYVuelta.TabIndex = 5;
             this.btnIdaYVuelta.Text = "Ida y vuelta";
             this.btnIdaYVuelta.Click += new System.EventHandler(this.btnIdaYVuelta_Click);
@@ -1250,22 +1189,21 @@
             this.btnSoloIda.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnSoloIda.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Bold);
             this.btnSoloIda.ForeColor = System.Drawing.Color.White;
-            this.btnSoloIda.Location = new System.Drawing.Point(128, 68);
-            this.btnSoloIda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSoloIda.Location = new System.Drawing.Point(96, 55);
             this.btnSoloIda.Name = "btnSoloIda";
-            this.btnSoloIda.Size = new System.Drawing.Size(252, 39);
+            this.btnSoloIda.Size = new System.Drawing.Size(189, 32);
             this.btnSoloIda.TabIndex = 4;
             this.btnSoloIda.Text = "Solo ida";
             // 
             // guna2HtmlLabel4
             // 
+            this.guna2HtmlLabel4.AutoSize = false;
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(313, 4);
-            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(235, 3);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(163, 37);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(133, 30);
             this.guna2HtmlLabel4.TabIndex = 3;
             this.guna2HtmlLabel4.Text = "Buscar vuelos";
             // 
@@ -1273,19 +1211,17 @@
             // 
             this.pnlContenedorBuscarVuelos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedorBuscarVuelos.Location = new System.Drawing.Point(0, 0);
-            this.pnlContenedorBuscarVuelos.Margin = new System.Windows.Forms.Padding(4);
             this.pnlContenedorBuscarVuelos.Name = "pnlContenedorBuscarVuelos";
-            this.pnlContenedorBuscarVuelos.Size = new System.Drawing.Size(847, 804);
+            this.pnlContenedorBuscarVuelos.Size = new System.Drawing.Size(707, 652);
             this.pnlContenedorBuscarVuelos.TabIndex = 61;
             // 
             // PaginaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1165, 788);
+            this.ClientSize = new System.Drawing.Size(919, 669);
             this.Controls.Add(this.tabControl_PaginaPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PaginaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaginaPrincipal";

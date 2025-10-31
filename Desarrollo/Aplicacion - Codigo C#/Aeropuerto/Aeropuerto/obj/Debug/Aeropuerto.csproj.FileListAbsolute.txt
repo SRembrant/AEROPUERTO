@@ -456,61 +456,61 @@ C:\Users\valeb\OneDrive\Escritorio\Semestre 5\AEROPUERTO6\Aeropuerto26\Aeropuert
 C:\Users\valeb\OneDrive\Escritorio\Semestre 5\AEROPUERTO6\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.exe.manifest
 C:\Users\valeb\OneDrive\Escritorio\Semestre 5\AEROPUERTO6\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.application
 C:\Users\valeb\OneDrive\Escritorio\Semestre 5\AEROPUERTO6\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.csproj.Up2Date
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\Aeropuerto.exe.config
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\Aeropuerto.exe.manifest
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\Aeropuerto.application
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\Aeropuerto.exe
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\Aeropuerto.pdb
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\Guna.UI2.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\Oracle.ManagedDataAccess.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Buffers.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Formats.Asn1.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Memory.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Numerics.Vectors.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Text.Encodings.Web.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Text.Json.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.ValueTuple.dll
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Buffers.xml
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Formats.Asn1.xml
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Memory.xml
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Numerics.Vectors.xml
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Text.Encodings.Web.xml
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Text.Json.xml
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\bin\Debug\System.ValueTuple.xml
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.csproj.AssemblyReference.cache
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.exe.config
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.ControlUsuario.Uc_DatosPasajero.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.ControlUsuario.Uc_GenerarFactura.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.AccionIda_Vuelta.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.AcVuelosDisponibles.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Inicio_Sesion.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.ModificarDatos.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.ModificarDatos_Parte2.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.PaginaPrincipal.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Properties.Resources.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Registrar_usuario.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Registrar_Usuario_Parte2.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_AccionIda_Vuelta.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_AcVuelosDisponibles.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_ModificarDatos.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_ModificarDatos_Parte2.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_Informacion_Pasajero.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_Informacion_Vuelo.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_MisVuelos.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_ConfirmarCancelacion.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_ConfirmarReagendamiento.resources
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.csproj.GenerateResource.cache
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.csproj.CoreCompileInputs.cache
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.exe.manifest
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.application
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.csproj.Up2Date
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.exe
-D:\SEMESTRE 5\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.pdb
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\Aeropuerto.exe.config
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\Aeropuerto.exe.manifest
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\Aeropuerto.application
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\Aeropuerto.exe
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\Aeropuerto.pdb
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\Guna.UI2.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Buffers.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Formats.Asn1.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Memory.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Text.Json.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.ValueTuple.dll
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Buffers.xml
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Formats.Asn1.xml
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Memory.xml
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Text.Json.xml
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\bin\Debug\System.ValueTuple.xml
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.csproj.AssemblyReference.cache
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.exe.config
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.ControlUsuario.Uc_DatosPasajero.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.ControlUsuario.Uc_GenerarFactura.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.AccionIda_Vuelta.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.AcVuelosDisponibles.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Inicio_Sesion.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.ModificarDatos.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.ModificarDatos_Parte2.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.PaginaPrincipal.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Properties.Resources.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Registrar_usuario.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Registrar_Usuario_Parte2.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Uc_AccionIda_Vuelta.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Uc_AcVuelosDisponibles.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Uc_ModificarDatos.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Uc_ModificarDatos_Parte2.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Uc_Informacion_Pasajero.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Uc_Informacion_Vuelo.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Uc_MisVuelos.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Uc_ConfirmarCancelacion.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.Uc_ConfirmarReagendamiento.resources
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.csproj.GenerateResource.cache
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.csproj.CoreCompileInputs.cache
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.exe.manifest
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.application
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.csproj.Up2Date
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.exe
+C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.pdb

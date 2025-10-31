@@ -49,6 +49,8 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnGuardarYContinuar = new Guna.UI2.WinForms.Guna2Button();
             this.pbxRegresar_Modificar1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegresar_Modificar1)).BeginInit();
@@ -58,10 +60,9 @@
             // 
             this.lblVolverAPerfil.BackColor = System.Drawing.Color.Transparent;
             this.lblVolverAPerfil.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblVolverAPerfil.Location = new System.Drawing.Point(64, 22);
-            this.lblVolverAPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblVolverAPerfil.Location = new System.Drawing.Point(48, 18);
             this.lblVolverAPerfil.Name = "lblVolverAPerfil";
-            this.lblVolverAPerfil.Size = new System.Drawing.Size(40, 22);
+            this.lblVolverAPerfil.Size = new System.Drawing.Size(33, 17);
             this.lblVolverAPerfil.TabIndex = 51;
             this.lblVolverAPerfil.Text = "Perfil";
             // 
@@ -74,12 +75,11 @@
             this.pnlPrincipal.Controls.Add(this.lblUneteANosotros);
             this.pnlPrincipal.Controls.Add(this.guna2Panel2);
             this.pnlPrincipal.FillColor = System.Drawing.Color.RoyalBlue;
-            this.pnlPrincipal.Location = new System.Drawing.Point(164, 90);
-            this.pnlPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlPrincipal.Location = new System.Drawing.Point(123, 73);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.ShadowDecoration.Depth = 20;
             this.pnlPrincipal.ShadowDecoration.Enabled = true;
-            this.pnlPrincipal.Size = new System.Drawing.Size(471, 588);
+            this.pnlPrincipal.Size = new System.Drawing.Size(353, 478);
             this.pnlPrincipal.TabIndex = 50;
             // 
             // lblCreaUsuarioGratuita_mns
@@ -87,10 +87,9 @@
             this.lblCreaUsuarioGratuita_mns.BackColor = System.Drawing.Color.Transparent;
             this.lblCreaUsuarioGratuita_mns.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblCreaUsuarioGratuita_mns.ForeColor = System.Drawing.Color.White;
-            this.lblCreaUsuarioGratuita_mns.Location = new System.Drawing.Point(115, 74);
-            this.lblCreaUsuarioGratuita_mns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblCreaUsuarioGratuita_mns.Location = new System.Drawing.Point(86, 60);
             this.lblCreaUsuarioGratuita_mns.Name = "lblCreaUsuarioGratuita_mns";
-            this.lblCreaUsuarioGratuita_mns.Size = new System.Drawing.Size(277, 22);
+            this.lblCreaUsuarioGratuita_mns.Size = new System.Drawing.Size(217, 17);
             this.lblCreaUsuarioGratuita_mns.TabIndex = 2;
             this.lblCreaUsuarioGratuita_mns.Text = "Actualiza los datos que sean necesarios";
             // 
@@ -99,16 +98,17 @@
             this.lblUneteANosotros.BackColor = System.Drawing.Color.Transparent;
             this.lblUneteANosotros.Font = new System.Drawing.Font("Segoe UI", 18.25F, System.Drawing.FontStyle.Bold);
             this.lblUneteANosotros.ForeColor = System.Drawing.Color.White;
-            this.lblUneteANosotros.Location = new System.Drawing.Point(144, 25);
-            this.lblUneteANosotros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblUneteANosotros.Location = new System.Drawing.Point(108, 20);
             this.lblUneteANosotros.Name = "lblUneteANosotros";
-            this.lblUneteANosotros.Size = new System.Drawing.Size(205, 43);
+            this.lblUneteANosotros.Size = new System.Drawing.Size(169, 34);
             this.lblUneteANosotros.TabIndex = 1;
             this.lblUneteANosotros.Text = "¿Ocurrió algo?";
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.BorderRadius = 10;
+            this.guna2Panel2.Controls.Add(this.label2);
+            this.guna2Panel2.Controls.Add(this.label3);
             this.guna2Panel2.Controls.Add(this.txtApellidoUsuario_Modificar);
             this.guna2Panel2.Controls.Add(this.cbxTipoIdentificacion);
             this.guna2Panel2.Controls.Add(this.lblTipoIdentificacion_msn);
@@ -126,10 +126,9 @@
             this.guna2Panel2.Controls.Add(this.btnGuardarYContinuar);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 117);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 95);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(471, 471);
+            this.guna2Panel2.Size = new System.Drawing.Size(353, 383);
             this.guna2Panel2.TabIndex = 0;
             // 
             // txtApellidoUsuario_Modificar
@@ -144,12 +143,12 @@
             this.txtApellidoUsuario_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellidoUsuario_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtApellidoUsuario_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtApellidoUsuario_Modificar.Location = new System.Drawing.Point(248, 82);
-            this.txtApellidoUsuario_Modificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtApellidoUsuario_Modificar.Location = new System.Drawing.Point(186, 67);
+            this.txtApellidoUsuario_Modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtApellidoUsuario_Modificar.Name = "txtApellidoUsuario_Modificar";
             this.txtApellidoUsuario_Modificar.PlaceholderText = "";
             this.txtApellidoUsuario_Modificar.SelectedText = "";
-            this.txtApellidoUsuario_Modificar.Size = new System.Drawing.Size(193, 30);
+            this.txtApellidoUsuario_Modificar.Size = new System.Drawing.Size(145, 24);
             this.txtApellidoUsuario_Modificar.TabIndex = 61;
             // 
             // cbxTipoIdentificacion
@@ -167,10 +166,9 @@
             "C.C.",
             "P.P.",
             "C.E."});
-            this.cbxTipoIdentificacion.Location = new System.Drawing.Point(272, 302);
-            this.cbxTipoIdentificacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxTipoIdentificacion.Location = new System.Drawing.Point(204, 257);
             this.cbxTipoIdentificacion.Name = "cbxTipoIdentificacion";
-            this.cbxTipoIdentificacion.Size = new System.Drawing.Size(159, 24);
+            this.cbxTipoIdentificacion.Size = new System.Drawing.Size(120, 24);
             this.cbxTipoIdentificacion.StartIndex = 0;
             this.cbxTipoIdentificacion.TabIndex = 59;
             // 
@@ -178,10 +176,9 @@
             // 
             this.lblTipoIdentificacion_msn.AutoSize = true;
             this.lblTipoIdentificacion_msn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblTipoIdentificacion_msn.Location = new System.Drawing.Point(268, 277);
-            this.lblTipoIdentificacion_msn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoIdentificacion_msn.Location = new System.Drawing.Point(201, 225);
             this.lblTipoIdentificacion_msn.Name = "lblTipoIdentificacion_msn";
-            this.lblTipoIdentificacion_msn.Size = new System.Drawing.Size(135, 16);
+            this.lblTipoIdentificacion_msn.Size = new System.Drawing.Size(108, 13);
             this.lblTipoIdentificacion_msn.TabIndex = 60;
             this.lblTipoIdentificacion_msn.Text = "Tipo de identificación";
             // 
@@ -202,10 +199,9 @@
             "No binario",
             "Prefiero no decirlo",
             "Otro"});
-            this.cbxNuevoGenero.Location = new System.Drawing.Point(27, 244);
-            this.cbxNuevoGenero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxNuevoGenero.Location = new System.Drawing.Point(20, 198);
             this.cbxNuevoGenero.Name = "cbxNuevoGenero";
-            this.cbxNuevoGenero.Size = new System.Drawing.Size(219, 24);
+            this.cbxNuevoGenero.Size = new System.Drawing.Size(165, 24);
             this.cbxNuevoGenero.StartIndex = 0;
             this.cbxNuevoGenero.TabIndex = 58;
             // 
@@ -213,10 +209,9 @@
             // 
             this.lblGenero_mns.AutoSize = true;
             this.lblGenero_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblGenero_mns.Location = new System.Drawing.Point(24, 224);
-            this.lblGenero_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGenero_mns.Location = new System.Drawing.Point(18, 182);
             this.lblGenero_mns.Name = "lblGenero_mns";
-            this.lblGenero_mns.Size = new System.Drawing.Size(52, 16);
+            this.lblGenero_mns.Size = new System.Drawing.Size(42, 13);
             this.lblGenero_mns.TabIndex = 56;
             this.lblGenero_mns.Text = "Genero";
             // 
@@ -232,22 +227,21 @@
             this.txtNumIdentificacion_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNumIdentificacion_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNumIdentificacion_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNumIdentificacion_Modificar.Location = new System.Drawing.Point(28, 302);
-            this.txtNumIdentificacion_Modificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNumIdentificacion_Modificar.Location = new System.Drawing.Point(21, 257);
+            this.txtNumIdentificacion_Modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumIdentificacion_Modificar.Name = "txtNumIdentificacion_Modificar";
             this.txtNumIdentificacion_Modificar.PlaceholderText = "";
             this.txtNumIdentificacion_Modificar.SelectedText = "";
-            this.txtNumIdentificacion_Modificar.Size = new System.Drawing.Size(220, 30);
+            this.txtNumIdentificacion_Modificar.Size = new System.Drawing.Size(165, 24);
             this.txtNumIdentificacion_Modificar.TabIndex = 55;
             // 
             // lblNumIdentificacion_mns
             // 
             this.lblNumIdentificacion_mns.AutoSize = true;
             this.lblNumIdentificacion_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblNumIdentificacion_mns.Location = new System.Drawing.Point(24, 277);
-            this.lblNumIdentificacion_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNumIdentificacion_mns.Location = new System.Drawing.Point(18, 225);
             this.lblNumIdentificacion_mns.Name = "lblNumIdentificacion_mns";
-            this.lblNumIdentificacion_mns.Size = new System.Drawing.Size(155, 16);
+            this.lblNumIdentificacion_mns.Size = new System.Drawing.Size(124, 13);
             this.lblNumIdentificacion_mns.TabIndex = 54;
             this.lblNumIdentificacion_mns.Text = "Número de identificación";
             // 
@@ -263,22 +257,21 @@
             this.txtNombreUsuario_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreUsuario_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombreUsuario_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreUsuario_Modificar.Location = new System.Drawing.Point(28, 191);
-            this.txtNombreUsuario_Modificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombreUsuario_Modificar.Location = new System.Drawing.Point(21, 155);
+            this.txtNombreUsuario_Modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreUsuario_Modificar.Name = "txtNombreUsuario_Modificar";
             this.txtNombreUsuario_Modificar.PlaceholderText = "";
             this.txtNombreUsuario_Modificar.SelectedText = "";
-            this.txtNombreUsuario_Modificar.Size = new System.Drawing.Size(192, 30);
+            this.txtNombreUsuario_Modificar.Size = new System.Drawing.Size(144, 24);
             this.txtNombreUsuario_Modificar.TabIndex = 53;
             // 
             // lblNombreUsuario_msn
             // 
             this.lblNombreUsuario_msn.AutoSize = true;
             this.lblNombreUsuario_msn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblNombreUsuario_msn.Location = new System.Drawing.Point(24, 171);
-            this.lblNombreUsuario_msn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreUsuario_msn.Location = new System.Drawing.Point(18, 139);
             this.lblNombreUsuario_msn.Name = "lblNombreUsuario_msn";
-            this.lblNombreUsuario_msn.Size = new System.Drawing.Size(122, 16);
+            this.lblNombreUsuario_msn.Size = new System.Drawing.Size(96, 13);
             this.lblNombreUsuario_msn.TabIndex = 52;
             this.lblNombreUsuario_msn.Text = "Nombre de usuario";
             // 
@@ -294,22 +287,21 @@
             this.txtDireccionCorreo_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDireccionCorreo_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDireccionCorreo_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDireccionCorreo_Modificar.Location = new System.Drawing.Point(28, 138);
-            this.txtDireccionCorreo_Modificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDireccionCorreo_Modificar.Location = new System.Drawing.Point(21, 112);
+            this.txtDireccionCorreo_Modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDireccionCorreo_Modificar.Name = "txtDireccionCorreo_Modificar";
             this.txtDireccionCorreo_Modificar.PlaceholderText = "";
             this.txtDireccionCorreo_Modificar.SelectedText = "";
-            this.txtDireccionCorreo_Modificar.Size = new System.Drawing.Size(403, 30);
+            this.txtDireccionCorreo_Modificar.Size = new System.Drawing.Size(302, 24);
             this.txtDireccionCorreo_Modificar.TabIndex = 51;
             // 
             // lblDireccionCorreco_mns
             // 
             this.lblDireccionCorreco_mns.AutoSize = true;
             this.lblDireccionCorreco_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblDireccionCorreco_mns.Location = new System.Drawing.Point(24, 116);
-            this.lblDireccionCorreco_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDireccionCorreco_mns.Location = new System.Drawing.Point(18, 94);
             this.lblDireccionCorreco_mns.Name = "lblDireccionCorreco_mns";
-            this.lblDireccionCorreco_mns.Size = new System.Drawing.Size(194, 16);
+            this.lblDireccionCorreco_mns.Size = new System.Drawing.Size(155, 13);
             this.lblDireccionCorreco_mns.TabIndex = 50;
             this.lblDireccionCorreco_mns.Text = "Dirección de correo electrónico";
             // 
@@ -325,22 +317,21 @@
             this.txtTuNombre_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTuNombre_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTuNombre_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTuNombre_Modificar.Location = new System.Drawing.Point(28, 82);
-            this.txtTuNombre_Modificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTuNombre_Modificar.Location = new System.Drawing.Point(21, 67);
+            this.txtTuNombre_Modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTuNombre_Modificar.Name = "txtTuNombre_Modificar";
             this.txtTuNombre_Modificar.PlaceholderText = "";
             this.txtTuNombre_Modificar.SelectedText = "";
-            this.txtTuNombre_Modificar.Size = new System.Drawing.Size(212, 30);
+            this.txtTuNombre_Modificar.Size = new System.Drawing.Size(159, 24);
             this.txtTuNombre_Modificar.TabIndex = 49;
             // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(28, 55);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(21, 45);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(70, 21);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(59, 15);
             this.guna2HtmlLabel3.TabIndex = 48;
             this.guna2HtmlLabel3.Text = "Tu nombre";
             // 
@@ -348,10 +339,9 @@
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(28, 25);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(21, 20);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(167, 23);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(135, 19);
             this.guna2HtmlLabel2.TabIndex = 47;
             this.guna2HtmlLabel2.Text = "Información personal";
             // 
@@ -366,10 +356,9 @@
             this.btnGuardarYContinuar.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnGuardarYContinuar.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Bold);
             this.btnGuardarYContinuar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarYContinuar.Location = new System.Drawing.Point(115, 368);
-            this.btnGuardarYContinuar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardarYContinuar.Location = new System.Drawing.Point(86, 299);
             this.btnGuardarYContinuar.Name = "btnGuardarYContinuar";
-            this.btnGuardarYContinuar.Size = new System.Drawing.Size(252, 39);
+            this.btnGuardarYContinuar.Size = new System.Drawing.Size(189, 32);
             this.btnGuardarYContinuar.TabIndex = 0;
             this.btnGuardarYContinuar.Text = "Continuar";
             this.btnGuardarYContinuar.Click += new System.EventHandler(this.btnGuardarYContinuar_Click);
@@ -377,25 +366,45 @@
             // pbxRegresar_Modificar1
             // 
             this.pbxRegresar_Modificar1.Image = global::Aeropuerto.Properties.Resources.flechaiz;
-            this.pbxRegresar_Modificar1.Location = new System.Drawing.Point(25, 31);
-            this.pbxRegresar_Modificar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxRegresar_Modificar1.Location = new System.Drawing.Point(19, 25);
             this.pbxRegresar_Modificar1.Name = "pbxRegresar_Modificar1";
-            this.pbxRegresar_Modificar1.Size = new System.Drawing.Size(16, 16);
+            this.pbxRegresar_Modificar1.Size = new System.Drawing.Size(12, 13);
             this.pbxRegresar_Modificar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxRegresar_Modificar1.TabIndex = 52;
             this.pbxRegresar_Modificar1.TabStop = false;
             this.pbxRegresar_Modificar1.Click += new System.EventHandler(this.pbxRegresar_Modificar1_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(115, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(188, 13);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "(Sin espacios o caracteres especiales)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(18, 238);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "(Sin puntos ni comas)";
+            // 
             // Uc_ModificarDatos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pbxRegresar_Modificar1);
             this.Controls.Add(this.lblVolverAPerfil);
             this.Controls.Add(this.pnlPrincipal);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Uc_ModificarDatos";
-            this.Size = new System.Drawing.Size(784, 740);
+            this.Size = new System.Drawing.Size(588, 601);
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
@@ -429,5 +438,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button btnGuardarYContinuar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

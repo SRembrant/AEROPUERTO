@@ -49,7 +49,7 @@
             this.mns_BuscarVuelos.ForeColor = System.Drawing.Color.Black;
             this.mns_BuscarVuelos.Location = new System.Drawing.Point(12, 6);
             this.mns_BuscarVuelos.Name = "mns_BuscarVuelos";
-            this.mns_BuscarVuelos.Size = new System.Drawing.Size(220, 30);
+            this.mns_BuscarVuelos.Size = new System.Drawing.Size(189, 22);
             this.mns_BuscarVuelos.TabIndex = 64;
             this.mns_BuscarVuelos.Text = "Información de pasajero";
             // 

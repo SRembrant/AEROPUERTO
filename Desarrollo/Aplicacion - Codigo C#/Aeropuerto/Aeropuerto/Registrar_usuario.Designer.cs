@@ -58,6 +58,8 @@
             this.lblInformacionPersonal_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtPrimerNombre = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnGuardarYContinuar = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -90,19 +92,20 @@
             // 
             // lblUneteANosotros
             // 
-            this.lblUneteANosotros.AutoSize = false;
             this.lblUneteANosotros.BackColor = System.Drawing.Color.Transparent;
             this.lblUneteANosotros.Font = new System.Drawing.Font("Segoe UI", 18.25F, System.Drawing.FontStyle.Bold);
             this.lblUneteANosotros.ForeColor = System.Drawing.Color.White;
             this.lblUneteANosotros.Location = new System.Drawing.Point(77, 18);
             this.lblUneteANosotros.Name = "lblUneteANosotros";
-            this.lblUneteANosotros.Size = new System.Drawing.Size(198, 34);
+            this.lblUneteANosotros.Size = new System.Drawing.Size(198, 33);
             this.lblUneteANosotros.TabIndex = 1;
             this.lblUneteANosotros.Text = "Únete a nosotros";
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 10;
+            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.lblErrorCampObligIdentificacion);
             this.guna2Panel1.Controls.Add(this.lblErrorCampoObligNombreUsuario);
@@ -223,7 +226,7 @@
             this.lblErrorIdentificacionValoresNoNumericos.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorIdentificacionValoresNoNumericos.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
             this.lblErrorIdentificacionValoresNoNumericos.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorIdentificacionValoresNoNumericos.Location = new System.Drawing.Point(166, 270);
+            this.lblErrorIdentificacionValoresNoNumericos.Location = new System.Drawing.Point(166, 280);
             this.lblErrorIdentificacionValoresNoNumericos.Name = "lblErrorIdentificacionValoresNoNumericos";
             this.lblErrorIdentificacionValoresNoNumericos.Size = new System.Drawing.Size(155, 11);
             this.lblErrorIdentificacionValoresNoNumericos.TabIndex = 25;
@@ -300,7 +303,7 @@
             this.txtNumIdentificacion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNumIdentificacion.ForeColor = System.Drawing.Color.Black;
             this.txtNumIdentificacion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNumIdentificacion.Location = new System.Drawing.Point(156, 243);
+            this.txtNumIdentificacion.Location = new System.Drawing.Point(156, 253);
             this.txtNumIdentificacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumIdentificacion.Name = "txtNumIdentificacion";
             this.txtNumIdentificacion.PlaceholderText = "ej: 1044324562";
@@ -501,10 +504,32 @@
             this.btnGuardarYContinuar.ForeColor = System.Drawing.Color.White;
             this.btnGuardarYContinuar.Location = new System.Drawing.Point(86, 338);
             this.btnGuardarYContinuar.Name = "btnGuardarYContinuar";
-            this.btnGuardarYContinuar.Size = new System.Drawing.Size(189, 32);
+            this.btnGuardarYContinuar.Size = new System.Drawing.Size(180, 32);
             this.btnGuardarYContinuar.TabIndex = 0;
             this.btnGuardarYContinuar.Text = "Guardar y continuar";
             this.btnGuardarYContinuar.Click += new System.EventHandler(this.btnGuardarYContinuar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(107, 163);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(188, 13);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "(Sin espacios o caracteres especiales)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(153, 236);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "(Sin puntos ni comas)";
             // 
             // Registrar_usuario
             // 
@@ -555,5 +580,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligNombreUsuario;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCamObligDireccionCorreo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
