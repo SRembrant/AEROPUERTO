@@ -374,6 +374,58 @@ INSERT INTO Vuelo (
 );
 
 
+-- Vuelo 3: Bogotá → Lima
+INSERT INTO Vuelo (
+    idVuelo, codVuelo,
+    ciuOrigenVuelo, paisOrigenVuelo,
+    ciuDestinoVuelo, paisDestinoVuelo,
+    precioBaseVuelo, estadoVuelo,
+    fechaEjecucion, horaSalidaVuelo, horaLlegadaVuelo, duracionVuelo,
+    idZEmbarque, idPuerta, idAvion
+) VALUES (
+    3, 'AV1003',
+    'Bogotá', 'Colombia',
+    'Lima', 'Perú',
+    850000, 'En tiempo',
+    TO_DATE('2025-12-20', 'YYYY-MM-DD'),
+    TO_DATE('2025-12-20 20:30', 'YYYY-MM-DD HH24:MI'),
+    TO_DATE('2025-12-20 23:45', 'YYYY-MM-DD HH24:MI'),
+    INTERVAL '3:15' HOUR TO MINUTE,
+    1, 1, 1
+);
+
+-- Vuelo 4: Lima → Bogotá
+INSERT INTO Vuelo (
+    idVuelo, codVuelo,
+    ciuOrigenVuelo, paisOrigenVuelo,
+    ciuDestinoVuelo, paisDestinoVuelo,
+    precioBaseVuelo, estadoVuelo,
+    fechaEjecucion, horaSalidaVuelo, horaLlegadaVuelo, duracionVuelo,
+    idZEmbarque, idPuerta, idAvion
+) VALUES (
+    4, 'AV1004',
+    'Lima', 'Perú',
+    'Bogotá', 'Colombia',
+    900000, 'Atrasado',
+    TO_DATE('2025-12-21', 'YYYY-MM-DD'),
+    TO_DATE('2025-12-21 16:25', 'YYYY-MM-DD HH24:MI'),
+    TO_DATE('2025-12-21 19:40', 'YYYY-MM-DD HH24:MI'),
+    INTERVAL '3:15' HOUR TO MINUTE,
+    1, 1, 1
+);
+
+
+SELECT ciuOrigenVuelo, ciuDestinoVuelo, TO_CHAR(fechaEjecucion, 'YYYY-MM-DD'), codVuelo
+FROM Vuelo
+WHERE ciuOrigenVuelo = 'Bogotá' AND ciuDestinoVuelo = 'Lima';
+
+SELECT ciuOrigenVuelo, ciuDestinoVuelo, TO_CHAR(fechaEjecucion, 'YYYY-MM-DD'), codVuelo
+FROM Vuelo
+WHERE ciuOrigenVuelo = 'Lima' AND ciuDestinoVuelo = 'Bogotá';
+
+
+
+
 INSERT INTO CategoriaAsiento (idCategoria, nombreCategoria, sobrecostoCategoria)
 VALUES (1, 'Economica', 1);
 
@@ -400,4 +452,5 @@ BEGIN
 END;
 
 
+SELECT COUNT(*) FROM Vuelo
 
