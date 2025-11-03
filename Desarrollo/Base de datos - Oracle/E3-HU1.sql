@@ -123,7 +123,8 @@ CREATE OR REPLACE PACKAGE BODY MONITOREAR_VUELOS AS
                 CIUDESTINOVUELO,
                 PAISDESTINOVUELO,
                 ESTADOVUELO,
-                FECHAEJECUCION,
+                --FECHAEJECUCION,
+                HORASALIDAVUELO,
                 IDZEMBARQUE,
                 IDPUERTA,
                 IDAVION,
@@ -145,7 +146,8 @@ CREATE OR REPLACE PACKAGE BODY MONITOREAR_VUELOS AS
                     NULL AS CIUDESTINOVUELO,
                     NULL AS PAISDESTINOVUELO,
                     NULL AS ESTADOVUELO,
-                    NULL AS FECHAEJECUCION,
+                    --NULL AS FECHAEJECUCION,
+                    NULL AS HORASALIDAVUELO,
                     NULL AS IDZEMBARQUE,
                     NULL AS IDPUERTA,
                     NULL AS IDAVION,
@@ -199,7 +201,8 @@ CREATE OR REPLACE PACKAGE BODY MONITOREAR_VUELOS AS
                     NULL AS CIUDESTINOVUELO,
                     NULL AS PAISDESTINOVUELO,
                     NULL AS ESTADOVUELO,
-                    NULL AS FECHAEJECUCION,
+                    --NULL AS FECHAEJECUCION,
+                    NULL AS HORASALIDAVUELO,
                     NULL AS IDZEMBARQUE,
                     NULL AS IDPUERTA,
                     NULL AS IDAVION
@@ -214,7 +217,8 @@ CREATE OR REPLACE PACKAGE BODY MONITOREAR_VUELOS AS
                     NULL AS CIUDESTINOVUELO,
                     NULL AS PAISDESTINOVUELO,
                     NULL AS ESTADOVUELO,
-                    NULL AS FECHAEJECUCION,
+                    --NULL AS FECHAEJECUCION,
+                    NULL AS HORASALIDAVUELO,
                     NULL AS IDZEMBARQUE,
                     NULL AS IDPUERTA,
                     NULL AS IDAVION,
@@ -223,3 +227,5 @@ CREATE OR REPLACE PACKAGE BODY MONITOREAR_VUELOS AS
                 WHERE 1=0;
     END VUELOS_IDA_Y_VUELTA;
 END MONITOREAR_VUELOS;
+
+

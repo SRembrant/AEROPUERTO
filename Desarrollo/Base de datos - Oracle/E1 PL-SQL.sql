@@ -12,7 +12,7 @@
 CREATE OR REPLACE PACKAGE GESTION_USUARIO AS
 
     -- Procedimiento para insertar un nuevo usuario
-    PROCEDURE INSERTAR_USUARIO_NUEVO(
+    FUNCTION INSERTAR_USUARIO_NUEVO(
         p_docIdUsuario         IN USUARIOREGISTRADO.DOCIDUSUARIO%TYPE,
         p_tipoIdUsuario        IN USUARIOREGISTRADO.TIPOIDUSUARIO%TYPE,
         p_nombreUsuario        IN USUARIOREGISTRADO.NOMBREUSUARIO%TYPE,
@@ -25,9 +25,9 @@ CREATE OR REPLACE PACKAGE GESTION_USUARIO AS
         p_contraseniaUsuario   IN USUARIOREGISTRADO.CONTRASENIAUSUARIO%TYPE,
         p_direccionUsuario     IN USUARIOREGISTRADO.DIRECCIONUSUARIO%TYPE,
         p_observacionUsuario   IN USUARIOREGISTRADO.OBSERVACIONUSUARIO%TYPE,
-        p_telefonoUsuario      IN USUARIOREGISTRADO.TELEFONOUSUARIO%TYPE,
-        p_bandera OUT NUMBER
-    );
+        p_telefonoUsuario      IN USUARIOREGISTRADO.TELEFONOUSUARIO%TYPE
+        --p_bandera OUT NUMBER
+    )RETURN NUMBER;
 
     -- Función: obtener ID de usuario por correo
     FUNCTION OBTENER_ID_PASAJERO_POR_NOMBRE_USUARIO(
@@ -81,7 +81,7 @@ END GESTION_USUARIO;
 CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
 
     ---------------------------------------------------------
-    PROCEDURE INSERTAR_USUARIO_NUEVO(
+    FUNCTION INSERTAR_USUARIO_NUEVO(
         p_docIdUsuario         IN USUARIOREGISTRADO.DOCIDUSUARIO%TYPE,
         p_tipoIdUsuario        IN USUARIOREGISTRADO.TIPOIDUSUARIO%TYPE,
         p_nombreUsuario        IN USUARIOREGISTRADO.NOMBREUSUARIO%TYPE,
@@ -94,11 +94,27 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
         p_contraseniaUsuario   IN USUARIOREGISTRADO.CONTRASENIAUSUARIO%TYPE,
         p_direccionUsuario     IN USUARIOREGISTRADO.DIRECCIONUSUARIO%TYPE,
         p_observacionUsuario   IN USUARIOREGISTRADO.OBSERVACIONUSUARIO%TYPE,
-        p_telefonoUsuario      IN USUARIOREGISTRADO.TELEFONOUSUARIO%TYPE,
-        p_bandera OUT NUMBER
+        p_telefonoUsuario      IN USUARIOREGISTRADO.TELEFONOUSUARIO%TYPE
+        --p_bandera OUT NUMBER
     )
+    RETURN NUMBER
     IS
+        e_unique_violation EXCEPTION;
+        PRAGMA EXCEPTION_INIT (e_unique_violation, -00001);
+        v_error_message VARCHAR2(500);
+        v_count INTEGER;
+        flag NUMBER := 0;
+    
     BEGIN
+        SELECT COUNT(*) INTO v_count
+        FROM USUARIOREGISTRADO
+        WHERE DOCIDUSUARIO = p_docIdUsuario;
+
+        IF v_count > 0 THEN
+            RAISE_APPLICATION_ERROR(-20000, 'El documento ya está en uso.');
+            RETURN flag;
+        END IF;
+
         INSERT INTO USUARIOREGISTRADO(
             DOCIDUSUARIO, TIPOIDUSUARIO, NOMBREUSUARIO, APELLIDOUSUARIO, CORREOUSUARIO,
             GENEROUSUARIO, FECHANACUSUARIO, NACIONALIDADUSUARIO, ESTADOUSUARIO,
@@ -109,19 +125,42 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
             p_correoUsuario, p_generoUsuario, p_fechaNacUsuario, p_nacionalidadUsuario,
             'Activo', p_usuarioAcceso, p_contraseniaUsuario, p_direccionUsuario, p_observacionUsuario, p_telefonoUsuario
         );
-
-        p_bandera := 1;
+        
+        IF SQL%ROWCOUNT = 0 THEN
+            RAISE_APPLICATION_ERROR(-20100, 'No se pudo registrar el usuario.');
+        ELSE
+            flag := 1;
+        END IF;
+        
+            RETURN flag;
+        
+        --p_bandera := 1;
 
     EXCEPTION
-        WHEN DUP_VAL_ON_INDEX THEN
-            RAISE_APPLICATION_ERROR(-20001, 'El usuario con ese ID, correo o usuario ya existe.');
+        --WHEN DUP_VAL_ON_INDEX THEN
+            --RAISE_APPLICATION_ERROR(-20001, 'El usuario con ese ID, correo o usuario ya existe.');
         WHEN VALUE_ERROR THEN
             RAISE_APPLICATION_ERROR(-20002, 'Error de tipo de dato o valor nulo en campo obligatorio.');
-        WHEN OTHERS THEN
+            RETURN flag;
+        WHEN e_unique_violation THEN
+            v_error_message := SQLERRM;
+            IF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_CORREO') > 0 THEN
+                -- Violación del email
+                RAISE_APPLICATION_ERROR(-20200, 'El correo ingresado ya existe en el sistema.');
+                RETURN flag;
+            ELSIF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_USUARIOACCESO') > 0 THEN
+                -- Violación del usuario
+                RAISE_APPLICATION_ERROR(-20300, 'El nombre de usuario ingresado ya está registrado.'); 
+                RETURN flag;
+             ELSIF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_DOCIDUSUARIO') > 0 THEN
+                -- Violación del id
+                RAISE_APPLICATION_ERROR(-20400, 'El documento de identificacion ya existe en el sistema.');    
+                RETURN flag;
+            END IF; 
+         WHEN OTHERS THEN
             IF SQLCODE = -2290 THEN
                 RAISE_APPLICATION_ERROR(-20003, 'Violación de restricción CHECK (valores inválidos).');
-            /*ELSE
-                RAISE_APPLICATION_ERROR(-20004, 'Error desconocido al insertar usuario: ' || SQLERRM);*/
+                RETURN flag;
             END IF;
     END INSERTAR_USUARIO_NUEVO;
 
@@ -437,6 +476,28 @@ END trg_validar_correo_usuario;
 
 
 
+CREATE OR REPLACE TRIGGER trg_validar_correo_pasajero
+BEFORE INSERT ON PASAJERO
+FOR EACH ROW
+DECLARE
+    v_newCorreo VARCHAR2(255);
+    v_oldCorreo VARCHAR2(255);
+BEGIN
+    v_newCorreo := TRIM(LOWER(:NEW.correoPasajero));
+    v_oldCorreo := TRIM(LOWER(:OLD.correoPasajero));
+
+    -- Validar espacios
+    IF TRIM(:NEW.correoPasajero) != :NEW.correoPasajero THEN
+        RAISE_APPLICATION_ERROR(-20072, 'El correo no debe tener espacios al inicio o al final.');
+    END IF;
+
+    -- Validar formato general
+    IF NOT REGEXP_LIKE(:NEW.correoPasajero, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$') THEN
+        RAISE_APPLICATION_ERROR(-20073, 'El correo electrónico no tiene un formato válido.');
+    END IF;
+END trg_validar_correo_pasajero;
+
+
 
 
 -- trigger de edad >18
@@ -562,6 +623,11 @@ END TRG_VALIDAR_CARACTERES_USUARIO;
 
 
 
+
+
+
+
+
 --PRUEBAS DE TRIGGERS Y EXCEPCIONES
 UPDATE USUARIOREGISTRADO
 SET CORREOUSUARIO = 'correotest.com'
@@ -578,7 +644,8 @@ UPDATE USUARIOREGISTRADO
 SET CONTRASENIAUSUARIO = ' contraseniatest'
 WHERE IDUSUARIO = 1;
 
-
+SET SERVEROUTPUT ON 
+BEGIN
 INSERT INTO UsuarioRegistrado (
     docIdUsuario,
     tipoIdUsuario,
@@ -599,17 +666,31 @@ INSERT INTO UsuarioRegistrado (
     'C.C.',                        -- Tipo de identificación
     'Valentina',                   -- Nombre
     'Balcazar',                    -- Apellido
-    'valebc@correo.com', -- Correo
+    'correo@test2.com',           -- Correo
     'Femenino',                    -- Género
-    TO_DATE('1998-05-21', 'YYYY-MM-DD'), -- Fecha de nacimiento
+    TO_DATE('2000-05-10', 'YYYY-MM-DD'), -- Fecha de nacimiento
     'Colombiana',                  -- Nacionalidad
     'Activo',                      -- Estado
     'valenb',                      -- Usuario de acceso
     '12345abc',                    -- Contraseña
     'Calle 10 #15-30',             -- Dirección
     'Sin observaciones',           -- Observación
-    3124567890                     -- Teléfono
+    3124567890                    -- Teléfono
 );
 
+
+DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT); 
+
+END;
+
 DELETE FROM USUARIOREGISTRADO
-WHERE IDUSUARIO=53;
+WHERE DOCIDUSUARIO=123456789;
+
+
+DELETE FROM USUARIOREGISTRADO
+WHERE IDUSUARIO=125;
+
+
+
+
+
