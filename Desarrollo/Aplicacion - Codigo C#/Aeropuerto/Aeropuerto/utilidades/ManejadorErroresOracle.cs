@@ -6,25 +6,6 @@ namespace Aeropuerto.utilidades
 {
     internal class ManejadorErroresOracle
     {
-        public static void Mostrar(OracleException ex)
-        {
-            string mensaje = Traducir(ex);
-
-            // 🔹 Si viene de un trigger o trae traza de ORA-06512/ORA-04088, limpiar el texto
-            if (mensaje.Contains("ORA-"))
-            {
-                // Eliminar todo lo que empiece desde "ORA-" hasta el final
-                int index = mensaje.IndexOf("ORA-");
-                if (index >= 0)
-                    mensaje = mensaje.Substring(0, index).Trim();
-            }
-
-            // Eliminar saltos de línea y dejar solo el mensaje limpio
-            mensaje = mensaje.Replace("\r", "").Replace("\n", " ").Trim();
-
-            MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
         public static string ObtenerMensaje(OracleException ex)
         {
             string mensaje = Traducir(ex);
@@ -46,7 +27,7 @@ namespace Aeropuerto.utilidades
         {
             int errorNumber = Math.Abs(ex.Number);
 
-            switch (ex.Number)
+            switch (errorNumber)
             {
                 // 🔹 Errores comunes
                 case 1: return "Ya existe un registro con esos datos.";
@@ -74,6 +55,14 @@ namespace Aeropuerto.utilidades
                 case 20040: return "Usuario no encontrado.";
                 case 20041: return "Más de un usuario tiene el mismo nombre de usuario.";
                 case 20042: return "Error inesperado al validar credenciales.";
+
+                case 20000: return "El documento ya está en uso.";
+                case 20100: return "No se pudo registrar el usuario.";
+                case 20200: return "'El correo ingresado ya existe en el sistema.";
+                case 20300: return "El nombre de usuario ingresado ya está registrado.";
+                case 20400: return "El documento de identificacion ya existe en el sistema.";
+                
+
 
                 // 🔹 Triggers validaciones
                 case 20050: return "El nombre de usuario ya existe.";

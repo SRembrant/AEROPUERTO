@@ -1,4 +1,5 @@
-﻿using Aeropuerto.logica;
+﻿using Aeropuerto.ControlUsuario;
+using Aeropuerto.logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,9 +29,9 @@ namespace Aeropuerto
             int? numID;
             string nombre, apellido, correo, nombreUsuario, tipoID = null, genero = null;
 
-            
 
-            if (txtNumIdentificacion.Text == "" && txtPrimerNombre.Text=="" && txtApellido.Text == "" && txtDireccionCorreo_ru.Text== "" && txtNombreUsuario.Text=="")
+
+            if (txtNumIdentificacion.Text == "" && txtPrimerNombre.Text == "" && txtApellido.Text == "" && txtDireccionCorreo_ru.Text == "" && txtNombreUsuario.Text == "")
             {
                 MessageBox.Show("Debe llenar los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -98,7 +99,7 @@ namespace Aeropuerto
                     MessageBox.Show("Debe seleccionar un tipo de identificacion.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                
+
                 if (string.IsNullOrWhiteSpace(txtNumIdentificacion.Text))
                 {
                     lblErrorIdentificacionValoresNoNumericos.Show();
@@ -141,7 +142,7 @@ namespace Aeropuerto
                 objRegistrar_Usuario_Parte2.Show();
                 this.Hide();
             }
-            
+
         }
 
         private void lblVolverAInicioSesion_Click(object sender, EventArgs e)

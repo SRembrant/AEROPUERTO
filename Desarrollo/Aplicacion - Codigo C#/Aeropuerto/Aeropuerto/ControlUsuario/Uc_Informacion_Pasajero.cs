@@ -1,5 +1,7 @@
 ﻿using Aeropuerto.ControlUsuario;
 using Aeropuerto.logica;
+using Aeropuerto.utilidades;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +36,7 @@ namespace Aeropuerto
             this.NumeroPasajeros = numeroPasajeros;
             lblPrecio_InformPasajero.Text = "";
             this.Visible = true;
+            GenerarPasajeros(numeroPasajeros);
         }
 
         public Uc_Informacion_Pasajero(int numero)
@@ -90,9 +93,9 @@ namespace Aeropuerto
                     string apellido = uc.Apellido;
                     string correo = uc.Correo;
 
-                    // 1️⃣ Registrar pasajero
+                    // Registrar pasajero
                     string mensaje = gestorPasaje.InsertarPasajero(idPasajero, tipoId, nombre, apellido, correo);
-
+                    if (mensaje == null) return;
                     if (!mensaje.Contains("correctamente"))
                     {
                         insercionExitosa = false;
@@ -100,12 +103,12 @@ namespace Aeropuerto
                         break;
                     }
 
-                    // 2️⃣ Reservar vuelo de ida
+                    // Reservar vuelo de ida
                     foreach (DataRow vuelo in vuelosIda.Rows)
                     {
                         int idVueloIda = Convert.ToInt32(vuelo["IDVUELO"]);
                         string resultadoIda = gestorPasaje.ReservarPasaje(idUsuario, idPasajero, idVueloIda, idCategoria);
-
+                        if (resultadoIda == null) return;
                         if (!resultadoIda.Contains("Reserva completada"))
                         {
                             reservaExitosa = false;
@@ -114,14 +117,14 @@ namespace Aeropuerto
                         }
                     }
 
-                    // 3️⃣ Reservar vuelo de regreso (si existe)
+                    // Reservar vuelo de regreso (si existe)
                     if (vuelosRegreso != null && vuelosRegreso.Rows.Count > 0 && reservaExitosa)
                     {
                         foreach (DataRow vuelo in vuelosRegreso.Rows)
                         {
                             int idVueloRegreso = Convert.ToInt32(vuelo["IDVUELO"]);
                             string resultadoRegreso = gestorPasaje.ReservarPasaje(idUsuario, idPasajero, idVueloRegreso, idCategoria);
-
+                            if (resultadoRegreso==null) return;
                             if (!resultadoRegreso.Contains("Reserva completada"))
                             {
                                 reservaExitosa = false;
@@ -135,7 +138,7 @@ namespace Aeropuerto
                         break;
                 }
 
-                // 4️⃣ Solo generar factura si TODO fue exitoso
+                // Solo generar factura si TODO fue exitoso
                 if (insercionExitosa && reservaExitosa)
                 {
                     int idVueloFactura = Convert.ToInt32(vuelosIda.Rows[0]["IDVUELO"]);
@@ -151,9 +154,14 @@ namespace Aeropuerto
                     MessageBox.Show("No se pudo completar la compra. Revise los errores mostrados.", "Compra incompleta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            catch (OracleException ex)
+            {
+                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
+                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al realizar la compra: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al realizar la compra, revise que los compos estén completos y que tengan el formato indicado ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
