@@ -69,8 +69,6 @@ namespace Aeropuerto
         {
             this.Visible = false;
             objModificarAnterior.Visible = true;
-            /*principal.PanelMiPerfil.Controls.Add(objModificarAnterior);
-            objModificarAnterior.Dock = DockStyle.Fill;*/
             principal.PanelMiPerfil.Refresh();
         }
 

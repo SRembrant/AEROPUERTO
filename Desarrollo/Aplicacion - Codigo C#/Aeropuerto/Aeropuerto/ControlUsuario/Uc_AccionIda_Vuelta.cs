@@ -28,60 +28,72 @@ namespace Aeropuerto
             dtmFechaViaje_Ida.MinDate = DateTime.Today;
             dtmFechaViaje_Regreso.MaxDate = dtmFechaViaje_Ida.MaxDate;
             dtmFechaViaje_Ida.MinDate = dtmFechaViaje_Ida.Value;
+            this.Visible = true;
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (cbxOrigen.SelectedIndex == -1 || cbxDestino.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe seleccionar origen y destino primero.");
-                return;
-            }
-
             if (dtmFechaViaje_Regreso.Value < dtmFechaViaje_Ida.Value)
             {
                 MessageBox.Show("La fecha de regreso no puede ser menor que la de ida.");
                 return;
             }
 
-            string ciudadOrigen = cbxOrigen.Text;
-            string paisOrigen = cbxOrigen.SelectedValue?.ToString();
-
-            string ciudadDestino = cbxDestino.Text;
-            string paisDestino = cbxDestino.SelectedValue?.ToString();
-
-            DateTime fechaIda = dtmFechaViaje_Ida.Value;
-            DateTime fechaRegreso = dtmFechaViaje_Regreso.Value;
-
-            int cantidadPasajeros = int.Parse(txtCantidadPasajeros.Text);
-
-            var resultados = objVuelo.ConsultarVuelosIdaVuelta(
-                                ciudadOrigen, paisOrigen,
-                                ciudadDestino, paisDestino,
-                                fechaIda, fechaRegreso
-                            );
-
-            if (resultados.VuelosIda.Rows.Count == 0)
+            if (cbxOrigen.SelectedIndex == -1 || cbxDestino.SelectedIndex == -1)
             {
-                MessageBox.Show("No hay vuelos de ida.");
+                MessageBox.Show("Debe seleccionar origen y destino primero.");
                 return;
             }
-            if (resultados.VuelosVuelta.Rows.Count == 0)
+            else
             {
-                MessageBox.Show("No hay vuelos de regreso.");
-                return;
+                string ciudadOrigen = cbxOrigen.Text;
+                string paisOrigen = cbxOrigen.SelectedValue?.ToString();
+
+                string ciudadDestino = cbxDestino.Text;
+                string paisDestino = cbxDestino.SelectedValue?.ToString();
+
+                DateTime fechaIda = dtmFechaViaje_Ida.Value;
+                DateTime fechaRegreso = dtmFechaViaje_Regreso.Value;
+
+                if (string.IsNullOrEmpty(txtCantidadPasajeros.Text))
+                {
+                    MessageBox.Show("Debe seleccionar cantidad de pasajeros", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    int cantidadPasajeros = int.Parse(txtCantidadPasajeros.Text);
+                    var resultados = objVuelo.ConsultarVuelosIdaVuelta(
+                                    ciudadOrigen, paisOrigen,
+                                    ciudadDestino, paisDestino,
+                                    fechaIda, fechaRegreso
+                                );
+
+                    if (resultados.VuelosIda.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No hay vuelos de ida.");
+                        return;
+                    }
+                    if (resultados.VuelosVuelta.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No hay vuelos de regreso.");
+                        return;
+                    }
+
+
+                    Uc_AcVuelosDisponibles ucVerVuelos = new Uc_AcVuelosDisponibles(
+                        cantidadPasajeros, principal, objVuelo, objUsuarioRegistrado,
+                        resultados.VuelosIda, resultados.VuelosVuelta
+                    );
+
+                    this.Visible = false;
+                    principal.PanelContenedorBuscarVuelos.Controls.Add(ucVerVuelos);
+                    ucVerVuelos.Dock = DockStyle.Fill;
+
+                    principal.PanelBuscarVuelos.Refresh();
+                }
             }
 
-            
-            Uc_AcVuelosDisponibles ucVerVuelos = new Uc_AcVuelosDisponibles(
-                cantidadPasajeros, principal, objVuelo, objUsuarioRegistrado,
-                resultados.VuelosIda, resultados.VuelosVuelta
-            );
-
-            principal.PanelBuscarVuelos.Controls.Clear();
-            principal.PanelBuscarVuelos.Controls.Add(ucVerVuelos);
-            ucVerVuelos.Dock = DockStyle.Fill;
-            
         }
 
         private void CargarOrigenes()
@@ -114,7 +126,12 @@ namespace Aeropuerto
         private void btnSoloIda_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            principal.Visible= true;
+            principal.PanelContenedorBuscarVuelos.Visible = false;
+
+            principal.PanelBuscarVuelos.Visible = true;
+            principal.PanelBuscarVuelos.BringToFront();
+
+            principal.ActualizarPantalla();
         }
     }
 }

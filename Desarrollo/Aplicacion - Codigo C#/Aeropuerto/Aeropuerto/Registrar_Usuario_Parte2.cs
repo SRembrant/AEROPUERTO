@@ -146,8 +146,30 @@ namespace Aeropuerto
                 }
                 else
                 {
+                    /*string resultado = objUsuarioRegistrado.RegistrarUsuario(numID, tipoID, nombre, apellido, correo, genero, fechaNacimiento, nacionalidad, nombreUsuario, pasword, direccion, numTelefono, detalles);
+
+                    if (resultado == null) return;
+                    if (!string.IsNullOrWhiteSpace(resultado))
+                    {
+                        MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }*/
+
+
                     string resultado = objUsuarioRegistrado.RegistrarUsuario(numID, tipoID, nombre, apellido, correo, genero, fechaNacimiento, nacionalidad, nombreUsuario, pasword, direccion, numTelefono, detalles);
-                    MessageBox.Show(resultado, "Resultado del registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (resultado == null) return;
+
+
+                    if (resultado.Contains("exitosamente"))
+                    {
+                        MessageBox.Show(resultado, "Cuenta creada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(resultado, "Error al crear cuenta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
                 }
 
 

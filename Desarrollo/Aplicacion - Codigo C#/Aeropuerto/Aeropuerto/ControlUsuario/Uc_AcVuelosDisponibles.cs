@@ -1,4 +1,5 @@
-﻿using Aeropuerto.logica;
+﻿using Aeropuerto.ControlUsuario;
+using Aeropuerto.logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,78 +32,111 @@ namespace Aeropuerto
             this.objUsuarioRegistrado = objUsuarioRegistrado;
             this.vuelosIda = vuelosIda;
             this.vuelosRegreso = null;
-            panelRegreso.Hide();
+            //panelRegreso.Hide();
             MostrarVuelos(vuelosIda, null);
+            this.Visible = true;
         }
 
         //Constructor ida y vuelta
         public Uc_AcVuelosDisponibles(int cantidadPasajeros, PaginaPrincipal principal, Vuelo objVuelo, UsuarioRegistrado objUsuarioRegistrado, DataTable vuelosIda, DataTable vuelosRegreso)
         {
             InitializeComponent();
-            this.cantidadPasajeros= cantidadPasajeros;
+            this.cantidadPasajeros = cantidadPasajeros;
             this.principal = principal;
             this.objVuelo = objVuelo;
             this.objUsuarioRegistrado = objUsuarioRegistrado;
             this.vuelosIda = vuelosIda;
             this.vuelosRegreso = vuelosRegreso;
             MostrarVuelos(vuelosIda, vuelosRegreso);
+            this.Visible = true;
         }
 
         private void MostrarVuelos(DataTable vuelosIda, DataTable vuelosVuelta)
         {
-            if ((vuelosIda == null || vuelosIda.Rows.Count == 0) &&
-                (vuelosVuelta == null || vuelosVuelta.Rows.Count == 0))
+            
+
+            flowVuelosDisponibles.Controls.Clear();
+            
+            if (vuelosVuelta == null || vuelosVuelta.Rows.Count == 0)
             {
-                MessageBox.Show("No hay vuelos disponibles");
-                return;
+                // Solo ida
+                int contador1= 1;
+                foreach (DataRow vuelo in vuelosIda.Rows)
+                {
+                    var ucIda = new Uc_DatosIda(vuelo, contador1);
+                    ucIda.OnSeleccionarVuelo += SeleccionarVuelo;
+                    ucIda.Margin = new Padding(10);
+                    flowVuelosDisponibles.Controls.Add(ucIda);
+                    contador1++;
+                }
             }
-
-            // Mostrar IDA (si existe)
-            if (vuelosIda != null && vuelosIda.Rows.Count > 0)
+            else
             {
-                DataRow vuelo = vuelosIda.Rows[0];
-
-                objVuelo.IdVuelo = Convert.ToInt32(vuelo["IDVUELO"]);
-
-                lbOrigen_VDisponibles.Text = vuelo["CIUORIGENVUELO"].ToString();
-                lbDestino_VDisponibles.Text = vuelo["CIUDESTINOVUELO"].ToString();
-
-                lbOrigen_Avr_VDisponibles.Text = vuelo["CIUORIGENVUELO"].ToString().Substring(0, 3).ToUpper();
-                lbDestino_Avr_VDisponibles.Text = vuelo["CIUDESTINOVUELO"].ToString().Substring(0, 3).ToUpper();
-
-                decimal precioIda = Convert.ToDecimal(vuelo["PRECIOBASEVUELO"]);
-                lbPrecio_VuelosDisponibles.Text = precioIda.ToString("N0") + " COP";
-
-                lbFecha_VDisponibles.Text = vuelo["FECHAEJECUCION"].ToString();
-            }
-
-            // Mostrar REGRESO (si existe)
-            if (vuelosVuelta != null && vuelosVuelta.Rows.Count > 0)
-            {
-                panelRegreso.Show();
-                DataRow vuelo = vuelosVuelta.Rows[0];
-
-                lbOrigen_VDisponibles_Regreso.Text = vuelo["CIUORIGENVUELO"].ToString();
-                lbOrigen_Avr_VDisponibles_Regreso.Text = vuelo["CIUORIGENVUELO"].ToString().Substring(0, 3).ToUpper();
-
-                lbDestino_VDisponibles_Regreso.Text = vuelo["CIUDESTINOVUELO"].ToString();
-                lbDestino_Avr_VDisponibles_Regreso.Text = vuelo["CIUDESTINOVUELO"].ToString().Substring(0, 3).ToUpper();
-
-                decimal precioVuelta = Convert.ToDecimal(vuelo["PRECIOBASEVUELO"]);
-                lbPrecio_VDisponibles_Regreso.Text = precioVuelta.ToString("N0") + " COP";
-
-                lbFecha_VDisponibles_Regreso.Text = vuelo["FECHAEJECUCION"].ToString();
-
+                // Ida y vuelta
+                int contador2 = 1;
+                foreach (DataRow vueloIda in vuelosIda.Rows)
+                {
+                    foreach (DataRow vueloRegreso in vuelosVuelta.Rows)
+                    {
+                        var ucIdaVuelta = new Uc_DatosIdaVuelta(vueloIda, vueloRegreso, contador2);
+                        ucIdaVuelta.OnSeleccionarParVuelos += SeleccionarParVuelos;
+                        ucIdaVuelta.Margin = new Padding(10);
+                        flowVuelosDisponibles.Controls.Add(ucIdaVuelta);
+                        contador2++;
+                    }
+                }
             }
         }
 
-        private void pbComprar_Click(object sender, EventArgs e)
+        private void SeleccionarVuelo(int idVuelo)
         {
-            Uc_Informacion_Pasajero ucPasajeros = new Uc_Informacion_Pasajero(principal, objVuelo, objUsuarioRegistrado, vuelosIda, vuelosRegreso, cantidadPasajeros);
-            principal.PanelBuscarVuelos.Controls.Clear();
-            principal.PanelBuscarVuelos.Controls.Add(ucPasajeros);
+            // Aquí haces lo mismo que hacías antes con pbComprar_Click
+            var ucPasajeros = new Uc_Informacion_Pasajero(principal, objVuelo, objUsuarioRegistrado,
+                vuelosIda.Select($"IDVUELO = {idVuelo}").CopyToDataTable(),
+                null, cantidadPasajeros);
+
+            MostrarPasajeros(ucPasajeros);
+        }
+
+        private void SeleccionarParVuelos(int idIda, int idVuelta)
+        {
+            var ucPasajeros = new Uc_Informacion_Pasajero(principal, objVuelo, objUsuarioRegistrado,
+                vuelosIda.Select($"IDVUELO = {idIda}").CopyToDataTable(),
+                vuelosRegreso.Select($"IDVUELO = {idVuelta}").CopyToDataTable(),
+                cantidadPasajeros);
+
+            MostrarPasajeros(ucPasajeros);
+        }
+
+        /*private void MostrarPasajeros(UserControl uc)
+        {
+            var ucPasajeros = new Uc_Informacion_Pasajero(principal, objVuelo, objUsuarioRegistrado, vuelosIda, vuelosRegreso, cantidadPasajeros);
+            this.Visible = false;
+            principal.PanelContenedorBuscarVuelos.Controls.Add(ucPasajeros);
             ucPasajeros.Dock = DockStyle.Fill;
             ucPasajeros.GenerarPasajeros(cantidadPasajeros);
+            principal.PanelBuscarVuelos.Refresh();
+        }*/
+
+        private void MostrarPasajeros(UserControl uc)
+        {
+            this.Visible = false;
+            principal.PanelContenedorBuscarVuelos.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+            principal.PanelBuscarVuelos.Refresh();
+        }
+
+
+
+        private void px_RegresarInicio_VerVuelosDisponibles_Click(object sender, EventArgs e)
+        {
+            principal.PanelContenedorBuscarVuelos.Visible = false;
+
+            this.Visible = false;
+            principal.PanelBuscarVuelos.Visible = true;
+            principal.PanelBuscarVuelos.BringToFront();
+
+            principal.ActualizarPantalla();
         }
     }
 }

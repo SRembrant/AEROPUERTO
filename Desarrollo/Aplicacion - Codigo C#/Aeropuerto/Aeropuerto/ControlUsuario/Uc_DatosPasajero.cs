@@ -26,6 +26,8 @@ namespace Aeropuerto.ControlUsuario
                 var contenedor = this.Parent?.Parent as Uc_Informacion_Pasajero;
                 contenedor?.CalcularTotal();
             };
+
+            this.Visible = true;
         }
 
         public string Nombre => txtNombre_DatosPasajeros.Text;

@@ -35,7 +35,7 @@ namespace Aeropuerto.logica
         //Creo un objeto de la clase Datos*
         Datos datos = new Datos();
 
-        public string RegistrarUsuario(int? docId, string tipoId, string nombre, string apellido, string correo, string genero, DateTime fechaNac,
+        /*public string RegistrarUsuario(int? docId, string tipoId, string nombre, string apellido, string correo, string genero, DateTime fechaNac,
                                        string nacionalidad, string nombreUsuario, string contrasenia, string direccion, long? telefono, string detalle)
         {
             try
@@ -54,12 +54,14 @@ namespace Aeropuerto.logica
                     new OracleParameter("p_contraseniaUsuario", contrasenia),
                     new OracleParameter("p_direccionUsuario", direccion),
                     new OracleParameter("p_observacionUsuario", detalle),
-                    new OracleParameter("p_telefonoUsuario", OracleDbType.Int64) { Value = telefono },
-                    new OracleParameter("p_bandera", OracleDbType.Int32) { Direction = System.Data.ParameterDirection.Output }
+                    new OracleParameter("p_telefonoUsuario", OracleDbType.Int64) { Value = telefono }
+                    //new OracleParameter("p_bandera", OracleDbType.Int32) { Direction = System.Data.ParameterDirection.Output }
                 };
 
                 datos.EjecutarProcedimiento("GESTION_USUARIO.INSERTAR_USUARIO_NUEVO", parametros);
+                return "Usuario registrado exitosamente";
 
+                /*
                 var valorSalida = parametros[parametros.Length - 1].Value;
                 int bandera = 0;
 
@@ -82,10 +84,64 @@ namespace Aeropuerto.logica
             }
             catch (Exception ex)
             {
-                return "Error general en la aplicación: " + ex.Message;
+                return "Error al insertar usuario: " + ex.Message;
+            }
+        }*/
+
+        public string RegistrarUsuario(int? docId, string tipoId, string nombre, string apellido, string correo, string genero, DateTime fechaNac,
+                                       string nacionalidad, string nombreUsuario, string contrasenia, string direccion, long? telefono, string detalle)
+        {
+            try
+            {
+                OracleParameter[] parametros = new OracleParameter[]
+                {
+                    new OracleParameter("p_docIdUsuario", docId),
+                    new OracleParameter("p_tipoIdUsuario", tipoId),
+                    new OracleParameter("p_nombreUsuario", nombre),
+                    new OracleParameter("p_apellidoUsuario", apellido),
+                    new OracleParameter("p_correoUsuario", correo),
+                    new OracleParameter("p_generoUsuario", genero),
+                    new OracleParameter("p_fechaNacUsuario", fechaNac),
+                    new OracleParameter("p_nacionalidadUsuario", nacionalidad),
+                    new OracleParameter("p_usuarioAcceso", nombreUsuario),
+                    new OracleParameter("p_contraseniaUsuario", contrasenia),
+                    new OracleParameter("p_direccionUsuario", direccion),
+                    new OracleParameter("p_observacionUsuario", detalle),
+                    new OracleParameter("p_telefonoUsuario", OracleDbType.Int64) { Value = telefono }
+                    //new OracleParameter("p_bandera", OracleDbType.Int32) { Direction = System.Data.ParameterDirection.Output }
+                };
+
+                var resultado = datos.EjecutarFuncion("GESTION_USUARIO.INSERTAR_USUARIO_NUEVO", parametros, OracleDbType.Int32);
+                int valor = 0;
+
+                // Conversión segura desde OracleDecimal → int
+                if (resultado is Oracle.ManagedDataAccess.Types.OracleDecimal oracleDecimal)
+                {
+                    valor = oracleDecimal.ToInt32();
+                }
+                else if (resultado != null)
+                {
+                    valor = Convert.ToInt32(resultado);
+                }
+
+                if (valor == 1)
+                    return "Usuario creado exitosamente. Bienvenido.";
+                else
+                    return "El usuario no pudo ser creado, inténtelo nuevamente.";
+
+
+            }
+            catch (OracleException ex)
+            {
+                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
+                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return "Error general al validar credenciales: " + ex.Message;
             }
         }
-
 
         public string ValidarCredenciales(string usuarioAcceso, string contrasenia)
         {
