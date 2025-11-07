@@ -514,3 +514,29 @@ C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26
 C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.csproj.Up2Date
 C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.exe
 C:\Users\ACER\OneDrive\Documentos\A_Universidad\5_Semestre\Software\Aeropuerto26\Aeropuerto26\Aeropuerto\obj\Debug\Aeropuerto.pdb
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.csproj.AssemblyReference.cache
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.exe.config
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.ControlUsuario.Uc_DatosPasajero.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.ControlUsuario.Uc_GenerarFactura.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.AccionIda_Vuelta.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.AcVuelosDisponibles.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Inicio_Sesion.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.ModificarDatos.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.ModificarDatos_Parte2.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.PaginaPrincipal.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Properties.Resources.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Registrar_usuario.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Registrar_Usuario_Parte2.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_AccionIda_Vuelta.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_AcVuelosDisponibles.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_ModificarDatos.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_ModificarDatos_Parte2.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_Informacion_Pasajero.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_Informacion_Vuelo.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_MisVuelos.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_ConfirmarCancelacion.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.Uc_ConfirmarReagendamiento.resources
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.csproj.GenerateResource.cache
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.csproj.CoreCompileInputs.cache
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.exe
+D:\SEMESTRE 5\ING SOFTWARE\REPO AERO\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.pdb

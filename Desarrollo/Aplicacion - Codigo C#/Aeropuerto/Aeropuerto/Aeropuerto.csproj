@@ -118,6 +118,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="accesoDatos\Datos.cs" />
+    <Compile Include="ControlUsuario\Uc_DatosIda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_DatosIda.Designer.cs">
+      <DependentUpon>Uc_DatosIda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_DatosIdaVuelta.Designer.cs" />
+    <Compile Include="ControlUsuario\Uc_DatosMisVuelos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_DatosMisVuelos.Designer.cs">
+      <DependentUpon>Uc_DatosMisVuelos.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlUsuario\Uc_DatosPasajero.cs">
       <SubType>UserControl</SubType>
     </Compile>
