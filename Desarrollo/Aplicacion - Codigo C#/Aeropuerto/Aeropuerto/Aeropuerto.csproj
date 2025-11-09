@@ -130,6 +130,7 @@
     <Compile Include="ControlUsuario\Uc_DatosIdaVuelta.Designer.cs">
       <DependentUpon>Uc_DatosIdaVuelta.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlUsuario\Uc_DatosIdaVuelta.Designer.cs" />
     <Compile Include="ControlUsuario\Uc_DatosMisVuelos.cs">
       <SubType>UserControl</SubType>
     </Compile>
