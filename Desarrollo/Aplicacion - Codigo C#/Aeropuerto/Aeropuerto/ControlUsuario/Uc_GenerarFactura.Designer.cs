@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlConfirmarReagendamiento = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnGenerarFactura = new Guna.UI2.WinForms.Guna2Button();
+            this.lbGenerarFactura = new System.Windows.Forms.Label();
             this.lblDireccionCorreco_mns = new System.Windows.Forms.Label();
             this.pnlConfirmarReagendamiento.SuspendLayout();
             this.SuspendLayout();
@@ -37,7 +37,7 @@
             // pnlConfirmarReagendamiento
             // 
             this.pnlConfirmarReagendamiento.BorderRadius = 20;
-            this.pnlConfirmarReagendamiento.Controls.Add(this.btnGenerarFactura);
+            this.pnlConfirmarReagendamiento.Controls.Add(this.lbGenerarFactura);
             this.pnlConfirmarReagendamiento.Controls.Add(this.lblDireccionCorreco_mns);
             this.pnlConfirmarReagendamiento.FillColor = System.Drawing.Color.White;
             this.pnlConfirmarReagendamiento.Location = new System.Drawing.Point(65, 217);
@@ -45,23 +45,17 @@
             this.pnlConfirmarReagendamiento.Size = new System.Drawing.Size(475, 215);
             this.pnlConfirmarReagendamiento.TabIndex = 2;
             // 
-            // btnGenerarFactura
+            // lbGenerarFactura
             // 
-            this.btnGenerarFactura.BorderRadius = 20;
-            this.btnGenerarFactura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenerarFactura.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGenerarFactura.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGenerarFactura.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGenerarFactura.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGenerarFactura.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnGenerarFactura.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarFactura.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarFactura.Location = new System.Drawing.Point(132, 111);
-            this.btnGenerarFactura.Name = "btnGenerarFactura";
-            this.btnGenerarFactura.Size = new System.Drawing.Size(212, 46);
-            this.btnGenerarFactura.TabIndex = 12;
-            this.btnGenerarFactura.Text = "Generar factura";
-            this.btnGenerarFactura.Click += new System.EventHandler(this.btnGenerarFactura_Click);
+            this.lbGenerarFactura.AutoSize = true;
+            this.lbGenerarFactura.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGenerarFactura.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lbGenerarFactura.Location = new System.Drawing.Point(169, 110);
+            this.lbGenerarFactura.Name = "lbGenerarFactura";
+            this.lbGenerarFactura.Size = new System.Drawing.Size(149, 28);
+            this.lbGenerarFactura.TabIndex = 11;
+            this.lbGenerarFactura.Text = "Generar Factura";
+            this.lbGenerarFactura.Click += new System.EventHandler(this.lbGenerarFactura_Click);
             // 
             // lblDireccionCorreco_mns
             // 
@@ -78,7 +72,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlConfirmarReagendamiento);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Uc_GenerarFactura";
             this.Size = new System.Drawing.Size(634, 644);
             this.pnlConfirmarReagendamiento.ResumeLayout(false);
@@ -91,6 +85,6 @@
 
         private Guna.UI2.WinForms.Guna2Panel pnlConfirmarReagendamiento;
         private System.Windows.Forms.Label lblDireccionCorreco_mns;
-        private Guna.UI2.WinForms.Guna2Button btnGenerarFactura;
+        private System.Windows.Forms.Label lbGenerarFactura;
     }
 }

@@ -35,7 +35,7 @@ namespace Aeropuerto.ControlUsuario
             this.Visible = true;
         }
 
-        private void btnGenerarFactura_Click(object sender, EventArgs e)
+        private void lbGenerarFactura_Click(object sender, EventArgs e)
         {
             // Recupera los datos de la factura según tu procedure actual
             DataTable factura = gestorPasaje.RecuperarFactura(idVuelo, idUsuario, medioPago);
@@ -83,7 +83,7 @@ namespace Aeropuerto.ControlUsuario
             {
                 MessageBox.Show("No se encontró información de la factura generada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
+
     }
 }
