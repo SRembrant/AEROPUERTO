@@ -30,10 +30,10 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelIda = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTituloVuelo = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbFecha_VDisponibles = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pbComprar = new System.Windows.Forms.PictureBox();
+            this.lblTituloVuelo = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbFecha_VDisponibles = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbPrecio_VuelosDisponibles = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbDestino_VDisponibles = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -51,10 +51,9 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.panelIda);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 15);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(888, 207);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(666, 168);
             this.flowLayoutPanel1.TabIndex = 14;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -71,22 +70,41 @@
             this.panelIda.Controls.Add(this.lbDestino_Avr_VDisponibles);
             this.panelIda.Controls.Add(this.lbOrigen_Avr_VDisponibles);
             this.panelIda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelIda.Location = new System.Drawing.Point(4, 4);
-            this.panelIda.Margin = new System.Windows.Forms.Padding(4);
+            this.panelIda.Location = new System.Drawing.Point(3, 3);
             this.panelIda.Name = "panelIda";
-            this.panelIda.Size = new System.Drawing.Size(875, 187);
+            this.panelIda.Size = new System.Drawing.Size(656, 152);
             this.panelIda.TabIndex = 0;
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(20, 39);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(26, 23);
+            this.guna2HtmlLabel2.TabIndex = 13;
+            this.guna2HtmlLabel2.Text = "Ida";
+            // 
+            // pbComprar
+            // 
+            this.pbComprar.Image = global::Aeropuerto.Properties.Resources.Captura_de_pantalla_2025_10_27_153759;
+            this.pbComprar.Location = new System.Drawing.Point(90, 39);
+            this.pbComprar.Name = "pbComprar";
+            this.pbComprar.Size = new System.Drawing.Size(334, 39);
+            this.pbComprar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbComprar.TabIndex = 11;
+            this.pbComprar.TabStop = false;
+            this.pbComprar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // lblTituloVuelo
             // 
-            this.lblTituloVuelo.AutoSize = false;
             this.lblTituloVuelo.BackColor = System.Drawing.Color.Transparent;
             this.lblTituloVuelo.Font = new System.Drawing.Font("Segoe UI", 13.25F, System.Drawing.FontStyle.Bold);
             this.lblTituloVuelo.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTituloVuelo.Location = new System.Drawing.Point(10, 7);
-            this.lblTituloVuelo.Margin = new System.Windows.Forms.Padding(4);
+            this.lblTituloVuelo.Location = new System.Drawing.Point(8, 6);
             this.lblTituloVuelo.Name = "lblTituloVuelo";
-            this.lblTituloVuelo.Size = new System.Drawing.Size(278, 56);
+            this.lblTituloVuelo.Size = new System.Drawing.Size(67, 26);
             this.lblTituloVuelo.TabIndex = 15;
             this.lblTituloVuelo.Text = "Vuelo 1";
             // 
@@ -95,44 +113,18 @@
             this.lbFecha_VDisponibles.BackColor = System.Drawing.Color.Transparent;
             this.lbFecha_VDisponibles.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lbFecha_VDisponibles.ForeColor = System.Drawing.Color.Gray;
-            this.lbFecha_VDisponibles.Location = new System.Drawing.Point(244, 117);
-            this.lbFecha_VDisponibles.Margin = new System.Windows.Forms.Padding(4);
+            this.lbFecha_VDisponibles.Location = new System.Drawing.Point(183, 95);
             this.lbFecha_VDisponibles.Name = "lbFecha_VDisponibles";
-            this.lbFecha_VDisponibles.Size = new System.Drawing.Size(68, 22);
+            this.lbFecha_VDisponibles.Size = new System.Drawing.Size(54, 17);
             this.lbFecha_VDisponibles.TabIndex = 14;
             this.lbFecha_VDisponibles.Text = "Fecha Ida ";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(45, 48);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(31, 30);
-            this.guna2HtmlLabel2.TabIndex = 13;
-            this.guna2HtmlLabel2.Text = "Ida";
-            // 
-            // pbComprar
-            // 
-            this.pbComprar.Image = global::Aeropuerto.Properties.Resources.Captura_de_pantalla_2025_10_27_153759;
-            this.pbComprar.Location = new System.Drawing.Point(120, 48);
-            this.pbComprar.Margin = new System.Windows.Forms.Padding(4);
-            this.pbComprar.Name = "pbComprar";
-            this.pbComprar.Size = new System.Drawing.Size(445, 48);
-            this.pbComprar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbComprar.TabIndex = 11;
-            this.pbComprar.TabStop = false;
-            this.pbComprar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // guna2Panel5
             // 
             this.guna2Panel5.Controls.Add(this.lbPrecio_VuelosDisponibles);
-            this.guna2Panel5.Location = new System.Drawing.Point(663, 0);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel5.Location = new System.Drawing.Point(497, 0);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(212, 187);
+            this.guna2Panel5.Size = new System.Drawing.Size(159, 152);
             this.guna2Panel5.TabIndex = 10;
             // 
             // lbPrecio_VuelosDisponibles
@@ -140,10 +132,9 @@
             this.lbPrecio_VuelosDisponibles.BackColor = System.Drawing.Color.Transparent;
             this.lbPrecio_VuelosDisponibles.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lbPrecio_VuelosDisponibles.ForeColor = System.Drawing.Color.Black;
-            this.lbPrecio_VuelosDisponibles.Location = new System.Drawing.Point(48, 81);
-            this.lbPrecio_VuelosDisponibles.Margin = new System.Windows.Forms.Padding(4);
+            this.lbPrecio_VuelosDisponibles.Location = new System.Drawing.Point(36, 66);
             this.lbPrecio_VuelosDisponibles.Name = "lbPrecio_VuelosDisponibles";
-            this.lbPrecio_VuelosDisponibles.Size = new System.Drawing.Size(132, 30);
+            this.lbPrecio_VuelosDisponibles.Size = new System.Drawing.Size(106, 23);
             this.lbPrecio_VuelosDisponibles.TabIndex = 10;
             this.lbPrecio_VuelosDisponibles.Text = "1.250.000 COP";
             // 
@@ -153,10 +144,9 @@
             this.lbDestino_VDisponibles.BackColor = System.Drawing.Color.Transparent;
             this.lbDestino_VDisponibles.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lbDestino_VDisponibles.ForeColor = System.Drawing.Color.Gray;
-            this.lbDestino_VDisponibles.Location = new System.Drawing.Point(501, 129);
-            this.lbDestino_VDisponibles.Margin = new System.Windows.Forms.Padding(4);
+            this.lbDestino_VDisponibles.Location = new System.Drawing.Point(376, 105);
             this.lbDestino_VDisponibles.Name = "lbDestino_VDisponibles";
-            this.lbDestino_VDisponibles.Size = new System.Drawing.Size(37, 21);
+            this.lbDestino_VDisponibles.Size = new System.Drawing.Size(28, 17);
             this.lbDestino_VDisponibles.TabIndex = 8;
             this.lbDestino_VDisponibles.Text = "Paris";
             // 
@@ -166,10 +156,9 @@
             this.lbOrigen_VDisponibles.BackColor = System.Drawing.Color.Transparent;
             this.lbOrigen_VDisponibles.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lbOrigen_VDisponibles.ForeColor = System.Drawing.Color.Gray;
-            this.lbOrigen_VDisponibles.Location = new System.Drawing.Point(144, 129);
-            this.lbOrigen_VDisponibles.Margin = new System.Windows.Forms.Padding(4);
+            this.lbOrigen_VDisponibles.Location = new System.Drawing.Point(94, 105);
             this.lbOrigen_VDisponibles.Name = "lbOrigen_VDisponibles";
-            this.lbOrigen_VDisponibles.Size = new System.Drawing.Size(55, 21);
+            this.lbOrigen_VDisponibles.Size = new System.Drawing.Size(41, 17);
             this.lbOrigen_VDisponibles.TabIndex = 7;
             this.lbOrigen_VDisponibles.Text = "Madrid";
             // 
@@ -178,10 +167,9 @@
             this.lbDestino_Avr_VDisponibles.BackColor = System.Drawing.Color.Transparent;
             this.lbDestino_Avr_VDisponibles.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbDestino_Avr_VDisponibles.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbDestino_Avr_VDisponibles.Location = new System.Drawing.Point(547, 103);
-            this.lbDestino_Avr_VDisponibles.Margin = new System.Windows.Forms.Padding(4);
+            this.lbDestino_Avr_VDisponibles.Location = new System.Drawing.Point(425, 84);
             this.lbDestino_Avr_VDisponibles.Name = "lbDestino_Avr_VDisponibles";
-            this.lbDestino_Avr_VDisponibles.Size = new System.Drawing.Size(70, 48);
+            this.lbDestino_Avr_VDisponibles.Size = new System.Drawing.Size(57, 39);
             this.lbDestino_Avr_VDisponibles.TabIndex = 4;
             this.lbDestino_Avr_VDisponibles.Text = "PAR";
             // 
@@ -190,20 +178,20 @@
             this.lbOrigen_Avr_VDisponibles.BackColor = System.Drawing.Color.Transparent;
             this.lbOrigen_Avr_VDisponibles.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbOrigen_Avr_VDisponibles.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbOrigen_Avr_VDisponibles.Location = new System.Drawing.Point(45, 103);
-            this.lbOrigen_Avr_VDisponibles.Margin = new System.Windows.Forms.Padding(4);
+            this.lbOrigen_Avr_VDisponibles.Location = new System.Drawing.Point(20, 84);
             this.lbOrigen_Avr_VDisponibles.Name = "lbOrigen_Avr_VDisponibles";
-            this.lbOrigen_Avr_VDisponibles.Size = new System.Drawing.Size(85, 48);
+            this.lbOrigen_Avr_VDisponibles.Size = new System.Drawing.Size(68, 39);
             this.lbOrigen_Avr_VDisponibles.TabIndex = 3;
             this.lbOrigen_Avr_VDisponibles.Text = "MAD";
             // 
             // Uc_DatosIda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Uc_DatosIda";
-            this.Size = new System.Drawing.Size(931, 231);
+            this.Size = new System.Drawing.Size(698, 188);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelIda.ResumeLayout(false);
             this.panelIda.PerformLayout();

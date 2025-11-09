@@ -47,13 +47,15 @@ namespace Aeropuerto
                 lblFechaIda_infoVuelos.Text = Convert.ToDateTime(row["FECHAVUELO"]).ToString("dd/MM/yyyy");
                 lblDuracion_infoVuelos.Text = row["DURACION"].ToString() + " h";
                 lblEstado_infoVuelos.Text = row["ESTADOVUELO"].ToString();
-                lblNumeroPasajeros_infoVuelos.Text = row["NUMPASAJEROS"].ToString();
+                lblNumeroPasajeros_infoVuelos.Text = row["NUMPASAJE"].ToString();
                 lblNumeroPuerta_InfoVuelos.Text = row["PUERTAEMBARQUE"].ToString();
                 lblNumeroZona_infoVuelos.Text = row["ZONAEMBARQUE"].ToString();
                 lblCategoria_infoVuelos.Text = row["CATEGORIA"].ToString();
                 lblAerolinea_infoVuelos.Text = row["NOMBREAEROLINEA"].ToString();
                 lblHoraSalida.Text = row["HORASALIDA"].ToString() + " h";
                 lblHora_LLegada.Text = row["HORALLEGADA"].ToString() + " h";
+                lblOrigen_Avr_InfoVuelos.Text = row["ORIGEN"].ToString().Substring(0, 3).ToUpper();
+                lblDestino_Avr_InfoVuelos.Text = row["DESTINO"].ToString().Substring(0, 3).ToUpper();
             }
             catch (Exception ex)
             {
