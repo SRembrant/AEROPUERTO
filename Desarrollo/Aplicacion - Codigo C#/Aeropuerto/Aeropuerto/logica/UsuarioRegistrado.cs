@@ -35,7 +35,6 @@ namespace Aeropuerto.logica
         //Creo un objeto de la clase Datos*
         Datos datos = new Datos();
 
-        /*
         public string RegistrarUsuario(int? docId, string tipoId, string nombre, string apellido, string correo, string genero, DateTime fechaNac,
                                        string nacionalidad, string nombreUsuario, string contrasenia, string direccion, long? telefono, string detalle)
         {
@@ -60,7 +59,6 @@ namespace Aeropuerto.logica
                 };
 
                 datos.EjecutarProcedimiento("GESTION_USUARIO.INSERTAR_USUARIO_NUEVO", parametros);
-                //return "Usuario registrado exitosamente";
 
                 var valorSalida = parametros[parametros.Length - 1].Value;
                 int bandera = 0;
@@ -84,10 +82,11 @@ namespace Aeropuerto.logica
             }
             catch (Exception ex)
             {
-                return "Error al insertar usuario: " + ex.Message;
+                return "Error general en la aplicación: " + ex.Message;
             }
-        }*/
+        }
 
+        /*
         public string RegistrarUsuario(int? docId, string tipoId, string nombre, string apellido, string correo, string genero, DateTime fechaNac,
                                        string nacionalidad, string nombreUsuario, string contrasenia, string direccion, long? telefono, string detalle)
         {
@@ -142,7 +141,7 @@ namespace Aeropuerto.logica
             {
                 return "Error al insertar usuario: " + ex.Message;
             }
-        }
+        }*/
 
         public string ValidarCredenciales(string usuarioAcceso, string contrasenia)
         {
