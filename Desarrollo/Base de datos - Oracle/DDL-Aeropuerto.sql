@@ -53,15 +53,6 @@ CREATE TABLE categoriaAsiento(
     constraint ckc_sobrecostoCategoria check (sobrecostoCategoria>0)
 ); 
 
---CREATE TABLE telefono(
-  --  idTelefono INTEGER NOT NULL,
-  --  numeroTelefono NUMBER NOT NULL,
-    
-  --  CONSTRAINT pk_Telefono PRIMARY KEY (idTelefono),
-  --  constraint ckc_numeroTelefono check (numeroTelefono>0),
-  --  constraint ckc_idTelefono check (idTelefono>0)
---);
-
 CREATE TABLE UsuarioRegistrado (
     idUsuario       INTEGER GENERATED ALWAYS AS IDENTITY,
     docIdUsuario    NUMBER NOT NULL,
@@ -225,6 +216,7 @@ CREATE TABLE Pasaje (
     idUsuario       INTEGER NOT NULL,
     idAvion         INTEGER NOT NULL,
     numAsiento      NUMBER NOT NULL,
+    countReagendamientos NUMBER NOT NULL, -- para las reglas de reagendamiento
      
     CONSTRAINT pk_Pasaje PRIMARY KEY (idPasaje),
     constraint fk_VuelPasaj foreign key (idVuelo) references Vuelo (idVuelo),
@@ -232,7 +224,8 @@ CREATE TABLE Pasaje (
     constraint fk_UsuaPasaj foreign key (idUsuario) references UsuarioRegistrado (idUsuario),
     constraint fk_AsiePasaj foreign key (numAsiento, idAvion) references Asiento (numAsiento, idAvion),
     constraint ckc_idPasaje check (idPasaje>0),
-    constraint ckc_estadoPasaje check (estadoPasaje IN ('Activo','Inactivo'))
+    constraint ckc_estadoPasaje check (estadoPasaje IN ('Activo','Inactivo')),
+    constraint ckc_countReagendamientos check (countReagendamientos >= 0)
 );
 
 CREATE TABLE Compra (
