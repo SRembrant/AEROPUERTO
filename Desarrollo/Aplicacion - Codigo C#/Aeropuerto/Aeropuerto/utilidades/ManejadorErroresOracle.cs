@@ -22,7 +22,6 @@ namespace Aeropuerto.utilidades
         }
 
 
-
         public static string Traducir(OracleException ex)
         {
             int errorNumber = Math.Abs(ex.Number);

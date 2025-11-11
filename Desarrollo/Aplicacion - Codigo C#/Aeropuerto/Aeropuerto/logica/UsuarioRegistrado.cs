@@ -35,7 +35,8 @@ namespace Aeropuerto.logica
         //Creo un objeto de la clase Datos*
         Datos datos = new Datos();
 
-        /*public string RegistrarUsuario(int? docId, string tipoId, string nombre, string apellido, string correo, string genero, DateTime fechaNac,
+        /*
+        public string RegistrarUsuario(int? docId, string tipoId, string nombre, string apellido, string correo, string genero, DateTime fechaNac,
                                        string nacionalidad, string nombreUsuario, string contrasenia, string direccion, long? telefono, string detalle)
         {
             try
@@ -54,14 +55,13 @@ namespace Aeropuerto.logica
                     new OracleParameter("p_contraseniaUsuario", contrasenia),
                     new OracleParameter("p_direccionUsuario", direccion),
                     new OracleParameter("p_observacionUsuario", detalle),
-                    new OracleParameter("p_telefonoUsuario", OracleDbType.Int64) { Value = telefono }
-                    //new OracleParameter("p_bandera", OracleDbType.Int32) { Direction = System.Data.ParameterDirection.Output }
+                    new OracleParameter("p_telefonoUsuario", OracleDbType.Int64) { Value = telefono },
+                    new OracleParameter("p_bandera", OracleDbType.Int32) { Direction = System.Data.ParameterDirection.Output }
                 };
 
                 datos.EjecutarProcedimiento("GESTION_USUARIO.INSERTAR_USUARIO_NUEVO", parametros);
-                return "Usuario registrado exitosamente";
+                //return "Usuario registrado exitosamente";
 
-                /*
                 var valorSalida = parametros[parametros.Length - 1].Value;
                 int bandera = 0;
 
@@ -107,8 +107,8 @@ namespace Aeropuerto.logica
                     new OracleParameter("p_contraseniaUsuario", contrasenia),
                     new OracleParameter("p_direccionUsuario", direccion),
                     new OracleParameter("p_observacionUsuario", detalle),
-                    new OracleParameter("p_telefonoUsuario", OracleDbType.Int64) { Value = telefono }
-                    //new OracleParameter("p_bandera", OracleDbType.Int32) { Direction = System.Data.ParameterDirection.Output }
+                    new OracleParameter("p_telefonoUsuario", OracleDbType.Int64) 
+
                 };
 
                 var resultado = datos.EjecutarFuncion("GESTION_USUARIO.INSERTAR_USUARIO_NUEVO", parametros, OracleDbType.Int32);
@@ -123,6 +123,7 @@ namespace Aeropuerto.logica
                 {
                     valor = Convert.ToInt32(resultado);
                 }
+
 
                 if (valor == 1)
                     return "Usuario creado exitosamente. Bienvenido.";
@@ -139,7 +140,7 @@ namespace Aeropuerto.logica
             }
             catch (Exception ex)
             {
-                return "Error general al validar credenciales: " + ex.Message;
+                return "Error al insertar usuario: " + ex.Message;
             }
         }
 
