@@ -74,15 +74,7 @@ CREATE OR REPLACE PACKAGE GESTION_PASAJES AS
         p_idPasaje IN PASAJE.IDPASAJE%TYPE
     );
     
-    --procediminto para retornar todos los datos de un pasaje y vuelo en particular (esto esta cerca de ser la 3ra epica)
-        
-
-    -- -------------------------------------------------------------------------
-    -- REAGENDAMIENTO DE PASAJES
-    -- -------------------------------------------------------------------------
-        -- tercer sprint...
-        
-    -- ===============================================================
+-- ===============================================================
 -- Función para obtener el ID de una categoría a partir de su nombre
 -- ===============================================================
     FUNCTION OBTENER_ID_CATEGORIA (
@@ -90,7 +82,8 @@ CREATE OR REPLACE PACKAGE GESTION_PASAJES AS
     )
     RETURN CATEGORIAASIENTO.IDCATEGORIA%TYPE;
 
-    PROCEDURE OBTENER_CATEGORIAS_ASIENTO_NOMBRES(
+    PROCEDURE OBTENER_CATEGORIAS_ASIENTO_NOMBRES
+    (
         p_resultado OUT SYS_REFCURSOR
     );
     
@@ -115,8 +108,12 @@ CREATE OR REPLACE PACKAGE GESTION_PASAJES AS
     )
     RETURN CATEGORIAASIENTO.SOBRECOSTOCATEGORIA%TYPE;    
 
-END GESTION_PASAJES;
+-- ================================================================
+-- REAGENDAMIENTO DE PASAJES
+-- ================================================================
 
+
+END GESTION_PASAJES;
 
 
 
@@ -125,7 +122,7 @@ END GESTION_PASAJES;
 --IMPLEMENTACION DEL PAQUETE
 --==========================================
 CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
-      --funcion para verificar la disponibilidad de sillas en una categoria especifica. ()
+    -- funcion para verificar la disponibilidad de sillas en una categoria especifica. ()
     FUNCTION OBTENER_ASIENTO_LIBRE
     (
         p_idAvion AVION.IDAVION%TYPE, 
@@ -200,8 +197,6 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         WHEN OTHERS THEN
             RAISE_APPLICATION_ERROR(-20020,'Error desconocido al calcular el total de precio base');
     END CALCULAR_SUMA_PRECIO_BASE;
-
-
 
     --procedimiento para registrar un pasajero
     PROCEDURE INSERTAR_PASAJERO_NUEVO (
@@ -536,8 +531,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
             RAISE_APPLICATION_ERROR(-20009, 'Error inesperado al cancelar el pasaje');
     END CANCELAR_PASAJE;
     
-    --procediminto para retornar todos los datos de un pasaje y vuelo en particular (esto esta cerca de ser la 3ra epica)
-
+    --procediminto para retornar el ID de una categoria segun su nombre
     FUNCTION OBTENER_ID_CATEGORIA (
         p_nombreCategoria CATEGORIAASIENTO.NOMBRECATEGORIA%TYPE
     )
@@ -561,6 +555,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
             RAISE_APPLICATION_ERROR(-20054, 'Error inesperado al obtener ID de categoría: ' || SQLERRM);
     END OBTENER_ID_CATEGORIA;
 
+    -- retornar la informacion de todas las categorias que existen
     PROCEDURE OBTENER_CATEGORIAS_ASIENTO_NOMBRES(
         p_resultado OUT SYS_REFCURSOR
     )
@@ -586,7 +581,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
     END OBTENER_CATEGORIAS_ASIENTO_NOMBRES;
     
     
-    
+    -- retorna toda la informacion de un vuelo asociado a un usuario que ya haya sido procesado y que este activo
     PROCEDURE OBTENER_VUELOS_USUARIO (
         p_idUsuario IN USUARIOREGISTRADO.IDUSUARIO%TYPE,
         p_resultado OUT SYS_REFCURSOR
@@ -619,8 +614,8 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
             ORDER BY v.fechaEjecucion DESC;
     END OBTENER_VUELOS_USUARIO;
     
-    
-    
+   
+    -- retorna cuantos pasajes procesados tiene asociado un usuario
     PROCEDURE OBTENER_CANTIDAD_PASAJES_USUARIO (
         p_idUsuario IN USUARIOREGISTRADO.IDUSUARIO%TYPE,
         p_cantidad OUT NUMBER
@@ -696,8 +691,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
     END OBTENER_INFO_VUELO_PASAJE;
 
 
-
-
+    -- funcion que obtiene el sobrecosto de una categoria en particular
     FUNCTION OBTENER_SOBRECOSTO_CATEGORIA (
         p_nombreCategoria CATEGORIAASIENTO.NOMBRECATEGORIA%TYPE
     )
@@ -719,7 +713,218 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
             RAISE_APPLICATION_ERROR(-20056, 'Error inesperado al obtener el sobrecosto: ' || SQLERRM);
     END OBTENER_SOBRECOSTO_CATEGORIA;
 
+-- ================================================================
+-- REAGENDAMIENTO DE PASAJES
+-- ================================================================
 
+-- ================================================================
+    -- funcion que valida si un pasaje fue reagendado demasiadas veces. retorna 1 si aun se puede reagendar, 0 en caso contrario. -1 en caso de excepcion(?
+    FUNCTION VERIFICAR_LIMITE_REAGENDAMIENTO(p_idPasaje PASAJE.IDPASAJE%TYPE)
+    RETURN NUMBER
+    IS
+        v_cantReagendamientos NUMBER;
+    BEGIN
+        SELECT countReagendamientos
+        INTO v_cantReagendamientos
+        FROM PASAJE
+        WHERE idPasaje = p_idPasaje;
+        
+        IF v_cantReagendamientos <= 2 THEN
+            RETURN 1;
+        ELSE
+            RETURN 0;
+        END IF;
+        
+    EXCEPTION
+        WHEN OTHERS THEN
+            RETURN -1;      
+    END VERIFICAR_LIMITE_REAGENDAMIENTO;
+    
+    --Funcion que verifica que la hora actual no sobrepase la hora de salida del vuelo
+    -- de sobrepasarla, retorna 0
+    --de no hacerlo retorna 1
+    -- en caso de excepcion, retorna -1 (SIN TERMINAR ESTE METODO)
+    FUNCTION VERIFICAR_VIGENCIA_VUELO(p_idVuelo VUELO.IDVUELO%TYPE)
+    RETURN NUMBER
+    IS
+        v_horaSalidaVuelo ;
+        v_horaActual
+    BEGIN
+        SELECT horaSalidaVuelo
+        INTO v_horaSalidaVuelo
+        FROM vuelo
+        WHERE idVuelo = p_idVuelo;
+        
+    EXCEPTION
+    END VERIFICAR_VIGENCIA_VUELO;
+    
+-- Metodos de transaccion
+    -- cacular sobrecosto de reagendamiento. Retorna el nuevo valor a cancelar
+    FUNCTION CALCULAR_SOBRECOSTO_REAGENDO (
+    p_idPasaje      IN Pasaje.idPasaje%TYPE,     -- ID del pasaje a reagendar
+    )
+    RETURN NUMBER
+    IS
+        -- Variables para el cálculo
+        v_fecha_vuelo_anterior Pasaje.fechaUsoPasaje%TYPE; -- Fecha del vuelo original (fechaUsoPasaje)
+        v_costo_base_pasaje    NUMBER(12, 2);              -- Monto original pagado por el pasaje (de la Factura)
+        v_dias_antelacion      NUMBER;                     -- Días entre HOY y la fecha del vuelo original
+        v_porcentaje_costo     ReglasReagendamiento.porcentajeCosto%TYPE := 0; -- Porcentaje de costo de la regla
+        v_sobrecosto_final     NUMBER(12, 2) := 0;         -- Resultado final
+    
+    BEGIN
+        -- 1. OBTENER LA FECHA DE USO ORIGINAL DEL PASAJE Y EL MONTO DE LA FACTURA
+        BEGIN
+            SELECT
+                v.fechaEjecucion,
+                f.montoFactura
+            INTO
+                v_fecha_vuelo_anterior,
+                v_costo_base_pasaje
+            FROM
+                Pasaje p
+            INNER JOIN
+                Vuelo v ON p.idVuelo = v.idVuelo
+            INNER JOIN
+                Compra c ON p.idPasaje = c.idPasaje
+            INNER JOIN
+                GenerarFactura gf ON c.idCompra = gf.idCompra
+            INNER JOIN
+                Factura f ON gf.idFactura = f.idFactura
+            WHERE
+                p.idPasaje = p_idPasaje;
+    
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                -- Si no se encuentra el pasaje o su factura asociada, retornamos 0 y lanzamos excepción
+                RAISE_APPLICATION_ERROR(-20001, 'No se encontró el Pasaje ID: ' || p_idPasaje || ' o su factura asociada.');
+            WHEN OTHERS THEN
+                RAISE_APPLICATION_ERROR(-20002, 'Error al obtener datos del pasaje y factura: ' || SQLERRM);
+        END;
+    
+        -- 2. CALCULAR DÍAS DE ANTELACIÓN
+        -- La antelación se calcula con la fecha actual (SYSDATE) y la fecha de uso original (fechaUsoPasaje).
+        v_dias_antelacion := TRUNC(v_fecha_vuelo_anterior) - TRUNC(SYSDATE);
+    
+        -- Si la fecha de uso ya pasó, no se permite el reagendamiento y se asume el costo total
+        IF v_dias_antelacion < 0 THEN
+            RAISE_APPLICATION_ERROR(-20003, 'El vuelo original (fecha ' || TO_CHAR(v_fecha_vuelo_anterior, 'DD-MON-YYYY') || ') ya ha pasado. No se puede reagendar.');
+        END IF;
+    
+        -- 3. DETERMINAR EL PORCENTAJE DE COSTO APLICABLE
+        -- Se busca la regla de reagendamiento con los DÍAS_ANTELACION más cercanos y menores o iguales
+        -- a los días de antelación calculados.
+    
+        BEGIN
+            SELECT
+                porcentajeCosto
+            INTO
+                v_porcentaje_costo
+            FROM
+                ReglasReagendamiento
+            WHERE
+                diasAntelacion <= v_dias_antelacion -- Días de antelación debe ser menor o igual a los días disponibles
+            ORDER BY
+                diasAntelacion DESC -- Selecciona la regla con la antelación más alta (menor porcentaje)
+            FETCH FIRST 1 ROWS ONLY;
+    
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                -- Si no hay reglas de reagendamiento que cumplan (por ejemplo, si v_dias_antelacion es muy bajo
+                -- y la regla más baja es 1 día o más), se podría aplicar un porcentaje por defecto alto,
+                -- o lanzar un error. Aquí lanzaremos un error indicando que no hay regla aplicable.
+                RAISE_APPLICATION_ERROR(-20004, 'No existe regla de reagendamiento para una antelación de ' || v_dias_antelacion || ' días.');
+            WHEN OTHERS THEN
+                RAISE_APPLICATION_ERROR(-20005, 'Error al buscar reglas de reagendamiento: ' || SQLERRM);
+        END;
+    
+        -- 4. CALCULAR EL SOBRECOSTO FINAL
+        -- El sobrecosto es el porcentaje de costo de la regla aplicado al monto base de la factura.
+        v_sobrecosto_final := v_costo_base_pasaje * (v_porcentaje_costo / 100);
+    
+        -- 5. RETORNAR EL RESULTADO
+        RETURN v_sobrecosto_final;
+    
+    EXCEPTION
+        WHEN OTHERS THEN
+            -- Manejo general de excepciones
+            --DBMS_OUTPUT.PUT_LINE('Error en CALCULAR_SOBRECOSTO_REAGENDO: ' || SQLERRM);
+            -- Re-lanzar la excepción para que sea manejada por el código que invoca la función
+            RAISE;
+    
+    END CALCULAR_SOBRECOSTO_REAGENDO;
+
+    -- generar factura de reagendamiento. Retorna el id de la nueva factura. 
+    -- asocia la compra originar con la nueva factura en la tabla generarFactura
+    
+    FUNCTION GENERAR_FACTURA_REAGENDO (
+    p_idPasaje      IN Pasaje.idPasaje%TYPE,         -- ID del pasaje reagendado
+    p_medioPago     IN Factura.medioPagoFactura%TYPE, -- Medio de pago (ej: 'Tarjeta', 'Efectivo')
+    p_idVuelo_dummy IN Vuelo.idVuelo%TYPE,           -- DUMMY: Requerido por la firma de CALCULAR_SOBRECOSTO_REAGENDO
+    p_idCategoria_dummy IN CategoriaAsiento.idCategoria%TYPE -- DUMMY: Requerido por la firma de CALCULAR_SOBRECOSTO_REAGENDO
+    )
+    RETURN Factura.idFactura%TYPE
+    IS
+        v_sobrecosto  NUMBER(12, 2);             -- Monto del sobrecosto (penalización)
+        v_nueva_idFactura Factura.idFactura%TYPE; -- ID de la nueva factura generada
+        v_idCompra_original Compra.idCompra%TYPE; -- ID de la Compra original asociada al Pasaje
+    
+    BEGIN
+        -- 1. CALCULAR EL SOBRECOSTO DE PENALIZACIÓN
+        -- Se invoca a la función creada anteriormente para obtener el monto de la penalización.
+        v_sobrecosto := CALCULAR_SOBRECOSTO_REAGENDO(
+            p_idPasaje      => p_idPasaje,
+        );
+    
+        -- Si el sobrecosto es negativo (lo cual solo ocurriría si CALCULAR_SOBRECOSTO_REAGENDO
+        -- se modifica para devolver valores negativos, lo cual no es el caso), lanzamos error.
+        IF v_sobrecosto < 0 THEN
+            RAISE_APPLICATION_ERROR(-20006, 'El cálculo del sobrecosto arrojó un valor no válido: ' || v_sobrecosto);
+        END IF;
+    
+        -- 2. INSERTAR EL NUEVO REGISTRO EN LA TABLA FACTURA
+        -- Factura usa una secuencia GENERATED ALWAYS AS IDENTITY (START WITH 2000)
+        INSERT INTO Factura (fechaFactura, montoFactura, medioPagoFactura)
+        VALUES (SYSDATE, v_sobrecosto, p_medioPago)
+        RETURNING idFactura INTO v_nueva_idFactura;
+    
+        -- 3. OBTENER LA ID DE COMPRA ORIGINAL
+        BEGIN
+            SELECT idCompra
+            INTO v_idCompra_original
+            FROM Compra
+            WHERE idPasaje = p_idPasaje;
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                -- Un pasaje siempre debe tener una compra asociada.
+                RAISE_APPLICATION_ERROR(-20007, 'No se encontró el registro de Compra para el Pasaje ID: ' || p_idPasaje);
+        END;
+    
+        -- 4. RELACIONAR LA NUEVA FACTURA CON LA COMPRA ORIGINAL
+        -- Se inserta un registro en la tabla de relación GenerarFactura.
+        -- Esto permite saber que esta nueva Factura es un cargo adicional (reagendamiento)
+        -- a la compra original.
+        INSERT INTO GenerarFactura (idFactura, idCompra)
+        VALUES (v_nueva_idFactura, v_idCompra_original);
+    
+        -- 5. CONFIRMAR LA TRANSACCIÓN (COMMIT implícito si es función autónoma o COMMIT explícito si no lo es)
+        -- Como esta función realiza DML, se recomienda que el COMMIT lo haga el procedimiento que la invoca.
+        -- Para este ejemplo, y si no hay un procedimiento superior, forzamos el COMMIT.
+        COMMIT;
+    
+        -- 6. RETORNAR EL ID DE LA NUEVA FACTURA
+        RETURN v_nueva_idFactura;
+    
+    EXCEPTION
+        WHEN OTHERS THEN
+            -- Si algo falla, se realiza ROLLBACK y se lanza la excepción.
+            ROLLBACK;
+            --DBMS_OUTPUT.PUT_LINE('Error en GENERAR_FACTURA_REAGENDO: ' || SQLERRM);
+            RAISE;
+    
+    END GENERAR_FACTURA_REAGENDO;
+-- Metodos de 
+ 
 END GESTION_PASAJES;
 
 
