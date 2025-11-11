@@ -22,9 +22,177 @@ namespace Aeropuerto
             InitializeComponent();
             this.inicio = inicio;
             this.objUsuarioRegistrado = objUsuarioRegistrado;
+            txtPrimerNombre.Leave += ValidarNombre;
+            txtApellido.Leave += ValidarApellido;
+            txtDireccionCorreo_ru.Leave += ValidarCorreo;
+            txtNumIdentificacion.Leave += ValidarIdentificacion;
+            cbxTipoIdentificacion.SelectedIndexChanged += ValidarTipoIdentificacion;
+        }
+
+        private void lblVolverAInicioSesion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            inicio.Show();
+        }
+
+        private void txtPrimerNombre_Click(object sender, EventArgs e)
+        {
+            txtPrimerNombre.Text = "";
+        }
+
+        private void txtApellido_Click(object sender, EventArgs e)
+        {
+            txtApellido.Text = "";
+        }
+
+        private void txtDireccionCorreo_ru_Click(object sender, EventArgs e)
+        {
+            txtDireccionCorreo_ru.Text = "";
+        }
+
+        private void txtNombreUsuario_Click(object sender, EventArgs e)
+        {
+            txtNombreUsuario.Text = "";
+        }
+
+        private void txtNumIdentificacion_Click(object sender, EventArgs e)
+        {
+            txtNumIdentificacion.Text = "";
+        }
+
+
+        private void ValidarNombre(object sender, EventArgs e)
+        {
+            string nombre = txtPrimerNombre.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(nombre))
+            {
+                lblErrorCampoObligatorioNombre.Text = "El nombre no puede estar vacío";
+                lblErrorCampoObligatorioNombre.Visible = true;
+            }
+            else if (!nombre.All(c => char.IsLetter(c)))
+            {
+                lblErrorCampoObligatorioNombre.Text = "El nombre solo puede contener letras";
+                lblErrorCampoObligatorioNombre.Visible = true;
+            }
+            else
+            {
+                lblErrorCampoObligatorioNombre.Visible = false;
+            }
+        }
+
+        private void ValidarApellido(object sender, EventArgs e)
+        {
+            string apellido = txtApellido.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(apellido))
+            {
+                lblErrorApellidoValoresNumericos.Text = "El apellido no puede estar vacío";
+                lblErrorApellidoValoresNumericos.Visible = true;
+            }
+            else if (!apellido.All(c => char.IsLetter(c)))
+            {
+                lblErrorApellidoValoresNumericos.Text = "El apellido solo puede contener letras";
+                lblErrorApellidoValoresNumericos.Visible = true;
+            }
+            else
+            {
+                lblErrorApellidoValoresNumericos.Visible = false;
+            }
+        }
+
+
+        private void ValidarCorreo(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtDireccionCorreo_ru.Text))
+            {
+                lblErrorCorreoInvalido.Text = "El correo no puede estar vacío";
+                lblErrorCorreoInvalido.Visible = true;
+            }
+            else if (!EsCorreoValido(txtDireccionCorreo_ru.Text))
+            {
+                lblErrorCorreoInvalido.Text = "Formato de correo inválido";
+                lblErrorCorreoInvalido.Visible = true;
+            }
+            else
+            {
+                lblErrorCorreoInvalido.Visible = false;
+            }
+        }
+
+        private void ValidarIdentificacion(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtNumIdentificacion.Text, out int numID) || numID <= 0)
+            {
+                lblErrorIdentificacionValoresNoNumericos.Text = "Debe ingresar un número válido";
+                lblErrorIdentificacionValoresNoNumericos.Visible = true;
+            }
+            else
+            {
+                lblErrorIdentificacionValoresNoNumericos.Visible = false;
+            }
+        }
+
+        private void ValidarTipoIdentificacion(object sender, EventArgs e)
+        {
+            lblErrorCampObligIdentificacion.Visible = (cbxTipoIdentificacion.SelectedItem == null);
+        }
+
+        private bool EsCorreoValido(string correo)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(correo);
+                return addr.Address == correo;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private void btnGuardarYContinuar_Click(object sender, EventArgs e)
+        {
+            // Llamar validaciones manualmente para asegurar que todas se ejecuten
+            ValidarNombre(null, null);
+            ValidarApellido(null, null);
+            ValidarCorreo(null, null);
+            ValidarIdentificacion(null, null);
+            ValidarTipoIdentificacion(null, null);
+            
+
+            // Si algún label de error está visible, no continuar
+            if (lblErrorCampoObligatorioNombre.Visible ||
+                lblErrorApellidoValoresNumericos.Visible ||
+                lblErrorCorreoInvalido.Visible ||
+                lblErrorIdentificacionValoresNoNumericos.Visible ||
+                lblErrorCampObligIdentificacion.Visible)
+            {
+                MessageBox.Show("Por favor, corrige los errores antes de continuar.",
+                                "Campos inválidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // ✅ Todo válido → Continuar
+            int numID = int.Parse(txtNumIdentificacion.Text);
+            string nombre = txtPrimerNombre.Text.Trim();
+            string apellido = txtApellido.Text.Trim();
+            string correo = txtDireccionCorreo_ru.Text.Trim();
+            string nombreUsuario = txtNombreUsuario.Text.Trim();
+            string tipoID = cbxTipoIdentificacion.SelectedItem.ToString();
+            string genero = cbxGenero.SelectedItem.ToString();
+
+            Registrar_Usuario_Parte2 parte2 = new Registrar_Usuario_Parte2(
+                this, inicio, objUsuarioRegistrado, numID, nombre, apellido, correo, nombreUsuario, tipoID, genero);
+            parte2.Show();
+            this.Hide();
+        }
+
+    }
+}
+
+
+/*private void btnGuardarYContinuar_Click(object sender, EventArgs e)
         {
             int? numID;
             string nombre, apellido, correo, nombreUsuario, tipoID = null, genero = null;
@@ -143,37 +311,4 @@ namespace Aeropuerto
                 this.Hide();
             }
 
-        }
-
-        private void lblVolverAInicioSesion_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            inicio.Show();
-        }
-
-        private void txtPrimerNombre_Click(object sender, EventArgs e)
-        {
-            txtPrimerNombre.Text = "";
-        }
-
-        private void txtApellido_Click(object sender, EventArgs e)
-        {
-            txtApellido.Text = "";
-        }
-
-        private void txtDireccionCorreo_ru_Click(object sender, EventArgs e)
-        {
-            txtDireccionCorreo_ru.Text = "";
-        }
-
-        private void txtNombreUsuario_Click(object sender, EventArgs e)
-        {
-            txtNombreUsuario.Text = "";
-        }
-
-        private void txtNumIdentificacion_Click(object sender, EventArgs e)
-        {
-            txtNumIdentificacion.Text = "";
-        }
-    }
-}
+        }*/
