@@ -150,6 +150,11 @@ CREATE OR REPLACE PACKAGE GESTION_PASAJES AS
         p_bandera OUT NUMBER
     );
     
+    PROCEDURE VUELOS_DISPONIBLES_REAGENDO (
+        p_idPasaje      IN Pasaje.idPasaje%TYPE,
+        p_vuelos_cursor OUT SYS_REFCURSOR -- Cursor fuerte de retorno
+    );
+    
 END GESTION_PASAJES;
 
 
@@ -1202,6 +1207,116 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
             END IF;
     END REAGENDAR_PASAJE;
 
+    -- procedimiento para retornar los vuelos disponibles para reagendamiento
+    PROCEDURE VUELOS_DISPONIBLES_REAGENDO (
+        p_idPasaje      IN Pasaje.idPasaje%TYPE,
+        p_vuelos_cursor OUT SYS_REFCURSOR -- Cursor fuerte de retorno
+    )
+    IS
+        -- Variables para almacenar el trayecto del vuelo original
+        v_idVuelo_original Pasaje.idVuelo%TYPE;
+        v_idAerolinea      Aerolinea.idAerolinea%TYPE;
+        v_ciuOrigen        Vuelo.ciuOrigenVuelo%TYPE;
+        v_ciuDestino       Vuelo.ciuDestinoVuelo%TYPE;
+        v_paisOrigen       Vuelo.paisOrigenVuelo%TYPE;
+        v_paisDestino      Vuelo.paisDestinoVuelo%TYPE;
+    
+    
+    BEGIN
+        -- 1. OBTENER DATOS DEL VUELO ORIGINAL ASOCIADO AL PASAJE
+            SELECT
+                p.idVuelo,
+                a.idAerolinea,
+                v.ciuOrigenVuelo,
+                v.ciuDestinoVuelo,
+                v.paisOrigenVuelo,
+                v.paisDestinoVuelo
+            INTO
+                v_idVuelo_original,
+                v_idAerolinea,
+                v_ciuOrigen,
+                v_ciuDestino,
+                v_paisOrigen,
+                v_paisDestino
+            FROM
+                Pasaje p
+            INNER JOIN
+                Vuelo v ON p.idVuelo = v.idVuelo
+            INNER JOIN
+                Avion a ON p.idAvion = a.idAvion
+            WHERE
+                p.idPasaje = p_idPasaje;
+    
+    
+        -- 2. ABRIR EL CURSOR (usando OPEN FOR)
+        -- Se buscan vuelos que cumplan con los criterios:
+        -- a) Mismo Trayecto (Origen/Destino Ciudad y País)
+        -- b) Misma Aerolínea
+        -- c) Diferente al Vuelo Original
+        -- d) Que tengan al menos 1 asiento 'Disponible'
+        OPEN p_vuelos_cursor FOR
+            SELECT
+                v.idVuelo,
+                v.codVuelo,
+                v.horaSalidaVuelo,
+                v.horaLlegadaVuelo,
+                v.precioBaseVuelo,
+                v.ciuorigenvuelo,
+                v.paisorigenvuelo,
+                v.ciudestinovuelo,
+                v.paisdestinovuelo,
+                v.estadovuelo,
+                v.horasalidavuelo,
+                v.idzembarque,
+                v.idpuerta,
+                v.idavion,
+                v.preciobasevuelo      
+            FROM
+                Vuelo v
+                INNER JOIN  
+                    Avion a ON v.idAvion = a.idAvion
+            WHERE
+                -- Criterios de Trayecto y Aerolínea
+                v.ciuOrigenVuelo = v_ciuOrigen
+                AND v.ciuDestinoVuelo = v_ciuDestino
+                AND v.paisOrigenVuelo = v_paisOrigen
+                AND v.paisDestinoVuelo = v_paisDestino
+                AND a.idAerolinea = v_idAerolinea
+                -- Criterio de exclusión
+                AND v.idVuelo != v_idVuelo_original
+                -- Criterio de disponibilidad (solo vuelos en el futuro)
+                AND v.horaSalidaVuelo > SYSDATE
+                -- Criterio de asientos (existe al menos un asiento disponible en el Asiento)
+                AND EXISTS (
+                    SELECT 1
+                    FROM Asiento a
+                    WHERE a.idAvion = v.idAvion
+                    AND a.estadoAsiento = 'Disponible'
+                )
+            ORDER BY
+                v.horaSalidaVuelo ASC;
+    EXCEPTION
+        WHEN OTHERS THEN
+            OPEN p_vuelos_cursor FOR
+                SELECT
+                    NULL AS idVuelo,
+                    NULL AS codVuelo,
+                    NULL AS horaSalidaVuelo,
+                    NULL AS horaLlegadaVuelo,
+                    NULL AS precioBaseVuelo,
+                    NULL AS ciuorigenvuelo,
+                    NULL AS paisorigenvuelo,
+                    NULL AS ciudestinovuelo,
+                    NULL AS paisdestinovuelo,
+                    NULL AS estadovuelo,
+                    NULL AS horasalidavuelo,
+                    NULL AS idzembarque,
+                    NULL AS idpuerta,
+                    NULL AS idavion,
+                    NULL AS preciobasevuelo
+                FROM DUAL
+                WHERE 1=0;
+    END VUELOS_DISPONIBLES_REAGENDO;
  
 END GESTION_PASAJES;
 
