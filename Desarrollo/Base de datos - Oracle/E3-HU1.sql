@@ -134,7 +134,8 @@ CREATE OR REPLACE PACKAGE BODY MONITOREAR_VUELOS AS
               AND UPPER(TRIM(PAISORIGENVUELO)) = UPPER(TRIM(p_paisOrigen))
               AND UPPER(TRIM(CIUDESTINOVUELO)) = UPPER(TRIM(p_ciuDestino))
               AND UPPER(TRIM(PAISDESTINOVUELO)) = UPPER(TRIM(p_paisDestino))
-              AND TRUNC(FECHAEJECUCION) = TRUNC(p_fecha);
+              AND TRUNC(FECHAEJECUCION) = TRUNC(p_fecha)
+              AND horaSalidaVuelo > SYSDATE;
     EXCEPTION
         WHEN OTHERS THEN
             -- Devolver cursor vacío para evitar errores en C#
