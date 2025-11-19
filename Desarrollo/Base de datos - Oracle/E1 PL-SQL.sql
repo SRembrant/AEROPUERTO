@@ -12,7 +12,7 @@
 CREATE OR REPLACE PACKAGE GESTION_USUARIO AS
 
     -- Procedimiento para insertar un nuevo usuario
-    FUNCTION INSERTAR_USUARIO_NUEVO(
+    PROCEDURE INSERTAR_USUARIO_NUEVO(
         p_docIdUsuario         IN USUARIOREGISTRADO.DOCIDUSUARIO%TYPE,
         p_tipoIdUsuario        IN USUARIOREGISTRADO.TIPOIDUSUARIO%TYPE,
         p_nombreUsuario        IN USUARIOREGISTRADO.NOMBREUSUARIO%TYPE,
@@ -25,9 +25,10 @@ CREATE OR REPLACE PACKAGE GESTION_USUARIO AS
         p_contraseniaUsuario   IN USUARIOREGISTRADO.CONTRASENIAUSUARIO%TYPE,
         p_direccionUsuario     IN USUARIOREGISTRADO.DIRECCIONUSUARIO%TYPE,
         p_observacionUsuario   IN USUARIOREGISTRADO.OBSERVACIONUSUARIO%TYPE,
-        p_telefonoUsuario      IN USUARIOREGISTRADO.TELEFONOUSUARIO%TYPE
-        --p_bandera OUT NUMBER
-    )RETURN NUMBER;
+        p_telefonoUsuario      IN USUARIOREGISTRADO.TELEFONOUSUARIO%TYPE,
+        p_bandera OUT NUMBER
+    );
+
 
     -- Función: obtener ID de usuario por correo
     FUNCTION OBTENER_ID_PASAJERO_POR_NOMBRE_USUARIO(
@@ -81,7 +82,7 @@ END GESTION_USUARIO;
 CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
 
     ---------------------------------------------------------
-    FUNCTION INSERTAR_USUARIO_NUEVO(
+    PROCEDURE INSERTAR_USUARIO_NUEVO(
         p_docIdUsuario         IN USUARIOREGISTRADO.DOCIDUSUARIO%TYPE,
         p_tipoIdUsuario        IN USUARIOREGISTRADO.TIPOIDUSUARIO%TYPE,
         p_nombreUsuario        IN USUARIOREGISTRADO.NOMBREUSUARIO%TYPE,
@@ -94,27 +95,11 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
         p_contraseniaUsuario   IN USUARIOREGISTRADO.CONTRASENIAUSUARIO%TYPE,
         p_direccionUsuario     IN USUARIOREGISTRADO.DIRECCIONUSUARIO%TYPE,
         p_observacionUsuario   IN USUARIOREGISTRADO.OBSERVACIONUSUARIO%TYPE,
-        p_telefonoUsuario      IN USUARIOREGISTRADO.TELEFONOUSUARIO%TYPE
-        --p_bandera OUT NUMBER
+        p_telefonoUsuario      IN USUARIOREGISTRADO.TELEFONOUSUARIO%TYPE,
+        p_bandera OUT NUMBER
     )
-    RETURN NUMBER
     IS
-        e_unique_violation EXCEPTION;
-        PRAGMA EXCEPTION_INIT (e_unique_violation, -00001);
-        v_error_message VARCHAR2(500);
-        v_count INTEGER;
-        flag NUMBER := 0;
-    
     BEGIN
-        SELECT COUNT(*) INTO v_count
-        FROM USUARIOREGISTRADO
-        WHERE DOCIDUSUARIO = p_docIdUsuario;
-
-        IF v_count > 0 THEN
-            RAISE_APPLICATION_ERROR(-20000, 'El documento ya está en uso.');
-            RETURN flag;
-        END IF;
-
         INSERT INTO USUARIOREGISTRADO(
             DOCIDUSUARIO, TIPOIDUSUARIO, NOMBREUSUARIO, APELLIDOUSUARIO, CORREOUSUARIO,
             GENEROUSUARIO, FECHANACUSUARIO, NACIONALIDADUSUARIO, ESTADOUSUARIO,
@@ -125,42 +110,17 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
             p_correoUsuario, p_generoUsuario, p_fechaNacUsuario, p_nacionalidadUsuario,
             'Activo', p_usuarioAcceso, p_contraseniaUsuario, p_direccionUsuario, p_observacionUsuario, p_telefonoUsuario
         );
-        
-        IF SQL%ROWCOUNT = 0 THEN
-            RAISE_APPLICATION_ERROR(-20100, 'No se pudo registrar el usuario.');
-        ELSE
-            flag := 1;
-        END IF;
-        
-            RETURN flag;
-        
-        --p_bandera := 1;
+
+        p_bandera := 1;
 
     EXCEPTION
-        --WHEN DUP_VAL_ON_INDEX THEN
-            --RAISE_APPLICATION_ERROR(-20001, 'El usuario con ese ID, correo o usuario ya existe.');
+        WHEN DUP_VAL_ON_INDEX THEN
+            RAISE_APPLICATION_ERROR(-20001, 'El usuario con ese ID, correo o usuario ya existe.');
         WHEN VALUE_ERROR THEN
             RAISE_APPLICATION_ERROR(-20002, 'Error de tipo de dato o valor nulo en campo obligatorio.');
-            RETURN flag;
-        WHEN e_unique_violation THEN
-            v_error_message := SQLERRM;
-            IF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_CORREO') > 0 THEN
-                -- Violación del email
-                RAISE_APPLICATION_ERROR(-20200, 'El correo ingresado ya existe en el sistema.');
-                RETURN flag;
-            ELSIF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_USUARIOACCESO') > 0 THEN
-                -- Violación del usuario
-                RAISE_APPLICATION_ERROR(-20300, 'El nombre de usuario ingresado ya está registrado.'); 
-                RETURN flag;
-             ELSIF INSTR(v_error_message, 'UQ_USUARIOREGISTRADO_DOCIDUSUARIO') > 0 THEN
-                -- Violación del id
-                RAISE_APPLICATION_ERROR(-20400, 'El documento de identificacion ya existe en el sistema.');    
-                RETURN flag;
-            END IF; 
-         WHEN OTHERS THEN
+        WHEN OTHERS THEN
             IF SQLCODE = -2290 THEN
                 RAISE_APPLICATION_ERROR(-20003, 'Violación de restricción CHECK (valores inválidos).');
-                RETURN flag;
             END IF;
     END INSERTAR_USUARIO_NUEVO;
 
@@ -210,7 +170,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_USUARIO AS
 
     EXCEPTION
         WHEN NO_DATA_FOUND THEN
-            RAISE_APPLICATION_ERROR(-20021, 'No existe el usuario a eliminar.');
+            RAISE_APPLICATION_ERROR(-20026, 'No existe el usuario a eliminar.');
         WHEN OTHERS THEN
             RAISE_APPLICATION_ERROR(-20022, 'Error al eliminar la cuenta ');
     END ELIMINAR_CUENTA;
