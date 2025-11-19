@@ -42,20 +42,19 @@
             this.pnlConfirmarCancelacion.Controls.Add(this.btnCancelar_confCancela);
             this.pnlConfirmarCancelacion.Controls.Add(this.btnConfirmarCancelacion);
             this.pnlConfirmarCancelacion.FillColor = System.Drawing.Color.White;
-            this.pnlConfirmarCancelacion.Location = new System.Drawing.Point(73, 81);
-            this.pnlConfirmarCancelacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlConfirmarCancelacion.Location = new System.Drawing.Point(55, 66);
             this.pnlConfirmarCancelacion.Name = "pnlConfirmarCancelacion";
-            this.pnlConfirmarCancelacion.Size = new System.Drawing.Size(633, 335);
+            this.pnlConfirmarCancelacion.Size = new System.Drawing.Size(475, 272);
             this.pnlConfirmarCancelacion.TabIndex = 2;
             // 
             // lblDireccionCorreco_mns
             // 
             this.lblDireccionCorreco_mns.AutoSize = true;
+            this.lblDireccionCorreco_mns.BackColor = System.Drawing.Color.Transparent;
             this.lblDireccionCorreco_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblDireccionCorreco_mns.Location = new System.Drawing.Point(143, 122);
-            this.lblDireccionCorreco_mns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDireccionCorreco_mns.Location = new System.Drawing.Point(107, 99);
             this.lblDireccionCorreco_mns.Name = "lblDireccionCorreco_mns";
-            this.lblDireccionCorreco_mns.Size = new System.Drawing.Size(319, 29);
+            this.lblDireccionCorreco_mns.Size = new System.Drawing.Size(249, 25);
             this.lblDireccionCorreco_mns.TabIndex = 10;
             this.lblDireccionCorreco_mns.Text = "¿Desea cancelar su vuelo?";
             // 
@@ -71,10 +70,9 @@
             this.btnCancelar_confCancela.FillColor = System.Drawing.Color.Silver;
             this.btnCancelar_confCancela.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar_confCancela.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar_confCancela.Location = new System.Drawing.Point(57, 194);
-            this.btnCancelar_confCancela.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar_confCancela.Location = new System.Drawing.Point(43, 158);
             this.btnCancelar_confCancela.Name = "btnCancelar_confCancela";
-            this.btnCancelar_confCancela.Size = new System.Drawing.Size(260, 50);
+            this.btnCancelar_confCancela.Size = new System.Drawing.Size(195, 41);
             this.btnCancelar_confCancela.TabIndex = 1;
             this.btnCancelar_confCancela.Text = "Cancelar";
             this.btnCancelar_confCancela.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -90,22 +88,20 @@
             this.btnConfirmarCancelacion.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnConfirmarCancelacion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmarCancelacion.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmarCancelacion.Location = new System.Drawing.Point(339, 194);
-            this.btnConfirmarCancelacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmarCancelacion.Location = new System.Drawing.Point(254, 158);
             this.btnConfirmarCancelacion.Name = "btnConfirmarCancelacion";
-            this.btnConfirmarCancelacion.Size = new System.Drawing.Size(253, 50);
+            this.btnConfirmarCancelacion.Size = new System.Drawing.Size(190, 41);
             this.btnConfirmarCancelacion.TabIndex = 0;
             this.btnConfirmarCancelacion.Text = "Confirmar";
             this.btnConfirmarCancelacion.Click += new System.EventHandler(this.btnConfirmarCancelacion_Click);
             // 
             // Uc_ConfirmarCancelacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlConfirmarCancelacion);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Uc_ConfirmarCancelacion";
-            this.Size = new System.Drawing.Size(784, 802);
+            this.Size = new System.Drawing.Size(588, 652);
             this.pnlConfirmarCancelacion.ResumeLayout(false);
             this.pnlConfirmarCancelacion.PerformLayout();
             this.ResumeLayout(false);

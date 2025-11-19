@@ -149,6 +149,12 @@
     <Compile Include="ControlUsuario\Uc_GenerarFactura.Designer.cs">
       <DependentUpon>Uc_GenerarFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlUsuario\Uc_ReagendarPasaje.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_ReagendarPasaje.Designer.cs">
+      <DependentUpon>Uc_ReagendarPasaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios_Opc\AccionIda_Vuelta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,12 @@
     <Compile Include="ControlUsuario\Uc_ConfirmarReagendamiento.Designer.cs">
       <DependentUpon>Uc_ConfirmarReagendamiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlUsuario\Uc_SobrecostoReagendarVuelo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario\Uc_SobrecostoReagendarVuelo.Designer.cs">
+      <DependentUpon>Uc_SobrecostoReagendarVuelo.cs</DependentUpon>
+    </Compile>
     <Compile Include="utilidades\ManejadorErroresOracle.cs" />
     <EmbeddedResource Include="ControlUsuario\Uc_DatosIda.resx">
       <DependentUpon>Uc_DatosIda.cs</DependentUpon>
@@ -274,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlUsuario\Uc_GenerarFactura.resx">
       <DependentUpon>Uc_GenerarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario\Uc_ReagendarPasaje.resx">
+      <DependentUpon>Uc_ReagendarPasaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios_Opc\AccionIda_Vuelta.resx">
       <DependentUpon>AccionIda_Vuelta.cs</DependentUpon>
@@ -335,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlUsuario\Uc_ConfirmarReagendamiento.resx">
       <DependentUpon>Uc_ConfirmarReagendamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario\Uc_SobrecostoReagendarVuelo.resx">
+      <DependentUpon>Uc_SobrecostoReagendarVuelo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Aeropuerto_TemporaryKey.pfx" />
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">

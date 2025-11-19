@@ -37,18 +37,19 @@
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtIdentificacion_DatosPasajero = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtNombre_DatosPasajeros = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtApellido_DatosPasajero = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTituloPasajero = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlPasajero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlPasajero
             // 
+            this.pnlPasajero.BackColor = System.Drawing.Color.White;
             this.pnlPasajero.Controls.Add(this.cbxCategoriaAsiento);
             this.pnlPasajero.Controls.Add(this.guna2HtmlLabel10);
             this.pnlPasajero.Controls.Add(this.cbxTipoID_DatosPasajero);
@@ -191,16 +192,6 @@
             this.txtIdentificacion_DatosPasajero.Size = new System.Drawing.Size(145, 24);
             this.txtIdentificacion_DatosPasajero.TabIndex = 79;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.Captura_de_pantalla_2025_10_27_150457;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 76;
-            this.pictureBox1.TabStop = false;
-            // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.AutoSize = false;
@@ -275,12 +266,22 @@
             this.lblTituloPasajero.TabIndex = 3;
             this.lblTituloPasajero.Text = "Pasajero 1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.Captura_de_pantalla_2025_10_27_150457;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 76;
+            this.pictureBox1.TabStop = false;
+            // 
             // Uc_DatosPasajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlPasajero);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Uc_DatosPasajero";
             this.Size = new System.Drawing.Size(549, 213);
             this.pnlPasajero.ResumeLayout(false);

@@ -32,6 +32,7 @@
             this.lblCreaUsuarioGratuita_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUneteANosotros = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblRegresarInicio_Modificar2 = new System.Windows.Forms.Label();
             this.cbxNacionalidad_ModifParte2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtDireccion_ModifParte2 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,7 +50,6 @@
             this.btnActualizarDatos_ModifParte2 = new Guna.UI2.WinForms.Guna2Button();
             this.lblRegresarAnterior_ModifParte2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,7 +75,7 @@
             this.lblCreaUsuarioGratuita_mns.BackColor = System.Drawing.Color.Transparent;
             this.lblCreaUsuarioGratuita_mns.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblCreaUsuarioGratuita_mns.ForeColor = System.Drawing.Color.White;
-            this.lblCreaUsuarioGratuita_mns.Location = new System.Drawing.Point(86, 60);
+            this.lblCreaUsuarioGratuita_mns.Location = new System.Drawing.Point(80, 60);
             this.lblCreaUsuarioGratuita_mns.Name = "lblCreaUsuarioGratuita_mns";
             this.lblCreaUsuarioGratuita_mns.Size = new System.Drawing.Size(217, 17);
             this.lblCreaUsuarioGratuita_mns.TabIndex = 2;
@@ -87,9 +87,9 @@
             this.lblUneteANosotros.BackColor = System.Drawing.Color.Transparent;
             this.lblUneteANosotros.Font = new System.Drawing.Font("Segoe UI", 18.25F, System.Drawing.FontStyle.Bold);
             this.lblUneteANosotros.ForeColor = System.Drawing.Color.White;
-            this.lblUneteANosotros.Location = new System.Drawing.Point(108, 20);
+            this.lblUneteANosotros.Location = new System.Drawing.Point(99, 20);
             this.lblUneteANosotros.Name = "lblUneteANosotros";
-            this.lblUneteANosotros.Size = new System.Drawing.Size(169, 34);
+            this.lblUneteANosotros.Size = new System.Drawing.Size(195, 34);
             this.lblUneteANosotros.TabIndex = 1;
             this.lblUneteANosotros.Text = "¿Ocurrió algo?";
             // 
@@ -118,6 +118,17 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(370, 383);
             this.guna2Panel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(77, 144);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "(Minimo 8 caracteres)";
             // 
             // lblRegresarInicio_Modificar2
             // 
@@ -358,17 +369,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(77, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 13);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "(Minimo 8 caracteres)";
             // 
             // Uc_ModificarDatos_Parte2
             // 

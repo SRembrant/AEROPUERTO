@@ -244,7 +244,7 @@
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.RoyalBlue;
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(212, 3);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(133, 30);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(172, 30);
             this.guna2HtmlLabel4.TabIndex = 63;
             this.guna2HtmlLabel4.Text = "Buscar vuelos";
             // 
@@ -282,6 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtmFechaViaje_Regreso);
             this.Controls.Add(this.btnSiguiente);

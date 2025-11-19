@@ -1,26 +1,114 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\SEMESTRE 5\\ING SOFTWARE\\REPO AERO\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\",
+  "WorkspaceRootPath": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|d:\\semestre 5\\ing software\\repo aero\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\inicio_sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_generarfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_generarfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\registrar_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\registrar_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\registrar_usuario_parte2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\registrar_usuario_parte2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_confirmarreagendamiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_confirmarreagendamiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_confirmarcancelacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_confirmarcancelacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\paginaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\paginaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_reagendarpasaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_reagendarpasaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_sobrecostoreagendarvuelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_sobrecostoreagendarvuelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\aeropuerto\\accesodatos\\datos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\accesodatos\\datos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\aeropuerto\\controlusuario\\uc_accionida_vuelta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_accionida_vuelta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_acvuelosdisponibles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_acvuelosdisponibles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_datosida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_datosida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_datosidavuelta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_datosidavuelta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\aeropuerto\\controlusuario\\uc_datosidavuelta.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_datosidavuelta.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_datosmisvuelos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_datosmisvuelos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_datospasajero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_datospasajero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_informacion_pasajero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_informacion_pasajero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_informacion_vuelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_informacion_vuelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_misvuelos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_misvuelos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_modificardatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_modificardatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_modificardatos_parte2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_modificardatos_parte2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\aeropuerto\\inicio_sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\inicio_sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|d:\\semestre 5\\ing software\\repo aero\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\inicio_sesion.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_reagendarpasaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_reagendarpasaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|c:\\aeropuerto git\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\uc_reagendarpasaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\uc_reagendarpasaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\aeropuerto\\inicio_sesion.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
       "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\inicio_sesion.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|d:\\semestre 5\\ing software\\repo aero\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\inicio_sesion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\aeropuerto\\inicio_sesion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\inicio_sesion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|d:\\semestre 5\\ing software\\repo aero\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_datosida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\aeropuerto\\controlusuario\\uc_datosida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_datosida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|d:\\semestre 5\\ing software\\repo aero\\aeropuerto\\desarrollo\\aplicacion - codigo c#\\aeropuerto\\aeropuerto\\controlusuario\\uc_datosidavuelta.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76773178-E898-4DB0-9DAD-2398D97CBE5D}|Aeropuerto\\Aeropuerto.csproj|solutionrelative:aeropuerto\\controlusuario\\uc_datosidavuelta.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,31 +118,311 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Inicio_Sesion.resx",
-              "DocumentMoniker": "D:\\SEMESTRE 5\\ING SOFTWARE\\REPO AERO\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Inicio_Sesion.resx",
-              "RelativeDocumentMoniker": "Aeropuerto\\Inicio_Sesion.resx",
-              "ToolTip": "D:\\SEMESTRE 5\\ING SOFTWARE\\REPO AERO\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Inicio_Sesion.resx",
-              "RelativeToolTip": "Aeropuerto\\Inicio_Sesion.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-11-07T00:01:58.208Z",
-              "EditorCaption": ""
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Registrar_Usuario_Parte2.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Registrar_Usuario_Parte2.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\Registrar_Usuario_Parte2.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Registrar_Usuario_Parte2.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\Registrar_Usuario_Parte2.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:57:22.63Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Registrar_usuario.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Registrar_usuario.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\Registrar_usuario.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Registrar_usuario.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\Registrar_usuario.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:54:51.587Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Uc_GenerarFactura.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_GenerarFactura.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_GenerarFactura.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_GenerarFactura.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_GenerarFactura.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:42:30.321Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Uc_ConfirmarReagendamiento.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_ConfirmarReagendamiento.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_ConfirmarReagendamiento.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_ConfirmarReagendamiento.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_ConfirmarReagendamiento.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:42:19.816Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Uc_ConfirmarCancelacion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_ConfirmarCancelacion.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_ConfirmarCancelacion.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_ConfirmarCancelacion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_ConfirmarCancelacion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:42:18.421Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PaginaPrincipal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\PaginaPrincipal.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\PaginaPrincipal.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\PaginaPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\PaginaPrincipal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T20:23:21.14Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Uc_ReagendarPasaje.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_ReagendarPasaje.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_ReagendarPasaje.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_ReagendarPasaje.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_ReagendarPasaje.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:27:15.526Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Uc_SobrecostoReagendarVuelo.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_SobrecostoReagendarVuelo.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_SobrecostoReagendarVuelo.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_SobrecostoReagendarVuelo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_SobrecostoReagendarVuelo.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T03:06:01.78Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Datos.cs",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\accesoDatos\\Datos.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\accesoDatos\\Datos.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\accesoDatos\\Datos.cs",
+              "RelativeToolTip": "Aeropuerto\\accesoDatos\\Datos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T19:33:05.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Uc_AccionIda_Vuelta.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_AccionIda_Vuelta.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_AccionIda_Vuelta.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_AccionIda_Vuelta.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_AccionIda_Vuelta.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T20:22:54.449Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Uc_AcVuelosDisponibles.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_AcVuelosDisponibles.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_AcVuelosDisponibles.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_AcVuelosDisponibles.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_AcVuelosDisponibles.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:42:10.963Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Uc_DatosIda.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosIda.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_DatosIda.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosIda.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_DatosIda.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:42:21.617Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Uc_DatosIdaVuelta.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosIdaVuelta.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_DatosIdaVuelta.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosIdaVuelta.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_DatosIdaVuelta.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:42:23.185Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Uc_DatosIdaVuelta.Designer.cs",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosIdaVuelta.Designer.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_DatosIdaVuelta.Designer.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosIdaVuelta.Designer.cs",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_DatosIdaVuelta.Designer.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwA0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T22:53:32.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Uc_DatosMisVuelos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosMisVuelos.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_DatosMisVuelos.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosMisVuelos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_DatosMisVuelos.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:42:26.229Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Uc_DatosPasajero.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosPasajero.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_DatosPasajero.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosPasajero.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_DatosPasajero.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:42:28.458Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Uc_Informacion_Pasajero.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_Informacion_Pasajero.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_Informacion_Pasajero.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_Informacion_Pasajero.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_Informacion_Pasajero.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T03:02:35.183Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Uc_Informacion_Vuelo.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_Informacion_Vuelo.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_Informacion_Vuelo.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_Informacion_Vuelo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_Informacion_Vuelo.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T03:02:12.394Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Uc_MisVuelos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_MisVuelos.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_MisVuelos.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_MisVuelos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_MisVuelos.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T03:02:09.146Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Uc_ModificarDatos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_ModificarDatos.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_ModificarDatos.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_ModificarDatos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_ModificarDatos.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T03:01:33.455Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Uc_ModificarDatos_Parte2.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_ModificarDatos_Parte2.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_ModificarDatos_Parte2.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_ModificarDatos_Parte2.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_ModificarDatos_Parte2.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T03:00:54.451Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Inicio_Sesion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Inicio_Sesion.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\Inicio_Sesion.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Inicio_Sesion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Aeropuerto\\Inicio_Sesion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T23:47:40.026Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Uc_ReagendarPasaje.cs",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_ReagendarPasaje.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_ReagendarPasaje.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_ReagendarPasaje.cs",
+              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_ReagendarPasaje.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:29:09.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Uc_ReagendarPasaje.cs",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Uc_ReagendarPasaje.cs",
+              "RelativeDocumentMoniker": "Aeropuerto\\Uc_ReagendarPasaje.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Uc_ReagendarPasaje.cs",
+              "RelativeToolTip": "Aeropuerto\\Uc_ReagendarPasaje.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T02:28:00.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "Inicio_Sesion.Designer.cs",
-              "DocumentMoniker": "D:\\SEMESTRE 5\\ING SOFTWARE\\REPO AERO\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Inicio_Sesion.Designer.cs",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Inicio_Sesion.Designer.cs",
               "RelativeDocumentMoniker": "Aeropuerto\\Inicio_Sesion.Designer.cs",
-              "ToolTip": "D:\\SEMESTRE 5\\ING SOFTWARE\\REPO AERO\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Inicio_Sesion.Designer.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Inicio_Sesion.Designer.cs",
               "RelativeToolTip": "Aeropuerto\\Inicio_Sesion.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -62,16 +430,12 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 26,
               "Title": "Uc_DatosIda.Designer.cs",
-              "DocumentMoniker": "D:\\SEMESTRE 5\\ING SOFTWARE\\REPO AERO\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosIda.Designer.cs",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosIda.Designer.cs",
               "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_DatosIda.Designer.cs",
-              "ToolTip": "D:\\SEMESTRE 5\\ING SOFTWARE\\REPO AERO\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosIda.Designer.cs",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosIda.Designer.cs",
               "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_DatosIda.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -80,31 +444,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Inicio_Sesion.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\SEMESTRE 5\\ING SOFTWARE\\REPO AERO\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Inicio_Sesion.cs",
-              "RelativeDocumentMoniker": "Aeropuerto\\Inicio_Sesion.cs",
-              "ToolTip": "D:\\SEMESTRE 5\\ING SOFTWARE\\REPO AERO\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Inicio_Sesion.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Aeropuerto\\Inicio_Sesion.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T23:47:40.026Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Uc_DatosIdaVuelta.Designer.cs",
-              "DocumentMoniker": "D:\\SEMESTRE 5\\ING SOFTWARE\\REPO AERO\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosIdaVuelta.Designer.cs",
-              "RelativeDocumentMoniker": "Aeropuerto\\ControlUsuario\\Uc_DatosIdaVuelta.Designer.cs",
-              "ToolTip": "D:\\SEMESTRE 5\\ING SOFTWARE\\REPO AERO\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\ControlUsuario\\Uc_DatosIdaVuelta.Designer.cs",
-              "RelativeToolTip": "Aeropuerto\\ControlUsuario\\Uc_DatosIdaVuelta.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T22:53:32.791Z",
+              "DocumentIndex": 24,
+              "Title": "Inicio_Sesion.resx",
+              "DocumentMoniker": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Inicio_Sesion.resx",
+              "RelativeDocumentMoniker": "Aeropuerto\\Inicio_Sesion.resx",
+              "ToolTip": "C:\\AEROPUERTO GIT\\AEROPUERTO\\Desarrollo\\Aplicacion - Codigo C#\\Aeropuerto\\Aeropuerto\\Inicio_Sesion.resx",
+              "RelativeToolTip": "Aeropuerto\\Inicio_Sesion.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-11-07T00:01:58.208Z",
               "EditorCaption": ""
             }
           ]

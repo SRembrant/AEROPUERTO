@@ -33,6 +33,8 @@
             this.lblCreaUsuarioGratuita_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUneteANosotros = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtApellidoUsuario_Modificar = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbxTipoIdentificacion = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTipoIdentificacion_msn = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnGuardarYContinuar = new Guna.UI2.WinForms.Guna2Button();
             this.pbxRegresar_Modificar1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegresar_Modificar1)).BeginInit();
@@ -87,7 +87,7 @@
             this.lblCreaUsuarioGratuita_mns.BackColor = System.Drawing.Color.Transparent;
             this.lblCreaUsuarioGratuita_mns.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblCreaUsuarioGratuita_mns.ForeColor = System.Drawing.Color.White;
-            this.lblCreaUsuarioGratuita_mns.Location = new System.Drawing.Point(86, 60);
+            this.lblCreaUsuarioGratuita_mns.Location = new System.Drawing.Point(69, 60);
             this.lblCreaUsuarioGratuita_mns.Name = "lblCreaUsuarioGratuita_mns";
             this.lblCreaUsuarioGratuita_mns.Size = new System.Drawing.Size(217, 17);
             this.lblCreaUsuarioGratuita_mns.TabIndex = 2;
@@ -98,7 +98,7 @@
             this.lblUneteANosotros.BackColor = System.Drawing.Color.Transparent;
             this.lblUneteANosotros.Font = new System.Drawing.Font("Segoe UI", 18.25F, System.Drawing.FontStyle.Bold);
             this.lblUneteANosotros.ForeColor = System.Drawing.Color.White;
-            this.lblUneteANosotros.Location = new System.Drawing.Point(108, 20);
+            this.lblUneteANosotros.Location = new System.Drawing.Point(86, 20);
             this.lblUneteANosotros.Name = "lblUneteANosotros";
             this.lblUneteANosotros.Size = new System.Drawing.Size(169, 34);
             this.lblUneteANosotros.TabIndex = 1;
@@ -130,6 +130,28 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(353, 383);
             this.guna2Panel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(18, 238);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "(Sin puntos ni comas)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(115, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(188, 13);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "(Sin espacios o caracteres especiales)";
             // 
             // txtApellidoUsuario_Modificar
             // 
@@ -331,7 +353,7 @@
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(21, 45);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(59, 15);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(58, 15);
             this.guna2HtmlLabel3.TabIndex = 48;
             this.guna2HtmlLabel3.Text = "Tu nombre";
             // 
@@ -373,28 +395,6 @@
             this.pbxRegresar_Modificar1.TabIndex = 52;
             this.pbxRegresar_Modificar1.TabStop = false;
             this.pbxRegresar_Modificar1.Click += new System.EventHandler(this.pbxRegresar_Modificar1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(115, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(188, 13);
-            this.label3.TabIndex = 62;
-            this.label3.Text = "(Sin espacios o caracteres especiales)";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(18, 238);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 13);
-            this.label2.TabIndex = 63;
-            this.label2.Text = "(Sin puntos ni comas)";
             // 
             // Uc_ModificarDatos
             // 

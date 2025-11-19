@@ -293,7 +293,7 @@
             this.dtmFechaNacimiento.MaxDate = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             this.dtmFechaNacimiento.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtmFechaNacimiento.Name = "dtmFechaNacimiento";
-            this.dtmFechaNacimiento.Size = new System.Drawing.Size(222, 23);
+            this.dtmFechaNacimiento.Size = new System.Drawing.Size(263, 23);
             this.dtmFechaNacimiento.TabIndex = 3;
             this.dtmFechaNacimiento.Value = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             // 
