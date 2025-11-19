@@ -28,22 +28,32 @@ namespace Aeropuerto.utilidades
 
             switch (errorNumber)
             {
-                // 🔹 Errores comunes
+                // Errores comunes
                 case 1: return "Ya existe un registro con esos datos.";
                 case 2290: return "Se violó una restricción CHECK. Revisa los valores ingresados.";
                 case 1400: return "Un campo obligatorio está vacío.";
                 case 1017: return "Usuario o contraseña incorrectos al conectar con la base de datos.";
                 case 12560: return "Error de conexión con Oracle. Verifica el servicio.";
                 case 2291: return "Violación de clave foránea (referencia inexistente).";
-                //case 50048: return "Muchos campos con valores erroneos, inténtelo de nuevo";
+                
 
-                // 🔹 Gestión Usuario
+                // Paquete Gestión Usuario
+                //Insertar usuario
                 case 20001: return "El usuario con ese ID, correo o nombre ya existe.";
                 case 20002: return "Error de tipo de dato o valor nulo en campo obligatorio.";
                 case 20003: return "Violación de restricción CHECK (valores inválidos).";
+
+                //Obtener id del pasajero por el nombre de usuario
                 case 20010: return "No existe ningún usuario con ese nombre.";
                 case 20011: return "Existen múltiples usuarios con ese nombre.";
                 case 20012: return "Error al buscar usuario";
+
+                //Eliminar cuenta
+                case 20024: return "El usuario ya se encuentra inactivo.";
+                case 20026: return "No existe el usuario a eliminar.";
+                case 20022: return "Error al eliminar la cuenta.";
+
+                //Modificar usuario
                 case 20030: return "El usuario no existe.";
                 case 20031: return "El documento ya está en uso.";
                 case 20032: return "No se pudo actualizar el usuario.";
@@ -51,36 +61,53 @@ namespace Aeropuerto.utilidades
                 case 20005: return "El correo ingresado ya existe en el sistema.";
                 case 20006: return "El nombre de usuario ingresado ya está registrado.";
                 case 20007: return "El documento de identificacion ya existe en el sistema.";
+
+                //Validar credenciales
                 case 20040: return "Usuario no encontrado.";
                 case 20041: return "Más de un usuario tiene el mismo nombre de usuario.";
                 case 20042: return "Error inesperado al validar credenciales.";
 
+                /*
                 case 20000: return "El documento ya está en uso.";
                 case 20100: return "No se pudo registrar el usuario.";
                 case 20200: return "'El correo ingresado ya existe en el sistema.";
                 case 20300: return "El nombre de usuario ingresado ya está registrado.";
                 case 20400: return "El documento de identificacion ya existe en el sistema.";
-                
+                */
 
 
-                // 🔹 Triggers validaciones
-                case 20050: return "El nombre de usuario ya existe.";
+                // Triggers validaciones
+                //Trigger de ciberseguridad
                 case 20060: return "La contraseña no puede tener espacios al inicio o al final.";
                 case 20061: return "La contraseña debe tener al menos 8 caracteres.";
                 case 20062: return "La contraseña no puede exceder 64 caracteres.";
+
+                //Trigger de correo electronico usuario
                 case 20070: return "El correo no debe tener espacios al inicio o al final.";
                 case 20071: return "El correo no tiene un formato válido.";
+
+                //Trigger de correo electronico de pasajero
                 case 20072: return "El correo no debe tener espacios al inicio o al final.";
                 case 20073: return "El correo no tiene un formato válido.";
+
+                //Trigger de edad >18
                 case 20080: return "El usuario debe ser mayor de 18 años.";
                 case 20081: return "La edad ingresada excede el máximo permitido (100 años).";
+
+                //Trigger para validar que no se acepten palabras del lenguaje SQL
                 case 20500: return "El texto ingresado contiene una palabra SQL reservada o peligrosa.";
+
+                //Trigger para validar cantidad de numeros en telefono
                 case 20600: return "El número de teléfono no puede ser nulo.";
+
+                //Trigger para validar cantidad de numeros en telefono
                 case 20601: return "El número de teléfono debe contener exactamente 10 dígitos numéricos.";
+
+                //Trigger para validar caracteres especiales
                 case 20092: return "La dirección contiene caracteres no permitidos. Solo se permiten letras, números, espacios, - # y ''.";
                 case 20093: return "La observación contiene caracteres no permitidos. Solo se permiten letras, números, espacios, - # y ''.";
 
-                // 🔹 Gestión Pasajes
+                // Paquete Gestión Pasajes
                 case 20014: return "No hay asientos disponibles en la categoría seleccionada.";
                 case 20015: return "Se encontró más de un asiento cuando solo se esperaba uno.";
                 case 20016: return "Error de conversión al asignar número de asiento.";
