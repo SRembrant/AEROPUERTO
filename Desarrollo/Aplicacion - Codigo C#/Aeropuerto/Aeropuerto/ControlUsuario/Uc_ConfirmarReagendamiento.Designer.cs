@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlConfirmarReagendamiento = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnConfirmarReagendamiento = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCancelarReagendamiento = new Guna.UI2.WinForms.Guna2Button();
             this.lblDireccionCorreco_mns = new System.Windows.Forms.Label();
+            this.btnCancelarReagendamiento = new Guna.UI2.WinForms.Guna2Button();
+            this.btnConfirmarReagendamiento = new Guna.UI2.WinForms.Guna2Button();
             this.pnlConfirmarReagendamiento.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,22 +47,16 @@
             this.pnlConfirmarReagendamiento.Size = new System.Drawing.Size(475, 272);
             this.pnlConfirmarReagendamiento.TabIndex = 1;
             // 
-            // btnConfirmarReagendamiento
+            // lblDireccionCorreco_mns
             // 
-            this.btnConfirmarReagendamiento.BorderRadius = 20;
-            this.btnConfirmarReagendamiento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmarReagendamiento.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnConfirmarReagendamiento.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnConfirmarReagendamiento.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnConfirmarReagendamiento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnConfirmarReagendamiento.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnConfirmarReagendamiento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarReagendamiento.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmarReagendamiento.Location = new System.Drawing.Point(254, 158);
-            this.btnConfirmarReagendamiento.Name = "btnConfirmarReagendamiento";
-            this.btnConfirmarReagendamiento.Size = new System.Drawing.Size(190, 41);
-            this.btnConfirmarReagendamiento.TabIndex = 0;
-            this.btnConfirmarReagendamiento.Text = "Confirmar";
+            this.lblDireccionCorreco_mns.AutoSize = true;
+            this.lblDireccionCorreco_mns.BackColor = System.Drawing.Color.Transparent;
+            this.lblDireccionCorreco_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblDireccionCorreco_mns.Location = new System.Drawing.Point(107, 99);
+            this.lblDireccionCorreco_mns.Name = "lblDireccionCorreco_mns";
+            this.lblDireccionCorreco_mns.Size = new System.Drawing.Size(264, 25);
+            this.lblDireccionCorreco_mns.TabIndex = 10;
+            this.lblDireccionCorreco_mns.Text = "¿Desea reagendar su vuelo?";
             // 
             // btnCancelarReagendamiento
             // 
@@ -82,15 +76,22 @@
             this.btnCancelarReagendamiento.TabIndex = 1;
             this.btnCancelarReagendamiento.Text = "Cancelar";
             // 
-            // lblDireccionCorreco_mns
+            // btnConfirmarReagendamiento
             // 
-            this.lblDireccionCorreco_mns.AutoSize = true;
-            this.lblDireccionCorreco_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblDireccionCorreco_mns.Location = new System.Drawing.Point(107, 99);
-            this.lblDireccionCorreco_mns.Name = "lblDireccionCorreco_mns";
-            this.lblDireccionCorreco_mns.Size = new System.Drawing.Size(264, 25);
-            this.lblDireccionCorreco_mns.TabIndex = 10;
-            this.lblDireccionCorreco_mns.Text = "¿Desea reagendar su vuelo?";
+            this.btnConfirmarReagendamiento.BorderRadius = 20;
+            this.btnConfirmarReagendamiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmarReagendamiento.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfirmarReagendamiento.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfirmarReagendamiento.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnConfirmarReagendamiento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnConfirmarReagendamiento.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnConfirmarReagendamiento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmarReagendamiento.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmarReagendamiento.Location = new System.Drawing.Point(254, 158);
+            this.btnConfirmarReagendamiento.Name = "btnConfirmarReagendamiento";
+            this.btnConfirmarReagendamiento.Size = new System.Drawing.Size(190, 41);
+            this.btnConfirmarReagendamiento.TabIndex = 0;
+            this.btnConfirmarReagendamiento.Text = "Confirmar";
             // 
             // Uc_ConfirmarReagendamiento
             // 

@@ -66,6 +66,7 @@
             // lblDireccionCorreco_mns
             // 
             this.lblDireccionCorreco_mns.AutoSize = true;
+            this.lblDireccionCorreco_mns.BackColor = System.Drawing.Color.Transparent;
             this.lblDireccionCorreco_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblDireccionCorreco_mns.Location = new System.Drawing.Point(62, 67);
             this.lblDireccionCorreco_mns.Name = "lblDireccionCorreco_mns";
