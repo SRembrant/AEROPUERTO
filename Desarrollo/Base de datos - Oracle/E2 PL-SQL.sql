@@ -327,8 +327,8 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
             WHERE idVuelo = p_idVuelo;
         
             -- 3.2 Generar Pasaje
-            INSERT INTO Pasaje (fechaCompraPasaje, fechaUsoPasaje, estadoPasaje, idVuelo, idPasajero, idUsuario, idAvion, numAsiento)
-            VALUES (CURRENT_DATE, v_fechaUsoPasaje, 'Activo', p_idVuelo, p_idPasajero, p_idUsuario, v_idAvionAsignado, v_numAsiento)
+            INSERT INTO Pasaje (fechaCompraPasaje, fechaUsoPasaje, estadoPasaje, idVuelo, idPasajero, idUsuario, idAvion, numAsiento,countreagendamientos)
+            VALUES (CURRENT_DATE, v_fechaUsoPasaje, 'Activo', p_idVuelo, p_idPasajero, p_idUsuario, v_idAvionAsignado, v_numAsiento,0)
             RETURNING idPasaje INTO v_id_pasaje;
             
         -- 4. Actualizar asiento como reservado
@@ -707,10 +707,10 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
                 f.idFactura,
                 f.medioPagoFactura,
                 -- Campos adicionales
-                'En tiempo' AS estadoVuelo,
-                '9' AS puertaEmbarque,
-                'A6' AS zonaEmbarque,
-                3 AS numPasajeros
+                v.estadovuelo AS estadoVuelo,
+                v.idpuerta AS puertaEmbarque,
+                v.idzembarque AS zonaEmbarque,
+                p.idpasaje AS numPasaje
             FROM 
                 PASAJE p
                 INNER JOIN VUELO v ON p.idVuelo = v.idVuelo

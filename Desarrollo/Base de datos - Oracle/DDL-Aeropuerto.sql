@@ -54,12 +54,12 @@ CREATE TABLE categoriaAsiento(
 ); 
 
 CREATE TABLE UsuarioRegistrado (
-    idUsuario       INTEGER GENERATED ALWAYS AS IDENTITY,
+    idUsuario       INTEGER GENERATED ALWAYS AS IDENTITY, --
     docIdUsuario    NUMBER NOT NULL,
-    tipoIdUsuario         VARCHAR2(50) NOT NULL,
-    nombreUsuario   VARCHAR2(50) NOT NULL,
-    apellidoUsuario VARCHAR2(50) NOT NULL,
-    correoUsuario   VARCHAR2(100) NOT NULL, 
+    tipoIdUsuario         VARCHAR2(50) NOT NULL, --
+    nombreUsuario   VARCHAR2(50) NOT NULL, --
+    apellidoUsuario VARCHAR2(50) NOT NULL, --
+    correoUsuario   VARCHAR2(100) NOT NULL, --
     generoUsuario    VARCHAR2(30) NOT NULL,
     fechaNacUsuario  DATE NOT NULL,
     nacionalidadUsuario    VARCHAR2(50) NOT NULL,
@@ -149,31 +149,7 @@ CREATE TABLE Asiento (
     constraint ckc_numAsiento check (numAsiento>0),
     constraint ckc_estadoAsiento check(estadoAsiento IN('Disponible','Reservado'))
 );
-/*
-CREATE TABLE Vuelo (
-    idVuelo         INTEGER NOT NULL,
-   -- origenVuelo     VARCHAR2(50) NOT NULL,
-    ciuOrigenVuelo VARCHAR2(50) NOT NULL,
-    paisOrigenVuelo VARCHAR2(50) NOT NULL,
-  --  destinoVuelo    VARCHAR2(50) NOT NULL,
-    ciuDestinoVuelo VARCHAR2(50) NOT NULL,
-    paisDestinoVuelo VARCHAR2(50) NOT NULL,
-    precioBaseVuelo NUMBER NOT NULL,
-    estadoVuelo     VARCHAR2(15) NOT NULL,
-    fechaEjecucion  TIMESTAMP NOT NULL,
-    idZEmbarque     INTEGER NOT NULL,
-    idPuerta        INTEGER NOT NULL,
-    idAvion        INTEGER NOT NULL,
 
-    CONSTRAINT pk_Vuelo PRIMARY KEY (idVuelo),
-    constraint fk_ZEmbVuel foreign key (idZEmbarque) references ZonaEmbarque (idZEmbarque),
-    constraint fk_PuerVuel foreign key (idPuerta) references PuertaEmbarque (idPuerta),
-    constraint fk_AvioVuel foreign key (idAvion) references Avion (idAvion),
-    constraint ckc_idVuelo check (idVuelo>0),
-    constraint ckc_precioBaseVuelo check (precioBaseVuelo > 0),
-    constraint ckc_estadoVuelo check (estadoVuelo in ('Adelantado', 'En tiempo', 'Atrasado'))
-);
-*/
 
 CREATE TABLE Vuelo (
     idVuelo             INTEGER NOT NULL,
@@ -407,7 +383,7 @@ INSERT INTO Vuelo (
     1, 1, 1
 );
 
-
+---------
 SELECT ciuOrigenVuelo, ciuDestinoVuelo, TO_CHAR(fechaEjecucion, 'YYYY-MM-DD'), codVuelo
 FROM Vuelo
 WHERE ciuOrigenVuelo = 'Bogotá' AND ciuDestinoVuelo = 'Lima';
@@ -418,7 +394,7 @@ WHERE ciuOrigenVuelo = 'Lima' AND ciuDestinoVuelo = 'Bogotá';
 
 
 
-
+---------
 INSERT INTO CategoriaAsiento (idCategoria, nombreCategoria, sobrecostoCategoria)
 VALUES (1, 'Economica', 1);
 
