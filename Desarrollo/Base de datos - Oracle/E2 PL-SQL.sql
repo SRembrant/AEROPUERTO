@@ -707,10 +707,10 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
                 f.idFactura,
                 f.medioPagoFactura,
                 -- Campos adicionales
-                'En tiempo' AS estadoVuelo,
-                '9' AS puertaEmbarque,
-                'A6' AS zonaEmbarque,
-                3 AS numPasajeros
+                v.estadovuelo AS estadoVuelo,
+                v.idpuerta AS puertaEmbarque,
+                v.idzembarque AS zonaEmbarque,
+                p.idpasaje AS numPasaje
             FROM 
                 PASAJE p
                 INNER JOIN VUELO v ON p.idVuelo = v.idVuelo
