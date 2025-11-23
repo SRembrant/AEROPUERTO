@@ -262,7 +262,7 @@ CREATE TABLE ReglasReagendamiento (
 );
 
 
-commit
+commit;
 
 
 -- =============================
@@ -384,14 +384,14 @@ INSERT INTO Vuelo (
 );
 
 ---------
-SELECT ciuOrigenVuelo, ciuDestinoVuelo, TO_CHAR(fechaEjecucion, 'YYYY-MM-DD'), codVuelo
+/*SELECT ciuOrigenVuelo, ciuDestinoVuelo, TO_CHAR(fechaEjecucion, 'YYYY-MM-DD'), codVuelo
 FROM Vuelo
 WHERE ciuOrigenVuelo = 'Bogotá' AND ciuDestinoVuelo = 'Lima';
 
 SELECT ciuOrigenVuelo, ciuDestinoVuelo, TO_CHAR(fechaEjecucion, 'YYYY-MM-DD'), codVuelo
 FROM Vuelo
 WHERE ciuOrigenVuelo = 'Lima' AND ciuDestinoVuelo = 'Bogotá';
-
+*/
 
 
 ---------
@@ -421,5 +421,5 @@ BEGIN
 END;
 
 
-SELECT COUNT(*) FROM Vuelo
+--SELECT COUNT(*) FROM Vuelo
 

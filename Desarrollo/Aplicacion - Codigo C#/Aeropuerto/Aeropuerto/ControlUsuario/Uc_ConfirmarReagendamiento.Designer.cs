@@ -75,6 +75,7 @@
             this.btnCancelarReagendamiento.Size = new System.Drawing.Size(195, 41);
             this.btnCancelarReagendamiento.TabIndex = 1;
             this.btnCancelarReagendamiento.Text = "Cancelar";
+            this.btnCancelarReagendamiento.Click += new System.EventHandler(this.btnCancelarReagendamiento_Click);
             // 
             // btnConfirmarReagendamiento
             // 
@@ -92,6 +93,7 @@
             this.btnConfirmarReagendamiento.Size = new System.Drawing.Size(190, 41);
             this.btnConfirmarReagendamiento.TabIndex = 0;
             this.btnConfirmarReagendamiento.Text = "Confirmar";
+            this.btnConfirmarReagendamiento.Click += new System.EventHandler(this.btnConfirmarReagendamiento_Click);
             // 
             // Uc_ConfirmarReagendamiento
             // 

@@ -33,6 +33,7 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.flowlp_vuelos_menuprincipal = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBoxFlechas2 = new System.Windows.Forms.PictureBox();
             this.lblDestino = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblOrigen = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.mns_Hasta = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -42,19 +43,7 @@
             this.lblCreaUsuarioGratuita_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblHola = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbpMisVuelos = new System.Windows.Forms.TabPage();
-            this.pnlMisVuelos = new Guna.UI2.WinForms.Guna2Panel();
-            this.lb_NoComprados = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.flp_MisVuelos = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnl_MisVuelos = new Guna.UI2.WinForms.Guna2Panel();
-            this.lb_FechaVuelo_misVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblNumeroVuelo_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblAerolinea_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbDestino_misVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbOrigen_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbDestino_Avr_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbOrigen_Avr_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pnlContenedorMisVuelos = new Guna.UI2.WinForms.Guna2Panel();
             this.tbpMiperfil = new System.Windows.Forms.TabPage();
             this.pnlMiPerfil = new Guna.UI2.WinForms.Guna2Panel();
             this.txtApellido_PgPerfil = new Guna.UI2.WinForms.Guna2TextBox();
@@ -95,36 +84,48 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtmFechaViaje_Ida = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cbxDestino = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxOrigen = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnIdaYVuelta = new Guna.UI2.WinForms.Guna2Button();
             this.btnSoloIda = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlContenedorBuscarVuelos = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBoxFlechas2 = new System.Windows.Forms.PictureBox();
+            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pnl_MisVuelos = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.flp_MisVuelos = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbOrigen_Avr_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbDestino_Avr_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbOrigen_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbDestino_misVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblAerolinea_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblNumeroVuelo_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_FechaVuelo_misVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_NoComprados = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pnlMisVuelos = new Guna.UI2.WinForms.Guna2Panel();
             this.tabControl_PaginaPrincipal.SuspendLayout();
             this.tbpInicio.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.flowlp_vuelos_menuprincipal.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlechas2)).BeginInit();
             this.tbpMisVuelos.SuspendLayout();
-            this.pnlMisVuelos.SuspendLayout();
-            this.flp_MisVuelos.SuspendLayout();
-            this.pnl_MisVuelos.SuspendLayout();
+            this.pnlContenedorMisVuelos.SuspendLayout();
             this.tbpMiperfil.SuspendLayout();
             this.pnlMiPerfil.SuspendLayout();
             this.tbpBuscarVuelos.SuspendLayout();
             this.pnlBuscarVuelos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlechas2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnl_MisVuelos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.flp_MisVuelos.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl_PaginaPrincipal
@@ -166,7 +167,7 @@
             this.tbpInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbpInicio.Location = new System.Drawing.Point(184, 4);
             this.tbpInicio.Name = "tbpInicio";
-            this.tbpInicio.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpInicio.Padding = new System.Windows.Forms.Padding(3);
             this.tbpInicio.Size = new System.Drawing.Size(707, 652);
             this.tbpInicio.TabIndex = 0;
             this.tbpInicio.Text = "▲  Inicio";
@@ -209,6 +210,16 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(543, 139);
             this.guna2Panel2.TabIndex = 0;
+            // 
+            // pictureBoxFlechas2
+            // 
+            this.pictureBoxFlechas2.Image = global::Aeropuerto.Properties.Resources.flecha_2;
+            this.pictureBoxFlechas2.Location = new System.Drawing.Point(203, 32);
+            this.pictureBoxFlechas2.Name = "pictureBoxFlechas2";
+            this.pictureBoxFlechas2.Size = new System.Drawing.Size(119, 62);
+            this.pictureBoxFlechas2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFlechas2.TabIndex = 9;
+            this.pictureBoxFlechas2.TabStop = false;
             // 
             // lblDestino
             // 
@@ -300,165 +311,26 @@
             // 
             // tbpMisVuelos
             // 
+            this.tbpMisVuelos.Controls.Add(this.pnlContenedorMisVuelos);
             this.tbpMisVuelos.Controls.Add(this.pnlMisVuelos);
             this.tbpMisVuelos.Location = new System.Drawing.Point(184, 4);
             this.tbpMisVuelos.Name = "tbpMisVuelos";
-            this.tbpMisVuelos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpMisVuelos.Padding = new System.Windows.Forms.Padding(3);
             this.tbpMisVuelos.Size = new System.Drawing.Size(707, 652);
             this.tbpMisVuelos.TabIndex = 1;
             this.tbpMisVuelos.Text = "✈ Mis vuelos";
             this.tbpMisVuelos.UseVisualStyleBackColor = true;
             // 
-            // pnlMisVuelos
+            // pnlContenedorMisVuelos
             // 
-            this.pnlMisVuelos.Controls.Add(this.lb_NoComprados);
-            this.pnlMisVuelos.Controls.Add(this.flp_MisVuelos);
-            this.pnlMisVuelos.Controls.Add(this.guna2HtmlLabel7);
-            this.pnlMisVuelos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMisVuelos.Location = new System.Drawing.Point(3, 3);
-            this.pnlMisVuelos.Name = "pnlMisVuelos";
-            this.pnlMisVuelos.Size = new System.Drawing.Size(701, 646);
-            this.pnlMisVuelos.TabIndex = 1;
-            // 
-            // lb_NoComprados
-            // 
-            this.lb_NoComprados.BackColor = System.Drawing.Color.Transparent;
-            this.lb_NoComprados.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_NoComprados.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lb_NoComprados.Location = new System.Drawing.Point(190, 15);
-            this.lb_NoComprados.Name = "lb_NoComprados";
-            this.lb_NoComprados.Size = new System.Drawing.Size(178, 21);
-            this.lb_NoComprados.TabIndex = 13;
-            this.lb_NoComprados.Text = "No hay vuelos comprados";
-            // 
-            // flp_MisVuelos
-            // 
-            this.flp_MisVuelos.AutoScroll = true;
-            this.flp_MisVuelos.BackColor = System.Drawing.Color.White;
-            this.flp_MisVuelos.Controls.Add(this.pnl_MisVuelos);
-            this.flp_MisVuelos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flp_MisVuelos.Location = new System.Drawing.Point(46, 53);
-            this.flp_MisVuelos.Name = "flp_MisVuelos";
-            this.flp_MisVuelos.Size = new System.Drawing.Size(642, 582);
-            this.flp_MisVuelos.TabIndex = 15;
-            this.flp_MisVuelos.WrapContents = false;
-            // 
-            // pnl_MisVuelos
-            // 
-            this.pnl_MisVuelos.BackColor = System.Drawing.Color.White;
-            this.pnl_MisVuelos.Controls.Add(this.lb_FechaVuelo_misVuelos);
-            this.pnl_MisVuelos.Controls.Add(this.lblNumeroVuelo_MisVuelos);
-            this.pnl_MisVuelos.Controls.Add(this.lblAerolinea_MisVuelos);
-            this.pnl_MisVuelos.Controls.Add(this.guna2HtmlLabel5);
-            this.pnl_MisVuelos.Controls.Add(this.pictureBox4);
-            this.pnl_MisVuelos.Controls.Add(this.lbDestino_misVuelos);
-            this.pnl_MisVuelos.Controls.Add(this.lbOrigen_MisVuelos);
-            this.pnl_MisVuelos.Controls.Add(this.lbDestino_Avr_MisVuelos);
-            this.pnl_MisVuelos.Controls.Add(this.lbOrigen_Avr_MisVuelos);
-            this.pnl_MisVuelos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnl_MisVuelos.Location = new System.Drawing.Point(3, 3);
-            this.pnl_MisVuelos.Name = "pnl_MisVuelos";
-            this.pnl_MisVuelos.Size = new System.Drawing.Size(639, 91);
-            this.pnl_MisVuelos.TabIndex = 0;
-            // 
-            // lb_FechaVuelo_misVuelos
-            // 
-            this.lb_FechaVuelo_misVuelos.BackColor = System.Drawing.Color.Transparent;
-            this.lb_FechaVuelo_misVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lb_FechaVuelo_misVuelos.ForeColor = System.Drawing.Color.Gray;
-            this.lb_FechaVuelo_misVuelos.Location = new System.Drawing.Point(241, 14);
-            this.lb_FechaVuelo_misVuelos.Name = "lb_FechaVuelo_misVuelos";
-            this.lb_FechaVuelo_misVuelos.Size = new System.Drawing.Size(104, 17);
-            this.lb_FechaVuelo_misVuelos.TabIndex = 13;
-            this.lb_FechaVuelo_misVuelos.Text = "7 DICIEMBRE 2025";
-            // 
-            // lblNumeroVuelo_MisVuelos
-            // 
-            this.lblNumeroVuelo_MisVuelos.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumeroVuelo_MisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lblNumeroVuelo_MisVuelos.ForeColor = System.Drawing.Color.Black;
-            this.lblNumeroVuelo_MisVuelos.Location = new System.Drawing.Point(115, 14);
-            this.lblNumeroVuelo_MisVuelos.Name = "lblNumeroVuelo_MisVuelos";
-            this.lblNumeroVuelo_MisVuelos.Size = new System.Drawing.Size(47, 17);
-            this.lblNumeroVuelo_MisVuelos.TabIndex = 12;
-            this.lblNumeroVuelo_MisVuelos.Text = "M186T5";
-            // 
-            // lblAerolinea_MisVuelos
-            // 
-            this.lblAerolinea_MisVuelos.BackColor = System.Drawing.Color.Transparent;
-            this.lblAerolinea_MisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lblAerolinea_MisVuelos.ForeColor = System.Drawing.Color.Black;
-            this.lblAerolinea_MisVuelos.Location = new System.Drawing.Point(414, 14);
-            this.lblAerolinea_MisVuelos.Name = "lblAerolinea_MisVuelos";
-            this.lblAerolinea_MisVuelos.Size = new System.Drawing.Size(76, 17);
-            this.lblAerolinea_MisVuelos.TabIndex = 11;
-            this.lblAerolinea_MisVuelos.Text = "Qatar Airways";
-            // 
-            // guna2HtmlLabel5
-            // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Gray;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(276, 14);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(3, 2);
-            this.guna2HtmlLabel5.TabIndex = 10;
-            this.guna2HtmlLabel5.Text = null;
-            // 
-            // lbDestino_misVuelos
-            // 
-            this.lbDestino_misVuelos.BackColor = System.Drawing.Color.Transparent;
-            this.lbDestino_misVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lbDestino_misVuelos.ForeColor = System.Drawing.Color.Gray;
-            this.lbDestino_misVuelos.Location = new System.Drawing.Point(414, 52);
-            this.lbDestino_misVuelos.Name = "lbDestino_misVuelos";
-            this.lbDestino_misVuelos.Size = new System.Drawing.Size(28, 17);
-            this.lbDestino_misVuelos.TabIndex = 8;
-            this.lbDestino_misVuelos.Text = "Paris";
-            // 
-            // lbOrigen_MisVuelos
-            // 
-            this.lbOrigen_MisVuelos.BackColor = System.Drawing.Color.Transparent;
-            this.lbOrigen_MisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lbOrigen_MisVuelos.ForeColor = System.Drawing.Color.Gray;
-            this.lbOrigen_MisVuelos.Location = new System.Drawing.Point(115, 52);
-            this.lbOrigen_MisVuelos.Name = "lbOrigen_MisVuelos";
-            this.lbOrigen_MisVuelos.Size = new System.Drawing.Size(41, 17);
-            this.lbOrigen_MisVuelos.TabIndex = 7;
-            this.lbOrigen_MisVuelos.Text = "Madrid";
-            // 
-            // lbDestino_Avr_MisVuelos
-            // 
-            this.lbDestino_Avr_MisVuelos.BackColor = System.Drawing.Color.Transparent;
-            this.lbDestino_Avr_MisVuelos.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
-            this.lbDestino_Avr_MisVuelos.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbDestino_Avr_MisVuelos.Location = new System.Drawing.Point(414, 23);
-            this.lbDestino_Avr_MisVuelos.Name = "lbDestino_Avr_MisVuelos";
-            this.lbDestino_Avr_MisVuelos.Size = new System.Drawing.Size(42, 30);
-            this.lbDestino_Avr_MisVuelos.TabIndex = 4;
-            this.lbDestino_Avr_MisVuelos.Text = "PAR";
-            // 
-            // lbOrigen_Avr_MisVuelos
-            // 
-            this.lbOrigen_Avr_MisVuelos.BackColor = System.Drawing.Color.Transparent;
-            this.lbOrigen_Avr_MisVuelos.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
-            this.lbOrigen_Avr_MisVuelos.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbOrigen_Avr_MisVuelos.Location = new System.Drawing.Point(115, 23);
-            this.lbOrigen_Avr_MisVuelos.Name = "lbOrigen_Avr_MisVuelos";
-            this.lbOrigen_Avr_MisVuelos.Size = new System.Drawing.Size(51, 30);
-            this.lbOrigen_Avr_MisVuelos.TabIndex = 3;
-            this.lbOrigen_Avr_MisVuelos.Text = "MAD";
-            // 
-            // guna2HtmlLabel7
-            // 
-            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(46, 14);
-            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(79, 22);
-            this.guna2HtmlLabel7.TabIndex = 14;
-            this.guna2HtmlLabel7.Text = "Mis Vuelos";
+            this.pnlContenedorMisVuelos.Controls.Add(this.lb_NoComprados);
+            this.pnlContenedorMisVuelos.Controls.Add(this.flp_MisVuelos);
+            this.pnlContenedorMisVuelos.Controls.Add(this.guna2HtmlLabel7);
+            this.pnlContenedorMisVuelos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContenedorMisVuelos.Location = new System.Drawing.Point(3, 3);
+            this.pnlContenedorMisVuelos.Name = "pnlContenedorMisVuelos";
+            this.pnlContenedorMisVuelos.Size = new System.Drawing.Size(701, 646);
+            this.pnlContenedorMisVuelos.TabIndex = 1;
             // 
             // tbpMiperfil
             // 
@@ -472,6 +344,7 @@
             // 
             // pnlMiPerfil
             // 
+            this.pnlMiPerfil.Controls.Add(this.pnlContenedorPerfil);
             this.pnlMiPerfil.Controls.Add(this.txtApellido_PgPerfil);
             this.pnlMiPerfil.Controls.Add(this.guna2HtmlLabel6);
             this.pnlMiPerfil.Controls.Add(this.btnCerrarSesion_Modificar1);
@@ -501,7 +374,6 @@
             this.pnlMiPerfil.Controls.Add(this.guna2HtmlLabel3);
             this.pnlMiPerfil.Controls.Add(this.guna2HtmlLabel2);
             this.pnlMiPerfil.Controls.Add(this.guna2HtmlLabel1);
-            this.pnlMiPerfil.Controls.Add(this.pnlContenedorPerfil);
             this.pnlMiPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMiPerfil.Location = new System.Drawing.Point(0, 0);
             this.pnlMiPerfil.Name = "pnlMiPerfil";
@@ -1077,6 +949,26 @@
             this.cbxDestino.TabIndex = 55;
             this.cbxDestino.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Aeropuerto.Properties.Resources.flecha_2;
+            this.pictureBox3.Location = new System.Drawing.Point(245, 108);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(109, 57);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 54;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.avion_b;
+            this.pictureBox1.Location = new System.Drawing.Point(391, 115);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 53;
+            this.pictureBox1.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1113,6 +1005,16 @@
             this.cbxOrigen.Size = new System.Drawing.Size(165, 24);
             this.cbxOrigen.TabIndex = 8;
             this.cbxOrigen.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Aeropuerto.Properties.Resources.avion_b;
+            this.pictureBox2.Location = new System.Drawing.Point(92, 115);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
             // 
             // btnIdaYVuelta
             // 
@@ -1167,15 +1069,34 @@
             this.pnlContenedorBuscarVuelos.Size = new System.Drawing.Size(707, 652);
             this.pnlContenedorBuscarVuelos.TabIndex = 61;
             // 
-            // pictureBoxFlechas2
+            // guna2HtmlLabel7
             // 
-            this.pictureBoxFlechas2.Image = global::Aeropuerto.Properties.Resources.flecha_2;
-            this.pictureBoxFlechas2.Location = new System.Drawing.Point(203, 32);
-            this.pictureBoxFlechas2.Name = "pictureBoxFlechas2";
-            this.pictureBoxFlechas2.Size = new System.Drawing.Size(119, 62);
-            this.pictureBoxFlechas2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxFlechas2.TabIndex = 9;
-            this.pictureBoxFlechas2.TabStop = false;
+            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(46, 14);
+            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(79, 22);
+            this.guna2HtmlLabel7.TabIndex = 14;
+            this.guna2HtmlLabel7.Text = "Mis Vuelos";
+            // 
+            // pnl_MisVuelos
+            // 
+            this.pnl_MisVuelos.BackColor = System.Drawing.Color.White;
+            this.pnl_MisVuelos.Controls.Add(this.lb_FechaVuelo_misVuelos);
+            this.pnl_MisVuelos.Controls.Add(this.lblNumeroVuelo_MisVuelos);
+            this.pnl_MisVuelos.Controls.Add(this.lblAerolinea_MisVuelos);
+            this.pnl_MisVuelos.Controls.Add(this.guna2HtmlLabel5);
+            this.pnl_MisVuelos.Controls.Add(this.pictureBox4);
+            this.pnl_MisVuelos.Controls.Add(this.lbDestino_misVuelos);
+            this.pnl_MisVuelos.Controls.Add(this.lbOrigen_MisVuelos);
+            this.pnl_MisVuelos.Controls.Add(this.lbDestino_Avr_MisVuelos);
+            this.pnl_MisVuelos.Controls.Add(this.lbOrigen_Avr_MisVuelos);
+            this.pnl_MisVuelos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_MisVuelos.Location = new System.Drawing.Point(3, 3);
+            this.pnl_MisVuelos.Name = "pnl_MisVuelos";
+            this.pnl_MisVuelos.Size = new System.Drawing.Size(639, 91);
+            this.pnl_MisVuelos.TabIndex = 0;
             // 
             // pictureBox4
             // 
@@ -1187,35 +1108,123 @@
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox3
+            // flp_MisVuelos
             // 
-            this.pictureBox3.Image = global::Aeropuerto.Properties.Resources.flecha_2;
-            this.pictureBox3.Location = new System.Drawing.Point(245, 108);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(109, 57);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 54;
-            this.pictureBox3.TabStop = false;
+            this.flp_MisVuelos.AutoScroll = true;
+            this.flp_MisVuelos.BackColor = System.Drawing.Color.White;
+            this.flp_MisVuelos.Controls.Add(this.pnl_MisVuelos);
+            this.flp_MisVuelos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flp_MisVuelos.Location = new System.Drawing.Point(46, 53);
+            this.flp_MisVuelos.Name = "flp_MisVuelos";
+            this.flp_MisVuelos.Size = new System.Drawing.Size(642, 582);
+            this.flp_MisVuelos.TabIndex = 15;
+            this.flp_MisVuelos.WrapContents = false;
             // 
-            // pictureBox1
+            // lbOrigen_Avr_MisVuelos
             // 
-            this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.avion_b;
-            this.pictureBox1.Location = new System.Drawing.Point(391, 115);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 53;
-            this.pictureBox1.TabStop = false;
+            this.lbOrigen_Avr_MisVuelos.BackColor = System.Drawing.Color.Transparent;
+            this.lbOrigen_Avr_MisVuelos.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
+            this.lbOrigen_Avr_MisVuelos.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lbOrigen_Avr_MisVuelos.Location = new System.Drawing.Point(115, 23);
+            this.lbOrigen_Avr_MisVuelos.Name = "lbOrigen_Avr_MisVuelos";
+            this.lbOrigen_Avr_MisVuelos.Size = new System.Drawing.Size(51, 30);
+            this.lbOrigen_Avr_MisVuelos.TabIndex = 3;
+            this.lbOrigen_Avr_MisVuelos.Text = "MAD";
             // 
-            // pictureBox2
+            // lbDestino_Avr_MisVuelos
             // 
-            this.pictureBox2.Image = global::Aeropuerto.Properties.Resources.avion_b;
-            this.pictureBox2.Location = new System.Drawing.Point(92, 115);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
+            this.lbDestino_Avr_MisVuelos.BackColor = System.Drawing.Color.Transparent;
+            this.lbDestino_Avr_MisVuelos.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
+            this.lbDestino_Avr_MisVuelos.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lbDestino_Avr_MisVuelos.Location = new System.Drawing.Point(414, 23);
+            this.lbDestino_Avr_MisVuelos.Name = "lbDestino_Avr_MisVuelos";
+            this.lbDestino_Avr_MisVuelos.Size = new System.Drawing.Size(42, 30);
+            this.lbDestino_Avr_MisVuelos.TabIndex = 4;
+            this.lbDestino_Avr_MisVuelos.Text = "PAR";
+            // 
+            // lbOrigen_MisVuelos
+            // 
+            this.lbOrigen_MisVuelos.BackColor = System.Drawing.Color.Transparent;
+            this.lbOrigen_MisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lbOrigen_MisVuelos.ForeColor = System.Drawing.Color.Gray;
+            this.lbOrigen_MisVuelos.Location = new System.Drawing.Point(115, 52);
+            this.lbOrigen_MisVuelos.Name = "lbOrigen_MisVuelos";
+            this.lbOrigen_MisVuelos.Size = new System.Drawing.Size(41, 17);
+            this.lbOrigen_MisVuelos.TabIndex = 7;
+            this.lbOrigen_MisVuelos.Text = "Madrid";
+            // 
+            // lbDestino_misVuelos
+            // 
+            this.lbDestino_misVuelos.BackColor = System.Drawing.Color.Transparent;
+            this.lbDestino_misVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lbDestino_misVuelos.ForeColor = System.Drawing.Color.Gray;
+            this.lbDestino_misVuelos.Location = new System.Drawing.Point(414, 52);
+            this.lbDestino_misVuelos.Name = "lbDestino_misVuelos";
+            this.lbDestino_misVuelos.Size = new System.Drawing.Size(28, 17);
+            this.lbDestino_misVuelos.TabIndex = 8;
+            this.lbDestino_misVuelos.Text = "Paris";
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(276, 14);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(3, 2);
+            this.guna2HtmlLabel5.TabIndex = 10;
+            this.guna2HtmlLabel5.Text = null;
+            // 
+            // lblAerolinea_MisVuelos
+            // 
+            this.lblAerolinea_MisVuelos.BackColor = System.Drawing.Color.Transparent;
+            this.lblAerolinea_MisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblAerolinea_MisVuelos.ForeColor = System.Drawing.Color.Black;
+            this.lblAerolinea_MisVuelos.Location = new System.Drawing.Point(414, 14);
+            this.lblAerolinea_MisVuelos.Name = "lblAerolinea_MisVuelos";
+            this.lblAerolinea_MisVuelos.Size = new System.Drawing.Size(76, 17);
+            this.lblAerolinea_MisVuelos.TabIndex = 11;
+            this.lblAerolinea_MisVuelos.Text = "Qatar Airways";
+            // 
+            // lblNumeroVuelo_MisVuelos
+            // 
+            this.lblNumeroVuelo_MisVuelos.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumeroVuelo_MisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblNumeroVuelo_MisVuelos.ForeColor = System.Drawing.Color.Black;
+            this.lblNumeroVuelo_MisVuelos.Location = new System.Drawing.Point(115, 14);
+            this.lblNumeroVuelo_MisVuelos.Name = "lblNumeroVuelo_MisVuelos";
+            this.lblNumeroVuelo_MisVuelos.Size = new System.Drawing.Size(47, 17);
+            this.lblNumeroVuelo_MisVuelos.TabIndex = 12;
+            this.lblNumeroVuelo_MisVuelos.Text = "M186T5";
+            // 
+            // lb_FechaVuelo_misVuelos
+            // 
+            this.lb_FechaVuelo_misVuelos.BackColor = System.Drawing.Color.Transparent;
+            this.lb_FechaVuelo_misVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lb_FechaVuelo_misVuelos.ForeColor = System.Drawing.Color.Gray;
+            this.lb_FechaVuelo_misVuelos.Location = new System.Drawing.Point(241, 14);
+            this.lb_FechaVuelo_misVuelos.Name = "lb_FechaVuelo_misVuelos";
+            this.lb_FechaVuelo_misVuelos.Size = new System.Drawing.Size(104, 17);
+            this.lb_FechaVuelo_misVuelos.TabIndex = 13;
+            this.lb_FechaVuelo_misVuelos.Text = "7 DICIEMBRE 2025";
+            // 
+            // lb_NoComprados
+            // 
+            this.lb_NoComprados.BackColor = System.Drawing.Color.Transparent;
+            this.lb_NoComprados.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_NoComprados.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lb_NoComprados.Location = new System.Drawing.Point(190, 15);
+            this.lb_NoComprados.Name = "lb_NoComprados";
+            this.lb_NoComprados.Size = new System.Drawing.Size(178, 21);
+            this.lb_NoComprados.TabIndex = 13;
+            this.lb_NoComprados.Text = "No hay vuelos comprados";
+            // 
+            // pnlMisVuelos
+            // 
+            this.pnlMisVuelos.Location = new System.Drawing.Point(0, 3);
+            this.pnlMisVuelos.Name = "pnlMisVuelos";
+            this.pnlMisVuelos.Size = new System.Drawing.Size(701, 644);
+            this.pnlMisVuelos.TabIndex = 16;
             // 
             // PaginaPrincipal
             // 
@@ -1234,23 +1243,23 @@
             this.flowlp_vuelos_menuprincipal.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlechas2)).EndInit();
             this.tbpMisVuelos.ResumeLayout(false);
-            this.pnlMisVuelos.ResumeLayout(false);
-            this.pnlMisVuelos.PerformLayout();
-            this.flp_MisVuelos.ResumeLayout(false);
-            this.pnl_MisVuelos.ResumeLayout(false);
-            this.pnl_MisVuelos.PerformLayout();
+            this.pnlContenedorMisVuelos.ResumeLayout(false);
+            this.pnlContenedorMisVuelos.PerformLayout();
             this.tbpMiperfil.ResumeLayout(false);
             this.pnlMiPerfil.ResumeLayout(false);
             this.pnlMiPerfil.PerformLayout();
             this.tbpBuscarVuelos.ResumeLayout(false);
             this.pnlBuscarVuelos.ResumeLayout(false);
             this.pnlBuscarVuelos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlechas2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnl_MisVuelos.ResumeLayout(false);
+            this.pnl_MisVuelos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.flp_MisVuelos.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1320,9 +1329,13 @@
         private Guna.UI2.WinForms.Guna2Button btnCerrarSesion_Modificar1;
         private Guna.UI2.WinForms.Guna2TextBox txtApellido_PgPerfil;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
-        private Guna.UI2.WinForms.Guna2Panel pnlMisVuelos;
+        private Guna.UI2.WinForms.Guna2Panel pnlContenedorMisVuelos;
+        private Guna.UI2.WinForms.Guna2Panel pnlContenedorPerfil;
+        private Guna.UI2.WinForms.Guna2Panel pnlContenedorBuscarVuelos;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_NoComprados;
         private System.Windows.Forms.FlowLayoutPanel flp_MisVuelos;
         private Guna.UI2.WinForms.Guna2Panel pnl_MisVuelos;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_FechaVuelo_misVuelos;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNumeroVuelo_MisVuelos;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblAerolinea_MisVuelos;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
@@ -1332,9 +1345,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbDestino_Avr_MisVuelos;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbOrigen_Avr_MisVuelos;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lb_NoComprados;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lb_FechaVuelo_misVuelos;
-        private Guna.UI2.WinForms.Guna2Panel pnlContenedorPerfil;
-        private Guna.UI2.WinForms.Guna2Panel pnlContenedorBuscarVuelos;
+        private Guna.UI2.WinForms.Guna2Panel pnlMisVuelos;
     }
 }

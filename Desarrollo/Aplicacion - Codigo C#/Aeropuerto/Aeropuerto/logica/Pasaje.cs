@@ -228,11 +228,11 @@ namespace Aeropuerto.logica
         {
             OracleParameter[] parametros = new OracleParameter[]
             {
-        new OracleParameter("p_idPasaje", idPasaje),
-        new OracleParameter("p_resultado", OracleDbType.RefCursor)
-        {
-            Direction = ParameterDirection.Output
-        }
+                new OracleParameter("p_idPasaje", idPasaje),
+                new OracleParameter("p_resultado", OracleDbType.RefCursor)
+                {
+                    Direction = ParameterDirection.Output
+                }
             };
 
             return datos.EjecutarProcedureCursor("GESTION_PASAJES.OBTENER_INFO_VUELO_PASAJE", parametros);
@@ -274,6 +274,93 @@ namespace Aeropuerto.logica
                 return 0;
             }
         }
+
+        //Reagendar
+        public DataTable ObtenerInfoVueloReagendar(int idPasaje)
+        {
+            OracleParameter[] parametros = new OracleParameter[]
+            {
+                new OracleParameter("p_idPasaje", idPasaje),
+                new OracleParameter("p_resultado", OracleDbType.RefCursor)
+                {
+                    Direction = ParameterDirection.Output
+                }
+            };
+
+            return datos.EjecutarProcedureCursor("GESTION_PASAJES.OBTENER_INFO_VUELO_REAGENDAR", parametros);
+        }
+
+
+        public string ReagendarPasaje(int idVueloNuevo, int idCategoriaNueva, int idPasaje, string medioPagoNuevo)
+        {
+            try
+            {
+                OracleParameter[] parametros = new OracleParameter[]
+                {
+                    new OracleParameter("p_idVuelo_nuevo", idVueloNuevo),
+                    new OracleParameter("p_idCategoria_nueva", idCategoriaNueva),
+                    new OracleParameter("p_idPasaje", idPasaje),
+                    new OracleParameter("p_medioPago_nuevo", medioPagoNuevo),
+
+                    new OracleParameter("p_idFactura_nueva", OracleDbType.Int32)
+                    {
+                        Direction = ParameterDirection.Output
+                    },
+
+                    new OracleParameter("p_bandera", OracleDbType.Int32)
+                    {
+                        Direction = ParameterDirection.Output
+                    }
+                };
+
+                datos.EjecutarProcedimiento("GESTION_PASAJES.REAGENDAR_PASAJE", parametros);
+
+                var valorSalida = parametros[parametros.Length - 1].Value;
+                int bandera = 0;
+
+                if (valorSalida is Oracle.ManagedDataAccess.Types.OracleDecimal oracleDecimal)
+                {
+                    bandera = oracleDecimal.ToInt32();
+                }
+
+                if (bandera == 1)
+                {
+                    return $"Reagendamiento exitoso.";
+                }
+                else
+                    return "No se pudo reagendar el pasaje. Revise nuevamente las reglas de reagendaimiento";
+
+                /*int bandera = Convert.ToInt32(((Oracle.ManagedDataAccess.Types.OracleDecimal)parametros[5].Value).ToInt32());
+
+                if (bandera == 1)
+                {
+                    return $"Reagendamiento exitoso.";
+                }
+                else
+                    return "No se pudo reagendar el pasaje.";*/
+            }
+            catch (OracleException ex)
+            {
+                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
+                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable ObtenerVuelosDisponiblesParaReagendo(int idPasaje)
+        {
+            OracleParameter[] parametros = new OracleParameter[]
+            {
+                new OracleParameter("p_idPasaje", idPasaje),
+                new OracleParameter("p_vuelos_cursor", OracleDbType.RefCursor)
+                {
+                    Direction = ParameterDirection.Output
+                }
+            };
+
+            return datos.EjecutarProcedureCursor("GESTION_PASAJES.VUELOS_DISPONIBLES_REAGENDO", parametros);
+        }
+
 
 
     }

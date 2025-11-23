@@ -10,23 +10,24 @@ namespace Aeropuerto
         private UsuarioRegistrado usuario;
         private int idPasaje;
         private Pasaje gestorPasaje;
+        Uc_Informacion_Vuelo anterior;
 
-        public Uc_ConfirmarCancelacion(PaginaPrincipal principal, UsuarioRegistrado usuario, int idPasaje, Pasaje gestorPasaje)
+        public Uc_ConfirmarCancelacion(PaginaPrincipal principal, UsuarioRegistrado usuario, int idPasaje, Pasaje gestorPasaje, Uc_Informacion_Vuelo anterior)
         {
             InitializeComponent();
             this.principal = principal;
             this.usuario = usuario;
             this.idPasaje = idPasaje;
             this.gestorPasaje = gestorPasaje;
+            this.anterior = anterior;
+            this.Visible = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            // Regresar sin cancelar
-            Uc_Informacion_Vuelo ucInfo = new Uc_Informacion_Vuelo(principal, usuario, idPasaje, gestorPasaje);
-            principal.PanelMisVuelos.Controls.Clear();
-            principal.PanelMisVuelos.Controls.Add(ucInfo);
-            ucInfo.Dock = DockStyle.Fill;
+            this.Visible = false;
+            anterior.Visible = true;
+            principal.PanelMisVuelos.Refresh();
         }
 
         private void btnConfirmarCancelacion_Click(object sender, EventArgs e)
@@ -39,10 +40,18 @@ namespace Aeropuerto
                 MessageBox.Show(resultado, "Cancelación completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Regresar a MisVuelos
+                /*
                 Uc_MisVuelos ucMisVuelos = new Uc_MisVuelos(principal, usuario);
                 principal.PanelMisVuelos.Controls.Clear();
                 principal.PanelMisVuelos.Controls.Add(ucMisVuelos);
-                ucMisVuelos.Dock = DockStyle.Fill;
+                ucMisVuelos.Dock = DockStyle.Fill;*/
+
+                principal.PanelContenedorMisVuelos.Visible = false;
+
+                principal.PanelMisVuelos.Visible = true;
+                principal.PanelMisVuelos.BringToFront();
+
+                principal.ActualizarPantalla();
             }
             catch (Exception ex)
             {

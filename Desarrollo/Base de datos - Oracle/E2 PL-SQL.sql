@@ -155,6 +155,11 @@ CREATE OR REPLACE PACKAGE GESTION_PASAJES AS
         p_vuelos_cursor OUT SYS_REFCURSOR -- Cursor fuerte de retorno
     );
     
+    PROCEDURE OBTENER_INFO_VUELO_REAGENDAR (
+            p_idPasaje IN PASAJE.IDPASAJE%TYPE,
+            p_resultado OUT SYS_REFCURSOR
+        );
+    
 END GESTION_PASAJES;
 
 
@@ -816,7 +821,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
         EXCEPTION
             WHEN NO_DATA_FOUND THEN
                 -- Si el vuelo no existe (o la referencia es incorrecta), es un error de dato
-                RAISE_APPLICATION_ERROR(-20041, 'El vuelo buscado no existe');
+                RAISE_APPLICATION_ERROR(-20141, 'El vuelo buscado no existe');
         --        RETURN -1;
         END;
     
@@ -975,7 +980,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
                 WHERE idVuelo = p_idVuelo_nuevo;
             EXCEPTION
                 WHEN NO_DATA_FOUND THEN
-                    RAISE_APPLICATION_ERROR(-20041,'El vuelo buscado no existe');
+                    RAISE_APPLICATION_ERROR(-20241,'El vuelo buscado no existe');
             END;
             
             
@@ -1184,26 +1189,24 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
             AND numAsiento = v_numAsiento_libre;
         
         -- 8. confirmar transaccion
+         p_bandera := 1;
         COMMIT;
         
     EXCEPTION
         WHEN OTHERS THEN
+        p_bandera := 0;
+        ROLLBACK;
         -- Errores de obtener_asiento_libre
             IF SQLCODE = -20014 THEN
-                ROLLBACK;
-                RAISE_APPLICATION_ERROR(-20014,'No hay asientos disponibles para el avion en la categoria ingresada');
+                RAISE_APPLICATION_ERROR(-20114,'No hay asientos disponibles para el avion en la categoria ingresada');
             ELSIF SQLCODE = -20015 THEN
-                ROLLBACK;
-                RAISE_APPLICATION_ERROR(-20015,'Se encontró más de un asiento cuando solo se esperaba uno');
+                RAISE_APPLICATION_ERROR(-20115,'Se encontró más de un asiento cuando solo se esperaba uno');
             ELSIF SQLCODE = -20016 THEN
-                ROLLBACK;
-                RAISE_APPLICATION_ERROR(-20016,'Error de tipo o conversión al asignar el número de asiento.');
+                RAISE_APPLICATION_ERROR(-20116,'Error de tipo o conversión al asignar el número de asiento.');
             ELSIF SQLCODE = -20023 THEN
-                ROLLBACK;
-                RAISE_APPLICATION_ERROR(-20023, 'Otro usuario está reservando asientos de esta categoría. Intente más tarde.');
+                RAISE_APPLICATION_ERROR(-20123, 'Otro usuario está reservando asientos de esta categoría. Intente más tarde.');
             ELSIF SQLCODE = -20017 THEN
-                ROLLBACK;
-                RAISE_APPLICATION_ERROR(-20017, 'Error inesperado al obtener asiento: ' || SQLERRM);
+                RAISE_APPLICATION_ERROR(-20117, 'Error inesperado al obtener asiento: ' || SQLERRM);
             END IF;
     END REAGENDAR_PASAJE;
 
@@ -1317,6 +1320,34 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
                 FROM DUAL
                 WHERE 1=0;
     END VUELOS_DISPONIBLES_REAGENDO;
+    
+    
+    
+    PROCEDURE OBTENER_INFO_VUELO_REAGENDAR (
+        p_idPasaje IN PASAJE.IDPASAJE%TYPE,
+        p_resultado OUT SYS_REFCURSOR
+    )
+    AS
+    BEGIN
+        OPEN p_resultado FOR
+            SELECT
+                v.ciuOrigenVuelo AS ciuorigen,
+                v.paisOrigenVuelo AS porigen,
+                v.ciuDestinoVuelo AS ciudestino,
+                v.paisDestinoVuelo AS pdestino,
+                v.estadovuelo AS estadoVuelo
+                --p.idpasaje AS idPasaje
+            FROM 
+               PASAJE p
+               INNER JOIN VUELO v ON p.idVuelo = v.idVuelo
+            WHERE 
+                    p.idPasaje = p_idPasaje;
+    
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            OPEN p_resultado FOR
+                SELECT NULL AS numeroVuelo FROM dual WHERE 1=0;
+    END OBTENER_INFO_VUELO_REAGENDAR;
  
 END GESTION_PASAJES;
 

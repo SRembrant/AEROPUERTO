@@ -32,7 +32,6 @@ namespace Aeropuerto
             this.objUsuarioRegistrado = objUsuarioRegistrado;
             this.vuelosIda = vuelosIda;
             this.vuelosRegreso = null;
-            //panelRegreso.Hide();
             MostrarVuelos(vuelosIda, null);
             this.Visible = true;
         }
@@ -90,7 +89,6 @@ namespace Aeropuerto
 
         private void SeleccionarVuelo(int idVuelo)
         {
-            // Aquí haces lo mismo que hacías antes con pbComprar_Click
             var ucPasajeros = new Uc_Informacion_Pasajero(principal, objVuelo, objUsuarioRegistrado,
                 vuelosIda.Select($"IDVUELO = {idVuelo}").CopyToDataTable(),
                 null, cantidadPasajeros);
@@ -108,15 +106,6 @@ namespace Aeropuerto
             MostrarPasajeros(ucPasajeros);
         }
 
-        /*private void MostrarPasajeros(UserControl uc)
-        {
-            var ucPasajeros = new Uc_Informacion_Pasajero(principal, objVuelo, objUsuarioRegistrado, vuelosIda, vuelosRegreso, cantidadPasajeros);
-            this.Visible = false;
-            principal.PanelContenedorBuscarVuelos.Controls.Add(ucPasajeros);
-            ucPasajeros.Dock = DockStyle.Fill;
-            ucPasajeros.GenerarPasajeros(cantidadPasajeros);
-            principal.PanelBuscarVuelos.Refresh();
-        }*/
 
         private void MostrarPasajeros(UserControl uc)
         {
