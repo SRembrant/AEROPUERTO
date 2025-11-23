@@ -25,6 +25,7 @@ namespace Aeropuerto
             this.idPasaje = idPasaje;
             this.gestorPasaje = gestorPasaje;
             CargarInformacionVuelo();
+            this.Visible = true;
         }
 
         private void CargarInformacionVuelo()
@@ -65,18 +66,36 @@ namespace Aeropuerto
 
         private void btnCancelarVuelo_Click(object sender, EventArgs e)
         {
-            Uc_ConfirmarCancelacion ucCancelar = new Uc_ConfirmarCancelacion(principal, objUsuarioRegistrado, idPasaje, gestorPasaje);
-            principal.PanelMisVuelos.Controls.Clear();
-            principal.PanelMisVuelos.Controls.Add(ucCancelar);
+            var ucCancelar = new Uc_ConfirmarCancelacion(principal, objUsuarioRegistrado, idPasaje, gestorPasaje, this);
+
+            // Limpia el panel y agrega el nuevo control
+            this.Visible = false;
+            principal.PanelContenedorMisVuelos.Controls.Add(ucCancelar);
             ucCancelar.Dock = DockStyle.Fill;
+
+            principal.PanelMisVuelos.Refresh();
         }
 
         private void lblVolvelMisVuelos_Click(object sender, EventArgs e)
         {
-            Uc_MisVuelos ucMisVuelos = new Uc_MisVuelos(principal,objUsuarioRegistrado);
-            principal.PanelMisVuelos.Controls.Clear();
-            principal.PanelMisVuelos.Controls.Add(ucMisVuelos);
-            ucMisVuelos.Dock = DockStyle.Fill;
+            principal.PanelContenedorMisVuelos.Visible = false;
+
+            principal.PanelMisVuelos.Visible = true;
+            principal.PanelMisVuelos.BringToFront();
+
+            principal.ActualizarPantalla();
+        }
+
+        private void btnReagendarVuelo_Click(object sender, EventArgs e)
+        {
+            var ucReagendarSobrecosto = new Uc_SobrecostoReagendarVuelo(principal, objUsuarioRegistrado, idPasaje, gestorPasaje, this);
+
+            // Limpia el panel y agrega el nuevo control
+            this.Visible = false;
+            principal.PanelContenedorMisVuelos.Controls.Add(ucReagendarSobrecosto);
+            ucReagendarSobrecosto.Dock = DockStyle.Fill;
+
+            principal.PanelMisVuelos.Refresh();
         }
     }
 }

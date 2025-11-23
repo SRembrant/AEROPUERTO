@@ -58,6 +58,16 @@ namespace Aeropuerto
             pnlBuscarVuelos.Visible = true;
             pnlContenedorBuscarVuelos.Visible = false;
 
+            //Mis Vuelos
+            pnlMisVuelos.Parent = tbpMisVuelos;
+            pnlContenedorMisVuelos.Parent = tbpMisVuelos;
+
+            pnlMisVuelos.Dock = DockStyle.Fill;
+            pnlContenedorMisVuelos.Dock = DockStyle.Fill;
+
+            pnlMisVuelos.Visible = true;
+            pnlContenedorMisVuelos.Visible = false;
+
             this.Refresh();
         }
 
@@ -141,8 +151,10 @@ namespace Aeropuerto
             {
                 Uc_MisVuelos ucMisVuelos = new Uc_MisVuelos(this, objUsuarioRegistrado);
                 this.pnlMisVuelos.Controls.Clear();
+                this.pnlContenedorMisVuelos.Controls.Clear();
                 this.pnlMisVuelos.Controls.Add(ucMisVuelos);
                 ucMisVuelos.Dock = DockStyle.Fill;
+
             }
 
         }
@@ -262,6 +274,11 @@ namespace Aeropuerto
         public Guna.UI2.WinForms.Guna2Panel PanelContenedorBuscarVuelos
         {
             get { return pnlContenedorBuscarVuelos; }
+        }
+
+        public Guna.UI2.WinForms.Guna2Panel PanelContenedorMisVuelos
+        {
+            get { return pnlContenedorMisVuelos; }
         }
 
     }

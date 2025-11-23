@@ -35,7 +35,7 @@ namespace Aeropuerto
                     Label lbl = new Label
                     {
                         Text = "No hay vuelos comprados",
-                        Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                        Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold),
                         ForeColor = Color.RoyalBlue,
                         AutoSize = true
                     };
@@ -61,10 +61,40 @@ namespace Aeropuerto
 
         private void VerVueloSeleccionado(int idPasaje)
         {
-            var ucVerVuelo = new Uc_Informacion_Vuelo(principal, objUsuarioRegistrado, idPasaje, gestorPasaje);
-            principal.PanelMisVuelos.Controls.Clear();
-            principal.PanelMisVuelos.Controls.Add(ucVerVuelo);
+            /*var ucVerVuelo = new Uc_Informacion_Vuelo(principal, objUsuarioRegistrado, idPasaje, gestorPasaje);
+            principal.PanelContenedorMisVuelos.Controls.Clear();
+            principal.PanelContenedorMisVuelos.Controls.Add(ucVerVuelo);
             ucVerVuelo.Dock = DockStyle.Fill;
+            */
+            /*
+            var ucVerVuelo = new Uc_Informacion_Vuelo(principal, objUsuarioRegistrado, idPasaje, gestorPasaje);
+
+            // Limpia el panel y agrega el nuevo control
+            this.Visible = false;
+            principal.PanelContenedorMisVuelos.Controls.Add(ucVerVuelo);
+            ucVerVuelo.Dock = DockStyle.Fill;
+
+            principal.PanelMisVuelos.Refresh();
+            */
+
+            ///
+
+            // Mostrar contenedor, ocultar panel base, y asegurar Z-order
+            principal.PanelContenedorMisVuelos.SuspendLayout();
+
+            principal.PanelContenedorMisVuelos.Visible = true;
+            principal.PanelContenedorMisVuelos.BringToFront();
+            principal.PanelMisVuelos.Visible = false;
+
+            // Cargar el UC dentro del contenedor
+            var ucVerVuelo = new Uc_Informacion_Vuelo(principal, objUsuarioRegistrado, idPasaje, gestorPasaje);
+            ucVerVuelo.Dock = DockStyle.Fill;
+
+            principal.PanelContenedorMisVuelos.Controls.Add(ucVerVuelo);
+            principal.PanelContenedorMisVuelos.ResumeLayout();
+
+
+
         }
     }
 }

@@ -31,16 +31,18 @@
             this.pnlConfirmarCancelacion = new Guna.UI2.WinForms.Guna2Panel();
             this.lblDireccionCorreco_mns = new System.Windows.Forms.Label();
             this.btnCancelar_ReagendarVuelo = new Guna.UI2.WinForms.Guna2Button();
-            this.btnConfirmarReagendarVuelo = new Guna.UI2.WinForms.Guna2Button();
+            this.btnConfirmar_ReagendarVuelo = new Guna.UI2.WinForms.Guna2Button();
+            this.VerPoliticas_Reagendamiento = new System.Windows.Forms.Label();
             this.pnlConfirmarCancelacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlConfirmarCancelacion
             // 
             this.pnlConfirmarCancelacion.BorderRadius = 20;
+            this.pnlConfirmarCancelacion.Controls.Add(this.VerPoliticas_Reagendamiento);
             this.pnlConfirmarCancelacion.Controls.Add(this.lblDireccionCorreco_mns);
             this.pnlConfirmarCancelacion.Controls.Add(this.btnCancelar_ReagendarVuelo);
-            this.pnlConfirmarCancelacion.Controls.Add(this.btnConfirmarReagendarVuelo);
+            this.pnlConfirmarCancelacion.Controls.Add(this.btnConfirmar_ReagendarVuelo);
             this.pnlConfirmarCancelacion.FillColor = System.Drawing.Color.White;
             this.pnlConfirmarCancelacion.Location = new System.Drawing.Point(114, 124);
             this.pnlConfirmarCancelacion.Name = "pnlConfirmarCancelacion";
@@ -57,6 +59,7 @@
             this.lblDireccionCorreco_mns.Size = new System.Drawing.Size(358, 50);
             this.lblDireccionCorreco_mns.TabIndex = 10;
             this.lblDireccionCorreco_mns.Text = "El reagendamiento del vuelo aplicará un\n sobrecosto sobre el total a pagar";
+            this.lblDireccionCorreco_mns.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCancelar_ReagendarVuelo
             // 
@@ -75,23 +78,38 @@
             this.btnCancelar_ReagendarVuelo.Size = new System.Drawing.Size(195, 41);
             this.btnCancelar_ReagendarVuelo.TabIndex = 1;
             this.btnCancelar_ReagendarVuelo.Text = "Cancelar";
+            this.btnCancelar_ReagendarVuelo.Click += new System.EventHandler(this.btnCancelar_ReagendarVuelo_Click);
             // 
-            // btnConfirmarReagendarVuelo
+            // btnConfirmar_ReagendarVuelo
             // 
-            this.btnConfirmarReagendarVuelo.BorderRadius = 20;
-            this.btnConfirmarReagendarVuelo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmarReagendarVuelo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnConfirmarReagendarVuelo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnConfirmarReagendarVuelo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnConfirmarReagendarVuelo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnConfirmarReagendarVuelo.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnConfirmarReagendarVuelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarReagendarVuelo.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmarReagendarVuelo.Location = new System.Drawing.Point(254, 158);
-            this.btnConfirmarReagendarVuelo.Name = "btnConfirmarReagendarVuelo";
-            this.btnConfirmarReagendarVuelo.Size = new System.Drawing.Size(190, 41);
-            this.btnConfirmarReagendarVuelo.TabIndex = 0;
-            this.btnConfirmarReagendarVuelo.Text = "Confirmar";
+            this.btnConfirmar_ReagendarVuelo.BorderRadius = 20;
+            this.btnConfirmar_ReagendarVuelo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmar_ReagendarVuelo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfirmar_ReagendarVuelo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfirmar_ReagendarVuelo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnConfirmar_ReagendarVuelo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnConfirmar_ReagendarVuelo.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnConfirmar_ReagendarVuelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar_ReagendarVuelo.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmar_ReagendarVuelo.Location = new System.Drawing.Point(254, 158);
+            this.btnConfirmar_ReagendarVuelo.Name = "btnConfirmar_ReagendarVuelo";
+            this.btnConfirmar_ReagendarVuelo.Size = new System.Drawing.Size(190, 41);
+            this.btnConfirmar_ReagendarVuelo.TabIndex = 0;
+            this.btnConfirmar_ReagendarVuelo.Text = "Confirmar";
+            this.btnConfirmar_ReagendarVuelo.Click += new System.EventHandler(this.btnConfirmar_ReagendarVuelo_Click);
+            // 
+            // VerPoliticas_Reagendamiento
+            // 
+            this.VerPoliticas_Reagendamiento.AutoSize = true;
+            this.VerPoliticas_Reagendamiento.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.VerPoliticas_Reagendamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VerPoliticas_Reagendamiento.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.VerPoliticas_Reagendamiento.Location = new System.Drawing.Point(150, 222);
+            this.VerPoliticas_Reagendamiento.Name = "VerPoliticas_Reagendamiento";
+            this.VerPoliticas_Reagendamiento.Size = new System.Drawing.Size(190, 15);
+            this.VerPoliticas_Reagendamiento.TabIndex = 11;
+            this.VerPoliticas_Reagendamiento.Text = "Ver Políticas de Reagendamiento";
+            this.VerPoliticas_Reagendamiento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Uc_SobrecostoReagendarVuelo
             // 
@@ -111,6 +129,7 @@
         private Guna.UI2.WinForms.Guna2Panel pnlConfirmarCancelacion;
         private System.Windows.Forms.Label lblDireccionCorreco_mns;
         private Guna.UI2.WinForms.Guna2Button btnCancelar_ReagendarVuelo;
-        private Guna.UI2.WinForms.Guna2Button btnConfirmarReagendarVuelo;
+        private Guna.UI2.WinForms.Guna2Button btnConfirmar_ReagendarVuelo;
+        private System.Windows.Forms.Label VerPoliticas_Reagendamiento;
     }
 }

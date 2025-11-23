@@ -362,33 +362,6 @@ END GESTION_USUARIO;
 
 
 --- TRIGGERS EPICA 1
-/*Trigger. Antes de insertar un nuevo usuario o actualizar el nombre de usuario, se debe garantizar que nadie más (activo) 
-        en la base de datos tiene el mismo nombre de usuario para evitar confusiones.*/
-/*
-CREATE OR REPLACE TRIGGER TR_VALIDAR_USERNAME_UNICO
-BEFORE INSERT ON UsuarioRegistrado
-FOR EACH ROW
-DECLARE
-    v_count NUMBER;
-BEGIN
-    -- Solo valida si el usuario cambia
-    IF UPDATING AND :NEW.UsuarioAcceso = :OLD.UsuarioAcceso THEN
-        RETURN;
-    END IF;
-
-    SELECT COUNT(*)
-    INTO v_count
-    FROM UsuarioRegistrado
-    WHERE UPPER(UsuarioAcceso) = UPPER(:NEW.UsuarioAcceso);
-
-    IF v_count > 0 THEN
-        RAISE_APPLICATION_ERROR(-20050, 'El nombre de usuario ya existe.');
-    END IF;
-END;
-
-ALTER TRIGGER TR_VALIDAR_USERNAME_UNICO ENABLE;
-DROP TRIGGER TR_VALIDAR_USERNAME_UNICO;*/
-
 --trigger de ciberseguridad
 CREATE OR REPLACE TRIGGER TR_VALIDAR_CONTRA_USUARIO
 BEFORE INSERT OR UPDATE OF CONTRASENIAUSUARIO ON UsuarioRegistrado

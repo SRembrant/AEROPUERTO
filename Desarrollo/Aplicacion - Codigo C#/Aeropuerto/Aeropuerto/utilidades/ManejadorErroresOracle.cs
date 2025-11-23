@@ -137,7 +137,27 @@ namespace Aeropuerto.utilidades
                 case 20054: return "Error inesperado al obtener la categoría.";
                 case 20055: return "No existe la categoría con ese nombre";
                 case 20056: return "Error inesperado al obtener el sobrecosto.";
+
+                //Reagendar Pasajes
+                case 20141: return "El vuelo buscado no existe";
+                case 20502: return "No se encontró el Pasaje ID o su factura asociada.";
+                case 20503: return "Error al obtener datos del pasaje y factura";
+                case 20504: return "El vuelo original ya ha pasado. No se puede reagendar.";
+                case 20505: return "No existe regla de reagendamiento para la antelación procesada.";
+                case 20506: return "Error al buscar reglas de reagendamiento";
+                case 20507: return "El cálculo del sobrecosto arrojó un valor no válido";
+                case 20241: return "El vuelo buscado no existe";
+                case 20508: return "No se encontró el registro de Compra para el Pasaje";
+                case 20509: return "Este pasaje alcanzo el maximo de reagendamientos permitidos";
+                case 20510: return "Error al verificar la cantidad de reagendamientos.";
+                case 20511: return "Hubo un fallo al liberar el asiento actual";
+                case 20114: return "No hay asientos disponibles para el avion en la categoria ingresada";
+                case 20115: return "Se encontró más de un asiento cuando solo se esperaba uno";
+                case 20116: return "Error de tipo o conversión al asignar el número de asiento.";
+                case 20123: return "Otro usuario está reservando asientos de esta categoría. Intente más tarde.";
+                case 20117: return "Error inesperado al obtener asiento.";
                 
+
                 // 🔹 Por defecto
                 default:
                     return "Ocurrió un error inesperado. Intente nuevamente o contacte al administrador.";

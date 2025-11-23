@@ -65,7 +65,7 @@
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnRealizarCompra = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReagendarVuelo = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelarVuelo = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblVolvelMisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -509,24 +509,25 @@
             this.guna2HtmlLabel8.TabIndex = 12;
             this.guna2HtmlLabel8.Text = "N° de pasaje";
             // 
-            // btnRealizarCompra
+            // btnReagendarVuelo
             // 
-            this.btnRealizarCompra.BackColor = System.Drawing.Color.Transparent;
-            this.btnRealizarCompra.BorderRadius = 15;
-            this.btnRealizarCompra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRealizarCompra.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRealizarCompra.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRealizarCompra.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRealizarCompra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRealizarCompra.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnRealizarCompra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRealizarCompra.ForeColor = System.Drawing.Color.White;
-            this.btnRealizarCompra.Location = new System.Drawing.Point(311, 587);
-            this.btnRealizarCompra.Name = "btnRealizarCompra";
-            this.btnRealizarCompra.Size = new System.Drawing.Size(214, 41);
-            this.btnRealizarCompra.TabIndex = 15;
-            this.btnRealizarCompra.Text = "Reagendar vuelo";
-            this.btnRealizarCompra.UseTransparentBackground = true;
+            this.btnReagendarVuelo.BackColor = System.Drawing.Color.Transparent;
+            this.btnReagendarVuelo.BorderRadius = 15;
+            this.btnReagendarVuelo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReagendarVuelo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReagendarVuelo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReagendarVuelo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReagendarVuelo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReagendarVuelo.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnReagendarVuelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReagendarVuelo.ForeColor = System.Drawing.Color.White;
+            this.btnReagendarVuelo.Location = new System.Drawing.Point(311, 587);
+            this.btnReagendarVuelo.Name = "btnReagendarVuelo";
+            this.btnReagendarVuelo.Size = new System.Drawing.Size(214, 41);
+            this.btnReagendarVuelo.TabIndex = 15;
+            this.btnReagendarVuelo.Text = "Reagendar vuelo";
+            this.btnReagendarVuelo.UseTransparentBackground = true;
+            this.btnReagendarVuelo.Click += new System.EventHandler(this.btnReagendarVuelo_Click);
             // 
             // btnCancelarVuelo
             // 
@@ -577,7 +578,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblVolvelMisVuelos);
             this.Controls.Add(this.btnCancelarVuelo);
-            this.Controls.Add(this.btnRealizarCompra);
+            this.Controls.Add(this.btnReagendarVuelo);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Name = "Uc_Informacion_Vuelo";
@@ -615,7 +616,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTerminosYCondiciones_mns;
-        private Guna.UI2.WinForms.Guna2Button btnRealizarCompra;
+        private Guna.UI2.WinForms.Guna2Button btnReagendarVuelo;
         private Guna.UI2.WinForms.Guna2Button btnCancelarVuelo;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblHora_LLegada;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;

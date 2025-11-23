@@ -36,13 +36,13 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.mns_estado = new System.Windows.Forms.Label();
             this.lb_Estado_ReagendarPasaje = new System.Windows.Forms.Label();
-            this.lb_Origen_ReagPasaje = new System.Windows.Forms.Label();
-            this.lb_Destino_ReagendarPasaje = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lb_CantidadPasajeros_ReagendarPasajes = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lb_Destino_ReagendarPasaje = new System.Windows.Forms.Label();
+            this.lb_Origen_ReagPasaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -63,7 +63,8 @@
             this.btnReagendarPasaje.Name = "btnReagendarPasaje";
             this.btnReagendarPasaje.Size = new System.Drawing.Size(189, 32);
             this.btnReagendarPasaje.TabIndex = 94;
-            this.btnReagendarPasaje.Text = "Aplicar cambio";
+            this.btnReagendarPasaje.Text = "Buscar Vuelo";
+            this.btnReagendarPasaje.Click += new System.EventHandler(this.btnReagendarPasaje_Click);
             // 
             // label3
             // 
@@ -143,45 +144,25 @@
             this.lb_Estado_ReagendarPasaje.TabIndex = 98;
             this.lb_Estado_ReagendarPasaje.Text = "Ida y Vuelta";
             // 
-            // lb_Origen_ReagPasaje
-            // 
-            this.lb_Origen_ReagPasaje.AutoSize = true;
-            this.lb_Origen_ReagPasaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lb_Origen_ReagPasaje.Location = new System.Drawing.Point(122, 189);
-            this.lb_Origen_ReagPasaje.Name = "lb_Origen_ReagPasaje";
-            this.lb_Origen_ReagPasaje.Size = new System.Drawing.Size(38, 13);
-            this.lb_Origen_ReagPasaje.TabIndex = 99;
-            this.lb_Origen_ReagPasaje.Text = "Origen";
-            // 
-            // lb_Destino_ReagendarPasaje
-            // 
-            this.lb_Destino_ReagendarPasaje.AutoSize = true;
-            this.lb_Destino_ReagendarPasaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lb_Destino_ReagendarPasaje.Location = new System.Drawing.Point(421, 189);
-            this.lb_Destino_ReagendarPasaje.Name = "lb_Destino_ReagendarPasaje";
-            this.lb_Destino_ReagendarPasaje.Size = new System.Drawing.Size(43, 13);
-            this.lb_Destino_ReagendarPasaje.TabIndex = 100;
-            this.lb_Destino_ReagendarPasaje.Text = "Destino";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
             this.label4.Location = new System.Drawing.Point(122, 213);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 13);
+            this.label4.Size = new System.Drawing.Size(115, 13);
             this.label4.TabIndex = 92;
-            this.label4.Text = "Cantidad de pasajeros";
+            this.label4.Text = "Cantidad de pasajeros:";
             // 
             // lb_CantidadPasajeros_ReagendarPasajes
             // 
             this.lb_CantidadPasajeros_ReagendarPasajes.AutoSize = true;
             this.lb_CantidadPasajeros_ReagendarPasajes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lb_CantidadPasajeros_ReagendarPasajes.Location = new System.Drawing.Point(122, 235);
+            this.lb_CantidadPasajeros_ReagendarPasajes.Location = new System.Drawing.Point(240, 213);
             this.lb_CantidadPasajeros_ReagendarPasajes.Name = "lb_CantidadPasajeros_ReagendarPasajes";
-            this.lb_CantidadPasajeros_ReagendarPasajes.Size = new System.Drawing.Size(112, 13);
+            this.lb_CantidadPasajeros_ReagendarPasajes.Size = new System.Drawing.Size(13, 13);
             this.lb_CantidadPasajeros_ReagendarPasajes.TabIndex = 101;
-            this.lb_CantidadPasajeros_ReagendarPasajes.Text = "Cantidad de pasajeros";
+            this.lb_CantidadPasajeros_ReagendarPasajes.Text = "1";
             // 
             // pictureBox3
             // 
@@ -212,6 +193,26 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 83;
             this.pictureBox2.TabStop = false;
+            // 
+            // lb_Destino_ReagendarPasaje
+            // 
+            this.lb_Destino_ReagendarPasaje.AutoSize = true;
+            this.lb_Destino_ReagendarPasaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.lb_Destino_ReagendarPasaje.Location = new System.Drawing.Point(421, 189);
+            this.lb_Destino_ReagendarPasaje.Name = "lb_Destino_ReagendarPasaje";
+            this.lb_Destino_ReagendarPasaje.Size = new System.Drawing.Size(43, 13);
+            this.lb_Destino_ReagendarPasaje.TabIndex = 100;
+            this.lb_Destino_ReagendarPasaje.Text = "Destino";
+            // 
+            // lb_Origen_ReagPasaje
+            // 
+            this.lb_Origen_ReagPasaje.AutoSize = true;
+            this.lb_Origen_ReagPasaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
+            this.lb_Origen_ReagPasaje.Location = new System.Drawing.Point(122, 189);
+            this.lb_Origen_ReagPasaje.Name = "lb_Origen_ReagPasaje";
+            this.lb_Origen_ReagPasaje.Size = new System.Drawing.Size(38, 13);
+            this.lb_Origen_ReagPasaje.TabIndex = 99;
+            this.lb_Origen_ReagPasaje.Text = "Origen";
             // 
             // Uc_ReagendarPasaje
             // 
@@ -255,9 +256,9 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private System.Windows.Forms.Label mns_estado;
         private System.Windows.Forms.Label lb_Estado_ReagendarPasaje;
-        private System.Windows.Forms.Label lb_Origen_ReagPasaje;
-        private System.Windows.Forms.Label lb_Destino_ReagendarPasaje;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lb_CantidadPasajeros_ReagendarPasajes;
+        private System.Windows.Forms.Label lb_Destino_ReagendarPasaje;
+        private System.Windows.Forms.Label lb_Origen_ReagPasaje;
     }
 }
