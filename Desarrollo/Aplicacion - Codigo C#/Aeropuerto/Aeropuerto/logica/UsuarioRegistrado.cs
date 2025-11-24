@@ -86,63 +86,6 @@ namespace Aeropuerto.logica
             }
         }
 
-        /*
-        public string RegistrarUsuario(int? docId, string tipoId, string nombre, string apellido, string correo, string genero, DateTime fechaNac,
-                                       string nacionalidad, string nombreUsuario, string contrasenia, string direccion, long? telefono, string detalle)
-        {
-            try
-            {
-                OracleParameter[] parametros = new OracleParameter[]
-                {
-                    new OracleParameter("p_docIdUsuario", docId),
-                    new OracleParameter("p_tipoIdUsuario", tipoId),
-                    new OracleParameter("p_nombreUsuario", nombre),
-                    new OracleParameter("p_apellidoUsuario", apellido),
-                    new OracleParameter("p_correoUsuario", correo),
-                    new OracleParameter("p_generoUsuario", genero),
-                    new OracleParameter("p_fechaNacUsuario", fechaNac),
-                    new OracleParameter("p_nacionalidadUsuario", nacionalidad),
-                    new OracleParameter("p_usuarioAcceso", nombreUsuario),
-                    new OracleParameter("p_contraseniaUsuario", contrasenia),
-                    new OracleParameter("p_direccionUsuario", direccion),
-                    new OracleParameter("p_observacionUsuario", detalle),
-                    new OracleParameter("p_telefonoUsuario", OracleDbType.Int64) 
-
-                };
-
-                var resultado = datos.EjecutarFuncion("GESTION_USUARIO.INSERTAR_USUARIO_NUEVO", parametros, OracleDbType.Int32);
-                int valor = 0;
-
-                // Conversión segura desde OracleDecimal → int
-                if (resultado is Oracle.ManagedDataAccess.Types.OracleDecimal oracleDecimal)
-                {
-                    valor = oracleDecimal.ToInt32();
-                }
-                else if (resultado != null)
-                {
-                    valor = Convert.ToInt32(resultado);
-                }
-
-
-                if (valor == 1)
-                    return "Usuario creado exitosamente. Bienvenido.";
-                else
-                    return "El usuario no pudo ser creado, inténtelo nuevamente.";
-
-
-            }
-            catch (OracleException ex)
-            {
-                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
-                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return null;
-            }
-            catch (Exception ex)
-            {
-                return "Error al insertar usuario: " + ex.Message;
-            }
-        }*/
-
         public string ValidarCredenciales(string usuarioAcceso, string contrasenia)
         {
             try

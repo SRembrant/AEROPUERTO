@@ -93,5 +93,16 @@ namespace Aeropuerto.ControlUsuario
                 MessageBox.Show("Error al cargar categorías: " + ex.Message);
             }
         }
+
+        private void pbx_VolverMisVuelos_Click(object sender, EventArgs e)
+        {
+            principal.PanelContenedorMisVuelos.Visible = false;
+
+            this.Visible = false;
+            principal.PanelMisVuelos.Visible = true;
+            principal.PanelMisVuelos.BringToFront();
+
+            principal.ActualizarPantalla();
+        }
     }
 }

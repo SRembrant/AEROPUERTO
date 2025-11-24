@@ -325,19 +325,11 @@ namespace Aeropuerto.logica
 
                 if (bandera == 1)
                 {
-                    return $"Reagendamiento exitoso.";
+                    return "Reagendamiento exitoso.";
                 }
                 else
-                    return "No se pudo reagendar el pasaje. Revise nuevamente las reglas de reagendaimiento";
+                    return "No se pudo reagendar el pasaje. Revise nuevamente las reglas de reagendamiento";
 
-                /*int bandera = Convert.ToInt32(((Oracle.ManagedDataAccess.Types.OracleDecimal)parametros[5].Value).ToInt32());
-
-                if (bandera == 1)
-                {
-                    return $"Reagendamiento exitoso.";
-                }
-                else
-                    return "No se pudo reagendar el pasaje.";*/
             }
             catch (OracleException ex)
             {
@@ -361,7 +353,26 @@ namespace Aeropuerto.logica
             return datos.EjecutarProcedureCursor("GESTION_PASAJES.VUELOS_DISPONIBLES_REAGENDO", parametros);
         }
 
+        public DataTable RecuperarFactura_Reagendamiento(int idPasaje, int idVuelo, string medioPago)
+        {
+            try { 
+                OracleParameter[] parametros = new OracleParameter[]
+                {
+                        new OracleParameter("p_idPasaje", idPasaje),
+                        new OracleParameter("p_idVuelo_Nuevo", idVuelo),
+                        new OracleParameter("p_medioPago", medioPago),
+                        new OracleParameter("p_infoFactura", OracleDbType.RefCursor) { Direction = ParameterDirection.Output }
+                };
 
+                return datos.EjecutarProcedureCursor("GESTION_PASAJES.GENERAR_FACTURA_REAGENDO", parametros);
+            }
+            catch (OracleException ex)
+            {
+                string mensaje = ManejadorErroresOracle.ObtenerMensaje(ex);
+                MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
 
     }
 }

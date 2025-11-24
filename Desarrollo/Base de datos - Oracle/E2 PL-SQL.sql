@@ -127,11 +127,18 @@ CREATE OR REPLACE PACKAGE GESTION_PASAJES AS
     )
     RETURN NUMBER;
     
-    PROCEDURE GENERAR_FACTURA_REAGENDO (
+    /*PROCEDURE GENERAR_FACTURA_REAGENDO (
         p_idPasaje      IN Pasaje.idPasaje%TYPE,         -- ID del pasaje reagendado
         p_idVuelo_nuevo IN Vuelo.idVuelo%TYPE,
         p_medioPago     IN Factura.medioPagoFactura%TYPE, -- Medio de pago (ej: 'Tarjeta', 'Efectivo')
         p_idFactura     OUT Factura.idFactura%TYPE
+    );*/
+    
+    PROCEDURE GENERAR_FACTURA_REAGENDO (
+        p_idPasaje        IN  Pasaje.idPasaje%TYPE,
+        p_idVuelo_nuevo   IN  Vuelo.idVuelo%TYPE,
+        p_medioPago       IN  Factura.medioPagoFactura%TYPE,
+        p_infoFactura     OUT SYS_REFCURSOR   -- <<< cursor con info de factura
     );
     
     PROCEDURE LIBERAR_ASIENTO_ACTUAL (
@@ -946,7 +953,7 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
 
     -- generar factura de reagendamiento. Retorna el id de la nueva factura. 
     -- asocia la compra originar con la nueva factura en la tabla generarFactura
-    PROCEDURE GENERAR_FACTURA_REAGENDO (
+    /*PROCEDURE GENERAR_FACTURA_REAGENDO (
         p_idPasaje      IN Pasaje.idPasaje%TYPE,         -- ID del pasaje reagendado
         p_idVuelo_nuevo IN Vuelo.idVuelo%TYPE,
         p_medioPago     IN Factura.medioPagoFactura%TYPE, -- Medio de pago (ej: 'Tarjeta', 'Efectivo')
@@ -1037,7 +1044,118 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
             --DBMS_OUTPUT.PUT_LINE('Error en GENERAR_FACTURA_REAGENDO: ' || SQLERRM);
             RAISE;
     
+    END GENERAR_FACTURA_REAGENDO;*/
+    
+    
+    PROCEDURE GENERAR_FACTURA_REAGENDO (
+        p_idPasaje        IN  Pasaje.idPasaje%TYPE,
+        p_idVuelo_nuevo   IN  Vuelo.idVuelo%TYPE,
+        p_medioPago       IN  Factura.medioPagoFactura%TYPE,
+        p_infoFactura     OUT SYS_REFCURSOR   -- <<< cursor con info de factura
+    )
+    IS
+        v_sobrecosto            NUMBER(12, 2);
+        v_nueva_idFactura       Factura.idFactura%TYPE;
+        v_idCompra_original     Compra.idCompra%TYPE;
+        v_precioVuelo_nuevo     Vuelo.precioBaseVuelo%TYPE;
+        v_precioVuelo_actual    Vuelo.precioBaseVuelo%TYPE;
+    
+    BEGIN
+        --------------------------------------------------------------------
+        -- 1. CALCULAR SOBRECOSTO
+        --------------------------------------------------------------------
+        v_sobrecosto := CALCULAR_SOBRECOSTO_REAGENDO(p_idPasaje);
+    
+        IF v_sobrecosto < 0 THEN
+            RAISE_APPLICATION_ERROR(
+                -20507,
+                'El cálculo del sobrecosto devolvió un valor inválido: ' || v_sobrecosto
+            );
+        END IF;
+    
+        --------------------------------------------------------------------
+        -- 1.1 OBTENER PRECIOS DE VUELOS
+        --------------------------------------------------------------------
+        BEGIN
+            SELECT precioBaseVuelo
+            INTO v_precioVuelo_nuevo
+            FROM Vuelo
+            WHERE idVuelo = p_idVuelo_nuevo;
+    
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                RAISE_APPLICATION_ERROR(-20241, 'El vuelo buscado no existe');
+        END;
+    
+        SELECT V.precioBaseVuelo
+        INTO v_precioVuelo_actual
+        FROM Pasaje P
+        INNER JOIN Vuelo V ON P.idVuelo = V.idVuelo
+        WHERE P.idPasaje = p_idPasaje;
+    
+        IF v_precioVuelo_nuevo > v_precioVuelo_actual THEN
+            v_sobrecosto := (v_precioVuelo_nuevo - v_precioVuelo_actual) + v_sobrecosto;
+        END IF;
+    
+        --------------------------------------------------------------------
+        -- 2. INSERTAR NUEVA FACTURA
+        --------------------------------------------------------------------
+        INSERT INTO Factura (fechaFactura, montoFactura, medioPagoFactura)
+        VALUES (SYSDATE, v_sobrecosto, p_medioPago)
+        RETURNING idFactura INTO v_nueva_idFactura;
+    
+        --------------------------------------------------------------------
+        -- 3. OBTENER ID DE COMPRA ORIGINAL
+        --------------------------------------------------------------------
+        BEGIN
+            SELECT idCompra
+            INTO v_idCompra_original
+            FROM Compra
+            WHERE idPasaje = p_idPasaje;
+    
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                RAISE_APPLICATION_ERROR(
+                    -20508,
+                    'No se encontró la compra asociada al pasaje: ' || p_idPasaje
+                );
+        END;
+    
+        --------------------------------------------------------------------
+        -- 4. RELACIONAR FACTURA CON COMPRA
+        --------------------------------------------------------------------
+        INSERT INTO GenerarFactura (idFactura, idCompra)
+        VALUES (v_nueva_idFactura, v_idCompra_original);
+    
+        COMMIT;
+    
+        --------------------------------------------------------------------
+        -- 5. ABRIR CURSOR (MISMA LÓGICA QUE RECUPERAR_DATOS_FACTURA)
+        --------------------------------------------------------------------
+        OPEN p_infoFactura FOR
+            SELECT 
+                f.idFactura,
+                f.fechaFactura,
+                f.montoFactura,
+                f.medioPagoFactura
+            FROM Factura f
+            WHERE f.idFactura = v_nueva_idFactura;
+    
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            RAISE_APPLICATION_ERROR(
+                -20036,
+                'No se encontró la factura generada.'
+            );
+    
+        WHEN OTHERS THEN
+            ROLLBACK;
+            RAISE_APPLICATION_ERROR(
+                -20037,
+                'Error inesperado al generar o recuperar la factura: ' || SQLERRM
+            );
     END GENERAR_FACTURA_REAGENDO;
+
 
     -- procedimiento para liberar un asiento. 
     --                                        1 si se libero exiitosamente
@@ -1350,5 +1468,8 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
     END OBTENER_INFO_VUELO_REAGENDAR;
  
 END GESTION_PASAJES;
+
+
+SELECT * FROM ReglasReagendamiento;
 
 
