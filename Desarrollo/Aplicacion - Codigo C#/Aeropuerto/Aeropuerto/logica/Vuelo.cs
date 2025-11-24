@@ -126,6 +126,22 @@ namespace Aeropuerto.logica
             return (vuelosIda, vuelosVuelta);
         }
 
-        
+        public DataTable ObtenerVuelosDisponibles()
+        {
+            OracleParameter[] parametros = new OracleParameter[]
+            {
+                new OracleParameter("p_resultado", OracleDbType.RefCursor)
+                {
+                    Direction = ParameterDirection.Output
+                }
+            };
+
+            return datos.EjecutarProcedureCursor(
+                "MONITOREAR_VUELOS.OBTENER_VUELOS_DISPONIBLES",
+                parametros
+            );
+        }
+
+
     }
 }

@@ -37,6 +37,10 @@ CREATE OR REPLACE PACKAGE MONITOREAR_VUELOS AS
         p_resultadoVuelta OUT SYS_REFCURSOR
     );
 
+    PROCEDURE OBTENER_VUELOS_DISPONIBLES(
+        p_resultado OUT SYS_REFCURSOR
+    );
+
 END MONITOREAR_VUELOS;
 
 
@@ -227,6 +231,25 @@ CREATE OR REPLACE PACKAGE BODY MONITOREAR_VUELOS AS
                 FROM DUAL
                 WHERE 1=0;
     END VUELOS_IDA_Y_VUELTA;
+    
+    PROCEDURE OBTENER_VUELOS_DISPONIBLES(
+        p_resultado OUT SYS_REFCURSOR
+    )
+    AS
+    BEGIN
+        OPEN p_resultado FOR
+            SELECT 
+                IDVUELO,
+                CIUORIGENVUELO,
+                CIUDESTINOVUELO,
+                HORASALIDAVUELO,
+                PRECIOBASEVUELO
+                
+            FROM VUELO
+            WHERE HORASALIDAVUELO > SYSDATE
+            ORDER BY HORASALIDAVUELO;
+    END OBTENER_VUELOS_DISPONIBLES;
+
 END MONITOREAR_VUELOS;
 
 

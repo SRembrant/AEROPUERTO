@@ -14,20 +14,17 @@ namespace Aeropuerto.ControlUsuario
     public partial class Uc_GenerarFactura_Reagendo : UserControl
     {
         PaginaPrincipal principal;
-        Vuelo objVuelo;
         UsuarioRegistrado objUsuarioRegistrado;
-        DataTable vuelosIda;
-        DataTable vuelosRegreso;
         Pasaje gestorPasaje;
         int idVuelo;
-        int idUsuario;
+        int idPasaje;
         string medioPago;
 
-        public Uc_GenerarFactura_Reagendo(int idVuelo, int idUsuario, string medioPago, Pasaje gestorPasaje, UsuarioRegistrado objUsuario, PaginaPrincipal principal)
+        public Uc_GenerarFactura_Reagendo(int idPasaje, int idVuelo, string medioPago, Pasaje gestorPasaje, UsuarioRegistrado objUsuario, PaginaPrincipal principal)
         {
             InitializeComponent();
+            this.idPasaje = idPasaje;
             this.idVuelo = idVuelo;
-            this.idUsuario = idUsuario;
             this.medioPago = medioPago;
             this.gestorPasaje = gestorPasaje;
             this.objUsuarioRegistrado = objUsuario;
@@ -38,7 +35,7 @@ namespace Aeropuerto.ControlUsuario
         private void btnGenerarFactura_Click(object sender, EventArgs e)
         {
             // Recupera los datos de la factura según tu procedure actual
-            DataTable factura = gestorPasaje.RecuperarFactura(idVuelo, idUsuario, medioPago);
+            DataTable factura = gestorPasaje.RecuperarFactura_Reagendamiento(idPasaje, idVuelo, medioPago);
 
             if (factura.Rows.Count > 0)
             {

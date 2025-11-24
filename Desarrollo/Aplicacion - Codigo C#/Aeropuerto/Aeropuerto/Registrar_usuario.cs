@@ -8,7 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
+//using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace Aeropuerto
@@ -22,13 +22,17 @@ namespace Aeropuerto
             InitializeComponent();
             this.inicio = inicio;
             this.objUsuarioRegistrado = objUsuarioRegistrado;
+
+            // Asociar eventos
             txtPrimerNombre.Leave += ValidarNombre;
             txtApellido.Leave += ValidarApellido;
             txtDireccionCorreo_ru.Leave += ValidarCorreo;
             txtNumIdentificacion.Leave += ValidarIdentificacion;
             cbxTipoIdentificacion.SelectedIndexChanged += ValidarTipoIdentificacion;
+
         }
 
+        
         private void lblVolverAInicioSesion_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -59,11 +63,11 @@ namespace Aeropuerto
         {
             txtNumIdentificacion.Text = "";
         }
-
+        
 
         private void ValidarNombre(object sender, EventArgs e)
         {
-            string nombre = txtPrimerNombre.Text.Trim();
+            string nombre = LimpiarExtremos(txtPrimerNombre.Text);
 
             if (string.IsNullOrWhiteSpace(nombre))
             {
@@ -75,15 +79,21 @@ namespace Aeropuerto
                 lblErrorCampoObligatorioNombre.Text = "El nombre solo puede contener letras";
                 lblErrorCampoObligatorioNombre.Visible = true;
             }
+            else if (!TextoValido(nombre))
+            {
+                lblErrorCampoObligatorioNombre.Text = "Nombre inválido. No debe tener espacios al inicio/fin y solo letras.";
+                lblErrorCampoObligatorioNombre.Visible = true;
+            }
             else
             {
+                txtPrimerNombre.Text = nombre;
                 lblErrorCampoObligatorioNombre.Visible = false;
             }
         }
 
         private void ValidarApellido(object sender, EventArgs e)
         {
-            string apellido = txtApellido.Text.Trim();
+            string apellido = LimpiarExtremos(txtApellido.Text);
 
             if (string.IsNullOrWhiteSpace(apellido))
             {
@@ -95,8 +105,14 @@ namespace Aeropuerto
                 lblErrorApellidoValoresNumericos.Text = "El apellido solo puede contener letras";
                 lblErrorApellidoValoresNumericos.Visible = true;
             }
+            else if (!TextoValido(apellido))
+            {
+                lblErrorApellidoValoresNumericos.Text = "Apellido inválido. No debe tener espacios al inicio/fin y solo letras.";
+                lblErrorApellidoValoresNumericos.Visible = true;
+            }
             else
             {
+                txtApellido.Text = apellido;
                 lblErrorApellidoValoresNumericos.Visible = false;
             }
         }
@@ -104,6 +120,8 @@ namespace Aeropuerto
 
         private void ValidarCorreo(object sender, EventArgs e)
         {
+            string correo = LimpiarExtremos(txtDireccionCorreo_ru.Text);
+
             if (string.IsNullOrWhiteSpace(txtDireccionCorreo_ru.Text))
             {
                 lblErrorCorreoInvalido.Text = "El correo no puede estar vacío";
@@ -114,21 +132,40 @@ namespace Aeropuerto
                 lblErrorCorreoInvalido.Text = "Formato de correo inválido";
                 lblErrorCorreoInvalido.Visible = true;
             }
+            else if (correo.Contains(" "))
+            {
+                lblErrorCorreoInvalido.Text = "El correo no puede contener espacios.";
+                lblErrorCorreoInvalido.Visible = true;
+            }
             else
             {
+                txtDireccionCorreo_ru.Text = correo;
                 lblErrorCorreoInvalido.Visible = false;
             }
         }
 
         private void ValidarIdentificacion(object sender, EventArgs e)
         {
+            string id = txtNumIdentificacion.Text;
+
             if (!int.TryParse(txtNumIdentificacion.Text, out int numID) || numID <= 0)
             {
                 lblErrorIdentificacionValoresNoNumericos.Text = "Debe ingresar un número válido";
                 lblErrorIdentificacionValoresNoNumericos.Visible = true;
             }
+            else if (string.IsNullOrWhiteSpace(txtNumIdentificacion.Text))
+            {
+                lblErrorIdentificacionValoresNoNumericos.Text = "El ID no puede estar vacío";
+                lblErrorIdentificacionValoresNoNumericos.Visible = true;
+            }
+            else if (ContieneEspaciosInternos(id))
+            {
+                lblErrorIdentificacionValoresNoNumericos.Text = "No se permiten espacios en el número.";
+                lblErrorIdentificacionValoresNoNumericos.Visible = true;
+            }
             else
             {
+                txtNumIdentificacion.Text = id;
                 lblErrorIdentificacionValoresNoNumericos.Visible = false;
             }
         }
@@ -150,6 +187,33 @@ namespace Aeropuerto
                 return false;
             }
         }
+
+        //Apoyo a validaciones
+        private string LimpiarExtremos(string input)
+        {
+            return input?.Trim();
+        }
+
+        private bool ContieneEspaciosInternos(string input)
+        {
+            return input.Contains(" ");
+        }
+
+        private bool TextoValido(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return false;
+
+            // Quitar espacios al inicio y al final
+            string limpio = input.Trim();
+
+            // No permitir que tenga múltiples espacios consecutivos
+            if (limpio.Contains("  "))
+                return false;
+
+            return limpio.All(c => char.IsLetter(c) || c == ' ');
+        }
+
 
         private void btnGuardarYContinuar_Click(object sender, EventArgs e)
         {
@@ -190,125 +254,3 @@ namespace Aeropuerto
 
     }
 }
-
-
-/*private void btnGuardarYContinuar_Click(object sender, EventArgs e)
-        {
-            int? numID;
-            string nombre, apellido, correo, nombreUsuario, tipoID = null, genero = null;
-
-
-
-            if (txtNumIdentificacion.Text == "" && txtPrimerNombre.Text == "" && txtApellido.Text == "" && txtDireccionCorreo_ru.Text == "" && txtNombreUsuario.Text == "")
-            {
-                MessageBox.Show("Debe llenar los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
-                //validaciones
-                if (txtPrimerNombre.Text == "")
-                {
-                    lblErrorCampoObligatorioNombre.Show();
-                    MessageBox.Show("El primer nombre no puede estar vacío.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                else
-                {
-                    lblErrorCampoObligatorioNombre.Hide();
-                    nombre = txtPrimerNombre.Text;
-                }
-
-                if (txtApellido.Text == "")
-                {
-                    lblErrorApellidoValoresNumericos.Show();
-                    MessageBox.Show("El apellido no puede estar vacío.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                else
-                {
-                    lblErrorApellidoValoresNumericos.Hide();
-                    apellido = txtApellido.Text;
-                }
-
-                if (txtDireccionCorreo_ru.Text == "")
-                {
-                    lblErrorCorreoInvalido.Show();
-                    MessageBox.Show("El correo no puede estar vacío.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                else
-                {
-                    lblErrorCorreoInvalido.Hide();
-                    correo = txtDireccionCorreo_ru.Text.Trim();
-                }
-
-                if (txtNombreUsuario.Text == "")
-                {
-                    lblErrorCampoObligNombreUsuario.Show();
-                    MessageBox.Show("El nombre de usuario no puede estar vacío.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                else
-                {
-                    lblErrorCampoObligNombreUsuario.Hide();
-                    nombreUsuario = txtNombreUsuario.Text;
-                }
-
-
-                if (cbxTipoIdentificacion.SelectedItem != null)
-                {
-                    lblErrorCampObligIdentificacion.Hide();
-                    tipoID = cbxTipoIdentificacion.SelectedItem.ToString();
-                }
-                else
-                {
-                    lblErrorCampObligIdentificacion.Show();
-                    MessageBox.Show("Debe seleccionar un tipo de identificacion.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(txtNumIdentificacion.Text))
-                {
-                    lblErrorIdentificacionValoresNoNumericos.Show();
-                    MessageBox.Show("El número de ID no puede estar vacío.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                else
-                {
-                    lblErrorIdentificacionValoresNoNumericos.Hide();
-                    try
-                    {
-                        numID = int.Parse(txtNumIdentificacion.Text);
-                        if (numID <= 0)
-                        {
-                            lblErrorIdentificacionValoresNoNumericos.Show();
-                            MessageBox.Show("El número de ID debe ser un número positivo y diferente de cero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
-                    }
-                    catch
-                    {
-                        lblErrorIdentificacionValoresNoNumericos.Show();
-                        MessageBox.Show("El número de ID debe contener solo números.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                }
-
-                if (cbxGenero.SelectedItem != null)
-                {
-                    genero = cbxGenero.SelectedItem.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Debe seleccionar genero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                //mandamos la consulta a la siguiente ventana
-                Registrar_Usuario_Parte2 objRegistrar_Usuario_Parte2 = new Registrar_Usuario_Parte2(this, inicio, objUsuarioRegistrado, numID, nombre, apellido, correo, nombreUsuario, tipoID, genero);
-                objRegistrar_Usuario_Parte2.Show();
-                this.Hide();
-            }
-
-        }*/

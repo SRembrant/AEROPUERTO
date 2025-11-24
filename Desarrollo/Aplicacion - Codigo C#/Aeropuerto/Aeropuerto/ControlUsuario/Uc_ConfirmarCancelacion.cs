@@ -39,13 +39,6 @@ namespace Aeropuerto
 
                 MessageBox.Show(resultado, "Cancelación completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Regresar a MisVuelos
-                /*
-                Uc_MisVuelos ucMisVuelos = new Uc_MisVuelos(principal, usuario);
-                principal.PanelMisVuelos.Controls.Clear();
-                principal.PanelMisVuelos.Controls.Add(ucMisVuelos);
-                ucMisVuelos.Dock = DockStyle.Fill;*/
-
                 principal.PanelContenedorMisVuelos.Visible = false;
 
                 principal.PanelMisVuelos.Visible = true;

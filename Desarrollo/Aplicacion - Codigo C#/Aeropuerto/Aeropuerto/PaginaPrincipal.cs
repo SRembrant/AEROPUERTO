@@ -1,4 +1,5 @@
-﻿using Aeropuerto.logica;
+﻿using Aeropuerto.ControlUsuario;
+using Aeropuerto.logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace Aeropuerto
         public Inicio_Sesion login;
         Pasaje gestorPasaje = new Pasaje();
 
+
         public PaginaPrincipal(Inicio_Sesion login, UsuarioRegistrado objUsuarioRegistrado)
         {
             InitializeComponent();
@@ -34,6 +36,8 @@ namespace Aeropuerto
             txtDireccion_Pgperfil.Text = objUsuarioRegistrado.DireccionUsuario;
             txtDetalles_Pgperfil.Text = objUsuarioRegistrado.DetalleUsuario;
             txtNacionalidad_Pgperfil.Text = objUsuarioRegistrado.NacionalidadUsuario;
+
+            MostrarVuelos();
 
 
             //Mi Perfil
@@ -108,7 +112,7 @@ namespace Aeropuerto
 
         //EPICA 3
         Vuelo objVuelo = new Vuelo();
-
+        
         private void CargarOrigenes()
         {
             DataTable tabla = objVuelo.ObtenerCiudadesOrigen();
@@ -232,6 +236,26 @@ namespace Aeropuerto
 
         }
 
+        //Monitorear Vuelos
+        
+        // Se obtiene la tabla con todos los vuelos
+        private void MostrarVuelos()
+        {
+            DataTable vuelosDisponibles = objVuelo.ObtenerVuelosDisponibles();
+
+            flowlp_vuelos_menuprincipal.Controls.Clear();
+            int contador1 = 1;
+            foreach (DataRow vuelo in vuelosDisponibles.Rows)
+            {
+                var ucIda = new Uc_DatosIda(vuelo, contador1);
+                ucIda.Margin = new Padding(10);
+                flowlp_vuelos_menuprincipal.Controls.Add(ucIda);
+                contador1++;
+            }
+
+        }
+
+
         private void btnCerrarSesion_Modificar1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -239,6 +263,7 @@ namespace Aeropuerto
 
         }
 
+        
 
 
         public Guna.UI2.WinForms.Guna2Panel PanelMiPerfil

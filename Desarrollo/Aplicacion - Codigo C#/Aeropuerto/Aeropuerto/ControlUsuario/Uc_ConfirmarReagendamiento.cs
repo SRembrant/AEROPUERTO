@@ -50,12 +50,30 @@ namespace Aeropuerto
                 // Llamar al procedimiento de reagendamiento
                 string resultado = gestorPasaje.ReagendarPasaje(idVuelo, idCategoria, idPasaje, medioPago);
 
+                if (resultado == null)
+                {
+                    MessageBox.Show("Ocurrió un error inesperado durante el proceso de reagendamiento.",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!resultado.Contains("exitoso"))
+                {
+                    MessageBox.Show(resultado, "Reagendamiento no completado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 MessageBox.Show(resultado, "Reagendación completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                var verFactura = new Uc_GenerarFactura_Reagendo(idVuelo, idUsuario, medioPago, gestorPasaje, objUsuario, principal);
+                var verFactura = new Uc_GenerarFactura_Reagendo(idPasaje, idVuelo, medioPago, gestorPasaje,
+                                    objUsuario, principal);
 
-                // Limpia el panel y agrega el nuevo control
                 this.Visible = false;
+
+                // Asegurar que el contenedor está limpio
+                principal.PanelContenedorMisVuelos.Controls.Clear();
+
+                // Agregar factura
                 principal.PanelContenedorMisVuelos.Controls.Add(verFactura);
                 verFactura.Dock = DockStyle.Fill;
 

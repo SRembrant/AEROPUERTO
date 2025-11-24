@@ -40,7 +40,7 @@
             this.pnlConfirmarReagendamiento.Controls.Add(this.btnGenerarFactura);
             this.pnlConfirmarReagendamiento.Controls.Add(this.lblDireccionCorreco_mns);
             this.pnlConfirmarReagendamiento.FillColor = System.Drawing.Color.White;
-            this.pnlConfirmarReagendamiento.Location = new System.Drawing.Point(91, 281);
+            this.pnlConfirmarReagendamiento.Location = new System.Drawing.Point(65, 217);
             this.pnlConfirmarReagendamiento.Name = "pnlConfirmarReagendamiento";
             this.pnlConfirmarReagendamiento.Size = new System.Drawing.Size(475, 215);
             this.pnlConfirmarReagendamiento.TabIndex = 3;
@@ -61,6 +61,7 @@
             this.btnGenerarFactura.Size = new System.Drawing.Size(212, 46);
             this.btnGenerarFactura.TabIndex = 12;
             this.btnGenerarFactura.Text = "Generar factura";
+            this.btnGenerarFactura.Click += new System.EventHandler(this.btnGenerarFactura_Click);
             // 
             // lblDireccionCorreco_mns
             // 
@@ -79,7 +80,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlConfirmarReagendamiento);
             this.Name = "Uc_GenerarFactura_Reagendo";
-            this.Size = new System.Drawing.Size(657, 776);
+            this.Size = new System.Drawing.Size(634, 644);
             this.pnlConfirmarReagendamiento.ResumeLayout(false);
             this.pnlConfirmarReagendamiento.PerformLayout();
             this.ResumeLayout(false);

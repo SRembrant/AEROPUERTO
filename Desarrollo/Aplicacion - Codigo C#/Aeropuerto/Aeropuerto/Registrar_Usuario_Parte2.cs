@@ -47,7 +47,7 @@ namespace Aeropuerto
         // --- VALIDACIONES INDIVIDUALES ---
         private void ValidarTelefono(object sender, EventArgs e)
         {
-            string telefono = txtNumeroTelefonico.Text.Trim();
+            string telefono = txtNumeroTelefonico.Text;
 
             if (string.IsNullOrWhiteSpace(telefono))
             {
@@ -59,13 +59,19 @@ namespace Aeropuerto
                 lblErrorCampoObligatorioNumTelefono.Text = "Solo se permiten números";
                 lblErrorCampoObligatorioNumTelefono.Visible = true;
             }
-            else if (telefono.Length != 10)
+            else if (!NumeroSinEspacios(telefono) || telefono.Length != 10)
             {
-                lblErrorCampoObligatorioNumTelefono.Text = "El número debe tener exactamente 10 dígitos";
+                lblErrorCampoObligatorioNumTelefono.Text = "El teléfono debe tener 10 dígitos y sin espacios.";
+                lblErrorCampoObligatorioNumTelefono.Visible = true;
+            }
+            else if (ContieneEspaciosInternos(telefono))
+            {
+                lblErrorCampoObligatorioNumTelefono.Text = "No se permiten espacios en el teléfono.";
                 lblErrorCampoObligatorioNumTelefono.Visible = true;
             }
             else
             {
+                txtNumeroTelefonico.Text = telefono;
                 lblErrorCampoObligatorioNumTelefono.Visible = false;
                 numTelefono = long.Parse(telefono);
             }
@@ -93,6 +99,7 @@ namespace Aeropuerto
             }
             else
             {
+                txtContrasenia.Text = pass;
                 lblErrorCampoObligatorioContrasenia.Visible = false;
                 password = pass;
             }
@@ -101,6 +108,8 @@ namespace Aeropuerto
 
         private void ValidarDireccion(object sender, EventArgs e)
         {
+            string dir = LimpiarExtremos(txtDireccion.Text);
+
             if (string.IsNullOrWhiteSpace(txtDireccion.Text))
             {
                 lblErrorCampoObligatorioDireccion.Text = "La dirección no puede estar vacía";
@@ -108,6 +117,7 @@ namespace Aeropuerto
             }
             else
             {
+                txtDireccion.Text = dir;
                 lblErrorCampoObligatorioDireccion.Visible = false;
                 direccion = txtDireccion.Text.Trim();
             }
@@ -124,8 +134,31 @@ namespace Aeropuerto
             }
             else
             {
+                dtmFechaNacimiento.Value = fechaNacimiento;
                 lblErrorCampoObligatorioFechaNac.Visible = false;
             }
+        }
+
+        //Apoyo a validaciones
+        private string LimpiarExtremos(string input)
+        {
+            return input?.Trim();
+        }
+
+        private bool ContieneEspaciosInternos(string input)
+        {
+            return input.Contains(" ");
+        }
+
+        private bool NumeroSinEspacios(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return false;
+
+            if (input.Contains(" "))
+                return false;
+
+            return input.All(char.IsDigit);
         }
 
         // --- VALIDACIÓN FINAL ---
