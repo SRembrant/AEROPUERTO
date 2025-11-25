@@ -22,8 +22,15 @@ namespace Aeropuerto
         public PaginaPrincipal(Inicio_Sesion login, UsuarioRegistrado objUsuarioRegistrado)
         {
             InitializeComponent();
+
+
+            this.pnlMisVuelos.Controls.Clear();
+            this.pnlContenedorMisVuelos.Controls.Clear();
+
             this.login = login;
             this.objUsuarioRegistrado = objUsuarioRegistrado;
+
+           
             txtTuNombre_PgPerfil.Text = objUsuarioRegistrado.NombreUsuario;
             txtApellido_PgPerfil.Text = objUsuarioRegistrado.ApellidoUsuario;
             txtDireccionCorreo_Pgperfil.Text = objUsuarioRegistrado.CorreoUsuario;
@@ -36,7 +43,7 @@ namespace Aeropuerto
             txtDireccion_Pgperfil.Text = objUsuarioRegistrado.DireccionUsuario;
             txtDetalles_Pgperfil.Text = objUsuarioRegistrado.DetalleUsuario;
             txtNacionalidad_Pgperfil.Text = objUsuarioRegistrado.NacionalidadUsuario;
-
+            lblHola.Text = "¡Hola " + objUsuarioRegistrado.NombreUsuario + "! Bienvenido.";
             MostrarVuelos();
 
 
@@ -72,7 +79,7 @@ namespace Aeropuerto
             pnlMisVuelos.Visible = true;
             pnlContenedorMisVuelos.Visible = false;
 
-            this.Refresh();
+
         }
 
         private void btnModificarDatos_Pgperfil_Click(object sender, EventArgs e)
@@ -157,8 +164,7 @@ namespace Aeropuerto
                 this.pnlMisVuelos.Controls.Clear();
                 this.pnlContenedorMisVuelos.Controls.Clear();
                 this.pnlMisVuelos.Controls.Add(ucMisVuelos);
-                ucMisVuelos.Dock = DockStyle.Fill;
-
+                ucMisVuelos.Dock = DockStyle.Fill; 
             }
 
         }
@@ -188,6 +194,12 @@ namespace Aeropuerto
                 else
                 {
                     int cantidadPasajeros = int.Parse(txtCantidadPasajeros.Text);
+
+                    if (cantidadPasajeros > 5 || cantidadPasajeros < 1)
+                    {
+                        MessageBox.Show("Debe seleccionar una cantidad de pasajeros válida", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
                     DataTable vuelos = objVuelo.ConsultarVuelosIda(ciudadOrigen, paisOrigen, ciudadDestino, paisDestino, fechaIda);
 

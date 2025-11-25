@@ -61,24 +61,6 @@ namespace Aeropuerto
 
         private void VerVueloSeleccionado(int idPasaje)
         {
-            /*var ucVerVuelo = new Uc_Informacion_Vuelo(principal, objUsuarioRegistrado, idPasaje, gestorPasaje);
-            principal.PanelContenedorMisVuelos.Controls.Clear();
-            principal.PanelContenedorMisVuelos.Controls.Add(ucVerVuelo);
-            ucVerVuelo.Dock = DockStyle.Fill;
-            */
-            /*
-            var ucVerVuelo = new Uc_Informacion_Vuelo(principal, objUsuarioRegistrado, idPasaje, gestorPasaje);
-
-            // Limpia el panel y agrega el nuevo control
-            this.Visible = false;
-            principal.PanelContenedorMisVuelos.Controls.Add(ucVerVuelo);
-            ucVerVuelo.Dock = DockStyle.Fill;
-
-            principal.PanelMisVuelos.Refresh();
-            */
-
-            ///
-
             // Mostrar contenedor, ocultar panel base, y asegurar Z-order
             principal.PanelContenedorMisVuelos.SuspendLayout();
 
@@ -92,10 +74,11 @@ namespace Aeropuerto
 
             principal.PanelContenedorMisVuelos.Controls.Add(ucVerVuelo);
             principal.PanelContenedorMisVuelos.ResumeLayout();
-
-
-
+            principal.PanelMisVuelos.Refresh();
+            principal.PanelContenedorMisVuelos.Refresh();
         }
+
+       
     }
 }
 

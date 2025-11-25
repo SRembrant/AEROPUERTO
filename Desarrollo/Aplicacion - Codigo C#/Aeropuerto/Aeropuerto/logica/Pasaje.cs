@@ -175,11 +175,11 @@ namespace Aeropuerto.logica
         {
             OracleParameter[] parametros = new OracleParameter[]
             {
-        new OracleParameter("p_idUsuario", idUsuario),
-        new OracleParameter("p_resultado", OracleDbType.RefCursor)
-        {
-            Direction = ParameterDirection.Output
-        }
+                new OracleParameter("p_idUsuario", idUsuario),
+                new OracleParameter("p_resultado", OracleDbType.RefCursor)
+                {
+                    Direction = ParameterDirection.Output
+                }
             };
 
             return datos.EjecutarProcedureCursor("GESTION_PASAJES.OBTENER_VUELOS_USUARIO", parametros);

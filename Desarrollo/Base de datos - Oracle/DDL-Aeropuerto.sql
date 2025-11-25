@@ -407,19 +407,35 @@ VALUES (3, 'Primera Clase', 30);
 
 BEGIN
   FOR i IN 1..4 LOOP
-    INSERT INTO Asiento VALUES (i, 1, 1, 'Disponible');
+    INSERT INTO Asiento VALUES (i, 1, 1, 'Disponible'); --Economica
   END LOOP;
 
   FOR i IN 5..8 LOOP
-    INSERT INTO Asiento VALUES (i, 1, 2, 'Disponible');
+    INSERT INTO Asiento VALUES (i, 1, 2, 'Disponible'); --Ejecutiva
   END LOOP;
 
   FOR i IN 9..10 LOOP
-    INSERT INTO Asiento VALUES (i, 1, 3, 'Disponible');
+    INSERT INTO Asiento VALUES (i, 1, 3, 'Disponible'); --Primera Clase
   END LOOP;
   COMMIT;
 END;
 
 
---SELECT COUNT(*) FROM Vuelo
+INSERT INTO ReglasReagendamiento (idRegla, diasAntelacion, porcentajeCosto)
+VALUES (1, 30, 10);   -- Cambia con más de 30 días → 10%
+
+INSERT INTO ReglasReagendamiento (idRegla, diasAntelacion, porcentajeCosto)
+VALUES (2, 15, 20);   -- Entre 15 y 29 días → 20%
+
+INSERT INTO ReglasReagendamiento (idRegla, diasAntelacion, porcentajeCosto)
+VALUES (3, 7, 35);    -- Entre 7 y 14 días → 35%
+
+INSERT INTO ReglasReagendamiento (idRegla, diasAntelacion, porcentajeCosto)
+VALUES (4, 3, 50);    -- Entre 3 y 6 días → 50%
+
+INSERT INTO ReglasReagendamiento (idRegla, diasAntelacion, porcentajeCosto)
+VALUES (5, 1, 70);    -- 1 a 2 días → 70%
+
+INSERT INTO ReglasReagendamiento (idRegla, diasAntelacion, porcentajeCosto)
+VALUES (6, 0, 90);    -- Mismo día o menos de 24h → 90%
 
