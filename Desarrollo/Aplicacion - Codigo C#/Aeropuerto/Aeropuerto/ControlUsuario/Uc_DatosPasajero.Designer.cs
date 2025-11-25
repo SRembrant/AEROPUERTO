@@ -37,12 +37,16 @@
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtIdentificacion_DatosPasajero = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtNombre_DatosPasajeros = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtApellido_DatosPasajero = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTituloPasajero = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblErrorNombre = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblErrorApellido = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblErrorCorreo = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblErrorID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlPasajero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +54,10 @@
             // pnlPasajero
             // 
             this.pnlPasajero.BackColor = System.Drawing.Color.White;
+            this.pnlPasajero.Controls.Add(this.lblErrorID);
+            this.pnlPasajero.Controls.Add(this.lblErrorCorreo);
+            this.pnlPasajero.Controls.Add(this.lblErrorApellido);
+            this.pnlPasajero.Controls.Add(this.lblErrorNombre);
             this.pnlPasajero.Controls.Add(this.cbxCategoriaAsiento);
             this.pnlPasajero.Controls.Add(this.guna2HtmlLabel10);
             this.pnlPasajero.Controls.Add(this.cbxTipoID_DatosPasajero);
@@ -67,7 +75,7 @@
             this.pnlPasajero.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlPasajero.Location = new System.Drawing.Point(3, 3);
             this.pnlPasajero.Name = "pnlPasajero";
-            this.pnlPasajero.Size = new System.Drawing.Size(543, 180);
+            this.pnlPasajero.Size = new System.Drawing.Size(543, 191);
             this.pnlPasajero.TabIndex = 1;
             // 
             // cbxCategoriaAsiento
@@ -81,9 +89,9 @@
             this.cbxCategoriaAsiento.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbxCategoriaAsiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbxCategoriaAsiento.ItemHeight = 18;
-            this.cbxCategoriaAsiento.Location = new System.Drawing.Point(354, 141);
+            this.cbxCategoriaAsiento.Location = new System.Drawing.Point(352, 142);
             this.cbxCategoriaAsiento.Name = "cbxCategoriaAsiento";
-            this.cbxCategoriaAsiento.Size = new System.Drawing.Size(134, 24);
+            this.cbxCategoriaAsiento.Size = new System.Drawing.Size(143, 24);
             this.cbxCategoriaAsiento.TabIndex = 84;
             // 
             // guna2HtmlLabel10
@@ -91,7 +99,7 @@
             this.guna2HtmlLabel10.AutoSize = false;
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(354, 113);
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(354, 121);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             this.guna2HtmlLabel10.Size = new System.Drawing.Size(111, 15);
             this.guna2HtmlLabel10.TabIndex = 83;
@@ -113,7 +121,7 @@
             "T.I.",
             "C.E.",
             "P.P."});
-            this.cbxTipoID_DatosPasajero.Location = new System.Drawing.Point(8, 141);
+            this.cbxTipoID_DatosPasajero.Location = new System.Drawing.Point(8, 144);
             this.cbxTipoID_DatosPasajero.Name = "cbxTipoID_DatosPasajero";
             this.cbxTipoID_DatosPasajero.Size = new System.Drawing.Size(134, 24);
             this.cbxTipoID_DatosPasajero.StartIndex = 0;
@@ -155,9 +163,9 @@
             this.guna2HtmlLabel7.AutoSize = false;
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(185, 113);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(175, 121);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(73, 15);
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(68, 15);
             this.guna2HtmlLabel7.TabIndex = 80;
             this.guna2HtmlLabel7.Text = "Identificación";
             // 
@@ -166,7 +174,7 @@
             this.guna2HtmlLabel8.AutoSize = false;
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(8, 113);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(8, 121);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             this.guna2HtmlLabel8.Size = new System.Drawing.Size(115, 15);
             this.guna2HtmlLabel8.TabIndex = 77;
@@ -184,20 +192,30 @@
             this.txtIdentificacion_DatosPasajero.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIdentificacion_DatosPasajero.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtIdentificacion_DatosPasajero.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIdentificacion_DatosPasajero.Location = new System.Drawing.Point(185, 136);
+            this.txtIdentificacion_DatosPasajero.Location = new System.Drawing.Point(175, 144);
             this.txtIdentificacion_DatosPasajero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIdentificacion_DatosPasajero.Name = "txtIdentificacion_DatosPasajero";
             this.txtIdentificacion_DatosPasajero.PlaceholderText = "";
             this.txtIdentificacion_DatosPasajero.SelectedText = "";
-            this.txtIdentificacion_DatosPasajero.Size = new System.Drawing.Size(145, 24);
+            this.txtIdentificacion_DatosPasajero.Size = new System.Drawing.Size(140, 24);
             this.txtIdentificacion_DatosPasajero.TabIndex = 79;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.Captura_de_pantalla_2025_10_27_150457;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 76;
+            this.pictureBox1.TabStop = false;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(185, 54);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(175, 54);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(46, 15);
             this.guna2HtmlLabel1.TabIndex = 65;
@@ -246,7 +264,7 @@
             this.txtApellido_DatosPasajero.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido_DatosPasajero.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtApellido_DatosPasajero.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtApellido_DatosPasajero.Location = new System.Drawing.Point(185, 76);
+            this.txtApellido_DatosPasajero.Location = new System.Drawing.Point(175, 76);
             this.txtApellido_DatosPasajero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtApellido_DatosPasajero.Name = "txtApellido_DatosPasajero";
             this.txtApellido_DatosPasajero.PlaceholderText = "";
@@ -266,15 +284,53 @@
             this.lblTituloPasajero.TabIndex = 3;
             this.lblTituloPasajero.Text = "Pasajero 1";
             // 
-            // pictureBox1
+            // lblErrorNombre
             // 
-            this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.Captura_de_pantalla_2025_10_27_150457;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 76;
-            this.pictureBox1.TabStop = false;
+            this.lblErrorNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.lblErrorNombre.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorNombre.Location = new System.Drawing.Point(18, 104);
+            this.lblErrorNombre.Name = "lblErrorNombre";
+            this.lblErrorNombre.Size = new System.Drawing.Size(21, 11);
+            this.lblErrorNombre.TabIndex = 85;
+            this.lblErrorNombre.Text = "Error";
+            this.lblErrorNombre.Visible = false;
+            // 
+            // lblErrorApellido
+            // 
+            this.lblErrorApellido.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.lblErrorApellido.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorApellido.Location = new System.Drawing.Point(186, 104);
+            this.lblErrorApellido.Name = "lblErrorApellido";
+            this.lblErrorApellido.Size = new System.Drawing.Size(21, 11);
+            this.lblErrorApellido.TabIndex = 86;
+            this.lblErrorApellido.Text = "Error";
+            this.lblErrorApellido.Visible = false;
+            // 
+            // lblErrorCorreo
+            // 
+            this.lblErrorCorreo.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.lblErrorCorreo.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCorreo.Location = new System.Drawing.Point(369, 104);
+            this.lblErrorCorreo.Name = "lblErrorCorreo";
+            this.lblErrorCorreo.Size = new System.Drawing.Size(21, 11);
+            this.lblErrorCorreo.TabIndex = 87;
+            this.lblErrorCorreo.Text = "Error";
+            this.lblErrorCorreo.Visible = false;
+            // 
+            // lblErrorID
+            // 
+            this.lblErrorID.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorID.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.lblErrorID.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorID.Location = new System.Drawing.Point(186, 171);
+            this.lblErrorID.Name = "lblErrorID";
+            this.lblErrorID.Size = new System.Drawing.Size(21, 11);
+            this.lblErrorID.TabIndex = 88;
+            this.lblErrorID.Text = "Error";
+            this.lblErrorID.Visible = false;
             // 
             // Uc_DatosPasajero
             // 
@@ -285,6 +341,7 @@
             this.Name = "Uc_DatosPasajero";
             this.Size = new System.Drawing.Size(549, 213);
             this.pnlPasajero.ResumeLayout(false);
+            this.pnlPasajero.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -307,5 +364,9 @@
         private Guna.UI2.WinForms.Guna2TextBox txtNombre_DatosPasajeros;
         private Guna.UI2.WinForms.Guna2TextBox txtApellido_DatosPasajero;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTituloPasajero;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorID;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCorreo;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorApellido;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorNombre;
     }
 }

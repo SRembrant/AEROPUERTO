@@ -59,7 +59,7 @@
             this.flowLayoutPanelPasajeros.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelPasajeros.Location = new System.Drawing.Point(12, 39);
             this.flowLayoutPanelPasajeros.Name = "flowLayoutPanelPasajeros";
-            this.flowLayoutPanelPasajeros.Size = new System.Drawing.Size(546, 473);
+            this.flowLayoutPanelPasajeros.Size = new System.Drawing.Size(744, 473);
             this.flowLayoutPanelPasajeros.TabIndex = 65;
             this.flowLayoutPanelPasajeros.WrapContents = false;
             // 
@@ -88,7 +88,7 @@
             "PSE",
             "Tarjeta Crédito",
             "Tarjeta Débito"});
-            this.cbxMetodoPago.Location = new System.Drawing.Point(392, 535);
+            this.cbxMetodoPago.Location = new System.Drawing.Point(390, 528);
             this.cbxMetodoPago.Name = "cbxMetodoPago";
             this.cbxMetodoPago.Size = new System.Drawing.Size(144, 24);
             this.cbxMetodoPago.TabIndex = 75;
@@ -102,7 +102,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.Black;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 567);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(588, 85);
+            this.guna2Panel1.Size = new System.Drawing.Size(774, 85);
             this.guna2Panel1.TabIndex = 66;
             // 
             // btnRealizarCompra
@@ -117,7 +117,7 @@
             this.btnRealizarCompra.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnRealizarCompra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRealizarCompra.ForeColor = System.Drawing.Color.White;
-            this.btnRealizarCompra.Location = new System.Drawing.Point(344, 19);
+            this.btnRealizarCompra.Location = new System.Drawing.Point(524, 19);
             this.btnRealizarCompra.Name = "btnRealizarCompra";
             this.btnRealizarCompra.Size = new System.Drawing.Size(214, 41);
             this.btnRealizarCompra.TabIndex = 7;
@@ -130,7 +130,7 @@
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(41, 14);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(88, 19);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(83, 22);
             this.guna2HtmlLabel5.TabIndex = 6;
@@ -141,7 +141,7 @@
             this.lblPrecio_InformPasajero.BackColor = System.Drawing.Color.Transparent;
             this.lblPrecio_InformPasajero.Font = new System.Drawing.Font("Segoe UI", 13.25F, System.Drawing.FontStyle.Bold);
             this.lblPrecio_InformPasajero.ForeColor = System.Drawing.Color.White;
-            this.lblPrecio_InformPasajero.Location = new System.Drawing.Point(23, 33);
+            this.lblPrecio_InformPasajero.Location = new System.Drawing.Point(70, 38);
             this.lblPrecio_InformPasajero.Name = "lblPrecio_InformPasajero";
             this.lblPrecio_InformPasajero.Size = new System.Drawing.Size(124, 27);
             this.lblPrecio_InformPasajero.TabIndex = 4;
@@ -179,7 +179,7 @@
             this.Controls.Add(this.chk_TerminosPoliticas);
             this.Controls.Add(this.mns_BuscarVuelos);
             this.Name = "Uc_Informacion_Pasajero";
-            this.Size = new System.Drawing.Size(588, 652);
+            this.Size = new System.Drawing.Size(774, 652);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -84,6 +84,13 @@ namespace Aeropuerto
 
                 foreach (Uc_DatosPasajero uc in flowLayoutPanelPasajeros.Controls)
                 {
+                    if (!uc.ValidarTodo())
+                    {
+                        MessageBox.Show("Corrige los errores antes de continuar.",
+                                        "Datos inválidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     string nombreCategoria = uc.Categoria;
                     int idCategoria = gestorPasaje.ObtenerIdCategoria(nombreCategoria);
 

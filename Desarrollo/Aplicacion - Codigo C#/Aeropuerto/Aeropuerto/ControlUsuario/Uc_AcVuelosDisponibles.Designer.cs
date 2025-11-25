@@ -40,22 +40,20 @@
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(966, 33);
-            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(650, 20);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(50, 27);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(95, 21);
             this.guna2HtmlLabel5.TabIndex = 14;
-            this.guna2HtmlLabel5.Text = "Inicio";
+            this.guna2HtmlLabel5.Text = "Buscar Vuelos";
             this.guna2HtmlLabel5.Click += new System.EventHandler(this.px_RegresarInicio_VerVuelosDisponibles_Click);
             // 
             // flowVuelosDisponibles
             // 
             this.flowVuelosDisponibles.AutoScroll = true;
             this.flowVuelosDisponibles.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowVuelosDisponibles.Location = new System.Drawing.Point(33, 68);
-            this.flowVuelosDisponibles.Margin = new System.Windows.Forms.Padding(4);
+            this.flowVuelosDisponibles.Location = new System.Drawing.Point(25, 55);
             this.flowVuelosDisponibles.Name = "flowVuelosDisponibles";
-            this.flowVuelosDisponibles.Size = new System.Drawing.Size(983, 716);
+            this.flowVuelosDisponibles.Size = new System.Drawing.Size(737, 582);
             this.flowVuelosDisponibles.TabIndex = 13;
             this.flowVuelosDisponibles.WrapContents = false;
             // 
@@ -64,20 +62,18 @@
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(23, 18);
-            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(17, 15);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(169, 27);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(133, 22);
             this.guna2HtmlLabel4.TabIndex = 12;
             this.guna2HtmlLabel4.Text = "Vuelos disponibles";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Aeropuerto.Properties.Resources.flechaiz;
-            this.pictureBox2.Location = new System.Drawing.Point(912, 48);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(619, 27);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 12);
+            this.pictureBox2.Size = new System.Drawing.Size(23, 10);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 29;
             this.pictureBox2.TabStop = false;
@@ -85,15 +81,14 @@
             // 
             // Uc_AcVuelosDisponibles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.flowVuelosDisponibles);
             this.Controls.Add(this.guna2HtmlLabel4);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Uc_AcVuelosDisponibles";
-            this.Size = new System.Drawing.Size(1068, 802);
+            this.Size = new System.Drawing.Size(801, 652);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

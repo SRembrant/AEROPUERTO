@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.pnlConfirmarCancelacion = new Guna.UI2.WinForms.Guna2Panel();
+            this.VerPoliticas_Reagendamiento = new System.Windows.Forms.Label();
             this.lblDireccionCorreco_mns = new System.Windows.Forms.Label();
             this.btnCancelar_ReagendarVuelo = new Guna.UI2.WinForms.Guna2Button();
             this.btnConfirmar_ReagendarVuelo = new Guna.UI2.WinForms.Guna2Button();
-            this.VerPoliticas_Reagendamiento = new System.Windows.Forms.Label();
             this.pnlConfirmarCancelacion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +48,20 @@
             this.pnlConfirmarCancelacion.Name = "pnlConfirmarCancelacion";
             this.pnlConfirmarCancelacion.Size = new System.Drawing.Size(475, 272);
             this.pnlConfirmarCancelacion.TabIndex = 3;
+            // 
+            // VerPoliticas_Reagendamiento
+            // 
+            this.VerPoliticas_Reagendamiento.AutoSize = true;
+            this.VerPoliticas_Reagendamiento.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.VerPoliticas_Reagendamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VerPoliticas_Reagendamiento.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.VerPoliticas_Reagendamiento.Location = new System.Drawing.Point(150, 222);
+            this.VerPoliticas_Reagendamiento.Name = "VerPoliticas_Reagendamiento";
+            this.VerPoliticas_Reagendamiento.Size = new System.Drawing.Size(190, 15);
+            this.VerPoliticas_Reagendamiento.TabIndex = 11;
+            this.VerPoliticas_Reagendamiento.Text = "Ver Políticas de Reagendamiento";
+            this.VerPoliticas_Reagendamiento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.VerPoliticas_Reagendamiento.Click += new System.EventHandler(this.VerPoliticas_Reagendamiento_Click);
             // 
             // lblDireccionCorreco_mns
             // 
@@ -97,19 +111,6 @@
             this.btnConfirmar_ReagendarVuelo.TabIndex = 0;
             this.btnConfirmar_ReagendarVuelo.Text = "Confirmar";
             this.btnConfirmar_ReagendarVuelo.Click += new System.EventHandler(this.btnConfirmar_ReagendarVuelo_Click);
-            // 
-            // VerPoliticas_Reagendamiento
-            // 
-            this.VerPoliticas_Reagendamiento.AutoSize = true;
-            this.VerPoliticas_Reagendamiento.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.VerPoliticas_Reagendamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VerPoliticas_Reagendamiento.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.VerPoliticas_Reagendamiento.Location = new System.Drawing.Point(150, 222);
-            this.VerPoliticas_Reagendamiento.Name = "VerPoliticas_Reagendamiento";
-            this.VerPoliticas_Reagendamiento.Size = new System.Drawing.Size(190, 15);
-            this.VerPoliticas_Reagendamiento.TabIndex = 11;
-            this.VerPoliticas_Reagendamiento.Text = "Ver Políticas de Reagendamiento";
-            this.VerPoliticas_Reagendamiento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Uc_SobrecostoReagendarVuelo
             // 

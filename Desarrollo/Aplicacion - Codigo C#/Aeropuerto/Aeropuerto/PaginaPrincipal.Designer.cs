@@ -60,7 +60,6 @@
             this.pnlMisVuelos = new Guna.UI2.WinForms.Guna2Panel();
             this.tbpMiperfil = new System.Windows.Forms.TabPage();
             this.pnlMiPerfil = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnlContenedorPerfil = new Guna.UI2.WinForms.Guna2Panel();
             this.txtApellido_PgPerfil = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnCerrarSesion_Modificar1 = new Guna.UI2.WinForms.Guna2Button();
@@ -90,6 +89,7 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pnlContenedorPerfil = new Guna.UI2.WinForms.Guna2Panel();
             this.tbpBuscarVuelos = new System.Windows.Forms.TabPage();
             this.pnlBuscarVuelos = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSiguiente = new Guna.UI2.WinForms.Guna2Button();
@@ -294,9 +294,9 @@
             this.lblCreaUsuarioGratuita_mns.ForeColor = System.Drawing.Color.Black;
             this.lblCreaUsuarioGratuita_mns.Location = new System.Drawing.Point(17, 48);
             this.lblCreaUsuarioGratuita_mns.Name = "lblCreaUsuarioGratuita_mns";
-            this.lblCreaUsuarioGratuita_mns.Size = new System.Drawing.Size(229, 21);
+            this.lblCreaUsuarioGratuita_mns.Size = new System.Drawing.Size(375, 21);
             this.lblCreaUsuarioGratuita_mns.TabIndex = 3;
-            this.lblCreaUsuarioGratuita_mns.Text = "Descubre miles de destinos para ti :)";
+            this.lblCreaUsuarioGratuita_mns.Text = "Descubre miles de destinos para ti en Aeropuerto El Dorado";
             // 
             // lblHola
             // 
@@ -312,24 +312,24 @@
             // tbpMisVuelos
             // 
             this.tbpMisVuelos.Controls.Add(this.pnlContenedorMisVuelos);
-            this.tbpMisVuelos.Controls.Add(this.pnlMisVuelos);
             this.tbpMisVuelos.Location = new System.Drawing.Point(184, 4);
             this.tbpMisVuelos.Name = "tbpMisVuelos";
             this.tbpMisVuelos.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpMisVuelos.Size = new System.Drawing.Size(707, 652);
+            this.tbpMisVuelos.Size = new System.Drawing.Size(774, 652);
             this.tbpMisVuelos.TabIndex = 1;
             this.tbpMisVuelos.Text = "✈ Mis vuelos";
             this.tbpMisVuelos.UseVisualStyleBackColor = true;
             // 
             // pnlContenedorMisVuelos
             // 
+            this.pnlContenedorMisVuelos.Controls.Add(this.pnlMisVuelos);
             this.pnlContenedorMisVuelos.Controls.Add(this.lb_NoComprados);
             this.pnlContenedorMisVuelos.Controls.Add(this.flp_MisVuelos);
             this.pnlContenedorMisVuelos.Controls.Add(this.guna2HtmlLabel7);
             this.pnlContenedorMisVuelos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedorMisVuelos.Location = new System.Drawing.Point(3, 3);
             this.pnlContenedorMisVuelos.Name = "pnlContenedorMisVuelos";
-            this.pnlContenedorMisVuelos.Size = new System.Drawing.Size(701, 646);
+            this.pnlContenedorMisVuelos.Size = new System.Drawing.Size(768, 646);
             this.pnlContenedorMisVuelos.TabIndex = 1;
             // 
             // lb_NoComprados
@@ -484,9 +484,9 @@
             // 
             // pnlMisVuelos
             // 
-            this.pnlMisVuelos.Location = new System.Drawing.Point(0, 3);
+            this.pnlMisVuelos.Location = new System.Drawing.Point(3, 3);
             this.pnlMisVuelos.Name = "pnlMisVuelos";
-            this.pnlMisVuelos.Size = new System.Drawing.Size(701, 644);
+            this.pnlMisVuelos.Size = new System.Drawing.Size(762, 644);
             this.pnlMisVuelos.TabIndex = 16;
             // 
             // tbpMiperfil
@@ -494,14 +494,13 @@
             this.tbpMiperfil.Controls.Add(this.pnlMiPerfil);
             this.tbpMiperfil.Location = new System.Drawing.Point(184, 4);
             this.tbpMiperfil.Name = "tbpMiperfil";
-            this.tbpMiperfil.Size = new System.Drawing.Size(707, 652);
+            this.tbpMiperfil.Size = new System.Drawing.Size(774, 652);
             this.tbpMiperfil.TabIndex = 2;
             this.tbpMiperfil.Text = " Mi perfil";
             this.tbpMiperfil.UseVisualStyleBackColor = true;
             // 
             // pnlMiPerfil
             // 
-            this.pnlMiPerfil.Controls.Add(this.pnlContenedorPerfil);
             this.pnlMiPerfil.Controls.Add(this.txtApellido_PgPerfil);
             this.pnlMiPerfil.Controls.Add(this.guna2HtmlLabel6);
             this.pnlMiPerfil.Controls.Add(this.btnCerrarSesion_Modificar1);
@@ -531,20 +530,12 @@
             this.pnlMiPerfil.Controls.Add(this.guna2HtmlLabel3);
             this.pnlMiPerfil.Controls.Add(this.guna2HtmlLabel2);
             this.pnlMiPerfil.Controls.Add(this.guna2HtmlLabel1);
+            this.pnlMiPerfil.Controls.Add(this.pnlContenedorPerfil);
             this.pnlMiPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMiPerfil.Location = new System.Drawing.Point(0, 0);
             this.pnlMiPerfil.Name = "pnlMiPerfil";
-            this.pnlMiPerfil.Size = new System.Drawing.Size(707, 652);
+            this.pnlMiPerfil.Size = new System.Drawing.Size(774, 652);
             this.pnlMiPerfil.TabIndex = 0;
-            // 
-            // pnlContenedorPerfil
-            // 
-            this.pnlContenedorPerfil.BackColor = System.Drawing.Color.White;
-            this.pnlContenedorPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContenedorPerfil.Location = new System.Drawing.Point(0, 0);
-            this.pnlContenedorPerfil.Name = "pnlContenedorPerfil";
-            this.pnlContenedorPerfil.Size = new System.Drawing.Size(707, 652);
-            this.pnlContenedorPerfil.TabIndex = 66;
             // 
             // txtApellido_PgPerfil
             // 
@@ -983,12 +974,21 @@
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Perfil";
             // 
+            // pnlContenedorPerfil
+            // 
+            this.pnlContenedorPerfil.BackColor = System.Drawing.Color.White;
+            this.pnlContenedorPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContenedorPerfil.Location = new System.Drawing.Point(0, 0);
+            this.pnlContenedorPerfil.Name = "pnlContenedorPerfil";
+            this.pnlContenedorPerfil.Size = new System.Drawing.Size(774, 652);
+            this.pnlContenedorPerfil.TabIndex = 66;
+            // 
             // tbpBuscarVuelos
             // 
             this.tbpBuscarVuelos.Controls.Add(this.pnlBuscarVuelos);
             this.tbpBuscarVuelos.Location = new System.Drawing.Point(184, 4);
             this.tbpBuscarVuelos.Name = "tbpBuscarVuelos";
-            this.tbpBuscarVuelos.Size = new System.Drawing.Size(707, 652);
+            this.tbpBuscarVuelos.Size = new System.Drawing.Size(774, 652);
             this.tbpBuscarVuelos.TabIndex = 3;
             this.tbpBuscarVuelos.Text = " Buscar vuelos";
             this.tbpBuscarVuelos.UseVisualStyleBackColor = true;
@@ -1014,7 +1014,7 @@
             this.pnlBuscarVuelos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBuscarVuelos.Location = new System.Drawing.Point(0, 0);
             this.pnlBuscarVuelos.Name = "pnlBuscarVuelos";
-            this.pnlBuscarVuelos.Size = new System.Drawing.Size(707, 652);
+            this.pnlBuscarVuelos.Size = new System.Drawing.Size(774, 652);
             this.pnlBuscarVuelos.TabIndex = 0;
             // 
             // btnSiguiente
@@ -1085,7 +1085,7 @@
             this.dtmFechaViaje_Ida.MaxDate = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             this.dtmFechaViaje_Ida.MinDate = new System.DateTime(1753, 2, 6, 0, 0, 0, 0);
             this.dtmFechaViaje_Ida.Name = "dtmFechaViaje_Ida";
-            this.dtmFechaViaje_Ida.Size = new System.Drawing.Size(222, 23);
+            this.dtmFechaViaje_Ida.Size = new System.Drawing.Size(238, 23);
             this.dtmFechaViaje_Ida.TabIndex = 56;
             this.dtmFechaViaje_Ida.Value = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             // 
@@ -1223,7 +1223,7 @@
             this.pnlContenedorBuscarVuelos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedorBuscarVuelos.Location = new System.Drawing.Point(0, 0);
             this.pnlContenedorBuscarVuelos.Name = "pnlContenedorBuscarVuelos";
-            this.pnlContenedorBuscarVuelos.Size = new System.Drawing.Size(707, 652);
+            this.pnlContenedorBuscarVuelos.Size = new System.Drawing.Size(774, 652);
             this.pnlContenedorBuscarVuelos.TabIndex = 61;
             // 
             // PaginaPrincipal
