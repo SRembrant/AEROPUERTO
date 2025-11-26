@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblVolverAPerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlPrincipal = new Guna.UI2.WinForms.Guna2Panel();
             this.lblCreaUsuarioGratuita_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUneteANosotros = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -51,20 +50,11 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnGuardarYContinuar = new Guna.UI2.WinForms.Guna2Button();
             this.pbxRegresar_Modificar1 = new System.Windows.Forms.PictureBox();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegresar_Modificar1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblVolverAPerfil
-            // 
-            this.lblVolverAPerfil.BackColor = System.Drawing.Color.Transparent;
-            this.lblVolverAPerfil.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblVolverAPerfil.Location = new System.Drawing.Point(48, 18);
-            this.lblVolverAPerfil.Name = "lblVolverAPerfil";
-            this.lblVolverAPerfil.Size = new System.Drawing.Size(33, 17);
-            this.lblVolverAPerfil.TabIndex = 51;
-            this.lblVolverAPerfil.Text = "Perfil";
             // 
             // pnlPrincipal
             // 
@@ -396,12 +386,23 @@
             this.pbxRegresar_Modificar1.TabStop = false;
             this.pbxRegresar_Modificar1.Click += new System.EventHandler(this.pbxRegresar_Modificar1_Click);
             // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(42, 18);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(60, 21);
+            this.guna2HtmlLabel5.TabIndex = 53;
+            this.guna2HtmlLabel5.Text = "Mi Perfil";
+            // 
             // Uc_ModificarDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.pbxRegresar_Modificar1);
-            this.Controls.Add(this.lblVolverAPerfil);
             this.Controls.Add(this.pnlPrincipal);
             this.Name = "Uc_ModificarDatos";
             this.Size = new System.Drawing.Size(588, 601);
@@ -418,7 +419,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbxRegresar_Modificar1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblVolverAPerfil;
         private Guna.UI2.WinForms.Guna2Panel pnlPrincipal;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCreaUsuarioGratuita_mns;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblUneteANosotros;
@@ -440,5 +440,6 @@
         private Guna.UI2.WinForms.Guna2Button btnGuardarYContinuar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
     }
 }

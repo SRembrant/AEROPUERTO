@@ -42,7 +42,7 @@
             this.pnlConfirmarReagendamiento.Controls.Add(this.btnCancelarReagendamiento);
             this.pnlConfirmarReagendamiento.Controls.Add(this.btnConfirmarReagendamiento);
             this.pnlConfirmarReagendamiento.FillColor = System.Drawing.Color.White;
-            this.pnlConfirmarReagendamiento.Location = new System.Drawing.Point(45, 65);
+            this.pnlConfirmarReagendamiento.Location = new System.Drawing.Point(119, 109);
             this.pnlConfirmarReagendamiento.Name = "pnlConfirmarReagendamiento";
             this.pnlConfirmarReagendamiento.Size = new System.Drawing.Size(475, 272);
             this.pnlConfirmarReagendamiento.TabIndex = 1;
@@ -101,7 +101,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlConfirmarReagendamiento);
             this.Name = "Uc_ConfirmarReagendamiento";
-            this.Size = new System.Drawing.Size(588, 652);
+            this.Size = new System.Drawing.Size(762, 644);
             this.pnlConfirmarReagendamiento.ResumeLayout(false);
             this.pnlConfirmarReagendamiento.PerformLayout();
             this.ResumeLayout(false);

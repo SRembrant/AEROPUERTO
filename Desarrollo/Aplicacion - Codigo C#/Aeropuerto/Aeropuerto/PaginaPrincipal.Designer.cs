@@ -44,6 +44,7 @@
             this.lblHola = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbpMisVuelos = new System.Windows.Forms.TabPage();
             this.pnlContenedorMisVuelos = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlMisVuelos = new Guna.UI2.WinForms.Guna2Panel();
             this.lb_NoComprados = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.flp_MisVuelos = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl_MisVuelos = new Guna.UI2.WinForms.Guna2Panel();
@@ -57,7 +58,6 @@
             this.lbDestino_Avr_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbOrigen_Avr_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pnlMisVuelos = new Guna.UI2.WinForms.Guna2Panel();
             this.tbpMiperfil = new System.Windows.Forms.TabPage();
             this.pnlMiPerfil = new Guna.UI2.WinForms.Guna2Panel();
             this.txtApellido_PgPerfil = new Guna.UI2.WinForms.Guna2TextBox();
@@ -322,15 +322,22 @@
             // 
             // pnlContenedorMisVuelos
             // 
-            this.pnlContenedorMisVuelos.Controls.Add(this.pnlMisVuelos);
             this.pnlContenedorMisVuelos.Controls.Add(this.lb_NoComprados);
             this.pnlContenedorMisVuelos.Controls.Add(this.flp_MisVuelos);
             this.pnlContenedorMisVuelos.Controls.Add(this.guna2HtmlLabel7);
+            this.pnlContenedorMisVuelos.Controls.Add(this.pnlMisVuelos);
             this.pnlContenedorMisVuelos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedorMisVuelos.Location = new System.Drawing.Point(3, 3);
             this.pnlContenedorMisVuelos.Name = "pnlContenedorMisVuelos";
             this.pnlContenedorMisVuelos.Size = new System.Drawing.Size(768, 646);
             this.pnlContenedorMisVuelos.TabIndex = 1;
+            // 
+            // pnlMisVuelos
+            // 
+            this.pnlMisVuelos.Location = new System.Drawing.Point(3, 3);
+            this.pnlMisVuelos.Name = "pnlMisVuelos";
+            this.pnlMisVuelos.Size = new System.Drawing.Size(762, 644);
+            this.pnlMisVuelos.TabIndex = 16;
             // 
             // lb_NoComprados
             // 
@@ -481,13 +488,6 @@
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(79, 22);
             this.guna2HtmlLabel7.TabIndex = 14;
             this.guna2HtmlLabel7.Text = "Mis Vuelos";
-            // 
-            // pnlMisVuelos
-            // 
-            this.pnlMisVuelos.Location = new System.Drawing.Point(3, 3);
-            this.pnlMisVuelos.Name = "pnlMisVuelos";
-            this.pnlMisVuelos.Size = new System.Drawing.Size(762, 644);
-            this.pnlMisVuelos.TabIndex = 16;
             // 
             // tbpMiperfil
             // 

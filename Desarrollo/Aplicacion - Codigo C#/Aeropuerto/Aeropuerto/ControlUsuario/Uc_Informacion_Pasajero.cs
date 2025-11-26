@@ -17,6 +17,7 @@ namespace Aeropuerto
     public partial class Uc_Informacion_Pasajero : UserControl
     {
         PaginaPrincipal principal;
+        Uc_AcVuelosDisponibles anterior;
         Vuelo objVuelo;
         UsuarioRegistrado objUsuarioRegistrado;
         DataTable vuelosIda;
@@ -25,10 +26,11 @@ namespace Aeropuerto
 
         public int NumeroPasajeros { get; private set; }
 
-        public Uc_Informacion_Pasajero(PaginaPrincipal principal, Vuelo objVuelo, UsuarioRegistrado objUsuarioRegistrado, DataTable vuelosIda, DataTable vuelosRegreso, int numeroPasajeros)
+        public Uc_Informacion_Pasajero(PaginaPrincipal principal, Uc_AcVuelosDisponibles anterior, Vuelo objVuelo, UsuarioRegistrado objUsuarioRegistrado, DataTable vuelosIda, DataTable vuelosRegreso, int numeroPasajeros)
         {
             InitializeComponent();
             this.principal = principal;
+            this.anterior = anterior;
             this.objVuelo = objVuelo;
             this.objUsuarioRegistrado = objUsuarioRegistrado;
             this.vuelosIda = vuelosIda;
@@ -207,6 +209,93 @@ namespace Aeropuerto
             // Mostrar total formateado
             lblPrecio_InformPasajero.Text = $"Precio total: {total:N0} COP";
         }
+
+        private void MostrarDisponibilidadAsientos()
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("=======================================");
+                sb.AppendLine("     ✈ DISPONIBILIDAD DE ASIENTOS ✈");
+                sb.AppendLine("=======================================");
+
+                // DISPONIBILIDAD PARA VUELO DE IDA
+                if (vuelosIda != null && vuelosIda.Rows.Count > 0)
+                {
+                    int idVueloIda = Convert.ToInt32(vuelosIda.Rows[0]["IDVUELO"]);
+                    DataTable dtIda = gestorPasaje.ObtenerAsientosDisponiblesPorVuelo(idVueloIda);
+
+                    sb.AppendLine($"🔵 VUELO DE IDA (ID: {idVueloIda})");
+                    sb.AppendLine("---------------------------------------");
+
+                    if (dtIda.Rows.Count == 0)
+                    {
+                        sb.AppendLine("No hay asientos disponibles.");
+                    }
+                    else
+                    {
+                        foreach (DataRow row in dtIda.Rows)
+                        {
+                            sb.AppendLine($"• {row["nombreCategoria"]}: {row["asientosDisponibles"]} disponible(s)");
+                        }
+                    }
+
+                    sb.AppendLine("---------------------------------------");
+                }
+
+                // 🔹 DISPONIBILIDAD PARA VUELO DE REGRESO
+                if (vuelosRegreso != null && vuelosRegreso.Rows.Count > 0)
+                {
+                    int idVueloRegreso = Convert.ToInt32(vuelosRegreso.Rows[0]["IDVUELO"]);
+                    DataTable dtRegreso = gestorPasaje.ObtenerAsientosDisponiblesPorVuelo(idVueloRegreso);
+
+                    sb.AppendLine($"🟣 VUELO DE REGRESO (ID: {idVueloRegreso})");
+                    sb.AppendLine("---------------------------------------");
+
+                    if (dtRegreso.Rows.Count == 0)
+                    {
+                        sb.AppendLine("No hay asientos disponibles.");
+                    }
+                    else
+                    {
+                        foreach (DataRow row in dtRegreso.Rows)
+                        {
+                            sb.AppendLine($"• {row["nombreCategoria"]}: {row["asientosDisponibles"]} disponible(s)");
+                        }
+                    }
+
+                    sb.AppendLine("---------------------------------------");
+                }
+
+                sb.AppendLine("Gracias por preferirnos. ¡Buen viaje!");
+                sb.AppendLine("=======================================");
+
+                MessageBox.Show(sb.ToString(),
+                                "Disponibilidad de Asientos",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al consultar disponibilidad: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+        private void VerDisponibilidad_Click(object sender, EventArgs e)
+        {
+            MostrarDisponibilidadAsientos();
+        }
+
+        private void pbxlblVolvelBuscarVuelos_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            anterior.Visible = true;
+            principal.PanelBuscarVuelos.Refresh();
+        }
+
 
     }
 

@@ -88,7 +88,7 @@
             this.dtmFechaViaje_ReagendarVuelo.MaxDate = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             this.dtmFechaViaje_ReagendarVuelo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtmFechaViaje_ReagendarVuelo.Name = "dtmFechaViaje_ReagendarVuelo";
-            this.dtmFechaViaje_ReagendarVuelo.Size = new System.Drawing.Size(222, 23);
+            this.dtmFechaViaje_ReagendarVuelo.Size = new System.Drawing.Size(248, 23);
             this.dtmFechaViaje_ReagendarVuelo.TabIndex = 90;
             this.dtmFechaViaje_ReagendarVuelo.Value = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             // 

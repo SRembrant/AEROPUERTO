@@ -89,7 +89,7 @@ namespace Aeropuerto
 
         private void SeleccionarVuelo(int idVuelo)
         {
-            var ucPasajeros = new Uc_Informacion_Pasajero(principal, objVuelo, objUsuarioRegistrado,
+            var ucPasajeros = new Uc_Informacion_Pasajero(principal, this, objVuelo, objUsuarioRegistrado,
                 vuelosIda.Select($"IDVUELO = {idVuelo}").CopyToDataTable(),
                 null, cantidadPasajeros);
 
@@ -98,7 +98,7 @@ namespace Aeropuerto
 
         private void SeleccionarParVuelos(int idIda, int idVuelta)
         {
-            var ucPasajeros = new Uc_Informacion_Pasajero(principal, objVuelo, objUsuarioRegistrado,
+            var ucPasajeros = new Uc_Informacion_Pasajero(principal, this, objVuelo, objUsuarioRegistrado,
                 vuelosIda.Select($"IDVUELO = {idIda}").CopyToDataTable(),
                 vuelosRegreso.Select($"IDVUELO = {idVuelta}").CopyToDataTable(),
                 cantidadPasajeros);

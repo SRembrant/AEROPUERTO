@@ -38,7 +38,11 @@
             this.lblPrecio_InformPasajero = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.chk_TerminosPoliticas = new System.Windows.Forms.CheckBox();
+            this.VerDisponibilidad = new System.Windows.Forms.Label();
+            this.pbxlblVolvelBuscarVuelos = new System.Windows.Forms.PictureBox();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxlblVolvelBuscarVuelos)).BeginInit();
             this.SuspendLayout();
             // 
             // mns_BuscarVuelos
@@ -167,10 +171,49 @@
             this.chk_TerminosPoliticas.Text = "He leído y acepto la política de privacidad";
             this.chk_TerminosPoliticas.UseVisualStyleBackColor = true;
             // 
+            // VerDisponibilidad
+            // 
+            this.VerDisponibilidad.AutoSize = true;
+            this.VerDisponibilidad.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.VerDisponibilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VerDisponibilidad.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.VerDisponibilidad.Location = new System.Drawing.Point(253, 13);
+            this.VerDisponibilidad.Name = "VerDisponibilidad";
+            this.VerDisponibilidad.Size = new System.Drawing.Size(173, 15);
+            this.VerDisponibilidad.TabIndex = 78;
+            this.VerDisponibilidad.Text = "Ver Disponibilidad de Asientos";
+            this.VerDisponibilidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.VerDisponibilidad.Click += new System.EventHandler(this.VerDisponibilidad_Click);
+            // 
+            // pbxlblVolvelBuscarVuelos
+            // 
+            this.pbxlblVolvelBuscarVuelos.Image = global::Aeropuerto.Properties.Resources.flechaiz;
+            this.pbxlblVolvelBuscarVuelos.Location = new System.Drawing.Point(628, 18);
+            this.pbxlblVolvelBuscarVuelos.Name = "pbxlblVolvelBuscarVuelos";
+            this.pbxlblVolvelBuscarVuelos.Size = new System.Drawing.Size(23, 10);
+            this.pbxlblVolvelBuscarVuelos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxlblVolvelBuscarVuelos.TabIndex = 80;
+            this.pbxlblVolvelBuscarVuelos.TabStop = false;
+            this.pbxlblVolvelBuscarVuelos.Click += new System.EventHandler(this.pbxlblVolvelBuscarVuelos_Click);
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(657, 12);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(63, 21);
+            this.guna2HtmlLabel1.TabIndex = 81;
+            this.guna2HtmlLabel1.Text = "Regresar";
+            // 
             // Uc_Informacion_Pasajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.guna2HtmlLabel1);
+            this.Controls.Add(this.pbxlblVolvelBuscarVuelos);
+            this.Controls.Add(this.VerDisponibilidad);
             this.Controls.Add(this.guna2HtmlLabel6);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2Panel1);
@@ -182,6 +225,7 @@
             this.Size = new System.Drawing.Size(774, 652);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxlblVolvelBuscarVuelos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +243,8 @@
         private Guna.UI2.WinForms.Guna2Button btnRealizarCompra;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private System.Windows.Forms.CheckBox chk_TerminosPoliticas;
+        private System.Windows.Forms.Label VerDisponibilidad;
+        private System.Windows.Forms.PictureBox pbxlblVolvelBuscarVuelos;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

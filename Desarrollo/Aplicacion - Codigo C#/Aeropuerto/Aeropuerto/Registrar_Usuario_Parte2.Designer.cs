@@ -34,7 +34,6 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.chbxAceptoTerminosCondiciones = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblVolverARegistrar_1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblErrorCampoObligatorioDireccion = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblErrorCampoObligatorioContrasenia = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblErrorCampoObligatorioNumTelefono = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -57,6 +56,7 @@
             this.lblFechaNacimiento_mns = new System.Windows.Forms.Label();
             this.lblSeguridadDeLaCuenta_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnCrearCuenta = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -102,9 +102,9 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 10;
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel5);
             this.guna2Panel1.Controls.Add(this.chbxAceptoTerminosCondiciones);
             this.guna2Panel1.Controls.Add(this.pictureBox1);
-            this.guna2Panel1.Controls.Add(this.lblVolverARegistrar_1);
             this.guna2Panel1.Controls.Add(this.lblErrorCampoObligatorioDireccion);
             this.guna2Panel1.Controls.Add(this.lblErrorCampoObligatorioContrasenia);
             this.guna2Panel1.Controls.Add(this.lblErrorCampoObligatorioNumTelefono);
@@ -147,23 +147,12 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.flechaiz;
-            this.pictureBox1.Location = new System.Drawing.Point(292, 16);
+            this.pictureBox1.Location = new System.Drawing.Point(289, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(23, 10);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblVolverARegistrar_1
-            // 
-            this.lblVolverARegistrar_1.BackColor = System.Drawing.Color.Transparent;
-            this.lblVolverARegistrar_1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVolverARegistrar_1.Location = new System.Drawing.Point(316, 9);
-            this.lblVolverARegistrar_1.Name = "lblVolverARegistrar_1";
-            this.lblVolverARegistrar_1.Size = new System.Drawing.Size(48, 17);
-            this.lblVolverARegistrar_1.TabIndex = 27;
-            this.lblVolverARegistrar_1.Text = "Regresar";
-            this.lblVolverARegistrar_1.Click += new System.EventHandler(this.lblVolverARegistrar_1_Click);
             // 
             // lblErrorCampoObligatorioDireccion
             // 
@@ -487,6 +476,17 @@
             this.btnCrearCuenta.Text = "Crear cuenta";
             this.btnCrearCuenta.Click += new System.EventHandler(this.btnCrearCuenta_Click);
             // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(315, 14);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(63, 21);
+            this.guna2HtmlLabel5.TabIndex = 30;
+            this.guna2HtmlLabel5.Text = "Regresar";
+            // 
             // Registrar_Usuario_Parte2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,8 +533,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligatorioNumTelefono;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligatorioFechaNac;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligatorioDireccion;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblVolverARegistrar_1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox chbxAceptoTerminosCondiciones;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
     }
 }

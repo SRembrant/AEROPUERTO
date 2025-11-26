@@ -68,7 +68,7 @@
             this.btnReagendarVuelo = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelarVuelo = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblVolvelMisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -111,7 +111,7 @@
             this.guna2Panel1.Controls.Add(this.guna2Panel4);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Controls.Add(this.guna2Panel3);
-            this.guna2Panel1.Location = new System.Drawing.Point(19, 61);
+            this.guna2Panel1.Location = new System.Drawing.Point(97, 44);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(545, 511);
             this.guna2Panel1.TabIndex = 14;
@@ -521,7 +521,7 @@
             this.btnReagendarVuelo.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnReagendarVuelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReagendarVuelo.ForeColor = System.Drawing.Color.White;
-            this.btnReagendarVuelo.Location = new System.Drawing.Point(311, 587);
+            this.btnReagendarVuelo.Location = new System.Drawing.Point(389, 570);
             this.btnReagendarVuelo.Name = "btnReagendarVuelo";
             this.btnReagendarVuelo.Size = new System.Drawing.Size(214, 41);
             this.btnReagendarVuelo.TabIndex = 15;
@@ -541,7 +541,7 @@
             this.btnCancelarVuelo.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnCancelarVuelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarVuelo.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarVuelo.Location = new System.Drawing.Point(49, 587);
+            this.btnCancelarVuelo.Location = new System.Drawing.Point(127, 570);
             this.btnCancelarVuelo.Name = "btnCancelarVuelo";
             this.btnCancelarVuelo.Size = new System.Drawing.Size(214, 41);
             this.btnCancelarVuelo.TabIndex = 16;
@@ -552,7 +552,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.flechaiz;
-            this.pictureBox1.Location = new System.Drawing.Point(454, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(590, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(23, 10);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -560,29 +560,29 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.lblVolvelMisVuelos_Click);
             // 
-            // lblVolvelMisVuelos
+            // guna2HtmlLabel12
             // 
-            this.lblVolvelMisVuelos.BackColor = System.Drawing.Color.Transparent;
-            this.lblVolvelMisVuelos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVolvelMisVuelos.Location = new System.Drawing.Point(478, 16);
-            this.lblVolvelMisVuelos.Name = "lblVolvelMisVuelos";
-            this.lblVolvelMisVuelos.Size = new System.Drawing.Size(59, 17);
-            this.lblVolvelMisVuelos.TabIndex = 29;
-            this.lblVolvelMisVuelos.Text = "Mis vuelos";
-            this.lblVolvelMisVuelos.Click += new System.EventHandler(this.lblVolvelMisVuelos_Click);
+            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel12.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(619, 16);
+            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(74, 21);
+            this.guna2HtmlLabel12.TabIndex = 31;
+            this.guna2HtmlLabel12.Text = "Mis Vuelos";
             // 
             // Uc_Informacion_Vuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.guna2HtmlLabel12);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblVolvelMisVuelos);
             this.Controls.Add(this.btnCancelarVuelo);
             this.Controls.Add(this.btnReagendarVuelo);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Name = "Uc_Informacion_Vuelo";
-            this.Size = new System.Drawing.Size(588, 652);
+            this.Size = new System.Drawing.Size(762, 644);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
@@ -622,7 +622,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_NumeroVuelo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblVolvelMisVuelos;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDestino_InfoVuelos;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDestino_Avr_InfoVuelos;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblOrigen_InfoVuelos;
@@ -640,5 +639,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNumeroZona_infoVuelos;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNumeroPuerta_InfoVuelos;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNumeroPasajeros_infoVuelos;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
     }
 }

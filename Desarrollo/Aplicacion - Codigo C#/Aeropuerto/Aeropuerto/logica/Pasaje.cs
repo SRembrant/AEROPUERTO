@@ -159,10 +159,10 @@ namespace Aeropuerto.logica
         {
             OracleParameter[] parametros = new OracleParameter[]
             {
-        new OracleParameter("p_resultado", OracleDbType.RefCursor)
-        {
-            Direction = ParameterDirection.Output
-        }
+                new OracleParameter("p_resultado", OracleDbType.RefCursor)
+                {
+                    Direction = ParameterDirection.Output
+                }
             };
 
             return datos.EjecutarProcedureCursor(
@@ -373,6 +373,21 @@ namespace Aeropuerto.logica
                 return null;
             }
         }
+
+        public DataTable ObtenerAsientosDisponiblesPorVuelo(int idVuelo)
+        {
+            OracleParameter[] parametros = new OracleParameter[]
+            {
+                new OracleParameter("p_idVuelo", idVuelo),
+                new OracleParameter("p_resultado", OracleDbType.RefCursor)
+                {
+                    Direction = ParameterDirection.Output
+                }
+            };
+
+            return datos.EjecutarProcedureCursor("GESTION_PASAJES.ASIENTOS_DISPONIBLES_POR_VUELO", parametros);
+        }
+
 
     }
 }
