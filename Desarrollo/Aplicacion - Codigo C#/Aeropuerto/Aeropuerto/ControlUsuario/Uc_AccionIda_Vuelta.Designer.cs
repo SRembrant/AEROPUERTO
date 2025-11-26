@@ -71,7 +71,7 @@
             this.dtmFechaViaje_Regreso.MaxDate = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             this.dtmFechaViaje_Regreso.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtmFechaViaje_Regreso.Name = "dtmFechaViaje_Regreso";
-            this.dtmFechaViaje_Regreso.Size = new System.Drawing.Size(222, 23);
+            this.dtmFechaViaje_Regreso.Size = new System.Drawing.Size(246, 23);
             this.dtmFechaViaje_Regreso.TabIndex = 78;
             this.dtmFechaViaje_Regreso.Value = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             // 
@@ -144,7 +144,7 @@
             this.dtmFechaViaje_Ida.MaxDate = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             this.dtmFechaViaje_Ida.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtmFechaViaje_Ida.Name = "dtmFechaViaje_Ida";
-            this.dtmFechaViaje_Ida.Size = new System.Drawing.Size(222, 23);
+            this.dtmFechaViaje_Ida.Size = new System.Drawing.Size(250, 23);
             this.dtmFechaViaje_Ida.TabIndex = 73;
             this.dtmFechaViaje_Ida.Value = new System.DateTime(2025, 10, 20, 0, 0, 0, 0);
             // 

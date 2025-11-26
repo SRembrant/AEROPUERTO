@@ -48,8 +48,8 @@
             this.lblFechaNacimiento_mns = new System.Windows.Forms.Label();
             this.lblSeguridadDeLaCuenta_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnActualizarDatos_ModifParte2 = new Guna.UI2.WinForms.Guna2Button();
-            this.lblRegresarAnterior_ModifParte2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -349,34 +349,35 @@
             this.btnActualizarDatos_ModifParte2.Text = "Actualizar datos";
             this.btnActualizarDatos_ModifParte2.Click += new System.EventHandler(this.btnActualizarDatos_ModifParte2_Click);
             // 
-            // lblRegresarAnterior_ModifParte2
-            // 
-            this.lblRegresarAnterior_ModifParte2.BackColor = System.Drawing.Color.Transparent;
-            this.lblRegresarAnterior_ModifParte2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegresarAnterior_ModifParte2.Location = new System.Drawing.Point(47, 13);
-            this.lblRegresarAnterior_ModifParte2.Name = "lblRegresarAnterior_ModifParte2";
-            this.lblRegresarAnterior_ModifParte2.Size = new System.Drawing.Size(53, 17);
-            this.lblRegresarAnterior_ModifParte2.TabIndex = 31;
-            this.lblRegresarAnterior_ModifParte2.Text = "Regresar";
-            this.lblRegresarAnterior_ModifParte2.Click += new System.EventHandler(this.lblRegresarAnterior_ModifParte2_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Aeropuerto.Properties.Resources.flechaiz;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 25);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(23, 10);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.lblRegresarAnterior_ModifParte2_Click);
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(42, 18);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(63, 21);
+            this.guna2HtmlLabel5.TabIndex = 33;
+            this.guna2HtmlLabel5.Text = "Regresar";
             // 
             // Uc_ModificarDatos_Parte2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlPrincipal);
-            this.Controls.Add(this.lblRegresarAnterior_ModifParte2);
             this.Name = "Uc_ModificarDatos_Parte2";
             this.Size = new System.Drawing.Size(588, 601);
             this.pnlPrincipal.ResumeLayout(false);
@@ -411,7 +412,7 @@
         private System.Windows.Forms.Label lblFechaNacimiento_mns;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSeguridadDeLaCuenta_mns;
         private Guna.UI2.WinForms.Guna2Button btnActualizarDatos_ModifParte2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblRegresarAnterior_ModifParte2;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
     }
 }

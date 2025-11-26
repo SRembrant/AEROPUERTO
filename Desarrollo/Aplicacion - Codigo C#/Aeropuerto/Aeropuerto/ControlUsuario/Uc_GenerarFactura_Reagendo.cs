@@ -37,6 +37,7 @@ namespace Aeropuerto.ControlUsuario
             // Recupera los datos de la factura según tu procedure actual
             DataTable factura = gestorPasaje.RecuperarFactura_Reagendamiento(idPasaje, idVuelo, medioPago);
 
+            if (factura != null) return;
             if (factura.Rows.Count > 0)
             {
                 var row = factura.Rows[0];

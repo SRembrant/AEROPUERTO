@@ -42,7 +42,7 @@
             this.pnlConfirmarCancelacion.Controls.Add(this.btnCancelar_confCancela);
             this.pnlConfirmarCancelacion.Controls.Add(this.btnConfirmarCancelacion);
             this.pnlConfirmarCancelacion.FillColor = System.Drawing.Color.White;
-            this.pnlConfirmarCancelacion.Location = new System.Drawing.Point(55, 66);
+            this.pnlConfirmarCancelacion.Location = new System.Drawing.Point(122, 118);
             this.pnlConfirmarCancelacion.Name = "pnlConfirmarCancelacion";
             this.pnlConfirmarCancelacion.Size = new System.Drawing.Size(475, 272);
             this.pnlConfirmarCancelacion.TabIndex = 2;
@@ -101,7 +101,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlConfirmarCancelacion);
             this.Name = "Uc_ConfirmarCancelacion";
-            this.Size = new System.Drawing.Size(588, 652);
+            this.Size = new System.Drawing.Size(762, 644);
             this.pnlConfirmarCancelacion.ResumeLayout(false);
             this.pnlConfirmarCancelacion.PerformLayout();
             this.ResumeLayout(false);

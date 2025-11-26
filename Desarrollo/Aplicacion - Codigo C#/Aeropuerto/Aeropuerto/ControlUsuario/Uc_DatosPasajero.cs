@@ -59,113 +59,6 @@ namespace Aeropuerto.ControlUsuario
             }
         }
 
-        /*private bool ValidarNombre()
-        {
-            string nombre = txtNombre_DatosPasajeros.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(nombre))
-            {
-                lblErrorNombre.Text = "El nombre no puede estar vacío";
-                lblErrorNombre.Visible = true;
-                return false;
-            }
-            if (!nombre.All(char.IsLetter))
-            {
-                lblErrorNombre.Text = "Solo se permiten letras";
-                lblErrorNombre.Visible = true;
-                return false;
-            }
-
-            txtNombre_DatosPasajeros.Text = nombre;
-            lblErrorNombre.Visible = false;
-            return true;
-        }
-
-        private bool ValidarApellido()
-        {
-            string apellido = txtApellido_DatosPasajero.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(apellido))
-            {
-                lblErrorApellido.Text = "El apellido no puede estar vacío";
-                lblErrorApellido.Visible = true;
-                return false;
-            }
-            if (!apellido.All(char.IsLetter))
-            {
-                lblErrorApellido.Text = "Solo se permiten letras";
-                lblErrorApellido.Visible = true;
-                return false;
-            }
-
-            txtApellido_DatosPasajero.Text = apellido;
-            lblErrorApellido.Visible = false;
-            return true;
-        }
-
-        private bool ValidarCorreo()
-        {
-            string correo = txtCorreo_DatosPasajero.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(correo))
-            {
-                lblErrorCorreo.Text = "El correo no puede estar vacío";
-                lblErrorCorreo.Visible = true;
-                return false;
-            }
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(correo);
-                txtCorreo_DatosPasajero.Text = correo;
-                lblErrorCorreo.Visible = false;
-                return true;
-            }
-            catch
-            {
-                lblErrorCorreo.Text = "Correo inválido";
-                lblErrorCorreo.Visible = true;
-                return false;
-            }
-
-        }
-
-        private bool ValidarIdentificacion()
-        {
-            string id = txtIdentificacion_DatosPasajero.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(id))
-            {
-                lblErrorID.Text = "La identificación no puede estar vacía";
-                lblErrorID.Visible = true;
-                return false;
-            }
-            if (!id.All(char.IsDigit))
-            {
-                lblErrorID.Text = "La identificación solo debe contener números";
-                lblErrorID.Visible = true;
-                return false;
-            }
-            if (id.Length < 5)
-            {
-                lblErrorID.Text = "La identificación es demasiado corta";
-                lblErrorID.Visible = true;
-                return false;
-            }
-
-            txtIdentificacion_DatosPasajero.Text = id;
-            lblErrorID.Visible = false;
-            return true;
-        }
-
-        public bool ValidarTodo()
-        {
-            bool v1 = ValidarNombre();
-            bool v2 = ValidarApellido();
-            bool v3 = ValidarCorreo();
-            bool v4 = ValidarIdentificacion();
-
-            return v1 && v2 && v3 && v4;
-        }*/
 
         private void ValidarNombre(object sender, EventArgs e)
         {
@@ -326,7 +219,6 @@ namespace Aeropuerto.ControlUsuario
                 return true;
             }
         }
-
 
     }
 }

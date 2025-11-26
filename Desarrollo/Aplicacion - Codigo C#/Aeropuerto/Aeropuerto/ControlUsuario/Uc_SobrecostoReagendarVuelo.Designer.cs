@@ -44,7 +44,7 @@
             this.pnlConfirmarCancelacion.Controls.Add(this.btnCancelar_ReagendarVuelo);
             this.pnlConfirmarCancelacion.Controls.Add(this.btnConfirmar_ReagendarVuelo);
             this.pnlConfirmarCancelacion.FillColor = System.Drawing.Color.White;
-            this.pnlConfirmarCancelacion.Location = new System.Drawing.Point(114, 124);
+            this.pnlConfirmarCancelacion.Location = new System.Drawing.Point(134, 132);
             this.pnlConfirmarCancelacion.Name = "pnlConfirmarCancelacion";
             this.pnlConfirmarCancelacion.Size = new System.Drawing.Size(475, 272);
             this.pnlConfirmarCancelacion.TabIndex = 3;
@@ -118,7 +118,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlConfirmarCancelacion);
             this.Name = "Uc_SobrecostoReagendarVuelo";
-            this.Size = new System.Drawing.Size(701, 646);
+            this.Size = new System.Drawing.Size(762, 644);
             this.pnlConfirmarCancelacion.ResumeLayout(false);
             this.pnlConfirmarCancelacion.PerformLayout();
             this.ResumeLayout(false);

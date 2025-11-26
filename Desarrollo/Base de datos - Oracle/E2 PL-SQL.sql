@@ -166,6 +166,12 @@ CREATE OR REPLACE PACKAGE GESTION_PASAJES AS
             p_idPasaje IN PASAJE.IDPASAJE%TYPE,
             p_resultado OUT SYS_REFCURSOR
         );
+        
+        
+   PROCEDURE ASIENTOS_DISPONIBLES_POR_VUELO(
+        p_idVuelo    IN  NUMBER,
+        p_resultado  OUT SYS_REFCURSOR
+    );
     
 END GESTION_PASAJES;
 
@@ -1466,9 +1472,34 @@ CREATE OR REPLACE PACKAGE BODY GESTION_PASAJES AS
             OPEN p_resultado FOR
                 SELECT NULL AS numeroVuelo FROM dual WHERE 1=0;
     END OBTENER_INFO_VUELO_REAGENDAR;
- 
-END GESTION_PASAJES;
+    
+    
+    PROCEDURE ASIENTOS_DISPONIBLES_POR_VUELO(
+        p_idVuelo    IN  NUMBER,
+        p_resultado  OUT SYS_REFCURSOR
+    )
+    AS
+    BEGIN
+        OPEN p_resultado FOR
+            SELECT 
+                ca.nombreCategoria, COUNT(a.numAsiento) AS asientosDisponibles
+            FROM Vuelo v
+            JOIN Avion av 
+                 ON av.idAvion = v.idAvion
+            JOIN Asiento a
+                 ON a.idAvion = av.idAvion
+                AND a.estadoAsiento = 'Disponible'
+            JOIN CategoriaAsiento ca
+                 ON ca.idCategoria = a.idCategoria
+            WHERE v.idVuelo = p_idVuelo
+            GROUP BY 
+                ca.nombreCategoria
+            HAVING COUNT(a.numAsiento) > 0
+            ORDER BY 
+                ca.nombreCategoria;
+    END ASIENTOS_DISPONIBLES_POR_VUELO;
 
+END GESTION_PASAJES;
 
 
 
