@@ -602,6 +602,3 @@ C:\AEROPUERTO GIT\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropu
 C:\AEROPUERTO GIT\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.exe
 C:\AEROPUERTO GIT\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.pdb
 C:\AEROPUERTO GIT\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.ControlUsuario.Uc_ReagendarPasaje.resources
-C:\Users\sebas\Downloads\VersionadoGit\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.csproj.AssemblyReference.cache
-C:\Users\sebas\Downloads\VersionadoGit\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.exe
-C:\Users\sebas\Downloads\VersionadoGit\AEROPUERTO\Desarrollo\Aplicacion - Codigo C#\Aeropuerto\Aeropuerto\obj\Debug\Aeropuerto.pdb
