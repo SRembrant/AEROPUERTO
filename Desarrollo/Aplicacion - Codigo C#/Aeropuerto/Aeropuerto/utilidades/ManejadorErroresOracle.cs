@@ -106,6 +106,7 @@ namespace Aeropuerto.utilidades
                 //Trigger para validar caracteres especiales
                 case 20092: return "La dirección contiene caracteres no permitidos. Solo se permiten letras, números, espacios, - # y ''.";
                 case 20093: return "La observación contiene caracteres no permitidos. Solo se permiten letras, números, espacios, - # y ''.";
+                
 
                 // Paquete Gestión Pasajes
                 case 20014: return "No hay asientos disponibles en la categoría seleccionada.";

@@ -50,6 +50,9 @@
             this.btnActualizarDatos_ModifParte2 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblErrorCampoObligatorioNumTelefono = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblErrorCampoObligatorioContrasenia = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblErrorCampoObligatorioDireccion = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -96,6 +99,9 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BorderRadius = 10;
+            this.guna2Panel2.Controls.Add(this.lblErrorCampoObligatorioDireccion);
+            this.guna2Panel2.Controls.Add(this.lblErrorCampoObligatorioContrasenia);
+            this.guna2Panel2.Controls.Add(this.lblErrorCampoObligatorioNumTelefono);
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Controls.Add(this.lblRegresarInicio_Modificar2);
             this.guna2Panel2.Controls.Add(this.cbxNacionalidad_ModifParte2);
@@ -124,7 +130,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(77, 144);
+            this.label2.Location = new System.Drawing.Point(75, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 13);
             this.label2.TabIndex = 37;
@@ -178,7 +184,7 @@
             this.txtDireccion_ModifParte2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDireccion_ModifParte2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDireccion_ModifParte2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDireccion_ModifParte2.Location = new System.Drawing.Point(13, 204);
+            this.txtDireccion_ModifParte2.Location = new System.Drawing.Point(11, 223);
             this.txtDireccion_ModifParte2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDireccion_ModifParte2.Name = "txtDireccion_ModifParte2";
             this.txtDireccion_ModifParte2.PlaceholderText = "";
@@ -198,7 +204,7 @@
             this.txtContrasenia_ModifParte2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtContrasenia_ModifParte2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtContrasenia_ModifParte2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContrasenia_ModifParte2.Location = new System.Drawing.Point(13, 161);
+            this.txtContrasenia_ModifParte2.Location = new System.Drawing.Point(11, 169);
             this.txtContrasenia_ModifParte2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContrasenia_ModifParte2.Name = "txtContrasenia_ModifParte2";
             this.txtContrasenia_ModifParte2.PlaceholderText = "";
@@ -243,7 +249,7 @@
             this.txtDetalles_ModifParte2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDetalles_ModifParte2.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtDetalles_ModifParte2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDetalles_ModifParte2.Location = new System.Drawing.Point(173, 204);
+            this.txtDetalles_ModifParte2.Location = new System.Drawing.Point(171, 223);
             this.txtDetalles_ModifParte2.Multiline = true;
             this.txtDetalles_ModifParte2.Name = "txtDetalles_ModifParte2";
             this.txtDetalles_ModifParte2.PlaceholderText = "";
@@ -255,7 +261,7 @@
             // 
             this.lblDetalles_mns.AutoSize = true;
             this.lblDetalles_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblDetalles_mns.Location = new System.Drawing.Point(170, 188);
+            this.lblDetalles_mns.Location = new System.Drawing.Point(168, 207);
             this.lblDetalles_mns.Name = "lblDetalles_mns";
             this.lblDetalles_mns.Size = new System.Drawing.Size(45, 13);
             this.lblDetalles_mns.TabIndex = 69;
@@ -265,7 +271,7 @@
             // 
             this.lblDireccion_mns.AutoSize = true;
             this.lblDireccion_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblDireccion_mns.Location = new System.Drawing.Point(10, 188);
+            this.lblDireccion_mns.Location = new System.Drawing.Point(8, 207);
             this.lblDireccion_mns.Name = "lblDireccion_mns";
             this.lblDireccion_mns.Size = new System.Drawing.Size(52, 13);
             this.lblDireccion_mns.TabIndex = 68;
@@ -283,7 +289,7 @@
             this.txtNumeroTelefonico_ModifParte2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNumeroTelefonico_ModifParte2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNumeroTelefonico_ModifParte2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNumeroTelefonico_ModifParte2.Location = new System.Drawing.Point(13, 118);
+            this.txtNumeroTelefonico_ModifParte2.Location = new System.Drawing.Point(13, 110);
             this.txtNumeroTelefonico_ModifParte2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumeroTelefonico_ModifParte2.Name = "txtNumeroTelefonico_ModifParte2";
             this.txtNumeroTelefonico_ModifParte2.PlaceholderText = "";
@@ -295,7 +301,7 @@
             // 
             this.lblContrasenia_mns.AutoSize = true;
             this.lblContrasenia_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblContrasenia_mns.Location = new System.Drawing.Point(10, 145);
+            this.lblContrasenia_mns.Location = new System.Drawing.Point(8, 153);
             this.lblContrasenia_mns.Name = "lblContrasenia_mns";
             this.lblContrasenia_mns.Size = new System.Drawing.Size(61, 13);
             this.lblContrasenia_mns.TabIndex = 66;
@@ -305,11 +311,11 @@
             // 
             this.lblNumeroTelefono_mns.AutoSize = true;
             this.lblNumeroTelefono_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblNumeroTelefono_mns.Location = new System.Drawing.Point(10, 102);
+            this.lblNumeroTelefono_mns.Location = new System.Drawing.Point(10, 94);
             this.lblNumeroTelefono_mns.Name = "lblNumeroTelefono_mns";
             this.lblNumeroTelefono_mns.Size = new System.Drawing.Size(100, 13);
             this.lblNumeroTelefono_mns.TabIndex = 65;
-            this.lblNumeroTelefono_mns.Text = "Numero de teléfono";
+            this.lblNumeroTelefono_mns.Text = "Número de teléfono";
             // 
             // lblFechaNacimiento_mns
             // 
@@ -371,6 +377,42 @@
             this.guna2HtmlLabel5.TabIndex = 33;
             this.guna2HtmlLabel5.Text = "Regresar";
             // 
+            // lblErrorCampoObligatorioNumTelefono
+            // 
+            this.lblErrorCampoObligatorioNumTelefono.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorCampoObligatorioNumTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.lblErrorCampoObligatorioNumTelefono.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCampoObligatorioNumTelefono.Location = new System.Drawing.Point(14, 134);
+            this.lblErrorCampoObligatorioNumTelefono.Name = "lblErrorCampoObligatorioNumTelefono";
+            this.lblErrorCampoObligatorioNumTelefono.Size = new System.Drawing.Size(21, 11);
+            this.lblErrorCampoObligatorioNumTelefono.TabIndex = 76;
+            this.lblErrorCampoObligatorioNumTelefono.Text = "Error";
+            this.lblErrorCampoObligatorioNumTelefono.Visible = false;
+            // 
+            // lblErrorCampoObligatorioContrasenia
+            // 
+            this.lblErrorCampoObligatorioContrasenia.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorCampoObligatorioContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.lblErrorCampoObligatorioContrasenia.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCampoObligatorioContrasenia.Location = new System.Drawing.Point(14, 193);
+            this.lblErrorCampoObligatorioContrasenia.Name = "lblErrorCampoObligatorioContrasenia";
+            this.lblErrorCampoObligatorioContrasenia.Size = new System.Drawing.Size(21, 11);
+            this.lblErrorCampoObligatorioContrasenia.TabIndex = 77;
+            this.lblErrorCampoObligatorioContrasenia.Text = "Error";
+            this.lblErrorCampoObligatorioContrasenia.Visible = false;
+            // 
+            // lblErrorCampoObligatorioDireccion
+            // 
+            this.lblErrorCampoObligatorioDireccion.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorCampoObligatorioDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.lblErrorCampoObligatorioDireccion.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCampoObligatorioDireccion.Location = new System.Drawing.Point(14, 249);
+            this.lblErrorCampoObligatorioDireccion.Name = "lblErrorCampoObligatorioDireccion";
+            this.lblErrorCampoObligatorioDireccion.Size = new System.Drawing.Size(21, 11);
+            this.lblErrorCampoObligatorioDireccion.TabIndex = 78;
+            this.lblErrorCampoObligatorioDireccion.Text = "Error";
+            this.lblErrorCampoObligatorioDireccion.Visible = false;
+            // 
             // Uc_ModificarDatos_Parte2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,5 +456,8 @@
         private Guna.UI2.WinForms.Guna2Button btnActualizarDatos_ModifParte2;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligatorioDireccion;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligatorioContrasenia;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligatorioNumTelefono;
     }
 }

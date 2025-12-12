@@ -44,7 +44,6 @@
             this.lblHola = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbpMisVuelos = new System.Windows.Forms.TabPage();
             this.pnlContenedorMisVuelos = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnlMisVuelos = new Guna.UI2.WinForms.Guna2Panel();
             this.lb_NoComprados = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.flp_MisVuelos = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl_MisVuelos = new Guna.UI2.WinForms.Guna2Panel();
@@ -58,6 +57,7 @@
             this.lbDestino_Avr_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbOrigen_Avr_MisVuelos = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pnlMisVuelos = new Guna.UI2.WinForms.Guna2Panel();
             this.tbpMiperfil = new System.Windows.Forms.TabPage();
             this.pnlMiPerfil = new Guna.UI2.WinForms.Guna2Panel();
             this.txtApellido_PgPerfil = new Guna.UI2.WinForms.Guna2TextBox();
@@ -332,13 +332,6 @@
             this.pnlContenedorMisVuelos.Size = new System.Drawing.Size(768, 646);
             this.pnlContenedorMisVuelos.TabIndex = 1;
             // 
-            // pnlMisVuelos
-            // 
-            this.pnlMisVuelos.Location = new System.Drawing.Point(3, 3);
-            this.pnlMisVuelos.Name = "pnlMisVuelos";
-            this.pnlMisVuelos.Size = new System.Drawing.Size(762, 644);
-            this.pnlMisVuelos.TabIndex = 16;
-            // 
             // lb_NoComprados
             // 
             this.lb_NoComprados.BackColor = System.Drawing.Color.Transparent;
@@ -489,6 +482,13 @@
             this.guna2HtmlLabel7.TabIndex = 14;
             this.guna2HtmlLabel7.Text = "Mis Vuelos";
             // 
+            // pnlMisVuelos
+            // 
+            this.pnlMisVuelos.Location = new System.Drawing.Point(3, 3);
+            this.pnlMisVuelos.Name = "pnlMisVuelos";
+            this.pnlMisVuelos.Size = new System.Drawing.Size(762, 644);
+            this.pnlMisVuelos.TabIndex = 16;
+            // 
             // tbpMiperfil
             // 
             this.tbpMiperfil.Controls.Add(this.pnlMiPerfil);
@@ -565,9 +565,9 @@
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(197, 66);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(47, 17);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(128, 17);
             this.guna2HtmlLabel6.TabIndex = 64;
-            this.guna2HtmlLabel6.Text = "Apellido";
+            this.guna2HtmlLabel6.Text = "Primer Apellido";
             // 
             // btnCerrarSesion_Modificar1
             // 
@@ -774,7 +774,7 @@
             this.lblNumeroTelefono_mns.Name = "lblNumeroTelefono_mns";
             this.lblNumeroTelefono_mns.Size = new System.Drawing.Size(114, 15);
             this.lblNumeroTelefono_mns.TabIndex = 52;
-            this.lblNumeroTelefono_mns.Text = "Numero de teléfono";
+            this.lblNumeroTelefono_mns.Text = "Número de teléfono";
             // 
             // lblFechaNacimiento_mns
             // 
@@ -825,7 +825,7 @@
             this.lblGenero_mns.Name = "lblGenero_mns";
             this.lblGenero_mns.Size = new System.Drawing.Size(45, 15);
             this.lblGenero_mns.TabIndex = 45;
-            this.lblGenero_mns.Text = "Genero";
+            this.lblGenero_mns.Text = "Género";
             // 
             // txtNumIdentificacion_Pgperfil
             // 
@@ -948,9 +948,9 @@
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(15, 66);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(47, 17);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(106, 17);
             this.guna2HtmlLabel3.TabIndex = 2;
-            this.guna2HtmlLabel3.Text = "Nombre";
+            this.guna2HtmlLabel3.Text = "Primer Nombre";
             // 
             // guna2HtmlLabel2
             // 

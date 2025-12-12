@@ -169,66 +169,77 @@ namespace Aeropuerto
 
         }
 
+        
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (cbxOrigen.SelectedItem == null && cbxDestino.SelectedItem == null && string.IsNullOrEmpty(txtCantidadPasajeros.Text) || cbxOrigen.SelectedItem == null && cbxDestino.SelectedItem == null)
+            // VALIDAR ORIGEN
+            if (cbxOrigen.SelectedItem == null)
             {
-                MessageBox.Show("Debe llenar los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe seleccionar una ciudad de origen", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else
+
+            // VALIDAR DESTINO
+            if (cbxDestino.SelectedItem == null)
             {
-                string ciudadOrigen = cbxOrigen.Text;
-                string paisOrigen = cbxOrigen.SelectedValue.ToString();
-
-                string ciudadDestino = cbxDestino.Text;
-                string paisDestino = cbxDestino.SelectedValue.ToString();
-
-                DateTime fechaIda = dtmFechaViaje_Ida.Value;
-
-                if (string.IsNullOrEmpty(txtCantidadPasajeros.Text))
-                {
-                    MessageBox.Show("Debe seleccionar la cantidad de pasajeros", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                else
-                {
-                    int cantidadPasajeros = int.Parse(txtCantidadPasajeros.Text);
-
-                    if (cantidadPasajeros > 5 || cantidadPasajeros < 1)
-                    {
-                        MessageBox.Show("Debe seleccionar una cantidad de pasajeros válida", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    DataTable vuelos = objVuelo.ConsultarVuelosIda(ciudadOrigen, paisOrigen, ciudadDestino, paisDestino, fechaIda);
-
-                    if (vuelos.Rows.Count == 0)
-                    {
-                        MessageBox.Show("No se encontraron vuelos disponibles para la selección.");
-                        return;
-                    }
-
-                    tabControl_PaginaPrincipal.SelectedTab = tbpBuscarVuelos;
-
-                    // Mostrar contenedor, ocultar panel base, y asegurar Z-order
-                    pnlContenedorBuscarVuelos.SuspendLayout();
-
-                    pnlContenedorBuscarVuelos.Visible = true;
-                    pnlContenedorBuscarVuelos.BringToFront();
-                    pnlBuscarVuelos.Visible = false;
-
-                    // Cargar el UC dentro del contenedor
-                    var ucVerVuelos = new Uc_AcVuelosDisponibles(cantidadPasajeros, this, objVuelo, objUsuarioRegistrado, vuelos);
-                    ucVerVuelos.Dock = DockStyle.Fill;
-
-                    pnlContenedorBuscarVuelos.Controls.Add(ucVerVuelos);
-                    pnlContenedorBuscarVuelos.ResumeLayout();
-                }
-
+                MessageBox.Show("Debe seleccionar una ciudad de destino", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
+            // VALIDAR QUE ORIGEN Y DESTINO NO SEAN IGUALES
+            if (cbxOrigen.SelectedValue.ToString() == cbxDestino.SelectedValue.ToString())
+            {
+                MessageBox.Show("El origen y destino no pueden ser iguales", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // VALIDAR CANTIDAD DE PASAJEROS
+            if (string.IsNullOrWhiteSpace(txtCantidadPasajeros.Text))
+            {
+                MessageBox.Show("Debe ingresar la cantidad de pasajeros", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!int.TryParse(txtCantidadPasajeros.Text, out int cantidadPasajeros))
+            {
+                MessageBox.Show("La cantidad de pasajeros debe ser un número", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (cantidadPasajeros < 1 || cantidadPasajeros > 5)
+            {
+                MessageBox.Show("La cantidad de pasajeros debe estar entre 1 y 5", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string ciudadOrigen = cbxOrigen.Text;
+            string paisOrigen = cbxOrigen.SelectedValue.ToString();
+
+            string ciudadDestino = cbxDestino.Text;
+            string paisDestino = cbxDestino.SelectedValue.ToString();
+
+            DateTime fechaIda = dtmFechaViaje_Ida.Value;
+
+            DataTable vuelos = objVuelo.ConsultarVuelosIda(ciudadOrigen, paisOrigen, ciudadDestino, paisDestino, fechaIda);
+
+            if (vuelos.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontraron vuelos disponibles para la selección.");
+                return;
+            }
+
+            tabControl_PaginaPrincipal.SelectedTab = tbpBuscarVuelos;
+
+            pnlContenedorBuscarVuelos.Visible = true;
+            pnlContenedorBuscarVuelos.BringToFront();
+            pnlBuscarVuelos.Visible = false;
+
+            pnlContenedorBuscarVuelos.Controls.Clear();
+            var ucVerVuelos = new Uc_AcVuelosDisponibles(cantidadPasajeros, this, objVuelo, objUsuarioRegistrado, vuelos);
+            ucVerVuelos.Dock = DockStyle.Fill;
+            pnlContenedorBuscarVuelos.Controls.Add(ucVerVuelos);
         }
+
 
         private void btnIdaYVuelta_Click(object sender, EventArgs e)
         {

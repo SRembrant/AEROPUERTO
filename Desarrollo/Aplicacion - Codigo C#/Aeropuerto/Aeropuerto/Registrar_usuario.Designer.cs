@@ -169,9 +169,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
             this.label1.Location = new System.Drawing.Point(184, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 32;
-            this.label1.Text = "Tu Apellido";
+            this.label1.Text = "Primer Apellido";
             // 
             // lblErrorCampObligIdentificacion
             // 
@@ -481,9 +481,9 @@
             this.lblTuNombre_msn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
             this.lblTuNombre_msn.Location = new System.Drawing.Point(14, 38);
             this.lblTuNombre_msn.Name = "lblTuNombre_msn";
-            this.lblTuNombre_msn.Size = new System.Drawing.Size(58, 13);
+            this.lblTuNombre_msn.Size = new System.Drawing.Size(74, 13);
             this.lblTuNombre_msn.TabIndex = 4;
-            this.lblTuNombre_msn.Text = "Tu nombre";
+            this.lblTuNombre_msn.Text = "Primer nombre";
             // 
             // lblInformacionPersonal_mns
             // 
