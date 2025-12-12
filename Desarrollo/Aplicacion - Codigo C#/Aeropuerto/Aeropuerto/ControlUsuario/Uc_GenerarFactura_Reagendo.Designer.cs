@@ -31,12 +31,14 @@
             this.pnlConfirmarReagendamiento = new Guna.UI2.WinForms.Guna2Panel();
             this.btnGenerarFactura = new Guna.UI2.WinForms.Guna2Button();
             this.lblDireccionCorreco_mns = new System.Windows.Forms.Label();
+            this.Regresar_misVuelos = new System.Windows.Forms.Label();
             this.pnlConfirmarReagendamiento.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlConfirmarReagendamiento
             // 
             this.pnlConfirmarReagendamiento.BorderRadius = 20;
+            this.pnlConfirmarReagendamiento.Controls.Add(this.Regresar_misVuelos);
             this.pnlConfirmarReagendamiento.Controls.Add(this.btnGenerarFactura);
             this.pnlConfirmarReagendamiento.Controls.Add(this.lblDireccionCorreco_mns);
             this.pnlConfirmarReagendamiento.FillColor = System.Drawing.Color.White;
@@ -74,6 +76,20 @@
             this.lblDireccionCorreco_mns.TabIndex = 10;
             this.lblDireccionCorreco_mns.Text = "¡Su pago se ha realizado exitosamente!";
             // 
+            // Regresar_misVuelos
+            // 
+            this.Regresar_misVuelos.AutoSize = true;
+            this.Regresar_misVuelos.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.Regresar_misVuelos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Regresar_misVuelos.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.Regresar_misVuelos.Location = new System.Drawing.Point(175, 160);
+            this.Regresar_misVuelos.Name = "Regresar_misVuelos";
+            this.Regresar_misVuelos.Size = new System.Drawing.Size(131, 15);
+            this.Regresar_misVuelos.TabIndex = 14;
+            this.Regresar_misVuelos.Text = "Regresar a Mis Vuelos";
+            this.Regresar_misVuelos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Regresar_misVuelos.Click += new System.EventHandler(this.Regresar_misVuelos_Click);
+            // 
             // Uc_GenerarFactura_Reagendo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,5 +108,6 @@
         private Guna.UI2.WinForms.Guna2Panel pnlConfirmarReagendamiento;
         private Guna.UI2.WinForms.Guna2Button btnGenerarFactura;
         private System.Windows.Forms.Label lblDireccionCorreco_mns;
+        private System.Windows.Forms.Label Regresar_misVuelos;
     }
 }

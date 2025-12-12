@@ -37,7 +37,12 @@ namespace Aeropuerto.ControlUsuario
             // Recupera los datos de la factura según tu procedure actual
             DataTable factura = gestorPasaje.RecuperarFactura_Reagendamiento(idPasaje, idVuelo, medioPago);
 
-            if (factura != null) return;
+            if (factura == null)
+            {
+                MessageBox.Show("No se generó la factura. Verifique el procedimiento almacenado.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (factura.Rows.Count > 0)
             {
                 var row = factura.Rows[0];
@@ -81,6 +86,15 @@ namespace Aeropuerto.ControlUsuario
             {
                 MessageBox.Show("No se encontró información de la factura generada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void Regresar_misVuelos_Click(object sender, EventArgs e)
+        {
+            principal.PanelContenedorMisVuelos.Visible = false;
+            this.Visible = false;
+            principal.PanelMisVuelos.Visible = true;
+            principal.PanelMisVuelos.BringToFront();
+            principal.ActualizarPantalla();
         }
     }
 }
