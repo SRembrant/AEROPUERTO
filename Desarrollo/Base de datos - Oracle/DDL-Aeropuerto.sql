@@ -65,7 +65,7 @@ CREATE TABLE UsuarioRegistrado (
     nacionalidadUsuario    VARCHAR2(50) NOT NULL,
     estadoUsuario VARCHAR2(30) NOT NULL,
     usuarioAcceso VARCHAR2(30) NOT NULL,
-    contraseniaUsuario VARCHAR2(20) NOT NULL,
+    contraseniaUsuario VARCHAR2(64) NOT NULL,
     direccionUsuario       VARCHAR2(50) NOT NULL,
     observacionUsuario     VARCHAR2(100),
     telefonoUsuario INTEGER NOT NULL, 

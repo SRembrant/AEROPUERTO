@@ -27,6 +27,7 @@ namespace Aeropuerto
             txtPrimerNombre.Leave += ValidarNombre;
             txtApellido.Leave += ValidarApellido;
             txtDireccionCorreo_ru.Leave += ValidarCorreo;
+            txtNombreUsuario.Leave += ValidarNombreUsuario;
             txtNumIdentificacion.Leave += ValidarIdentificacion;
             cbxTipoIdentificacion.SelectedIndexChanged += ValidarTipoIdentificacion;
 
@@ -127,7 +128,7 @@ namespace Aeropuerto
                 lblErrorCorreoInvalido.Text = "El correo no puede estar vacío";
                 lblErrorCorreoInvalido.Visible = true;
             }
-            else if (!EsCorreoValido(txtDireccionCorreo_ru.Text))
+            else if (!EsCorreoValido(correo))
             {
                 lblErrorCorreoInvalido.Text = "Formato de correo inválido";
                 lblErrorCorreoInvalido.Visible = true;
@@ -141,6 +142,39 @@ namespace Aeropuerto
             {
                 txtDireccionCorreo_ru.Text = correo;
                 lblErrorCorreoInvalido.Visible = false;
+            }
+        }
+
+        
+        private void ValidarNombreUsuario(object sender, EventArgs e)
+        {
+            string nombreUsuario = LimpiarExtremos(txtNombreUsuario.Text);
+
+            if (string.IsNullOrWhiteSpace(nombreUsuario))
+            {
+                lblErrorCampoObligNombreUsuario.Text = "El nombre de usuario no puede estar vacío";
+                lblErrorCampoObligNombreUsuario.Visible = true;
+            }
+            else if (ContieneEspaciosInternos(nombreUsuario))
+            {
+                lblErrorCampoObligNombreUsuario.Text = "No se permiten espacios en el nombre de usuario.";
+                lblErrorCampoObligNombreUsuario.Visible = true;
+            }
+            else
+            {
+                string patron = @"^[A-Za-z0-9\*\#_\-/]+$";
+
+
+                if (!System.Text.RegularExpressions.Regex.IsMatch(nombreUsuario, patron))
+                {
+                    lblErrorCampoObligNombreUsuario.Text =
+                        "El nombre de usuario solo permite estos caracteres especiales: *  #  _  -  /";
+                    lblErrorCampoObligNombreUsuario.Visible = true;
+                    return;
+                }
+
+                txtNombreUsuario.Text = nombreUsuario;
+                lblErrorCampoObligNombreUsuario.Visible = false;
             }
         }
 
@@ -221,6 +255,7 @@ namespace Aeropuerto
             ValidarNombre(null, null);
             ValidarApellido(null, null);
             ValidarCorreo(null, null);
+            ValidarNombreUsuario(null, null);
             ValidarIdentificacion(null, null);
             ValidarTipoIdentificacion(null, null);
             

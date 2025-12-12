@@ -99,6 +99,17 @@ namespace Aeropuerto
             }
             else
             {
+                string patron = @"^[A-Za-z0-9\*\#_\-/]+$";
+
+
+                if (!System.Text.RegularExpressions.Regex.IsMatch(pass, patron))
+                {
+                    lblErrorCampoObligatorioContrasenia.Text =
+                        "La contraseña solo permite estos caracteres especiales: *  #  _  -  /";
+                    lblErrorCampoObligatorioContrasenia.Visible = true;
+                    return;
+                }
+
                 txtContrasenia.Text = pass;
                 lblErrorCampoObligatorioContrasenia.Visible = false;
                 password = pass;
@@ -200,8 +211,18 @@ namespace Aeropuerto
             string resultado = objUsuarioRegistrado.RegistrarUsuario(numID, tipoID, nombre, apellido, correo, genero,
                                                                      fechaNacimiento, nacionalidad, nombreUsuario,
                                                                      password, direccion, numTelefono, detalles);
-            MessageBox.Show(resultado, "Resultado del registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (resultado != null) 
+            {
+                MessageBox.Show(resultado, "Resultado del registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                if (resultado.Contains("correctamente"))
+                {
+                    this.Hide();
+                    inicio.Show();
+                }
+            }
+            
+            
         }
 
         // --- Navegación ---

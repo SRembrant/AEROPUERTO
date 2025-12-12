@@ -32,6 +32,7 @@
             this.lblCreaUsuarioGratuita_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUneteANosotros = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtApellidoUsuario_Modificar = new Guna.UI2.WinForms.Guna2TextBox();
@@ -51,6 +52,11 @@
             this.btnGuardarYContinuar = new Guna.UI2.WinForms.Guna2Button();
             this.pbxRegresar_Modificar1 = new System.Windows.Forms.PictureBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblErrorCampoObligatorioNombre = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblErrorApellidoValoresNumericos = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblErrorCorreoInvalido = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblErrorCampoObligNombreUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblErrorIdentificacionValoresNoNumericos = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegresar_Modificar1)).BeginInit();
@@ -97,6 +103,12 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BorderRadius = 10;
+            this.guna2Panel2.Controls.Add(this.lblErrorIdentificacionValoresNoNumericos);
+            this.guna2Panel2.Controls.Add(this.lblErrorCampoObligNombreUsuario);
+            this.guna2Panel2.Controls.Add(this.lblErrorCorreoInvalido);
+            this.guna2Panel2.Controls.Add(this.lblErrorApellidoValoresNumericos);
+            this.guna2Panel2.Controls.Add(this.lblErrorCampoObligatorioNombre);
+            this.guna2Panel2.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Controls.Add(this.label3);
             this.guna2Panel2.Controls.Add(this.txtApellidoUsuario_Modificar);
@@ -121,12 +133,22 @@
             this.guna2Panel2.Size = new System.Drawing.Size(353, 383);
             this.guna2Panel2.TabIndex = 0;
             // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(186, 45);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(81, 15);
+            this.guna2HtmlLabel1.TabIndex = 64;
+            this.guna2HtmlLabel1.Text = "Primer Apellido";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(18, 238);
+            this.label2.Location = new System.Drawing.Point(18, 268);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 13);
             this.label2.TabIndex = 63;
@@ -137,7 +159,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(115, 140);
+            this.label3.Location = new System.Drawing.Point(114, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(188, 13);
             this.label3.TabIndex = 62;
@@ -178,7 +200,7 @@
             "C.C.",
             "P.P.",
             "C.E."});
-            this.cbxTipoIdentificacion.Location = new System.Drawing.Point(204, 257);
+            this.cbxTipoIdentificacion.Location = new System.Drawing.Point(204, 287);
             this.cbxTipoIdentificacion.Name = "cbxTipoIdentificacion";
             this.cbxTipoIdentificacion.Size = new System.Drawing.Size(120, 24);
             this.cbxTipoIdentificacion.StartIndex = 0;
@@ -188,7 +210,7 @@
             // 
             this.lblTipoIdentificacion_msn.AutoSize = true;
             this.lblTipoIdentificacion_msn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblTipoIdentificacion_msn.Location = new System.Drawing.Point(201, 225);
+            this.lblTipoIdentificacion_msn.Location = new System.Drawing.Point(201, 255);
             this.lblTipoIdentificacion_msn.Name = "lblTipoIdentificacion_msn";
             this.lblTipoIdentificacion_msn.Size = new System.Drawing.Size(108, 13);
             this.lblTipoIdentificacion_msn.TabIndex = 60;
@@ -211,7 +233,7 @@
             "No binario",
             "Prefiero no decirlo",
             "Otro"});
-            this.cbxNuevoGenero.Location = new System.Drawing.Point(20, 198);
+            this.cbxNuevoGenero.Location = new System.Drawing.Point(20, 228);
             this.cbxNuevoGenero.Name = "cbxNuevoGenero";
             this.cbxNuevoGenero.Size = new System.Drawing.Size(165, 24);
             this.cbxNuevoGenero.StartIndex = 0;
@@ -221,11 +243,11 @@
             // 
             this.lblGenero_mns.AutoSize = true;
             this.lblGenero_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblGenero_mns.Location = new System.Drawing.Point(18, 182);
+            this.lblGenero_mns.Location = new System.Drawing.Point(18, 212);
             this.lblGenero_mns.Name = "lblGenero_mns";
             this.lblGenero_mns.Size = new System.Drawing.Size(42, 13);
             this.lblGenero_mns.TabIndex = 56;
-            this.lblGenero_mns.Text = "Genero";
+            this.lblGenero_mns.Text = "Género";
             // 
             // txtNumIdentificacion_Modificar
             // 
@@ -239,7 +261,7 @@
             this.txtNumIdentificacion_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNumIdentificacion_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNumIdentificacion_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNumIdentificacion_Modificar.Location = new System.Drawing.Point(21, 257);
+            this.txtNumIdentificacion_Modificar.Location = new System.Drawing.Point(21, 287);
             this.txtNumIdentificacion_Modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumIdentificacion_Modificar.Name = "txtNumIdentificacion_Modificar";
             this.txtNumIdentificacion_Modificar.PlaceholderText = "";
@@ -251,7 +273,7 @@
             // 
             this.lblNumIdentificacion_mns.AutoSize = true;
             this.lblNumIdentificacion_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblNumIdentificacion_mns.Location = new System.Drawing.Point(18, 225);
+            this.lblNumIdentificacion_mns.Location = new System.Drawing.Point(18, 255);
             this.lblNumIdentificacion_mns.Name = "lblNumIdentificacion_mns";
             this.lblNumIdentificacion_mns.Size = new System.Drawing.Size(124, 13);
             this.lblNumIdentificacion_mns.TabIndex = 54;
@@ -269,7 +291,7 @@
             this.txtNombreUsuario_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreUsuario_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombreUsuario_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreUsuario_Modificar.Location = new System.Drawing.Point(21, 155);
+            this.txtNombreUsuario_Modificar.Location = new System.Drawing.Point(20, 178);
             this.txtNombreUsuario_Modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreUsuario_Modificar.Name = "txtNombreUsuario_Modificar";
             this.txtNombreUsuario_Modificar.PlaceholderText = "";
@@ -281,7 +303,7 @@
             // 
             this.lblNombreUsuario_msn.AutoSize = true;
             this.lblNombreUsuario_msn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblNombreUsuario_msn.Location = new System.Drawing.Point(18, 139);
+            this.lblNombreUsuario_msn.Location = new System.Drawing.Point(17, 162);
             this.lblNombreUsuario_msn.Name = "lblNombreUsuario_msn";
             this.lblNombreUsuario_msn.Size = new System.Drawing.Size(96, 13);
             this.lblNombreUsuario_msn.TabIndex = 52;
@@ -299,7 +321,7 @@
             this.txtDireccionCorreo_Modificar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDireccionCorreo_Modificar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDireccionCorreo_Modificar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDireccionCorreo_Modificar.Location = new System.Drawing.Point(21, 112);
+            this.txtDireccionCorreo_Modificar.Location = new System.Drawing.Point(21, 124);
             this.txtDireccionCorreo_Modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDireccionCorreo_Modificar.Name = "txtDireccionCorreo_Modificar";
             this.txtDireccionCorreo_Modificar.PlaceholderText = "";
@@ -311,7 +333,7 @@
             // 
             this.lblDireccionCorreco_mns.AutoSize = true;
             this.lblDireccionCorreco_mns.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.75F);
-            this.lblDireccionCorreco_mns.Location = new System.Drawing.Point(18, 94);
+            this.lblDireccionCorreco_mns.Location = new System.Drawing.Point(18, 106);
             this.lblDireccionCorreco_mns.Name = "lblDireccionCorreco_mns";
             this.lblDireccionCorreco_mns.Size = new System.Drawing.Size(155, 13);
             this.lblDireccionCorreco_mns.TabIndex = 50;
@@ -343,9 +365,9 @@
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(21, 45);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(58, 15);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(79, 15);
             this.guna2HtmlLabel3.TabIndex = 48;
-            this.guna2HtmlLabel3.Text = "Tu nombre";
+            this.guna2HtmlLabel3.Text = "Primer Nombre";
             // 
             // guna2HtmlLabel2
             // 
@@ -368,7 +390,7 @@
             this.btnGuardarYContinuar.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnGuardarYContinuar.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Bold);
             this.btnGuardarYContinuar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarYContinuar.Location = new System.Drawing.Point(86, 299);
+            this.btnGuardarYContinuar.Location = new System.Drawing.Point(86, 329);
             this.btnGuardarYContinuar.Name = "btnGuardarYContinuar";
             this.btnGuardarYContinuar.Size = new System.Drawing.Size(189, 32);
             this.btnGuardarYContinuar.TabIndex = 0;
@@ -396,6 +418,66 @@
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(60, 21);
             this.guna2HtmlLabel5.TabIndex = 53;
             this.guna2HtmlLabel5.Text = "Mi Perfil";
+            // 
+            // lblErrorCampoObligatorioNombre
+            // 
+            this.lblErrorCampoObligatorioNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorCampoObligatorioNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.lblErrorCampoObligatorioNombre.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCampoObligatorioNombre.Location = new System.Drawing.Point(21, 92);
+            this.lblErrorCampoObligatorioNombre.Name = "lblErrorCampoObligatorioNombre";
+            this.lblErrorCampoObligatorioNombre.Size = new System.Drawing.Size(21, 11);
+            this.lblErrorCampoObligatorioNombre.TabIndex = 65;
+            this.lblErrorCampoObligatorioNombre.Text = "Error";
+            this.lblErrorCampoObligatorioNombre.Visible = false;
+            // 
+            // lblErrorApellidoValoresNumericos
+            // 
+            this.lblErrorApellidoValoresNumericos.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorApellidoValoresNumericos.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.lblErrorApellidoValoresNumericos.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorApellidoValoresNumericos.Location = new System.Drawing.Point(186, 92);
+            this.lblErrorApellidoValoresNumericos.Name = "lblErrorApellidoValoresNumericos";
+            this.lblErrorApellidoValoresNumericos.Size = new System.Drawing.Size(21, 11);
+            this.lblErrorApellidoValoresNumericos.TabIndex = 66;
+            this.lblErrorApellidoValoresNumericos.Text = "Error";
+            this.lblErrorApellidoValoresNumericos.Visible = false;
+            // 
+            // lblErrorCorreoInvalido
+            // 
+            this.lblErrorCorreoInvalido.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorCorreoInvalido.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.lblErrorCorreoInvalido.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCorreoInvalido.Location = new System.Drawing.Point(21, 148);
+            this.lblErrorCorreoInvalido.Name = "lblErrorCorreoInvalido";
+            this.lblErrorCorreoInvalido.Size = new System.Drawing.Size(21, 11);
+            this.lblErrorCorreoInvalido.TabIndex = 67;
+            this.lblErrorCorreoInvalido.Text = "Error";
+            this.lblErrorCorreoInvalido.Visible = false;
+            // 
+            // lblErrorCampoObligNombreUsuario
+            // 
+            this.lblErrorCampoObligNombreUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorCampoObligNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.lblErrorCampoObligNombreUsuario.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCampoObligNombreUsuario.Location = new System.Drawing.Point(20, 203);
+            this.lblErrorCampoObligNombreUsuario.Name = "lblErrorCampoObligNombreUsuario";
+            this.lblErrorCampoObligNombreUsuario.Size = new System.Drawing.Size(21, 11);
+            this.lblErrorCampoObligNombreUsuario.TabIndex = 68;
+            this.lblErrorCampoObligNombreUsuario.Text = "Error";
+            this.lblErrorCampoObligNombreUsuario.Visible = false;
+            // 
+            // lblErrorIdentificacionValoresNoNumericos
+            // 
+            this.lblErrorIdentificacionValoresNoNumericos.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorIdentificacionValoresNoNumericos.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.lblErrorIdentificacionValoresNoNumericos.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorIdentificacionValoresNoNumericos.Location = new System.Drawing.Point(21, 315);
+            this.lblErrorIdentificacionValoresNoNumericos.Name = "lblErrorIdentificacionValoresNoNumericos";
+            this.lblErrorIdentificacionValoresNoNumericos.Size = new System.Drawing.Size(21, 11);
+            this.lblErrorIdentificacionValoresNoNumericos.TabIndex = 66;
+            this.lblErrorIdentificacionValoresNoNumericos.Text = "Error";
+            this.lblErrorIdentificacionValoresNoNumericos.Visible = false;
             // 
             // Uc_ModificarDatos
             // 
@@ -441,5 +523,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligatorioNombre;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorIdentificacionValoresNoNumericos;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCampoObligNombreUsuario;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorCorreoInvalido;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblErrorApellidoValoresNumericos;
     }
 }

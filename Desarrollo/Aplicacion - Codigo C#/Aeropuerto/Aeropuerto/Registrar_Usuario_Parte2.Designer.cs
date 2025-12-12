@@ -32,6 +32,7 @@
             this.lblCreaUsuarioGratuita_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUneteANosotros = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.chbxAceptoTerminosCondiciones = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblErrorCampoObligatorioDireccion = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -56,7 +57,6 @@
             this.lblFechaNacimiento_mns = new System.Windows.Forms.Label();
             this.lblSeguridadDeLaCuenta_mns = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnCrearCuenta = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlPrincipal.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -134,6 +134,17 @@
             this.guna2Panel1.Size = new System.Drawing.Size(389, 459);
             this.guna2Panel1.TabIndex = 0;
             // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(315, 14);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(63, 21);
+            this.guna2HtmlLabel5.TabIndex = 30;
+            this.guna2HtmlLabel5.Text = "Regresar";
+            // 
             // chbxAceptoTerminosCondiciones
             // 
             this.chbxAceptoTerminosCondiciones.AutoSize = true;
@@ -153,6 +164,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.lblVolverARegistrar_1_Click);
             // 
             // lblErrorCampoObligatorioDireccion
             // 
@@ -475,17 +487,6 @@
             this.btnCrearCuenta.TabIndex = 0;
             this.btnCrearCuenta.Text = "Crear cuenta";
             this.btnCrearCuenta.Click += new System.EventHandler(this.btnCrearCuenta_Click);
-            // 
-            // guna2HtmlLabel5
-            // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(315, 14);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(63, 21);
-            this.guna2HtmlLabel5.TabIndex = 30;
-            this.guna2HtmlLabel5.Text = "Regresar";
             // 
             // Registrar_Usuario_Parte2
             // 
